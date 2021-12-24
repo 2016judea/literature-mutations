@@ -58,7 +58,7 @@ python .\shelves_merger.py
 
 This script will collect all books, remove duplicates, clean the attributes of the books and clean all reviews.
 
-### \*\*Step 5: Generate Network
+### **Step 5: Generate Network**
 
 ```
 python .\generate_network.py
