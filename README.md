@@ -10,6 +10,8 @@ Goodreads scraper forked from: https://github.com/javierlopeza/goodreads-scraper
 
 My fork: https://github.com/2016judea/goodreads-scraper
 
+![alt text](https://github.com/2016judea/literature-mutations/blob/master/example-output.PNG)
+
 ### **Step 1: Select shelves**
 
 Go to https://www.goodreads.com/shelf and select the shelves you want to scrape from.
