@@ -1,6 +1,6 @@
 # Global constants
 
-shelved_books = '../goodreads-scraper/data_by_shelf'
+shelved_books = '../goodreads-scraper/_data'
 untracked_genres = [
     "Classics",
     "Fiction",

@@ -112,46 +112,45 @@ def populate_graphs():
     G = nx.Graph()
     genre_counter = {}
 
-    for index, dataset in enumerate(os.listdir(shelved_books)):
-        books = []
-        with open(os.path.join(shelved_books, dataset), "r", encoding='utf-8') as f:
-            books = json.load(f)["books"]
+    books = []
+    with open(os.path.join(shelved_books, "books.json"), "r", encoding='utf-8') as f:
+        books = json.load(f)["books"]
 
-        # add nodes for year
-        for book in books:
-            G.add_node(book["title"])
+    # add nodes for year
+    for book in books:
+        G.add_node(book["title"])
 
-        proposed_edges = []
-        genre_of_edges = []
+    proposed_edges = []
+    genre_of_edges = []
 
-        # find all edges between books of that year based on genre
-        for book in books:
-            for node in G.nodes:
-                if node != book["title"]:
-                    for other_book in books:
-                        if other_book["title"] == node:
-                            node_object = other_book
-                            break
-                    for genre in book["genres"]:
-                        if genre not in untracked_genres:
-                            if genre in node_object["genres"]:
-                                proposed_edges.append(
-                                    tuple([book["title"], node]))
-                                genre_of_edges.append(genre)
-                                try:
-                                    genre_counter[genre] = genre_counter[genre] + 1
-                                except:
-                                    genre_counter[genre] = 1
+    # find all edges between books of that year based on genre
+    for book in books:
+        for node in G.nodes:
+            if node != book["title"]:
+                for other_book in books:
+                    if other_book["title"] == node:
+                        node_object = other_book
+                        break
+                for genre in book["genres"]:
+                    if genre not in untracked_genres:
+                        if genre in node_object["genres"]:
+                            proposed_edges.append(
+                                tuple([book["title"], node]))
+                            genre_of_edges.append(genre)
+                            try:
+                                genre_counter[genre] = genre_counter[genre] + 1
+                            except:
+                                genre_counter[genre] = 1
 
-        # run edges through algorithm for validity
-        valid_edges = determine_valid_edges(
-            proposed_edges, genre_of_edges, genre_counter)
+    # run edges through algorithm for validity
+    valid_edges = determine_valid_edges(
+        proposed_edges, genre_of_edges, genre_counter)
 
-        # populate graph with the valid edges
-        for edge in valid_edges:
-            G.add_edge(edge[0], edge[1])
+    # populate graph with the valid edges
+    for edge in valid_edges:
+        G.add_edge(edge[0], edge[1])
 
-        graphs.append(copy.deepcopy(G))
+    graphs.append(copy.deepcopy(G))
 
     # outside loop
     ordered_genre_dict = dict((sorted(genre_counter.items(),
