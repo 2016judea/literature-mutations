@@ -2,6 +2,14 @@
 
 ## Description
 
+An ideation of generating a network of literature and applying graph clustering algorithms to derive genres/subgenres (maybe also determine when said genres formed?)
+
+## Credit Where Credit is Due
+
+Goodreads scraper forked from: https://github.com/javierlopeza/goodreads-scraper
+
+My fork: https://github.com/2016judea/goodreads-scraper
+
 ### **Step 1: Select shelves**
 
 Go to https://www.goodreads.com/shelf and select the shelves you want to scrape from.
