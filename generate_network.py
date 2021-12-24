@@ -90,19 +90,34 @@ def get_traces(G):
     return node_trace, edge_trace
 
 
-def determine_valid_edges(proposed_edges, genre_of_edges, genre_counter):
-    average = statistics.mean(genre_counter.values())
-    standard_deviation = statistics.stdev(genre_counter.values())
-
-    lower_bound = average - standard_deviation
-    upper_bound = average + standard_deviation
-
+'''
+    Valid edges (genres) are those within one standard deviation of the median 
+    number of genres for the entire corpus. 
+    
+    Should this only genres that appear very seldom? Very often?
+'''
+def determine_valid_edges(proposed_edges, genre_of_edges, genre_counter, method):
     valid_edges = []
+        
+    if method == "median-with-one-std":
+        average = statistics.median(genre_counter.values())
+        standard_deviation = statistics.stdev(genre_counter.values())
 
-    for index, edge in enumerate(proposed_edges):
-        if genre_counter[genre_of_edges[index]] > lower_bound and \
-                genre_counter[genre_of_edges[index]] < upper_bound:
-            valid_edges.append(edge)
+        lower_bound = average - standard_deviation
+        upper_bound = average + standard_deviation
+
+        for index, edge in enumerate(proposed_edges):
+            occurrences_of_genre_in_corpus = genre_counter[genre_of_edges[index]]
+            if occurrences_of_genre_in_corpus > lower_bound and \
+                    occurrences_of_genre_in_corpus < upper_bound:
+                valid_edges.append(edge)
+    elif method == "uncommon-genres":
+        upper_bound = sum(genre_counter.values()) * .10
+
+        for index, edge in enumerate(proposed_edges):
+            occurrences_of_genre_in_corpus = genre_counter[genre_of_edges[index]]
+            if occurrences_of_genre_in_corpus < upper_bound:
+                valid_edges.append(edge)
 
     return valid_edges
 
@@ -144,15 +159,17 @@ def populate_graphs():
 
     # run edges through algorithm for validity
     valid_edges = determine_valid_edges(
-        proposed_edges, genre_of_edges, genre_counter)
+        proposed_edges, genre_of_edges, genre_counter, "uncommon-genres")
 
     # populate graph with the valid edges
     for edge in valid_edges:
         G.add_edge(edge[0], edge[1])
+        
+    # remove isolated nodes from graph
+    G.remove_nodes_from(list(nx.isolates(G)))
 
     graphs.append(copy.deepcopy(G))
 
-    # outside loop
     ordered_genre_dict = dict((sorted(genre_counter.items(),
                                       key=lambda k: k[1], reverse=True)))
 
