@@ -15,6 +15,7 @@ import networkx as nx
 import plotly.express as px
 import plotly.graph_objects as go
 
+from cluster_analysis import get_nodes_with_low_clustering_coefficients
 from constants import *
 
 '''
@@ -27,6 +28,7 @@ Pseudocode:
       - Add requirements.txt
       - Cluster analysis:
         - Find way to identify clusters that form in the graph
+            - High degree of connectedness? 
             - Highlight them? 
       - Edge validity algorithms:
         - Try different genre weighting algorithms
@@ -226,13 +228,16 @@ def populate_graphs():
                     G,
                     books,
                     "compare_all_genres_between_nodes", 
-                    {'required_weight': .9 }
+                    {'required_weight': .5 }
                 )
 
     # populate graph with the valid edges
     for edge in valid_edges:
         G.add_edge(edge[0], edge[1])
-        
+    
+    # remove nodes with low clustering coefficients
+    G.remove_nodes_from(get_nodes_with_low_clustering_coefficients(G))
+    
     # remove isolated nodes from graph
     G.remove_nodes_from(list(nx.isolates(G)))
 
