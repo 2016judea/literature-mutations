@@ -8,6 +8,7 @@ import json
 import os
 import statistics
 import time
+from collections import defaultdict
 
 import ipywidgets as widgets
 import networkx as nx
@@ -19,18 +20,28 @@ from constants import *
 '''
 Pseudocode:
     1. Iterate by year of publication
-    2. Join books with matching shelves (prune unhelpful shelves, aka "Fiction")
-    3. Determine if cluster exists
+    2. Join books with similar qualities
+    3. Determine if clusters exist
 
     Todo:
       - Add requirements.txt
-      - Dynamically build cluster defitions/labels
-      - Add genre as edge label
+      - Cluster analysis:
+        - Find way to identify clusters that form in the graph
+            - Highlight them? 
+      - Edge validity algorithms:
+        - Try different genre weighting algorithms
+        - Use NLP model for weighting edge validity
+            - Edge validity in graph could be weighted between genre overlap and NLP model analysis of description/reviews text corpus     
 '''
 
 
 def get_traces(G):
-    node_positions = nx.spring_layout(G)
+    node_positions = nx.spring_layout(G, k=.3, iterations=100)
+    #   k:              controls the distance between the nodes and varies between 0 and 1
+    #   iterations:     is the number of times simulated annealing is run
+    #       
+    #   default k=0.1 and iterations=50
+    
     edge_x = []
     edge_y = []
     for edge in G.edges():
@@ -90,59 +101,16 @@ def get_traces(G):
     return node_trace, edge_trace
 
 
-'''
-    Valid edges (genres) are those within one standard deviation of the median 
-    number of genres for the entire corpus. 
-    
-    Should this only genres that appear very seldom? Very often?
-'''
-def determine_valid_edges(proposed_edges, genre_of_edges, genre_counter, method):
-    valid_edges = []
-        
-    if method == "median-with-one-std":
-        average = statistics.median(genre_counter.values())
-        standard_deviation = statistics.stdev(genre_counter.values())
-
-        lower_bound = average - standard_deviation
-        upper_bound = average + standard_deviation
-
-        for index, edge in enumerate(proposed_edges):
-            occurrences_of_genre_in_corpus = genre_counter[genre_of_edges[index]]
-            if occurrences_of_genre_in_corpus > lower_bound and \
-                    occurrences_of_genre_in_corpus < upper_bound:
-                valid_edges.append(edge)
-    elif method == "uncommon-genres":
-        upper_bound = sum(genre_counter.values()) * .10
-
-        for index, edge in enumerate(proposed_edges):
-            occurrences_of_genre_in_corpus = genre_counter[genre_of_edges[index]]
-            if occurrences_of_genre_in_corpus < upper_bound:
-                valid_edges.append(edge)
-
-    return valid_edges
-
-
-def populate_graphs():
-    graphs = []
-    G = nx.Graph()
-    genre_counter = {}
-
-    books = []
-    with open(os.path.join(shelved_books, "books.json"), "r", encoding='utf-8') as f:
-        books = json.load(f)["books"]
-
-    # add nodes for year
-    for book in books:
-        G.add_node(book["title"])
-
+def evaluate_every_genre_as_edge(G, books):
     proposed_edges = []
     genre_of_edges = []
+    genre_counter = {}
 
     # find all edges between books of that year based on genre
     for book in books:
         for node in G.nodes:
-            if node != book["title"]:
-                for other_book in books:
+            if node != book["title"]:# evaluate all the OTHER books in corpus
+                for other_book in books: # find the JSON object for the other book we want to evaluate
                     if other_book["title"] == node:
                         node_object = other_book
                         break
@@ -154,12 +122,112 @@ def populate_graphs():
                             genre_of_edges.append(genre)
                             try:
                                 genre_counter[genre] = genre_counter[genre] + 1
-                            except:
+                            except KeyError:
                                 genre_counter[genre] = 1
+    
+    ordered_genre_dict = dict((sorted(genre_counter.items(),
+                                    key=lambda k: k[1], reverse=True)))
+    
+    # print(ordered_genre_dict)
+    
+    return proposed_edges, genre_of_edges, genre_counter
+
+
+def determine_overlap_of_genres_between_nodes(source, dest):
+    common_genres = list(set(source['genres']).intersection(set(dest['genres'])))
+    min_genres_between_two = min(len(source['genres']), len(dest['genres']))
+    
+    if min_genres_between_two == 0:
+        overlap = 0
+    else:
+        overlap = len(common_genres) / min_genres_between_two
+    
+    # print(source['title'] + " <---------> " + dest['title'] + ", Weight: " + str(overlap))
+    return overlap
+    
+
+'''
+    Methods:
+        evaluate_every_genre_as_edge: 
+            Iterate through every genre that a given node (book) has listed, determine if the edge should exist in graph
+                params = { 'statistic': "p10" | "within_single_std_median" }
+        
+        compare_all_genres_between_nodes:
+            Assert the commonality between the two nodes, based on the overlap of their genre
+                params = { 'required_weight': number (between 0 and 1) }
+'''
+def determine_valid_edges(G, books, method, params):
+    valid_edges = []
+    
+    if method == "compare_all_genres_between_nodes":
+        for book in books:
+            for node in G.nodes:
+                if node != book["title"]: # evaluate all the OTHER books in corpus
+                    for other_book in books: # find the JSON object for the other book we want to evaluate
+                        if other_book["title"] == node:
+                            other_node = other_book 
+                            break
+                    if other_node is not None:
+                        overlap = determine_overlap_of_genres_between_nodes(book, other_node)
+                        if overlap >= params['required_weight']:
+                            valid_edges.append(tuple([book["title"], node]))
+        return valid_edges
+                                
+    elif method == "evaluate_every_genre_as_edge":
+        proposed_edges, genre_of_edges, genre_counter= evaluate_every_genre_as_edge(G, books)
+        
+        if params['statistic'] == "within_single_std_median":
+            average = statistics.median(genre_counter.values())
+            standard_deviation = statistics.stdev(genre_counter.values())
+
+            lower_bound = average - standard_deviation
+            upper_bound = average + standard_deviation
+
+            for index, edge in enumerate(proposed_edges):
+                occurrences_of_genre_in_corpus = genre_counter[genre_of_edges[index]]
+                if occurrences_of_genre_in_corpus > lower_bound and \
+                        occurrences_of_genre_in_corpus < upper_bound:
+                    valid_edges.append(edge)
+                    
+        elif params['statistic']  == "p10":
+            upper_bound = sum(genre_counter.values()) * .10
+            existing_connections = defaultdict(list)
+
+            for index, edge in enumerate(proposed_edges):
+                occurrences_of_genre_in_corpus = genre_counter[genre_of_edges[index]]
+                if occurrences_of_genre_in_corpus < upper_bound:
+                    source = edge[0]
+                    dest = edge[1]
+                    try:
+                        if dest not in existing_connections[source]:
+                            existing_connections[source].append(dest)
+                            valid_edges.append(edge)
+                    except KeyError:
+                        existing_connections[source].append(dest)
+                        valid_edges.append(edge)
+
+    return valid_edges
+
+
+def populate_graphs():
+    graphs = []
+    G = nx.Graph()
+
+    books = []
+    with open(os.path.join(shelved_books, "books.json"), "r", encoding='utf-8') as f:
+        books = json.load(f)["books"]
+
+    # add nodes for year
+    for book in books:
+        G.add_node(book["title"])
 
     # run edges through algorithm for validity
     valid_edges = determine_valid_edges(
-        proposed_edges, genre_of_edges, genre_counter, "uncommon-genres")
+                    G,
+                    books,
+                    "compare_all_genres_between_nodes", 
+                    {'required_weight': .9 }
+                )
 
     # populate graph with the valid edges
     for edge in valid_edges:
@@ -170,16 +238,11 @@ def populate_graphs():
 
     graphs.append(copy.deepcopy(G))
 
-    ordered_genre_dict = dict((sorted(genre_counter.items(),
-                                      key=lambda k: k[1], reverse=True)))
-
-    return graphs, ordered_genre_dict
+    return graphs
 
 
 def main():
-    graphs, ordered_genre_dict = populate_graphs()
-
-    # print ordered_genre_dict
+    graphs = populate_graphs()
 
     frames = []
     steps = []
