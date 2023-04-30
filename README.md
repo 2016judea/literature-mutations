@@ -1,6 +1,6 @@
 # Literature Mutations Network Builder
 
-## Description
+**DESCRIPTION**
 
 Generating a network of literature and applying graph clustering algorithms to derive genres/subgenres (maybe also determine when said genres formed?)
 
@@ -84,15 +84,15 @@ While there are uncertainties surrounding the acquisition and preparation of the
 
 [8] Sarah Allison, Ryan Heuser, Matthew Jockers, Franco Moretti, and Michael Witmore. 2011. Quantitative Formalism: An Experiment. (January 2011). https://litlab.stanford.edu/LiteraryLabPamphlet1.pdf
 
-## Implementation
+**IMPLEMENTATION**
 
-### Credit Where Credit is Due
+**_Credit Where Credit is Due_**
 
 Goodreads scraper forked from: https://github.com/javierlopeza/goodreads-scraper
 
 My fork: https://github.com/2016judea/goodreads-scraper
 
-### **Step 1: Select shelves**
+**_Step 1: Select shelves_**
 
 Go to https://www.goodreads.com/shelf and select the shelves you want to scrape from.
 
@@ -104,11 +104,11 @@ adventure
 thriller
 ```
 
-### **Step 2: Get your cookies**
+**_Step 2: Get your cookies_**
 
 To retrieve all pages you want you'll need to log in into Goodreads and get the value of your `_session_id2` cookie. Set the value of the constant COOKIE in `constants.py` with the one you obtained from your browser.
 
-### **Step 3: Run books scraper**
+**_Step 3: Run books scraper_**
 
 ```
 python .\books_scaper.py
@@ -130,7 +130,7 @@ thriller_2.json
 thriller_3.json
 ```
 
-### **Step 4: Run shelves merger**
+**_Step 4: Run shelves merger_**
 
 ```
 python .\shelves_merger.py
@@ -138,7 +138,7 @@ python .\shelves_merger.py
 
 This script will collect all books, remove duplicates, clean the attributes of the books and clean all reviews.
 
-### **Step 5: Generate Network**
+**_Step 5: Generate Network_**
 
 ```
 python .\generate_network.py
