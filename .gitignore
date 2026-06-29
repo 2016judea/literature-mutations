@@ -105,3 +105,7 @@ venv.bak/
 
 # .DS_Store
 .DS_Store
+mutation_timeline.csv
+.venv/
+__pycache__/
+*.bak

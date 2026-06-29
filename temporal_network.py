@@ -30,9 +30,13 @@ import networkx as nx
 import networkx.algorithms.community as nx_comm
 
 from constants import shelved_books, untracked_genres
+from semantic_edges import attach_embeddings, semantic_overlap
 
 # --- tuning knobs -----------------------------------------------------------
+EDGE_METHOD = "genre"      # "genre"   -> genre-set overlap (the original paper)
+                           # "semantic"-> cosine over description embeddings (sec. 6)
 EDGE_MIN_OVERLAP = 0.5     # genre-overlap threshold for an edge (matches paper)
+SEMANTIC_MIN_COSINE = 0.25 # cosine threshold for a semantic edge
 MATCH_MIN_JACCARD = 0.3    # how much membership overlap counts as "the same"
                            # community persisting from one year to the next
 
@@ -56,12 +60,22 @@ def parse_year(date_published):
 
 def books_by_year(books):
     grouped = defaultdict(list)
+    kept = []
     for b in books:
         year = parse_year(b.get("date_published"))
         genres = [g for g in (b.get("genres") or []) if g not in untracked_genres]
         if year is None or not genres:
             continue
-        grouped[year].append({"title": b["title"], "genres": set(genres)})
+        entry = {"title": b["title"], "genres": set(genres),
+                 "description": b.get("description")}
+        grouped[year].append(entry)
+        kept.append(entry)
+
+    # For semantic edges, embed the whole kept corpus once so the vectors are
+    # comparable across every year before snapshots are built.
+    if EDGE_METHOD == "semantic" and kept:
+        backend = attach_embeddings(kept)
+        print(f"Semantic edges via: {backend}\n")
     return grouped
 
 
@@ -73,6 +87,13 @@ def genre_overlap(a, b):
     return len(a["genres"] & b["genres"]) / smaller
 
 
+def edge_valid(a, b):
+    '''Whether an edge should connect two books, per the selected method.'''
+    if EDGE_METHOD == "semantic":
+        return semantic_overlap(a, b) >= SEMANTIC_MIN_COSINE
+    return genre_overlap(a, b) >= EDGE_MIN_OVERLAP
+
+
 def build_snapshot(books_so_far):
     '''All books published up to and including the current year -> one graph.'''
     G = nx.Graph()
@@ -81,7 +102,7 @@ def build_snapshot(books_so_far):
     titles = list(books_so_far)
     for i in range(len(titles)):
         for j in range(i + 1, len(titles)):
-            if genre_overlap(titles[i], titles[j]) >= EDGE_MIN_OVERLAP:
+            if edge_valid(titles[i], titles[j]):
                 G.add_edge(titles[i]["title"], titles[j]["title"])
     G.remove_nodes_from(list(nx.isolates(G)))
     return G
@@ -158,17 +179,21 @@ def synthetic_corpus():
     '''Tiny fake corpus so the pipeline runs with nothing scraped.
     Designed so a new "cyberpunk" cluster splits out of sci-fi over time.'''
     rng = []
-    def add(title, year, genres):
-        rng.append({"title": title, "date_published": str(year), "genres": genres})
+    def add(title, year, genres, desc):
+        rng.append({"title": title, "date_published": str(year),
+                    "genres": genres, "description": desc})
     # early: undifferentiated sci-fi
     for i in range(6):
-        add(f"SF-{i}", 1950 + i, ["Science Fiction", "Fiction"])
+        add(f"SF-{i}", 1950 + i, ["Science Fiction", "Fiction"],
+            "A starship crew explores distant planets and alien worlds in deep space.")
     # mystery cluster
     for i in range(6):
-        add(f"MY-{i}", 1955 + i, ["Mystery", "Crime", "Fiction"])
+        add(f"MY-{i}", 1955 + i, ["Mystery", "Crime", "Fiction"],
+            "A detective investigates a murder, hunting the killer through clues and suspects.")
     # cyberpunk splits off sci-fi in the 80s
     for i in range(6):
-        add(f"CP-{i}", 1984 + i, ["Science Fiction", "Cyberpunk", "Dystopia"])
+        add(f"CP-{i}", 1984 + i, ["Science Fiction", "Cyberpunk", "Dystopia"],
+            "A hacker jacks into cyberspace against megacorporations in a neon dystopian city.")
     return rng
 
 
