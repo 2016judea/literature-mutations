@@ -26,6 +26,7 @@ import re
 import csv
 from collections import defaultdict
 
+import numpy as np
 import networkx as nx
 import networkx.algorithms.community as nx_comm
 
@@ -33,10 +34,15 @@ from constants import shelved_books, untracked_genres
 from semantic_edges import attach_embeddings, semantic_overlap
 
 # --- tuning knobs -----------------------------------------------------------
-EDGE_METHOD = "genre"      # "genre"   -> genre-set overlap (the original paper)
+EDGE_METHOD = os.environ.get("EDGE_METHOD", "genre")
+                           # "genre"   -> genre-set overlap (the original paper)
                            # "semantic"-> cosine over description embeddings (sec. 6)
 EDGE_MIN_OVERLAP = 0.5     # genre-overlap threshold for an edge (matches paper)
-SEMANTIC_MIN_COSINE = 0.25 # cosine threshold for a semantic edge
+# Semantic edges use k-nearest-neighbors, not a global cosine threshold: over
+# long English prose every novel is somewhat similar to every other, so a
+# threshold yields one blob. Linking each book to its k most-similar peers
+# recovers genre structure robustly regardless of the absolute cosine scale.
+EDGE_KNN = 6
 MATCH_MIN_JACCARD = 0.3    # how much membership overlap counts as "the same"
                            # community persisting from one year to the next
 
@@ -99,11 +105,23 @@ def build_snapshot(books_so_far):
     G = nx.Graph()
     for b in books_so_far:
         G.add_node(b["title"], genres=b["genres"])
-    titles = list(books_so_far)
-    for i in range(len(titles)):
-        for j in range(i + 1, len(titles)):
-            if edge_valid(titles[i], titles[j]):
-                G.add_edge(titles[i]["title"], titles[j]["title"])
+    books = list(books_so_far)
+
+    if EDGE_METHOD == "semantic" and EDGE_KNN and len(books) > 2:
+        # k-nearest-neighbors graph from the precomputed description vectors.
+        M = np.vstack([b["vec"] for b in books])
+        sims = M @ M.T
+        np.fill_diagonal(sims, -1.0)
+        k = min(EDGE_KNN, len(books) - 1)
+        for i, b in enumerate(books):
+            for j in np.argpartition(-sims[i], k)[:k]:
+                G.add_edge(b["title"], books[int(j)]["title"])
+    else:
+        for i in range(len(books)):
+            for j in range(i + 1, len(books)):
+                if edge_valid(books[i], books[j]):
+                    G.add_edge(books[i]["title"], books[j]["title"])
+
     G.remove_nodes_from(list(nx.isolates(G)))
     return G
 

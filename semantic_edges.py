@@ -27,7 +27,13 @@ def _embed_sentence_transformers(texts):
 
 def _embed_tfidf(texts):
     from sklearn.feature_extraction.text import TfidfVectorizer
-    vecs = TfidfVectorizer(stop_words="english", max_features=4096).fit_transform(texts)
+    # The signal is DISTINCTIVE vocabulary, not shared "novel-ese". max_df=0.4
+    # drops words common to >40% of books (said, man, eyes, time...) that
+    # otherwise make every novel look similar; min_df=3 drops one-off proper
+    # nouns (character names) that link books for incidental reasons.
+    vecs = TfidfVectorizer(stop_words="english", max_features=20000,
+                           min_df=3, max_df=0.4,
+                           sublinear_tf=True).fit_transform(texts)
     # L2-normalize rows so dot product == cosine similarity
     arr = vecs.toarray().astype(np.float32)
     norms = np.linalg.norm(arr, axis=1, keepdims=True)
