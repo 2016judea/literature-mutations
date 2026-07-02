@@ -1,0 +1,2122 @@
+{
+  "n_books": 345,
+  "communities": [
+    {
+      "titles": [
+        "Ferdinand Count Fathom",
+        "The Count of Monte Cristo",
+        "The Moonstone",
+        "Joseph Andrews",
+        "Jonathan Wild",
+        "The Expedition of Humphry Clinker",
+        "Heroine",
+        "Robinson Crusoe",
+        "Anna Karenina",
+        "The Adventures of Peregrine Pickle",
+        "Twenty Thousand Leagues Under the Sea",
+        "The Adventures of Roderick Random",
+        "Billy Budd",
+        "War and Peace",
+        "Tom Jones",
+        "Roderick Random",
+        "Humphry Clinker",
+        "Tristram Shandy",
+        "The Life of Jonathan Wild the Great",
+        "The Purple Cloud",
+        "The Power of Sympathy",
+        "The Life and Opinions of Tristram Shandy, Gentleman",
+        "Gulliver's Travels",
+        "The Waste Land",
+        "The Private Memoirs and Confessions of a Justified Sinner",
+        "Roxana",
+        "A Sentimental Journey Through France and Italy",
+        "Captain Singleton",
+        "Amelia",
+        "The Man of Feeling",
+        "The Three Musketeers",
+        "Peregrine Pickle",
+        "An Apology for the Life of Mrs. Shamela Andrews",
+        "The Adventures of Ferdinand Count Fathom",
+        "The Narrative of Arthur Gordon Pym of Nantucket"
+      ],
+      "size": 35,
+      "year_min": 1719,
+      "year_max": 1924,
+      "birth_year": 1726,
+      "held_out_label": "Best Books Ever Listings",
+      "top_terms": [
+        "design",
+        "hath",
+        "behaviour",
+        "madam",
+        "notwithstanding",
+        "parson",
+        "mankind",
+        "discourse",
+        "effectually",
+        "accordingly"
+      ],
+      "genre_name": "Georgian prose fiction"
+    },
+    {
+      "titles": [
+        "Looking Backward",
+        "Evelina",
+        "The Female Quixote",
+        "Rasselas",
+        "The Last Man",
+        "Memoirs of Miss Sidney Bidulph",
+        "A Sicilian Romance",
+        "The Sketch Book of Geoffrey Crayon",
+        "The Monk",
+        "Frankenstein; or, The Modern Prometheus",
+        "The Scarlet Letter",
+        "The Italian",
+        "Caleb Williams",
+        "Hope Leslie",
+        "Belinda",
+        "Northanger Abbey",
+        "The Coquette",
+        "Love in Excess",
+        "Cecilia; or, Memoirs of an Heiress",
+        "Vivian Grey",
+        "Emma",
+        "Glenarvon",
+        "Walden",
+        "The Old English Baron",
+        "The Wild Irish Girl",
+        "Persuasion",
+        "The Mysteries of Udolpho",
+        "Wieland; or, The Transformation: An American Tale",
+        "Headlong Hall",
+        "The Way of All Flesh",
+        "Clarissa",
+        "Pamela",
+        "The Castle of Otranto",
+        "The Mummy!",
+        "St. Leon",
+        "Melmoth the Wanderer",
+        "Camilla",
+        "Cecilia",
+        "Carmilla",
+        "Sybil",
+        "The Woman in White",
+        "Camilla; or, A Picture of Youth",
+        "Sense and Sensibility",
+        "Nightmare Abbey",
+        "The Pilgrim's Progress",
+        "The Wanderer",
+        "The Way We Live Now",
+        "Pride and Prejudice",
+        "Frankenstein",
+        "Wieland"
+      ],
+      "size": 50,
+      "year_min": 1678,
+      "year_max": 1903,
+      "birth_year": 1748,
+      "held_out_label": "England -- Fiction",
+      "top_terms": [
+        "sentiments",
+        "thy",
+        "tenderness",
+        "madam",
+        "endeavoured",
+        "affections",
+        "shew",
+        "thou",
+        "affectionate",
+        "gratitude"
+      ],
+      "genre_name": "Early English novel"
+    },
+    {
+      "titles": [
+        "The Talisman",
+        "The Virginians",
+        "Clementina",
+        "Puck of Pook's Hill",
+        "The Fortunes of Nigel",
+        "The Antiquary",
+        "Pierre",
+        "Rookwood",
+        "Quentin Durward",
+        "The Pirate",
+        "Castle Rackrent",
+        "Old Mortality",
+        "Guy Mannering",
+        "Crotchet Castle",
+        "The Black Arrow: A Tale of the Two Roses",
+        "The Black Arrow",
+        "Around the World in Eighty Days",
+        "The White Company",
+        "The Deerslayer",
+        "The Fifth Queen",
+        "Kim",
+        "Micah Clarke",
+        "The Pioneers",
+        "A Connecticut Yankee in King Arthur's Court",
+        "Henry Esmond",
+        "The Prairie",
+        "Rob Roy",
+        "Redgauntlet",
+        "Ivanhoe",
+        "Hugh Wynne",
+        "Kidnapped",
+        "She",
+        "The Sea Hawk",
+        "Quo Vadis",
+        "Vanity Fair",
+        "Lorna Doone",
+        "The Last of the Mohicans",
+        "Westward Ho!",
+        "Ben-Hur",
+        "The Master of Ballantrae",
+        "With Fire and Sword",
+        "Waverley",
+        "Richard Carvel",
+        "Kenilworth",
+        "The Pathfinder",
+        "The American",
+        "Marriage",
+        "Moon of Israel",
+        "The Wept of Wish-ton-Wish",
+        "Vathek"
+      ],
+      "size": 50,
+      "year_min": 1786,
+      "year_max": 1918,
+      "birth_year": 1815,
+      "held_out_label": "Historical fiction",
+      "top_terms": [
+        "thou",
+        "thy",
+        "thee",
+        "hath",
+        "sword",
+        "knight",
+        "castle",
+        "hast",
+        "prince",
+        "scarce"
+      ],
+      "genre_name": "Historical romance"
+    },
+    {
+      "titles": [
+        "Jude the Obscure",
+        "A Tale of Two Cities",
+        "Esther Waters",
+        "The Tenant of Wildfell Hall",
+        "The Amateur Gentleman",
+        "Oliver Twist",
+        "Wuthering Heights",
+        "Middlemarch",
+        "The Mayor of Casterbridge",
+        "Shirley",
+        "Jack Sheppard",
+        "Wives and Daughters",
+        "Tess of the D'Urbervilles",
+        "Barnaby Rudge",
+        "Mary Barton",
+        "Jane Eyre",
+        "The Pickwick Papers",
+        "The Odd Women",
+        "News from Nowhere",
+        "Bleak House",
+        "North and South",
+        "Far from the Madding Crowd",
+        "The Black Moth",
+        "The Broad Highway",
+        "David Copperfield",
+        "Cranford",
+        "Silas Marner",
+        "Uncle Silas",
+        "Nicholas Nickleby",
+        "Great Expectations",
+        "Agnes Grey"
+      ],
+      "size": 31,
+      "year_min": 1837,
+      "year_max": 1921,
+      "birth_year": 1839,
+      "held_out_label": "England -- Fiction",
+      "top_terms": [
+        "em",
+        "candle",
+        "ha",
+        "ma",
+        "ay",
+        "wi",
+        "coach",
+        "parish",
+        "richard",
+        "shawl"
+      ],
+      "genre_name": "Victorian serialized fiction"
+    },
+    {
+      "titles": [
+        "The Island of Doctor Moreau",
+        "Three Soldiers",
+        "Tono-Bungay",
+        "The Covered Wagon",
+        "The Moon Pool",
+        "At the Earth's Core",
+        "The Riddle of the Sands",
+        "The Red Badge of Courage",
+        "Ann Veronica",
+        "R.U.R.",
+        "White Fang",
+        "The Adventures of Huckleberry Finn",
+        "Ralph 124C 41+",
+        "Nostromo",
+        "The Nigger of the Narcissus",
+        "King Solomon's Mines",
+        "Dracula",
+        "The World Set Free",
+        "Victory",
+        "The Research Magnificent",
+        "When the Sleeper Wakes",
+        "Herland",
+        "Redburn",
+        "The Adventures of Tom Sawyer",
+        "The Confidence-Man",
+        "Almayer's Folly",
+        "The Sea-Wolf",
+        "Death Comes for the Archbishop",
+        "Moby-Dick",
+        "Treasure Island",
+        "Prester John",
+        "The Clockwork Man",
+        "The Food of the Gods",
+        "The History of Mr Polly",
+        "Kipps",
+        "Captains Courageous",
+        "No More Parades",
+        "Erewhon",
+        "Uncle Tom's Cabin",
+        "The Food of the Gods and How It Came to Earth",
+        "The Call of the Wild",
+        "Heart of Darkness",
+        "The Time Machine",
+        "The Hampdenshire Wonder",
+        "Under Western Eyes",
+        "The House on the Borderland",
+        "The Four Feathers",
+        "The Invisible Man",
+        "The Return of Tarzan",
+        "The Land That Time Forgot",
+        "A Princess of Mars",
+        "The Ghost Pirates",
+        "Riders of the Purple Sage",
+        "Chance",
+        "The Battle of Dorking"
+      ],
+      "size": 55,
+      "year_min": 1849,
+      "year_max": 1927,
+      "birth_year": 1857,
+      "held_out_label": "Best Books Ever Listings",
+      "top_terms": [
+        "deck",
+        "ain",
+        "cabin",
+        "camp",
+        "em",
+        "aboard",
+        "mate",
+        "rifle",
+        "daylight",
+        "swung"
+      ],
+      "genre_name": "Nautical adventure"
+    },
+    {
+      "titles": [
+        "Little Women",
+        "The Wonderful Wizard of Oz",
+        "The Well of Loneliness",
+        "The Rainbow",
+        "The Portrait of a Lady",
+        "Dubliners",
+        "The Enchanted Castle",
+        "Jacob's Room",
+        "Sons and Lovers",
+        "Trilby",
+        "Three Men in a Boat",
+        "Peter Pan",
+        "The Hill of Dreams",
+        "Ulysses",
+        "The Dark Flower",
+        "A Portrait of the Artist as a Young Man",
+        "Women in Love",
+        "The Awakening",
+        "The Secret Garden",
+        "Alice's Adventures in Wonderland",
+        "Lady Audley's Secret",
+        "The Railway Children",
+        "Of Human Bondage",
+        "The Wind in the Willows",
+        "The White Peacock",
+        "Pointed Roofs",
+        "The Jungle Book"
+      ],
+      "size": 27,
+      "year_min": 1862,
+      "year_max": 1928,
+      "birth_year": 1881,
+      "held_out_label": "Bildungsromans",
+      "top_terms": [
+        "butter",
+        "baby",
+        "funny",
+        "stephen",
+        "kiss",
+        "brush",
+        "fun",
+        "sang",
+        "tiny",
+        "awfully"
+      ],
+      "genre_name": "Victorian popular fiction"
+    },
+    {
+      "titles": [
+        "The Benson Murder Case",
+        "The Murder on the Links",
+        "The Greene Murder Case",
+        "The Valley of Fear",
+        "The King in Yellow",
+        "The Red House Mystery",
+        "The Adventures of Sherlock Holmes",
+        "The Strange Case of Dr Jekyll and Mr Hyde",
+        "Whose Body?",
+        "The Rasp",
+        "A Study in Scarlet",
+        "The Murder of Roger Ackroyd",
+        "Hadrian the Seventh",
+        "The Secret of Chimneys",
+        "Trent's Last Case",
+        "The Cask",
+        "The Singing Bone",
+        "The Leavenworth Case",
+        "The Hound of the Baskervilles",
+        "The Innocence of Father Brown",
+        "The Man Who Was Thursday",
+        "The Big Bow Mystery",
+        "The Secret Agent",
+        "That Affair Next Door",
+        "The Big Four",
+        "The Thirty-Nine Steps",
+        "The Napoleon of Notting Hill",
+        "The Sign of the Four",
+        "The Mystery of the Yellow Room",
+        "The Roger Ackroyd",
+        "The Lost World",
+        "The Sign of Four",
+        "The Wisdom of Father Brown",
+        "The Man in Lower Ten",
+        "Lord of the World",
+        "The Mystery of the Blue Train",
+        "The Canary Murder Case",
+        "The Circular Staircase",
+        "The Great God Pan",
+        "The Red Thumb Mark",
+        "The Mysterious Affair at Styles",
+        "The Man in the Brown Suit",
+        "The Eye of Osiris"
+      ],
+      "size": 43,
+      "year_min": 1878,
+      "year_max": 1928,
+      "birth_year": 1890,
+      "held_out_label": "Detective and mystery stories",
+      "top_terms": [
+        "detective",
+        "police",
+        "inspector",
+        "murder",
+        "holmes",
+        "murderer",
+        "dr",
+        "secretary",
+        "murdered",
+        "poirot"
+      ],
+      "genre_name": "Detective fiction"
+    },
+    {
+      "titles": [
+        "Manhattan Transfer",
+        "Sister Carrie",
+        "Elmer Gantry",
+        "The Jungle",
+        "The Wings of the Dove",
+        "The Financier",
+        "Those Barren Leaves",
+        "Some Do Not",
+        "The Ambassadors",
+        "Lady Chatterley's Lover",
+        "The Longest Journey",
+        "The Sun Also Rises",
+        "McTeague",
+        "New Grub Street",
+        "The Age of Innocence",
+        "An American Tragedy",
+        "The Crisis",
+        "The Professor's House",
+        "The House Without a Key",
+        "The Voyage Out",
+        "The Picture of Dorian Gray",
+        "The Man of Property",
+        "Clayhanger",
+        "Mrs Dalloway",
+        "In Our Time",
+        "Main Street",
+        "The Inheritors",
+        "This Side of Paradise",
+        "Tarr",
+        "The Turn of the Screw",
+        "The Magnificent Ambersons",
+        "The Old Wives' Tale",
+        "Jennie Gerhardt",
+        "The Rise of Silas Lapham",
+        "A Passage to India",
+        "The Titan",
+        "Antic Hay",
+        "Ethan Frome",
+        "My \u00c1ntonia",
+        "The Golden Bowl",
+        "Zuleika Dobson",
+        "A Lost Lady",
+        "The Damnation of Theron Ware",
+        "The Great Gatsby",
+        "A Room with a View",
+        "Babbitt",
+        "The Good Soldier",
+        "What Maisie Knew",
+        "The House of Mirth",
+        "The Beautiful and Damned",
+        "The Virginian",
+        "Where Angels Fear to Tread",
+        "Under Two Flags",
+        "Three Lives"
+      ],
+      "size": 54,
+      "year_min": 1867,
+      "year_max": 1928,
+      "birth_year": 1891,
+      "held_out_label": "Psychological fiction",
+      "top_terms": [
+        "car",
+        "dollars",
+        "hadn",
+        "chicago",
+        "hotel",
+        "aunt",
+        "cars",
+        "ain",
+        "york",
+        "lunch"
+      ],
+      "genre_name": "American realism"
+    }
+  ],
+  "timeline": [
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 0,
+      "year": 1678,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 1,
+      "year": 1719,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 1,
+      "year": 1722,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 1,
+      "year": 1724,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 1,
+      "year": 1726,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 1,
+      "year": 1740,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 1,
+      "year": 1741,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 2,
+      "year": 1742,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 2,
+      "year": 1743,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 2,
+      "year": 1748,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 2,
+      "year": 1749,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1751,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1752,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1753,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1759,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1761,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 4,
+      "year": 1764,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1768,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1771,
+      "mutations": 2
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 3,
+      "year": 1778,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1782,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 3,
+      "year": 1786,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 4,
+      "year": 1789,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 3,
+      "year": 1790,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 4,
+      "year": 1794,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 4,
+      "year": 1796,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1797,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1798,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1799,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1800,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1801,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1806,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1811,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1813,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1814,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1815,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 5,
+      "year": 1816,
+      "mutations": 2
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1817,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1818,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1820,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1821,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1822,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1823,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 5,
+      "year": 1824,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1825,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 4,
+      "year": 1826,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1827,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 4,
+      "year": 1829,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1831,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1834,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 4,
+      "year": 1837,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1838,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1839,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 5,
+      "year": 1840,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1841,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1844,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1845,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 6,
+      "year": 1847,
+      "mutations": 2
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1848,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1849,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 6,
+      "year": 1850,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1851,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1852,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1854,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1855,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1857,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 6,
+      "year": 1859,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1861,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1862,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1864,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1865,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1867,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1868,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1869,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1870,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 6,
+      "year": 1871,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1872,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1874,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1875,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1876,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1877,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1878,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 8,
+      "year": 1880,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 8,
+      "year": 1881,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 6,
+      "year": 1883,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1884,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1885,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1886,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 6,
+      "year": 1887,
+      "mutations": 0
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1888,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1889,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1890,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 7,
+      "year": 1891,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 8,
+      "year": 1892,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 8,
+      "year": 1893,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 8,
+      "year": 1894,
+      "mutations": 2
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 8,
+      "year": 1895,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 8,
+      "year": 1896,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 1,
+      "n_communities": 8,
+      "year": 1897,
+      "mutations": 2
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 8,
+      "year": 1898,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 9,
+      "year": 1899,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 9,
+      "year": 1900,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 9,
+      "year": 1901,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 8,
+      "year": 1902,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 9,
+      "year": 1903,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 1,
+      "n_communities": 9,
+      "year": 1904,
+      "mutations": 2
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1905,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1906,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1907,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 9,
+      "year": 1908,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1909,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 10,
+      "year": 1910,
+      "mutations": 2
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 1,
+      "n_communities": 10,
+      "year": 1911,
+      "mutations": 2
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 1,
+      "n_communities": 10,
+      "year": 1912,
+      "mutations": 2
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1913,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1914,
+      "mutations": 0
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 11,
+      "year": 1915,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 10,
+      "year": 1916,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 9,
+      "year": 1918,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1919,
+      "mutations": 2
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 2,
+      "n_communities": 8,
+      "year": 1920,
+      "mutations": 3
+    },
+    {
+      "births": 0,
+      "splits": 2,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1921,
+      "mutations": 2
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 9,
+      "year": 1922,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 9,
+      "year": 1923,
+      "mutations": 2
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1924,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 0,
+      "merges": 0,
+      "n_communities": 9,
+      "year": 1925,
+      "mutations": 1
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 8,
+      "year": 1926,
+      "mutations": 1
+    },
+    {
+      "births": 1,
+      "splits": 1,
+      "merges": 0,
+      "n_communities": 10,
+      "year": 1927,
+      "mutations": 2
+    },
+    {
+      "births": 0,
+      "splits": 0,
+      "merges": 1,
+      "n_communities": 9,
+      "year": 1928,
+      "mutations": 1
+    }
+  ],
+  "cumulative_genres": [
+    [
+      1678,
+      0
+    ],
+    [
+      1719,
+      1
+    ],
+    [
+      1722,
+      1
+    ],
+    [
+      1724,
+      1
+    ],
+    [
+      1726,
+      1
+    ],
+    [
+      1740,
+      1
+    ],
+    [
+      1741,
+      1
+    ],
+    [
+      1742,
+      2
+    ],
+    [
+      1743,
+      2
+    ],
+    [
+      1748,
+      2
+    ],
+    [
+      1749,
+      2
+    ],
+    [
+      1751,
+      3
+    ],
+    [
+      1752,
+      3
+    ],
+    [
+      1753,
+      3
+    ],
+    [
+      1759,
+      3
+    ],
+    [
+      1761,
+      3
+    ],
+    [
+      1764,
+      4
+    ],
+    [
+      1768,
+      4
+    ],
+    [
+      1771,
+      5
+    ],
+    [
+      1778,
+      5
+    ],
+    [
+      1782,
+      5
+    ],
+    [
+      1786,
+      5
+    ],
+    [
+      1789,
+      5
+    ],
+    [
+      1790,
+      5
+    ],
+    [
+      1794,
+      5
+    ],
+    [
+      1796,
+      5
+    ],
+    [
+      1797,
+      5
+    ],
+    [
+      1798,
+      5
+    ],
+    [
+      1799,
+      5
+    ],
+    [
+      1800,
+      5
+    ],
+    [
+      1801,
+      5
+    ],
+    [
+      1806,
+      5
+    ],
+    [
+      1811,
+      5
+    ],
+    [
+      1813,
+      5
+    ],
+    [
+      1814,
+      5
+    ],
+    [
+      1815,
+      5
+    ],
+    [
+      1816,
+      5
+    ],
+    [
+      1817,
+      5
+    ],
+    [
+      1818,
+      6
+    ],
+    [
+      1820,
+      6
+    ],
+    [
+      1821,
+      6
+    ],
+    [
+      1822,
+      6
+    ],
+    [
+      1823,
+      6
+    ],
+    [
+      1824,
+      6
+    ],
+    [
+      1825,
+      6
+    ],
+    [
+      1826,
+      6
+    ],
+    [
+      1827,
+      6
+    ],
+    [
+      1829,
+      6
+    ],
+    [
+      1831,
+      6
+    ],
+    [
+      1834,
+      6
+    ],
+    [
+      1837,
+      6
+    ],
+    [
+      1838,
+      6
+    ],
+    [
+      1839,
+      6
+    ],
+    [
+      1840,
+      6
+    ],
+    [
+      1841,
+      6
+    ],
+    [
+      1844,
+      6
+    ],
+    [
+      1845,
+      6
+    ],
+    [
+      1847,
+      6
+    ],
+    [
+      1848,
+      6
+    ],
+    [
+      1849,
+      7
+    ],
+    [
+      1850,
+      7
+    ],
+    [
+      1851,
+      7
+    ],
+    [
+      1852,
+      7
+    ],
+    [
+      1854,
+      7
+    ],
+    [
+      1855,
+      7
+    ],
+    [
+      1857,
+      7
+    ],
+    [
+      1859,
+      7
+    ],
+    [
+      1861,
+      7
+    ],
+    [
+      1862,
+      7
+    ],
+    [
+      1864,
+      7
+    ],
+    [
+      1865,
+      7
+    ],
+    [
+      1867,
+      7
+    ],
+    [
+      1868,
+      7
+    ],
+    [
+      1869,
+      7
+    ],
+    [
+      1870,
+      7
+    ],
+    [
+      1871,
+      7
+    ],
+    [
+      1872,
+      7
+    ],
+    [
+      1874,
+      7
+    ],
+    [
+      1875,
+      7
+    ],
+    [
+      1876,
+      7
+    ],
+    [
+      1877,
+      7
+    ],
+    [
+      1878,
+      7
+    ],
+    [
+      1880,
+      8
+    ],
+    [
+      1881,
+      8
+    ],
+    [
+      1883,
+      8
+    ],
+    [
+      1884,
+      8
+    ],
+    [
+      1885,
+      8
+    ],
+    [
+      1886,
+      8
+    ],
+    [
+      1887,
+      8
+    ],
+    [
+      1888,
+      8
+    ],
+    [
+      1889,
+      8
+    ],
+    [
+      1890,
+      8
+    ],
+    [
+      1891,
+      8
+    ],
+    [
+      1892,
+      8
+    ],
+    [
+      1893,
+      8
+    ],
+    [
+      1894,
+      8
+    ],
+    [
+      1895,
+      8
+    ],
+    [
+      1896,
+      8
+    ],
+    [
+      1897,
+      8
+    ],
+    [
+      1898,
+      8
+    ],
+    [
+      1899,
+      9
+    ],
+    [
+      1900,
+      9
+    ],
+    [
+      1901,
+      9
+    ],
+    [
+      1902,
+      9
+    ],
+    [
+      1903,
+      9
+    ],
+    [
+      1904,
+      9
+    ],
+    [
+      1905,
+      10
+    ],
+    [
+      1906,
+      10
+    ],
+    [
+      1907,
+      10
+    ],
+    [
+      1908,
+      10
+    ],
+    [
+      1909,
+      10
+    ],
+    [
+      1910,
+      10
+    ],
+    [
+      1911,
+      10
+    ],
+    [
+      1912,
+      10
+    ],
+    [
+      1913,
+      10
+    ],
+    [
+      1914,
+      10
+    ],
+    [
+      1915,
+      11
+    ],
+    [
+      1916,
+      11
+    ],
+    [
+      1918,
+      11
+    ],
+    [
+      1919,
+      11
+    ],
+    [
+      1920,
+      11
+    ],
+    [
+      1921,
+      11
+    ],
+    [
+      1922,
+      11
+    ],
+    [
+      1923,
+      11
+    ],
+    [
+      1924,
+      11
+    ],
+    [
+      1925,
+      11
+    ],
+    [
+      1926,
+      11
+    ],
+    [
+      1927,
+      11
+    ],
+    [
+      1928,
+      11
+    ]
+  ],
+  "robustness_sweep": {
+    "4": {
+      "pre1890": 45,
+      "post1890": 54,
+      "ratio_per_yr": 7.08
+    },
+    "6": {
+      "pre1890": 44,
+      "post1890": 46,
+      "ratio_per_yr": 6.17
+    },
+    "8": {
+      "pre1890": 35,
+      "post1890": 32,
+      "ratio_per_yr": 5.39
+    },
+    "10": {
+      "pre1890": 41,
+      "post1890": 36,
+      "ratio_per_yr": 5.18
+    }
+  },
+  "curve_fit": {
+    "linear_r2": 0.943,
+    "power_r2": 0.942,
+    "power_exponent": 1.25
+  },
+  "honest_metrics": {
+    "per_book_rate_by_era": {
+      "1660-1799": 0.3,
+      "1800-1849": 0.25,
+      "1850-1889": 0.26,
+      "1890-1928": 0.25
+    },
+    "per_book_rate_verdict": "flat (~0.26/book) across 270 years; per-year 'acceleration' is a corpus-density artifact",
+    "null_model": {
+      "real_total_mutations": 90,
+      "shuffled_mean": 94.1,
+      "shuffled_std": 15.2,
+      "z": -0.27,
+      "verdict": "temporal mutation-rate signal is null-equivalent; not chronology-driven"
+    },
+    "robust_finding": "unsupervised genre recovery from prose, validated by held-out labels; genre-rate-over-time NOT supported"
+  }
+}
