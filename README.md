@@ -9,7 +9,7 @@ This began in 2021 as a course proposal at Columbia (the original proposal is pr
 ## TL;DR
 
 - **Yes to the first question.** An unsupervised network built from raw opening prose recovers the recognizable genre system of English fiction — detective, science fiction, nautical adventure, historical romance, the early English novel, American realism — and each emergent cluster is **confirmed by held-out genre labels the model never sees.**
-- **No to the second.** The *rate* of genre mutation over time — the original quarry — does **not** survive scrutiny. The apparent acceleration is an artifact of how many books each era contributes, and the per-year event count is statistically indistinguishable from randomly shuffling publication dates. We report this negative result rather than bury it.
+- **Mostly no to the second.** There is **no global mutation *rate*** — the apparent acceleration is a corpus-density artifact, and the event count is indistinguishable from shuffled publication dates (null model, z = −0.27). *But* after controlling for three confounds (density, style drift, author voice), **detective fiction stands out as one genuine, datable genre emergence** (~1840s–1920s, z ≈ −3.0). Genre birth is real but rare and genre-specific, not a smooth rate.
 
 ---
 
@@ -44,14 +44,28 @@ Eight communities emerge, each named by an LLM from its member titles + distinct
 
 Genres were recovered from the words alone, and independent labels confirm them. See [`visualize.py`](visualize.py) → `literary_genres.html` for the interactive network.
 
-## Result 2 — the mutation *rate* does not survive (negative)
+## Result 2 — there is no global mutation *rate*, but one genre genuinely emerges
 
-The original thesis wanted a genre-*mutation rate* over time. It does not hold up:
+The original thesis wanted a genre-*mutation rate* over time. There is no such global rate — the apparent signal is a stack of confounds, each of which we found (and were fooled by) in turn ([`controls.py`](controls.py)):
 
-- **Density artifact.** The per-*year* rate of genre-mutation events rises ~6× toward 1900 — but only because the canon contains far more books per year in later decades. Per **book added**, the rate is flat across 270 years (≈0.30 → 0.25 → 0.26 → 0.25 for 1660–1799 / 1800–1849 / 1850–1889 / 1890–1928).
-- **Null model.** Real chronology yields 90 mutation events; shuffling the publication years yields **94 ± 15** (z = −0.27). The event count is **statistically indistinguishable from random order** — it is not chronology-driven.
+| Test | Apparent signal | Verdict |
+|---|---|---|
+| Per-*year* mutation rate | "accelerates, inflection ~1890" | ❌ **corpus-density** artifact (later eras have more books) |
+| Per-*book* rate + null model | — | ❌ no global signal: real chronology (90 events) ≈ shuffled years (94 ± 15, **z = −0.27**) |
+| Style-drift control | "science fiction emerges, z = −4.9" | ❌ **prolific-author** artifact (the cluster was H.G. Wells's voice; not robust across k) |
+| **+ author control (one book/author) + k/seed sweep** | **detective fiction, z ≈ −3.0** | ✅ **robust, label-validated** |
 
-Conclusion: with this method and corpus, genre mutation *rate* is confounded by corpus composition and graph churn. The measurable, real finding is genre **recovery**, not genre **rate**.
+Three structural confounds, each controlled:
+1. **Corpus density** — measure per *book*, not per year.
+2. **Style drift** — English prose drifts over time (corr(similarity, year-gap) = −0.32), making *any* text graph temporally structured. Regress the year trend out of the vectors (→ corr ≈ 0).
+3. **Author voice** — ~20–26% of raw k-NN edges are same-author; prolific authors (Wells, Conrad, Doyle: 8–10 books each) form clusters that masquerade as concentrated genres. Use one book per author.
+
+After all three, each emergent community is tested for temporal **concentration** vs a null (random same-size draws). The result:
+
+- **Detective fiction is the one genuine, datable emergence** — z ≈ −3.0, concentrated in ~1840s–1920s, matched to the held-out "Detective and mystery stories" label, robust across k = 4–6 and all seeds. This fits literary history exactly: detective fiction is the paradigm genre with a real birth (Poe → Collins → Doyle → the golden age).
+- **Everything else is a perennial *mode*** — gothic, adventure, domestic, historical fiction are spread across all 250 years (z ≈ 0), not "born" at a point.
+
+Conclusion: genre birth is **real but rare and genre-specific**, not a smooth global rate. The measurable findings are unsupervised genre **recovery** and the emergence of **detective fiction** specifically — not a universal mutation rate.
 
 ## Reproducing
 

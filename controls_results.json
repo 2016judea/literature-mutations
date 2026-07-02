@@ -1,0 +1,155 @@
+{
+  "author_confound_pct": 19.5,
+  "n_books": 345,
+  "n_authors": 166,
+  "n_one_per_author": 166,
+  "communities": [
+    {
+      "n": 13,
+      "year_min": 1878,
+      "year_max": 1926,
+      "year_std": 14.9,
+      "concentration_z": -3.04,
+      "top_terms": [
+        "detective",
+        "inspector",
+        "murderer",
+        "police",
+        "murder",
+        "inquest"
+      ],
+      "held_out_label": "Detective and mystery stories"
+    },
+    {
+      "n": 35,
+      "year_min": 1726,
+      "year_max": 1925,
+      "year_std": 44.6,
+      "concentration_z": -1.24,
+      "top_terms": [
+        "cattle",
+        "mountain",
+        "wagon",
+        "camp",
+        "gray",
+        "rock"
+      ],
+      "held_out_label": "Best Books Ever Listings"
+    },
+    {
+      "n": 5,
+      "year_min": 1820,
+      "year_max": 1907,
+      "year_std": 33.0,
+      "concentration_z": -0.6,
+      "top_terms": [
+        "catholics",
+        "catholic",
+        "archbishop",
+        "priest",
+        "cardinal",
+        "lambert"
+      ],
+      "held_out_label": "Fantasy fiction"
+    },
+    {
+      "n": 13,
+      "year_min": 1748,
+      "year_max": 1921,
+      "year_std": 47.4,
+      "concentration_z": -0.3,
+      "top_terms": [
+        "highness",
+        "thee",
+        "jack",
+        "richard",
+        "prince",
+        "hath"
+      ],
+      "held_out_label": "Historical Fiction"
+    },
+    {
+      "n": 31,
+      "year_min": 1678,
+      "year_max": 1928,
+      "year_std": 54.3,
+      "concentration_z": 0.2,
+      "top_terms": [
+        "mary",
+        "mamma",
+        "nursery",
+        "anna",
+        "darling",
+        "papa"
+      ],
+      "held_out_label": "Domestic fiction"
+    },
+    {
+      "n": 29,
+      "year_min": 1764,
+      "year_max": 1925,
+      "year_std": 54.3,
+      "concentration_z": 0.21,
+      "top_terms": [
+        "castle",
+        "sensations",
+        "veil",
+        "madame",
+        "trembled",
+        "gallery"
+      ],
+      "held_out_label": "Science fiction"
+    },
+    {
+      "n": 10,
+      "year_min": 1719,
+      "year_max": 1919,
+      "year_std": 55.8,
+      "concentration_z": 0.43,
+      "top_terms": [
+        "deck",
+        "cabin",
+        "voyage",
+        "shore",
+        "forecastle",
+        "crew"
+      ],
+      "held_out_label": "Adventure stories"
+    },
+    {
+      "n": 30,
+      "year_min": 1719,
+      "year_max": 1923,
+      "year_std": 63.3,
+      "concentration_z": 1.45,
+      "top_terms": [
+        "aunt",
+        "literary",
+        "lucy",
+        "vulgar",
+        "madam",
+        "bye"
+      ],
+      "held_out_label": "Bildungsromans"
+    }
+  ],
+  "emergent_genres": [
+    {
+      "n": 13,
+      "year_min": 1878,
+      "year_max": 1926,
+      "year_std": 14.9,
+      "concentration_z": -3.04,
+      "top_terms": [
+        "detective",
+        "inspector",
+        "murderer",
+        "police",
+        "murder",
+        "inquest"
+      ],
+      "held_out_label": "Detective and mystery stories"
+    }
+  ],
+  "verdict": "No global mutation rate. After controlling density, style drift, and author voice, detective fiction is the one robust, label-validated temporal emergence; the rest are perennial modes."
+}
