@@ -69,12 +69,21 @@ def main():
         d = [yk[rng.choice(len(yk), len(idx), replace=False)].std() for _ in range(2000)]
         return (yk[idx].std() - np.mean(d)) / np.std(d)
 
+    import collections
+    NOISE = ("Best Books", "Category", "--", "Listings", "Banned Books",
+             "Anne Haight", "Harvard Classics", "Movie Books")
+    def held_out_name(idx):
+        labs = collections.Counter(
+            g for i in idx for g in (books[keep[i]].get("genres") or [])
+            if not any(n in g for n in NOISE))
+        return labs.most_common(1)[0][0] if labs else None
+
     info = {}
     for ci, c in enumerate(comms):
         idx = list(c)
-        top = terms[np.argsort(-M[idx].mean(0))[:4]]
-        name = " ".join(top[:3])
-        info[ci] = {"idx": idx, "name": name, "z": zconc(idx),
+        top = list(terms[np.argsort(-M[idx].mean(0))[:5]])
+        name = held_out_name(idx) or " ".join(top[:3])
+        info[ci] = {"idx": idx, "name": name, "terms": top, "z": zconc(idx),
                     "y0": int(yk[idx].min()), "y1": int(yk[idx].max()),
                     "color": PALETTE[ci % len(PALETTE)]}
     node_comm = {i: ci for ci, c in enumerate(comms) for i in c}
@@ -129,10 +138,11 @@ def main():
     fig.update_layout(
         title=dict(text="Literature Mutations — genres from prose, after controlling "
                         "for style drift & author voice", x=0.5, font=dict(size=16)),
-        plot_bgcolor="white", height=720, width=1350,
+        plot_bgcolor="white", height=720, autosize=True,
         legend=dict(title="community (★ = temporally emergent)", font=dict(size=9)),
         margin=dict(l=10, r=10, t=70, b=40))
-    fig.write_html(OUT, include_plotlyjs="cdn")
+    fig.write_html(OUT, include_plotlyjs="cdn", default_width="100%",
+                   config={"responsive": True})
     print(f"Wrote {OUT}  |  emergent genres: "
           f"{[m['name'] for m in order if m['z'] <= -2.0]}")
 
