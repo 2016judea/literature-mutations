@@ -28,8 +28,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from constants import shelved_books
 from gutenberg_ingest import _http, fetch_opening_prose, text_plain_url
 
-CANON_FILE = os.path.join(shelved_books, "canon.json")
-BOOKS_FILE = os.path.join(shelved_books, "books.json")
 GUTENDEX = "https://gutendex.com/books/"
 CHECKPOINT_EVERY = 25
 # Genre vocabulary saturates well before a novel ends; ~20k words (~first third)
@@ -94,28 +92,32 @@ def resolve(rec):
     }
 
 
-def load_done():
-    if not os.path.isfile(BOOKS_FILE):
+def load_done(books_file):
+    if not os.path.isfile(books_file):
         return [], set()
-    books = json.load(open(BOOKS_FILE, encoding="utf-8")).get("books", [])
+    books = json.load(open(books_file, encoding="utf-8")).get("books", [])
     return books, {b["title"] for b in books if b.get("source") == "canon+gutenberg"}
 
 
-def save(books):
-    tmp = BOOKS_FILE + ".tmp"
+def save(books, books_file):
+    tmp = books_file + ".tmp"
     json.dump({"books": books}, open(tmp, "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
-    os.replace(tmp, BOOKS_FILE)
+    os.replace(tmp, books_file)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--fresh", action="store_true")
+    ap.add_argument("--canon", default=os.path.join(shelved_books, "canon.json"),
+                    help="input canon-shaped file (Phase 2: bibliography.json)")
+    ap.add_argument("--books", default=os.path.join(shelved_books, "books.json"),
+                    help="output books file (Phase 2: use a separate path)")
     args = ap.parse_args()
 
-    canon = json.load(open(CANON_FILE, encoding="utf-8"))
-    books, done = ([], set()) if args.fresh else load_done()
+    canon = json.load(open(args.canon, encoding="utf-8"))
+    books, done = ([], set()) if args.fresh else load_done(args.books)
     todo = [r for r in canon if r["title"] not in done]
     print(f"Canon {len(canon)}; {len(done)} already matched; resolving {len(todo)}...")
 
@@ -131,13 +133,13 @@ def main():
                 books.append(r)
                 found += 1
             if i % CHECKPOINT_EVERY == 0:
-                save(books)
+                save(books, args.books)
                 print(f"  {i}/{len(todo)} processed, {found} matched", end="\r")
 
-    save(books)
+    save(books, args.books)
     matched = [b for b in books if b.get("source") == "canon+gutenberg"]
     print(f"\nMatched {len(matched)}/{len(canon)} canon titles to Gutenberg text "
-          f"-> {BOOKS_FILE}")
+          f"-> {args.books}")
     per = Counter((int(b["date_published"]) // 20) * 20 for b in books)
     print("Per 20yr:", {k: per[k] for k in sorted(per)})
 

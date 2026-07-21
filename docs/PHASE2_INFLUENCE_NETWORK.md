@@ -1,6 +1,7 @@
 # Phase 2 — Author Influence Network
 
-**Status:** design draft, not started. Written to hand off to a fresh session.
+**Status:** design decided, build starting. Written to hand off to a fresh session,
+then decided in a follow-up session on 2026-07-21 (see §7 for the record).
 **Author of this doc:** Claude, at Aidan's request, 2026-07-21.
 
 ---
@@ -183,8 +184,11 @@ Concretely:
   earliest relevant publication predates B's — the real version of the
   forward/backward framing `influences.html` used playfully with Aidan's own
   read-order. Here it's actual literary chronology, not personal biography.
-- **Signal** = aggregate-text similarity (Phase 1's TF-IDF/semantic-edge
-  approach, or a stylometric analogue for the sparse non-PD tier).
+- **Signal** = two independent aggregate-text similarity scores per edge,
+  never merged: *stylistic* (TF-IDF, Phase 1's tool — word choice, syntax,
+  rhythm) and *conceptual* (semantic embeddings — ideas, imagery, themes).
+  See §7.3 for why these must stay separate rather than becoming one
+  "influence score."
 - **Validation** = (a) a null model — shuffle each author's active-years,
   check whether "high similarity + correct time order" edges beat the
   shuffled baseline, same spirit as Phase 1's z = −0.27 result; (b) a
@@ -203,15 +207,14 @@ Concretely:
   score) but retarget it — instead of "find the pre-1929 canon," build a
   real, dated bibliography *per seed author* (every notable work + real
   publication year). This is the backbone the directed time-graph depends on.
-- **PD-tier corpus:** `build_corpus.py` / `gutenberg_ingest.py`, unchanged.
-- **Non-PD-tier corpus** (new, e.g. `build_corpus_secondary.py`): sources a
-  bounded, fairly-used excerpt/criticism corpus per §3 option B or C. Keep
-  its provenance and evidence tier as a first-class field on every record —
-  never let it look identical to a PD-tier record downstream.
-- **Vectors:** `semantic_edges.py`'s TF-IDF approach for PD-tier text;
-  a lighter stylometric feature set for the sparse non-PD tier (this will
-  need real design work — full TF-IDF is not trustworthy on a few hundred
-  words of excerpt).
+- **Corpus:** `build_corpus.py` / `gutenberg_ingest.py`, unchanged, scoped to
+  the ~15–17 PD-safe seed authors plus their real PD-era antecedents/
+  successors (§7.1 — PD-only scope; the non-PD tier from the original draft
+  is out of scope for this phase, not built).
+- **Vectors, dual and never merged:**
+  - *stylistic* — `semantic_edges.py`'s existing TF-IDF approach, unchanged.
+  - *conceptual* — new: sentence/passage-level semantic embeddings
+    (aggregated per author), a genuinely new component, not a Phase 1 reuse.
 - **Graph:** unlike Phase 1's undirected k-NN genre graph, this is a
   **directed** graph constrained by real publication chronology (§4). New
   code, not a reuse of `temporal_network.py` as-is.
@@ -221,10 +224,12 @@ Concretely:
   2. Style drift (regress out the year trend) — same as Phase 1.
   3. Author voice (aggregate per author, one signal per author, not per book)
      — same idea as Phase 1, adapted since nodes are already authors here.
-  4. **Evidence-tier confound (new):** PD-tier authors will have richer text
-     and therefore more/stronger edges than non-PD-tier authors by
-     construction, not because they were more influential. Report edge
-     density separately per tier; do not let it read as a single ranked list.
+  4. **Form confound (new, replaces the draft's evidence-tier confound —
+     moot under PD-only scope, §7.1):** form (poetry/prose/philosophy)
+     correlates heavily with the stylistic signal by construction. Report
+     same-form vs. cross-form edge rates separately for both signals
+     (§7.3) rather than letting form differences read as influence
+     differences.
 - **Output:** `analyze.py`/`visualize.py`'s pattern (JSON results +
   interactive HTML), but the primary object is the directed influence graph
   itself, not a community-detection genre map.
@@ -246,26 +251,56 @@ works today.
 
 ---
 
-## 7. Open decisions for the next session
+## 7. Decisions (settled 2026-07-21, follow-up session)
 
-1. **Corpus-access strategy** (§3, options A–D) — blocks everything else,
-   decide first.
-2. **Scope trim** — all 57 seed authors, or drop the 1-quote long tail (too
-   thin to seed anything) and focus on the ~20 authors with 2+ quotes?
-3. **Form-mixing** — poetry (Hölderlin, Whitman, Shelley, Cummings), prose
-   fiction, and philosophy (Plato, Nietzsche, Hegel, Marcus Aurelius) have
-   very different stylistic baselines. Mix them and control hard for form, or
-   split into per-form sub-networks from the start? (Same "apples vs oranges"
-   risk that author-voice control addressed in Phase 1, one level up.)
-4. **LLM usage boundary** — restate Phase 1's rule explicitly so it isn't
-   loosened by accident: *"No model ever writes the text we analyze. LLMs
-   only enumerate citeable list membership and verifiable facts; the signal
-   is always real authorial prose."* (README, verbatim.) LLMs may enumerate
-   bibliographies and label results after real signal is found — never
-   originate the influence claim itself from parametric/trained knowledge.
-5. **Repo** — continue in `2016judea/literature-mutations` as Phase 2
-   (recommended: keeps the discipline, the controls, and the honest-negative-
-   results culture in one place) vs. a new repo.
+1. **Corpus-access strategy: A — PD-only scope.** Build real-prose corpora
+   only for the ~15–17 seed authors that are safely public domain (§3), then
+   extend outward from them to their *actual* historical antecedents/
+   successors (also PD, not necessarily in the original 57 — e.g. Melville's
+   real antecedents, Nietzsche's real antecedents). The ~40 non-PD seed
+   authors (McCarthy, Chandler, DFW, etc.) are **not** built into this phase's
+   pipeline — they stay in §2's seed list as context/wishlist, explicitly out
+   of scope, not silently dropped.
+2. **Scope: keep all 57** seed authors in §2 as the record of what motivated
+   this phase — the 1-quote long tail isn't trimmed from the list, it's just
+   that most of it falls outside PD-only scope per decision 1. (This
+   supersedes the either/or framing of the original open question — the
+   seed list and the buildable set are no longer the same set, and that's
+   fine as long as it's explicit.)
+3. **Form-mixing: one graph, dual signal, form reported not split.**
+   Discussion note (worth preserving — this is the real design turn from the
+   original draft): "influence" was collapsing two different things.
+   *Surface/stylistic echo* (word choice, syntax, rhythm — TF-IDF's actual
+   measurement) is almost tautologically bound by form: a philosophy text's
+   word frequencies resemble other philosophy far more than any poem,
+   regardless of real influence. *Conceptual/thematic echo* (ideas, imagery,
+   worldview surfacing later — semantic embeddings' actual measurement) is
+   the cross-form case that actually matters (e.g. Nietzsche's ideas
+   surfacing in later prose) and TF-IDF will never find it. Resolution:
+   **compute both signals on every directed candidate edge, never merge them
+   into one score.** A PD-safe example within this phase's actual scope:
+   Nietzsche → later PD-era prose stylists he predates, checked for
+   conceptual similarity (ideas/themes) independently of stylistic
+   similarity (word/syntax patterns). Report both per edge:
+   - high-stylistic + high-conceptual → strongest influence claim
+   - high-conceptual + low-stylistic → idea-influence without prose imitation
+   - high-stylistic + low-conceptual → shared form/genre convention, weaker
+     influence claim
+   - the correlation between the two signals *across the whole graph* is
+     itself a reported result (same discipline as Phase 1's null-model
+     check: are these secretly one signal, or genuinely orthogonal?)
+   Form (poetry/prose/philosophy) is tracked per edge as a reported variable
+   — same-form vs. cross-form edge rates are a *finding*, not something
+   decided by splitting the graph in advance or regressed out as a nuisance
+   confound (regressing out a variable this correlated with the stylistic
+   signal would gut it).
+4. **LLM usage boundary** — restated, unchanged from the original draft:
+   *"No model ever writes the text we analyze. LLMs only enumerate citeable
+   list membership and verifiable facts; the signal is always real authorial
+   prose."* (README, verbatim.) LLMs may enumerate bibliographies and label
+   results after real signal is found — never originate the influence claim
+   itself from parametric/trained knowledge.
+5. **Repo:** continue in `2016judea/literature-mutations` as Phase 2.
 
 ---
 
