@@ -1,0 +1,279 @@
+# Phase 2 — Author Influence Network
+
+**Status:** design draft, not started. Written to hand off to a fresh session.
+**Author of this doc:** Claude, at Aidan's request, 2026-07-21.
+
+---
+
+## 0. Why this exists
+
+The 2021 proposal ([`docs/PROPOSAL.md`](PROPOSAL.md)) wanted to trace how literature's
+forms *mutate and influence each other* over time. The 2026 rebuild (this repo,
+see main [`README.md`](../README.md)) delivered a rigorous pipeline and two honest
+results — genres are recoverable from prose alone (robust), and there is no
+global "mutation rate" (null). Both results are about **genre**, at the
+**corpus** level, capped at the pre-1929 public-domain ceiling.
+
+Aidan's read of it, in his own words: *"I think this was the true aspiration of
+my research back then."* Not genre clustering — **tracing influence between
+specific authors, across time.** That's what this phase is.
+
+It reuses the interaction language of `/influences.html` on the personal site
+(a small graph: trunk nodes descending into root nodes, click to traverse, shared
+roots merge) as UI inspiration only. Everything else about that page is the
+opposite of this project and must **not** carry over. See §1.
+
+---
+
+## 1. Non-goals — read this before writing any code
+
+`/influences.html` was a personal, hand-curated artifact: six quotes Aidan
+likes, traced to roots via (a) his own Goodreads read-dates and (b) citations
+to literary critics ("Harold Bloom says McCarthy descends from Melville and
+Faulkner"). That was fine for a personal page. **None of it is a valid method
+for this project:**
+
+- **No read-dates, no personal reading history, no "which quote Aidan likes
+  more."** His Quotes DB is used for exactly one thing — see §2 — and nothing
+  else about him enters the research.
+- **No citation-as-edge.** "A critic said X influenced Y" is a fine *validation*
+  check (the same role Gutenberg subject-labels played in Phase 1 — held out,
+  never used to build edges), but it is not measured evidence and must never be
+  the primary signal. The whole discipline of this repo is "the signal is
+  always real authorial prose" (README, verbatim) — that rule is the point of
+  redoing this properly instead of just extending the `influences.html` graph.
+- **Not a rehash of the genre question.** This is author-to-author, directed,
+  and time-constrained (§4) — structurally a different graph than Phase 1's
+  undirected genre-similarity graph.
+
+---
+
+## 2. Seed authors
+
+Pulled live from Aidan's Notion "Quotes DB" (284 rows, see the `quotes-db`
+memory in his assistant's memory store for provenance) on 2026-07-21. This is
+**only a seed list** — a way to pick an author set that's actually interesting
+to Aidan, not a dataset the analysis depends on. 57 distinct authors:
+
+| Author | Quotes | Author | Quotes |
+|---|---|---|---|
+| Cormac McCarthy | 57 | Ralph Waldo Emerson | 1 |
+| Raymond Chandler | 20 | Percy Bysshe Shelley | 1 |
+| F. Scott Fitzgerald | 18 | Kurt Vonnegut | 1 |
+| Ayn Rand | 17 | Ken Kesey | 1 |
+| Herman Melville | 14 | John Williams | 1 |
+| Jack Kerouac | 13 | Jay McInerney | 1 |
+| Denis Johnson | 10 | James Joyce | 1 |
+| Bret Easton Ellis | 9 | J. D. Vance | 1 |
+| John Fante | 8 | Iain Banks | 1 |
+| Joan Didion | 8 | Homer | 1 |
+| Hunter S. Thompson | 8 | G.W.F. Hegel | 1 |
+| Albert Camus | 7 | Edgar Allan Poe | 1 |
+| Friedrich Nietzsche | 6 | Daphne du Maurier | 1 |
+| Plato | 5 | Chuck Palahniuk | 1 |
+| John Steinbeck | 5 | Christopher Paolini | 1 |
+| William Faulkner | 4 | Carlos Ruiz Zafón | 1 |
+| Virginia Woolf | 4 | Alexander Hamilton | 1 |
+| Richard Brautigan | 4 | William H. Gass | 1 |
+| Dan Simmons | 4 | William Gay | 1 |
+| Dalton Trumbo | 4 | William Gass | 1 |
+| Sam Harris | 3 | Wendell Berry | 1 |
+| Numa Denis Fustel de Coulanges | 3 | Walker Percy | 1 |
+| David Foster Wallace | 3 | Vincent Bugliosi | 1 |
+| Anthony Bourdain | 3 | T.S. Eliot | 1 |
+| Walt Whitman | 2 | | |
+| Thomas Wolfe | 2 | | |
+| Thomas Paine | 2 | | |
+| Marcus Aurelius | 2 | | |
+| John Muir | 2 | | |
+| Friedrich Hölderlin | 2 | | |
+| Ernest Hemingway | 2 | | |
+| E.E. Cummings | 2 | | |
+| Don Carpenter | 2 | | |
+| Charles Simic | 2 | | |
+
+**Reading it:** heavy skew to a personal core (McCarthy alone is a fifth of the
+whole DB), a long tail of one-quote authors, and a span from antiquity (Plato,
+Marcus Aurelius, Homer) through 2016 (J.D. Vance). The center of mass is
+**mid-to-late-20th-century American prose** — Southern Gothic, hardboiled noir,
+Lost Generation, Beat — which is the entire problem in §3.
+
+To re-pull this list fresh (Notion state may have changed):
+```sql
+SELECT Author, COUNT(*) as n FROM "collection://4323abdb-2dd0-4244-aea7-4c7b8b4178d7"
+GROUP BY Author ORDER BY n DESC
+```
+via the Notion MCP `query-data-sources` tool, or ask Claude to re-run it.
+
+---
+
+## 3. The central problem: most of these authors are not public domain
+
+Phase 1's entire corpus strategy (`build_canon.py` → `build_corpus.py`) leans
+on the US public-domain cutoff (~1929 and rolling) via Project Gutenberg. The
+existing README already names the consequence as an open problem: *"Pre-1929
+ceiling... postmodernism are out of reach without a licensed-text or excerpt
+source."* This phase runs straight into that wall, because Aidan's actual
+favorite authors are exactly the authors it excludes.
+
+Rough triage of the 57 (verify per-work, not per-author — publication *year*
+is what matters, not author death-year; an author can straddle the line, e.g.
+Fitzgerald: *Gatsby* 1925 is PD, *Tender Is the Night* 1934 is not):
+
+- **Safely pre-1929 / PD:** Melville, Plato, Nietzsche, Marcus Aurelius,
+  Whitman, Paine, Muir, Hölderlin, Emerson, Shelley, Homer, Hegel, Poe,
+  Hamilton, Fustel de Coulanges, early Joyce, early Eliot. ≈15–17 authors —
+  and note this subset skews philosophy/poetry/antiquity, **not** the prose
+  fiction core that actually anchors Aidan's taste.
+- **Not PD (the other ~40):** McCarthy, Chandler, Rand, Kerouac, Denis Johnson,
+  Ellis, Fante, Didion, Thompson, Steinbeck (mixed), Faulkner (mixed), Woolf
+  (mixed), Wallace, DFW, Vonnegut, Palahniuk, Vance, and most of the rest.
+
+**Four options, not mutually exclusive:**
+
+**A — PD-only scope.** Restrict to the ~15–17 safely-PD authors, extend the
+existing pipeline outward from them (their real historical antecedents/
+successors, also PD) exactly as-is. Rigorous, cheap, reuses Phase 1 almost
+unchanged. Cost: leaves out the authors Aidan actually cares about.
+
+**B — Fair-use / short-excerpt corpus for non-PD authors.** Build a much
+smaller per-author feature set from legitimately obtainable short text:
+publisher preview snippets (Google Books "search inside"), interview
+transcripts, reviews/criticism that quote brief passages, properly-bounded
+fair-use excerpts for research/criticism purposes. Sparse and noisy — good
+enough for coarse stylometrics (sentence length, function-word rates,
+punctuation), not for full TF-IDF-over-novel the way Phase 1 does it.
+
+**C — Secondary-text proxy.** Study influence via what's *written about* these
+authors instead of their prose directly — a citation network built from
+literary criticism, Wikipedia "influenced / influenced by" infobox fields,
+LitLab-style secondary sources. This is a legitimately different, still-real
+research question (what do critics/scholars say vs. what does the text show)
+— it just isn't the same claim as Phase 1's "signal is always real authorial
+prose," and the writeup must say so plainly.
+
+**D — Hybrid, tiered, and labeled (recommended).** PD-tier authors get the
+full Phase 1 treatment (real prose, TF-IDF, k-NN). Non-PD-tier authors get
+option B or C, clearly and permanently marked as a different evidence tier —
+never silently merged into one undifferentiated "influence score." This is
+the same instinct as Phase 1's "held-out validation, never fabricate signal"
+discipline, applied to a new place it could go wrong: two tiers of evidence
+quality must never be presented as one.
+
+**Decide this before writing any pipeline code — it determines almost
+everything downstream.**
+
+---
+
+## 4. Reframed research question
+
+**Not this** (already asked, already null, do not re-ask): *"What is the
+genre mutation rate?"*
+
+**This instead:** *Does textual/stylistic influence between authors correlate
+with chronological precedence, beyond what a shuffled-timeline null model
+would produce — and can a real influence-network structure be recovered from
+prose (plus clearly-labeled secondary evidence where prose is unavailable)?*
+
+Concretely:
+- **Node** = author, aggregated across their own corpus (not a single book —
+  Phase 1's author-voice confound applies here even harder, since single-book
+  "author fingerprints" are noisy).
+- **Edge** = candidate influence A → B, directed, permitted only when A's
+  earliest relevant publication predates B's — the real version of the
+  forward/backward framing `influences.html` used playfully with Aidan's own
+  read-order. Here it's actual literary chronology, not personal biography.
+- **Signal** = aggregate-text similarity (Phase 1's TF-IDF/semantic-edge
+  approach, or a stylometric analogue for the sparse non-PD tier).
+- **Validation** = (a) a null model — shuffle each author's active-years,
+  check whether "high similarity + correct time order" edges beat the
+  shuffled baseline, same spirit as Phase 1's z = −0.27 result; (b) a
+  held-out check against real, independently-documented influence claims
+  (a curated "known influences" list — e.g. McCarthy's own stated debt to
+  Faulkner and Melville is publicly documented) — used only to *check*
+  emergent edges after the fact, exactly the role Gutenberg subject labels
+  played in Phase 1. Never build edges from this list.
+
+---
+
+## 5. Method — extending the existing pipeline, not replacing it
+
+- **Bibliography step** (new): reuse `build_canon.py`'s cross-referencing
+  pattern (multiple sources + two independent model families + a support
+  score) but retarget it — instead of "find the pre-1929 canon," build a
+  real, dated bibliography *per seed author* (every notable work + real
+  publication year). This is the backbone the directed time-graph depends on.
+- **PD-tier corpus:** `build_corpus.py` / `gutenberg_ingest.py`, unchanged.
+- **Non-PD-tier corpus** (new, e.g. `build_corpus_secondary.py`): sources a
+  bounded, fairly-used excerpt/criticism corpus per §3 option B or C. Keep
+  its provenance and evidence tier as a first-class field on every record —
+  never let it look identical to a PD-tier record downstream.
+- **Vectors:** `semantic_edges.py`'s TF-IDF approach for PD-tier text;
+  a lighter stylometric feature set for the sparse non-PD tier (this will
+  need real design work — full TF-IDF is not trustworthy on a few hundred
+  words of excerpt).
+- **Graph:** unlike Phase 1's undirected k-NN genre graph, this is a
+  **directed** graph constrained by real publication chronology (§4). New
+  code, not a reuse of `temporal_network.py` as-is.
+- **Controls** (extend `controls.py`'s three-confound discipline with a
+  fourth):
+  1. Corpus density (per-book, not per-year) — same as Phase 1.
+  2. Style drift (regress out the year trend) — same as Phase 1.
+  3. Author voice (aggregate per author, one signal per author, not per book)
+     — same idea as Phase 1, adapted since nodes are already authors here.
+  4. **Evidence-tier confound (new):** PD-tier authors will have richer text
+     and therefore more/stronger edges than non-PD-tier authors by
+     construction, not because they were more influential. Report edge
+     density separately per tier; do not let it read as a single ranked list.
+- **Output:** `analyze.py`/`visualize.py`'s pattern (JSON results +
+  interactive HTML), but the primary object is the directed influence graph
+  itself, not a community-detection genre map.
+
+---
+
+## 6. Visualization — later phase, deliberately deferred
+
+The `influences.html` trunk/root interaction (small graph, click a node to
+traverse, shared roots merge into one node, right-side detail panel) is a
+genuinely good reusable **interface** pattern for exploring the eventual real
+network. But it should not be built before the data is validated — that
+ordering (compelling UI first, curated-not-measured data under it) is exactly
+what made the original page a personal artifact instead of research. Once
+real, validated edges exist: likely home is a new page under `/research/` on
+the personal site (a sibling to `literature-mutations.html`), or a
+`visualize.py`-style standalone HTML output the same way `literary_genres.html`
+works today.
+
+---
+
+## 7. Open decisions for the next session
+
+1. **Corpus-access strategy** (§3, options A–D) — blocks everything else,
+   decide first.
+2. **Scope trim** — all 57 seed authors, or drop the 1-quote long tail (too
+   thin to seed anything) and focus on the ~20 authors with 2+ quotes?
+3. **Form-mixing** — poetry (Hölderlin, Whitman, Shelley, Cummings), prose
+   fiction, and philosophy (Plato, Nietzsche, Hegel, Marcus Aurelius) have
+   very different stylistic baselines. Mix them and control hard for form, or
+   split into per-form sub-networks from the start? (Same "apples vs oranges"
+   risk that author-voice control addressed in Phase 1, one level up.)
+4. **LLM usage boundary** — restate Phase 1's rule explicitly so it isn't
+   loosened by accident: *"No model ever writes the text we analyze. LLMs
+   only enumerate citeable list membership and verifiable facts; the signal
+   is always real authorial prose."* (README, verbatim.) LLMs may enumerate
+   bibliographies and label results after real signal is found — never
+   originate the influence claim itself from parametric/trained knowledge.
+5. **Repo** — continue in `2016judea/literature-mutations` as Phase 2
+   (recommended: keeps the discipline, the controls, and the honest-negative-
+   results culture in one place) vs. a new repo.
+
+---
+
+## 8. The one rule that must survive the handoff
+
+> No model ever writes the text we analyze. LLMs only enumerate citeable list
+> membership and verifiable facts; the signal is always real authorial prose.
+
+That's Phase 1's README, unchanged, and it's the whole reason this is worth
+doing properly instead of just adding more nodes to the `influences.html`
+graph.
