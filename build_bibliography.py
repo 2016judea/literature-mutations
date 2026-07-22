@@ -210,15 +210,30 @@ def fetch_expansions(author, seen_expansions):
 EXPANSION_SUPPORT_THRESHOLD = 2
 
 
+def canonical_author_map(author_strings):
+    '''Same person can surface under multiple full-name forms (e.g. "G.W.F.
+    Hegel" vs "Georg Wilhelm Friedrich Hegel") since different anchors/models
+    phrase it differently. Group by surname, canonicalize to the longest
+    (most complete) form so the graph gets one node per person.'''
+    by_surname = defaultdict(set)
+    for a in author_strings:
+        by_surname[surname(a)].add(a)
+    return {variant: max(names, key=len)
+            for names in by_surname.values() for variant in names}
+
+
 def dump(works_by_title, expansions):
     '''Checkpoint - safe to call repeatedly, always leaves valid JSON on disk.'''
+    alias = canonical_author_map(r["author"] for r in works_by_title.values() if r["author"])
+
     bibliography = []
     for rec in works_by_title.values():
         if not rec["title"] or not rec["years"]:
             continue
         year = sorted(rec["years"])[len(rec["years"]) // 2]  # median of model-reported years
         bibliography.append({
-            "title": rec["title"], "author": rec["author"], "year": year,
+            "title": rec["title"], "author": alias.get(rec["author"], rec["author"]),
+            "year": year,
             "support": len(rec["models"]),
             "models": sorted(rec["models"]),
             "n_lists": 1,          # kept for build_corpus.py field compatibility
@@ -230,7 +245,7 @@ def dump(works_by_title, expansions):
     for rec in expansions.values():
         for frm, to in rec["edges"]:
             known_influences.append({
-                "from": frm, "to": to,
+                "from": alias.get(frm, frm), "to": alias.get(to, to),
                 "support": len(rec["models"]),
                 "models": sorted(rec["models"]),
                 "notes": rec["notes"],
