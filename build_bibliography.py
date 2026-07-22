@@ -69,10 +69,11 @@ WORKS_PROMPT = '''List the major, real works written by {author}.
 Return ONLY a JSON array (no prose, no markdown fence) of objects with keys exactly:
   "title"  - canonical work title (no subtitle)
   "author" - author's full name, exactly "{author}"
-  "year"   - integer year of FIRST publication (original language)
-Rules: only works first published strictly BEFORE 1929. Real, verifiable works
-only - omit anything you are unsure of. Include philosophical, poetic, and
-historical works, not only novels.'''
+  "year"   - integer year of FIRST publication/composition (original language).
+             Use a NEGATIVE integer for BCE (e.g. -380 for 380 BCE).
+Rules: only works first composed/published strictly BEFORE 1929 CE. Real,
+verifiable works only - omit anything you are unsure of. Include philosophical,
+poetic, and historical works, not only novels.'''
 
 EXPAND_PROMPT = '''{author} is a node in a literary-influence network study.
 List real, historically-documented authors in ONE of these two relations to {author}:
@@ -145,16 +146,31 @@ def surname(author):
     return a[-1].lower() if a else ""
 
 
+JUNK_NAME_TERMS = {"bible", "anonymous", "unknown", "various", "encyclopedia",
+                   "the koran", "the quran", "the talmud", "folklore", "oral tradition"}
+
+
+def looks_like_a_person(name):
+    '''Filter modeling artifacts ("The Bible", "Anonymous") out of the node set.'''
+    if norm(name) in JUNK_NAME_TERMS:
+        return False
+    return bool(re.match(r"^[A-Za-z.\-' ]+$", name.strip()))
+
+
 def fetch_works(author, role, seen_titles):
     '''Cross-referenced (title, author, year) records for one author's own bibliography.'''
     records = []
     for pname, fn in PROVIDERS:
-        for it in fn(WORKS_PROMPT.format(author=author)):
+        t0 = time.time()
+        print(f"    [{pname}] WORKS {author} ...", end="", flush=True)
+        result = fn(WORKS_PROMPT.format(author=author))
+        print(f" {len(result)} items ({time.time() - t0:.1f}s)", flush=True)
+        for it in result:
             try:
                 title, year = it["title"], int(it["year"])
             except (KeyError, ValueError, TypeError):
                 continue
-            if not title or not (500 <= year < 1929):
+            if not title or not (-800 <= year < 1929):   # -800: covers Homer (~8th c. BCE)
                 continue
             key = norm(title) + "|" + surname(author)
             rec = seen_titles[key]
@@ -169,9 +185,15 @@ def fetch_works(author, role, seen_titles):
 def fetch_expansions(author, seen_expansions):
     '''Cross-referenced candidate antecedent/successor authors - node discovery only.'''
     for pname, fn in PROVIDERS:
-        for it in fn(EXPAND_PROMPT.format(author=author)):
+        t0 = time.time()
+        print(f"    [{pname}] EXPAND {author} ...", end="", flush=True)
+        result = fn(EXPAND_PROMPT.format(author=author))
+        print(f" {len(result)} items ({time.time() - t0:.1f}s)", flush=True)
+        for it in result:
             name, relation, note = it.get("name"), it.get("relation"), it.get("note")
             if not name or relation not in ("antecedent", "successor"):
+                continue
+            if not looks_like_a_person(name):
                 continue
             key = surname(name) + "|" + norm(name)
             rec = seen_expansions[key]
@@ -183,32 +205,13 @@ def fetch_expansions(author, seen_expansions):
             rec["notes"].append(f"{author} <-> {name} ({relation}): {note}")
 
 
-def main():
-    works_by_title = defaultdict(lambda: {"title": None, "author": None,
-                                          "years": [], "models": set(), "role": "anchor"})
-    for author in ANCHORS:
-        before = len(works_by_title)
-        fetch_works(author, "anchor", works_by_title)
-        print(f"  anchor works: {author:30s} +{len(works_by_title) - before} titles")
-        time.sleep(0.3)
+# Only candidates confirmed by BOTH models get a (expensive) one-hop works
+# pass - cuts noise (single-model guesses, near-misses) and keeps runtime sane.
+EXPANSION_SUPPORT_THRESHOLD = 2
 
-    expansions = defaultdict(lambda: {"name": None, "models": set(),
-                                      "anchors": set(), "edges": set(), "notes": []})
-    for author in ANCHORS:
-        fetch_expansions(author, expansions)
-        time.sleep(0.3)
-    print(f"\nCandidate expansion authors (antecedents/successors): {len(expansions)}")
 
-    # One-hop works pass for expansion authors with any model support
-    for rec in expansions.values():
-        if rec["name"] and len(rec["models"]) >= 1:
-            before = len(works_by_title)
-            fetch_works(rec["name"], "expansion", works_by_title)
-            added = len(works_by_title) - before
-            if added:
-                print(f"  expansion works: {rec['name']:30s} +{added} titles")
-            time.sleep(0.3)
-
+def dump(works_by_title, expansions):
+    '''Checkpoint - safe to call repeatedly, always leaves valid JSON on disk.'''
     bibliography = []
     for rec in works_by_title.values():
         if not rec["title"] or not rec["years"]:
@@ -234,11 +237,52 @@ def main():
             })
 
     os.makedirs(shelved_books, exist_ok=True)
-    with open(BIBLIOGRAPHY_FILE, "w", encoding="utf-8") as f:
-        json.dump(bibliography, f, indent=2, ensure_ascii=False)
-    with open(INFLUENCES_FILE, "w", encoding="utf-8") as f:
-        json.dump(known_influences, f, indent=2, ensure_ascii=False)
+    tmp = BIBLIOGRAPHY_FILE + ".tmp"
+    json.dump(bibliography, open(tmp, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+    os.replace(tmp, BIBLIOGRAPHY_FILE)
+    tmp = INFLUENCES_FILE + ".tmp"
+    json.dump(known_influences, open(tmp, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+    os.replace(tmp, INFLUENCES_FILE)
+    return bibliography, known_influences
 
+
+def main():
+    works_by_title = defaultdict(lambda: {"title": None, "author": None,
+                                          "years": [], "models": set(), "role": "anchor"})
+    expansions = defaultdict(lambda: {"name": None, "models": set(),
+                                      "anchors": set(), "edges": set(), "notes": []})
+
+    for author in ANCHORS:
+        before = len(works_by_title)
+        fetch_works(author, "anchor", works_by_title)
+        print(f"  anchor works: {author:30s} +{len(works_by_title) - before} titles")
+        time.sleep(0.3)
+    dump(works_by_title, expansions)
+    print(f"  checkpoint: {len(works_by_title)} anchor works saved -> {BIBLIOGRAPHY_FILE}")
+
+    for author in ANCHORS:
+        fetch_expansions(author, expansions)
+        time.sleep(0.3)
+    dump(works_by_title, expansions)
+    confirmed = [r for r in expansions.values()
+                 if r["name"] and len(r["models"]) >= EXPANSION_SUPPORT_THRESHOLD]
+    print(f"\nCandidate expansion authors: {len(expansions)} total, "
+          f"{len(confirmed)} confirmed by both models (threshold={EXPANSION_SUPPORT_THRESHOLD}) "
+          f"-> will get a one-hop works pass")
+
+    # One-hop works pass, restricted to both-model-confirmed candidates only.
+    for i, rec in enumerate(confirmed, 1):
+        before = len(works_by_title)
+        fetch_works(rec["name"], "expansion", works_by_title)
+        added = len(works_by_title) - before
+        if added:
+            print(f"  expansion works: {rec['name']:30s} +{added} titles")
+        if i % 10 == 0:
+            dump(works_by_title, expansions)
+            print(f"  checkpoint: {i}/{len(confirmed)} expansion authors processed")
+        time.sleep(0.3)
+
+    bibliography, known_influences = dump(works_by_title, expansions)
     anchors_n = sum(1 for r in bibliography if r["role"] == "anchor")
     expansion_n = sum(1 for r in bibliography if r["role"] == "expansion")
     print(f"\nBibliography: {len(bibliography)} works "
