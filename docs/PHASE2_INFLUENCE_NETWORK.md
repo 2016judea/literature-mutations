@@ -1,7 +1,7 @@
 # Phase 2 — Author Influence Network
 
-**Status:** design decided, build starting. Written to hand off to a fresh session,
-then decided in a follow-up session on 2026-07-21 (see §7 for the record).
+**Status:** first real, validated result landed 2026-07-22 (see §9). Design
+decided 2026-07-21 (§7); built end-to-end same week.
 **Author of this doc:** Claude, at Aidan's request, 2026-07-21.
 
 ---
@@ -312,3 +312,56 @@ works today.
 That's Phase 1's README, unchanged, and it's the whole reason this is worth
 doing properly instead of just adding more nodes to the `influences.html`
 graph.
+
+---
+
+## 9. Result — the first real, validated finding (2026-07-22)
+
+Built end-to-end same week as the design decision: `build_bibliography.py`
+produced 2,411 cross-referenced works across 108 authors (17 PD-safe
+anchors + 91 both-model-confirmed antecedents/successors); `build_corpus.py`
+resolved 583 of those to real Gutenberg prose across 77 authors (Homer,
+~780 BCE, through the 1920s); `build_influence_graph.py` built the directed,
+dual-signal graph (2,915 candidate edges) exactly as designed in §5/§7.3.
+
+**Held-out validation** (§4, `known_influences.json` — 130 of the 377
+documented relationships resolvable among these 77 authors; a permutation
+z-test against random same-chronology-direction pairs, never used to build
+edges):
+
+| signal | real mean | null mean | z |
+|---|---|---|---|
+| stylistic (TF-IDF) | 0.076 | 0.073 | **0.91** — not significant |
+| conceptual (embedding) | 0.682 | 0.647 | **9.47** — highly significant |
+
+**This is a real result, not a null one** — unlike Phase 1's genre-mutation
+rate. Documented, independently-verified influence relationships (Pound on
+Eliot, Coleridge and Byron on Shelley, Emerson on Thoreau, Hawthorne on
+Melville, Wagner on Nietzsche) show no detectable elevation in word-choice/
+syntax similarity, but a strong, statistically robust elevation in
+conceptual/embedding similarity. The §7.3 design bet paid off directly: had
+this project used only Phase 1's TF-IDF signal (the "just extend the
+existing pipeline" path), the result would have come back null, masking a
+real effect that only the embedding signal can see.
+
+The effect is **not** an artifact of same-form pairs dragging the average
+up — cross-form documented pairs (conceptual mean 0.676, n=70) score almost
+identically to same-form pairs (0.688, n=60), including genuine cross-form
+cases like Wagner (music/drama) → Nietzsche (philosophy).
+
+**Honest scope/limits:**
+- n=77 authors, 130 held-out pairs - a real but modest-scale result, not a
+  sweeping claim about "literary influence" in general.
+- The held-out list itself was LLM-enumerated (citeable critical consensus,
+  §2/§7.4 discipline) - a second, independent scholarly source list would
+  strengthen this further but wasn't required to see the effect.
+- "Conceptual similarity" here means Gemini embedding cosine on a bounded
+  author digest (≤6 works × 250 words) - a specific, reproducible
+  operationalization, not a claim to have measured "ideas" directly.
+
+**Not yet done:** the corpus-density control (§5 point 1, direct Phase-1
+analogue) wasn't ported over explicitly - author-level aggregation already
+subsumes the author-voice control (point 3), and style-drift detrending
+(point 2) and the form confound (point 4) are both implemented in
+`build_influence_graph.py`. Visualization remains deliberately deferred
+per §6 until/unless this result is extended further.
