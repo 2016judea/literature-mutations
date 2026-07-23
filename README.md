@@ -91,14 +91,48 @@ EDGE_METHOD=semantic python temporal_network.py   # the year-by-year timeline
 A second, separate result: does textual similarity between specific authors
 track real, documented influence, beyond chronology alone? Built on the same
 discipline (measured signal only, held out against real influence claims,
-never fabricated) but a different graph — directed, author-to-author, two
-independent similarity signals (stylistic + conceptual) kept separate rather
-than merged into one score. Conceptual similarity comes back significant and
-replicates across two independent validation sources; stylistic similarity is
-a genuinely open question. Full design, results, and honest limits in
-[`docs/PHASE2_INFLUENCE_NETWORK.md`](docs/PHASE2_INFLUENCE_NETWORK.md); the
-interactive network itself is built by
-[`visualize_influence.py`](visualize_influence.py) → `influence_network.html`.
+never fabricated) but a different graph — directed, author-to-author,
+chronologically-forward-only candidate edges, two independent similarity
+signals (stylistic TF-IDF + conceptual embedding) kept separate rather than
+merged into one score.
+
+**[`build_bibliography.py`](build_bibliography.py)** cross-references 2,411
+works across 108 authors (each confirmed by two independent model families);
+**[`build_corpus.py`](build_corpus.py)** resolves 583 of those to real
+Gutenberg prose across 77 authors, Homer through the 1920s;
+**[`build_influence_graph.py`](build_influence_graph.py)** builds 2,915
+directed candidate edges, each carrying both scores.
+
+Held out against **two independent validation sources** — neither used to
+build a single edge:
+
+| validation source | stylistic z | conceptual z |
+|---|---|---|
+| `known_influences.json` — 130 pairs, LLM-enumerated critical consensus | 0.91 (not significant) | **9.47** (highly significant) |
+| Wikidata P737 "influenced by" — 102 pairs, no LLM involved | **2.45** (significant) | **7.16** (replicates) |
+| well-represented subset (n=47 authors, density control) | **2.97** (significant) | **6.25** (replicates) |
+
+**Conceptual similarity is a real, replicated result** — not a density
+artifact (the well-represented subset still holds), not a same-form artifact
+(cross-form documented pairs like Wagner → Nietzsche score the same as
+same-form pairs). **Stylistic similarity is a genuinely open question,
+deliberately left unresolved**: null on the full 130-pair sample but
+significant in both narrower independent checks. Two honest readings, not
+adjudicated — either the full-sample null is real and both narrower checks
+are small-N noise landing the same lucky direction, or the full-sample null
+was itself partly an artifact that both narrower checks correct. Worth a
+dedicated pass before claiming or dismissing it either way.
+
+Full design, results, and honest limits in
+[`docs/PHASE2_INFLUENCE_NETWORK.md`](docs/PHASE2_INFLUENCE_NETWORK.md).
+
+**Visualization:** [`visualize_influence.py`](visualize_influence.py) →
+`influence_network.html` — an interactive, chronologically-laid-out, directed
+graph. Click any author and their edges light up; a side panel shows both
+similarity scores per connection, plus the real citation note where a
+connection is independently documented (Wikidata or the held-out list), not
+just measured. Hosted live at
+[aidanjude.vercel.app/research/literature-mutations.html](https://aidanjude.vercel.app/research/literature-mutations.html).
 
 ## References
 
