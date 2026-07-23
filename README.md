@@ -86,6 +86,20 @@ EDGE_METHOD=semantic python temporal_network.py   # the year-by-year timeline
 - **The rate question isn't dead, the *instrument* is.** A per-book, null-model-controlled statistic might still find real structure; the raw event count does not. That is the honest open problem.
 - **Reception vs text.** Genre also lives in how readers/critics classify books over time; a period-reception dataset (not modern retrospective reviews, which back-project today's categories) could measure formation directly — the hardest but most direct future dataset.
 
+## Phase 2 — Author Influence Network
+
+A second, separate result: does textual similarity between specific authors
+track real, documented influence, beyond chronology alone? Built on the same
+discipline (measured signal only, held out against real influence claims,
+never fabricated) but a different graph — directed, author-to-author, two
+independent similarity signals (stylistic + conceptual) kept separate rather
+than merged into one score. Conceptual similarity comes back significant and
+replicates across two independent validation sources; stylistic similarity is
+a genuinely open question. Full design, results, and honest limits in
+[`docs/PHASE2_INFLUENCE_NETWORK.md`](docs/PHASE2_INFLUENCE_NETWORK.md); the
+interactive network itself is built by
+[`visualize_influence.py`](visualize_influence.py) → `influence_network.html`.
+
 ## References
 
 See [`docs/PROPOSAL.md`](docs/PROPOSAL.md) for the original 2021 proposal and its full reference list (Stanford Literary Lab's *Quantitative Formalism*, Moretti, Hope & Witmore's Docuscope work, Galton's *Vox Populi*, and the clustering literature).

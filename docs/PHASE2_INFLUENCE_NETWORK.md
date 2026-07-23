@@ -3,6 +3,7 @@
 **Status:** first real, validated result landed 2026-07-22 (see §9); an
 independent validation source and a density control closed out 2026-07-23
 (see §10). Design decided 2026-07-21 (§7); built end-to-end same week.
+The visualization deferred in §6 was built 2026-07-23 — see §11.
 **Author of this doc:** Claude, at Aidan's request, 2026-07-21.
 
 ---
@@ -250,6 +251,8 @@ the personal site (a sibling to `literature-mutations.html`), or a
 `visualize.py`-style standalone HTML output the same way `literary_genres.html`
 works today.
 
+Built 2026-07-23 — see §11 for what changed from the plan above and why.
+
 ---
 
 ## 7. Decisions (settled 2026-07-21, follow-up session)
@@ -430,3 +433,57 @@ full sample's non-significance was itself partly an artifact (of density,
 or of the specific 130 LLM-enumerated pairs) that both independent narrower
 checks happen to correct. Worth a dedicated pass before either claiming or
 dismissing a stylistic effect.
+
+---
+
+## 11. Visualization built (2026-07-23)
+
+`visualize_influence.py` → `influence_network.html`, following `visualize.py`'s
+pattern of a self-contained generated HTML file. Reuses `influences.html`'s
+interaction language (§6) — click a node, its edges light up, everything else
+dims, a side panel opens with per-edge detail — but had to adapt it for scale
+and honesty in ways the 6-quote original never needed to:
+
+- **The graph is far too dense to render whole.** Mean out-degree is ~38 (an
+  early author like Homer is chronologically eligible to connect to nearly
+  all 76 others), so all 2,915 edges at once is an unreadable hairball —
+  confirmed by an early screenshot pass during this build. Default view shows
+  only the top ~7% of candidate edges by conceptual similarity (the signal
+  that actually replicated) plus every independently-documented pair
+  regardless of rank, with a slider to move the cutoff live.
+- **Layout is chronological rank-order, not true-to-scale time.** Author
+  years span -762 to 1919 with almost nothing between -37 and 1294 — a
+  literal timeline would crush 300+ years of coverage into a sliver.
+  Nodes are spaced by chronological *rank*, banded vertically by form
+  (poetry/prose/drama/philosophy/other, itself a §7.3 reported variable),
+  actual year shown on click.
+- **Both signals travel to the UI, never merged** (the §7.3 discipline,
+  extended to display): every edge in a node's panel shows conceptual and
+  stylistic side by side, plus same-form/cross-form and year-gap, so the
+  four-quadrant reading in §7.3 is directly inspectable per pair, not
+  collapsed into one number.
+- **Documented pairs are visually distinct, always shown, and cite their real
+  source** — never merged with the measured candidate edges. Each
+  `known_influences.json` entry's `notes` field turned out to be shared
+  across every pair from the same source author (all of Shakespeare's
+  documented influence pairs carry the same four notes), not written per-pair —
+  isolating the one note that actually names the specific target author
+  (matched on substring) was necessary to avoid misattributing e.g. the
+  Melville note under the Whitman edge. 364 of 377 pairs (97%) resolve this
+  way; the rest fall back to an unlabeled "documented" badge rather than a
+  guessed quote.
+- **A clicked node can end up hidden under its own detail panel** — the panel
+  overlays the wide, horizontally-scrolling canvas rather than participating
+  in layout, and a node positioned late in the chronology (e.g. Nietzsche,
+  ranked 57 of 77) lands exactly where the panel opens. Fixed by scrolling
+  the focused node into the safe (non-panel) region on selection. Caught by
+  screenshotting the actual click interaction (via a temporary URL-param
+  auto-click hook, headless Chrome) rather than trusting the JS logic by
+  inspection — the same "verify against a live check, not the design on
+  paper" discipline as §10's Wikipedia-infobox catch.
+- **Honest framing travels with the page, not just the docs.** The header
+  states both replicated z-scores and the unresolved stylistic discrepancy;
+  a caveats block at the foot of the page restates "what's solid / what's
+  open" in the same terms as §9-10, so the artifact can't be read as stronger
+  evidence than the underlying analysis supports if it circulates without
+  this doc attached.
