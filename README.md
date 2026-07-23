@@ -42,7 +42,7 @@ Eight communities emerge, each named by an LLM from its member titles + distinct
 | Early English novel | madam parson behaviour discourse | England — Fiction | Robinson Crusoe, Tom Jones |
 | American realism | car dollars chicago hotel york | Psychological fiction | The Great Gatsby, Age of Innocence |
 
-Genres were recovered from the words alone, and independent labels confirm them. See [`visualize.py`](visualize.py) → `literary_genres.html` for the interactive network.
+Genres were recovered from the words alone, and independent labels confirm them. See [`visualize_genres.py`](visualize_genres.py) → `genre_network.html` for the interactive network (click any novel or genre to trace its cluster) — [live on the site](https://aidanjude.vercel.app/research/literature-mutations.html), alongside Phase 2's influence network, under the "Explore the genres" tab. (`visualize.py` → `literary_genres.html` still produces the original static two-panel Plotly export.)
 
 ## Result 2 — there is no global mutation *rate*, but one genre genuinely emerges
 
@@ -76,7 +76,8 @@ export GEMINI_API_KEY=...  ANTHROPIC_API_KEY=...   # for corpus assembly only
 python build_canon.py        # -> _data/canon.json   (cross-referenced canon)
 python build_corpus.py       # -> _data/books.json   (real Gutenberg full text)
 python analyze.py            # -> results.json        (communities, naming, null model, sweep)
-python visualize.py          # -> literary_genres.html
+python visualize.py           # -> literary_genres.html (static two-panel Plotly export)
+python visualize_genres.py   # -> genre_network.html (click-to-explore version, needs literary_genres.html + controls_results.json)
 EDGE_METHOD=semantic python temporal_network.py   # the year-by-year timeline
 ```
 

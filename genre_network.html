@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Genre Network — literature-mutations Phase 1</title>
+<style>
+  :root{--bg:#f7f3ec;--bg2:#efe9dd;--ink:#1c1814;--ink2:#544e44;--faint:#8b8478;
+        --rule:rgba(60,50,40,.16);--accent:#b8442f;--accent-soft:rgba(184,68,47,.14)}
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#15120f;--bg2:#1d1916;--ink:#e9e3d5;--ink2:#b3aa9a;--faint:#7d766a;
+          --rule:rgba(230,220,200,.16);--accent:#e2765f;--accent-soft:rgba(226,118,95,.16)}
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);
+    font-family:Georgia,'Iowan Old Style',serif;min-height:100vh;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace}
+  .page{max-width:1240px;margin:0 auto;padding:44px 32px 64px}
+  @media (max-width:720px){.page{padding:24px 14px 40px}}
+  header{margin-bottom:28px}
+  .eyebrow{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11px;
+    color:var(--faint);letter-spacing:.1em;text-transform:uppercase}
+  h1{font-size:26px;font-style:italic;font-weight:600;letter-spacing:-.01em;margin:4px 0 10px}
+  .lede{max-width:74ch;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+  .lede a{color:var(--ink)}
+  .lede b{color:var(--ink);font-weight:600}
+
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+  .stat{background:var(--bg2);border:1px solid var(--rule);border-radius:6px;
+    padding:9px 13px;min-width:130px}
+  .stat .n{font-size:17px;font-weight:600}
+  .stat .n.sig{color:var(--accent)}
+  .stat .l{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+    color:var(--faint);letter-spacing:.03em;margin-top:2px}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 10px}
+  .legend-item{display:flex;align-items:center;gap:6px;font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;color:var(--ink2);cursor:pointer;background:var(--bg2);border:1px solid var(--rule);
+    border-radius:999px;padding:5px 10px 5px 8px;transition:border-color .2s,color .2s}
+  .legend-item:hover{border-color:var(--ink2);color:var(--ink)}
+  .legend-item.active{border-color:var(--accent);color:var(--ink)}
+  .legend-item .sw{display:inline-block;width:9px;height:9px;border-radius:50%}
+  .legend-item .star{color:var(--accent)}
+
+  .layout{display:grid;grid-template-columns:1fr;gap:14px}
+  @media (min-width:980px){.layout{grid-template-columns:2.1fr 1fr}}
+  .graph-wrap{position:relative;border:1px solid var(--rule);border-radius:6px;
+    background:var(--bg2);overflow:hidden;height:620px}
+  .graph-wrap svg{display:block;width:100%;height:100%}
+  .graph-node{cursor:pointer}
+  .graph-node circle{transition:opacity .2s}
+  .graph-node:hover circle{stroke:var(--ink);stroke-width:1.5}
+  .graph-node.dim circle{opacity:.12}
+  .graph-node.focus circle{stroke:var(--accent);stroke-width:2}
+  .edge-path{fill:none;stroke:var(--ink2);pointer-events:none;opacity:.12}
+  .edge-path.edge-focus{opacity:.7 !important;stroke:var(--accent);stroke-width:1.4px}
+  .edge-path.edge-context-dim{opacity:.02 !important}
+
+  .side{border:1px solid var(--rule);border-radius:6px;background:var(--bg2);
+    padding:16px 18px;height:620px;overflow-y:auto}
+  .side h3{font-size:17px;font-style:italic;font-weight:600}
+  .side .sub{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11px;
+    color:var(--faint);margin-top:4px}
+  .side .empty{color:var(--faint);font-size:13.5px;line-height:1.6;margin-top:8px}
+  .side .terms{margin-top:10px;font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;color:var(--ink2)}
+  .side .terms span{background:var(--bg);border:1px solid var(--rule);border-radius:4px;
+    padding:2px 6px;margin:2px 3px 0 0;display:inline-block}
+  .book-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule);font-size:13.5px}
+  .book-row.focus-book{color:var(--accent)}
+  .book-row .t{font-weight:600}
+  .book-row .a{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;color:var(--ink2)}
+
+  .temporal{margin-top:22px;border:1px solid var(--rule);border-radius:6px;background:var(--bg2);
+    padding:16px 18px}
+  .temporal h2{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+  .temporal-row{display:flex;align-items:center;gap:10px;padding:5px 0;cursor:pointer;border-radius:4px}
+  .temporal-row:hover{background:var(--bg)}
+  .temporal-row.active{background:var(--accent-soft)}
+  .temporal-label{width:230px;flex:none;font-size:12.5px;color:var(--ink2);text-align:right}
+  .temporal-label b{color:var(--ink)}
+  .temporal-track{flex:1;position:relative;height:10px;background:var(--rule);border-radius:99px}
+  .temporal-bar{position:absolute;top:0;height:10px;border-radius:99px}
+  .temporal-z{width:96px;flex:none;font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:var(--faint)}
+  .temporal-z .star{color:var(--accent);font-weight:600}
+
+  .caveats{margin-top:26px;padding-top:16px;border-top:1px solid var(--rule);
+    font-size:13px;line-height:1.6;color:var(--ink2);max-width:78ch}
+  .caveats b{color:var(--ink)}
+  footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--rule);
+    font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:var(--faint)}
+  footer a{color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="eyebrow">literature-mutations · phase 1</div>
+    <h1>Genre Network</h1>
+    <p class="lede">345 canon novels, one per author (166 authors), after
+      regressing out secular prose-style drift. An unsupervised k-NN
+      similarity graph over each novel's opening prose, clustered by
+      community detection - <b>no genre label is ever fed in.</b> Colour is
+      the community the model found; each cluster's held-out Gutenberg
+      subject label (never used to build the graph, only to check it after)
+      is shown alongside. <b>Click a novel, or a genre below, to trace its
+      cluster.</b> Full method:
+      <a href="docs/PHASE2_INFLUENCE_NETWORK.md">design doc</a>,
+      <a href="README.md">README</a>.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="legend" id="legend"></div>
+
+  <div class="layout">
+    <div class="graph-wrap"><svg id="graph-svg"></svg></div>
+    <div class="side" id="side"><div class="empty">Click a novel or a genre pill above to see what the model found.</div></div>
+  </div>
+
+  <div class="temporal">
+    <h2>Temporal concentration — born, or perennial?</h2>
+    <div id="temporal-rows"></div>
+  </div>
+
+  <p class="caveats">
+    <b>What this is:</b> genres recovered purely from distinctive prose
+    vocabulary, after controlling for three confounds in turn - corpus
+    density, secular style drift, and prolific-author voice (one book per
+    author). <b>What's solid:</b> the recovered clusters match recognizable
+    genres and each is independently confirmed by a held-out Gutenberg
+    subject label the model never saw. <b>What's open:</b> only one cluster
+    is temporally concentrated enough to call a genuine, datable emergence
+    (z ≤ -2); the rest are perennial modes spread across the full 1660-1928
+    span, and a null model (shuffled publication years) can't be
+    distinguished from real chronology overall (z = -0.27).</p>
+
+  <footer>literature-mutations · <a href="README.md">repo</a> ·
+    generated by <span class="mono">visualize_genres.py</span> from
+    <span class="mono">literary_genres.html</span> + <span class="mono">controls_results.json</span></footer>
+</div>
+
+<script>
+const DATA = {"meta": {"nBooks": 345, "nAuthors": 166, "nGenres": 8, "authorConfoundPct": 19.5, "emergentGenre": "Detective and mystery stories"}, "books": [{"id": 0, "title": "The Call of the Wild", "author": "Jack London", "year": 1903, "genre": 0, "x": 0.1587301493851058, "y": -0.8692760402832268}, {"id": 1, "title": "The Virginian", "author": "Owen Wister", "year": 1902, "genre": 0, "x": 0.43287998614408, "y": -0.5503966490169905}, {"id": 2, "title": "Dracula", "author": "Bram Stoker", "year": 1897, "genre": 0, "x": 0.001443725471492855, "y": -0.45873906023259853}, {"id": 3, "title": "The Red Badge of Courage", "author": "Stephen Crane", "year": 1895, "genre": 0, "x": 0.1689418070780249, "y": -0.5054972872994746}, {"id": 4, "title": "Gulliver's Travels", "author": "Jonathan Swift", "year": 1726, "genre": 0, "x": -0.08243805060274505, "y": -0.4566285681290166}, {"id": 5, "title": "The Scarlet Letter", "author": "Nathaniel Hawthorne", "year": 1850, "genre": 0, "x": 0.12526704224353258, "y": -0.07255955085736343}, {"id": 6, "title": "Sister Carrie", "author": "Theodore Dreiser", "year": 1900, "genre": 0, "x": 0.044461079433014174, "y": -0.062149206948583044}, {"id": 7, "title": "Riders of the Purple Sage", "author": "Zane Grey", "year": 1912, "genre": 0, "x": 0.19434019757652418, "y": -0.6668683302993439}, {"id": 8, "title": "Main Street", "author": "Sinclair Lewis", "year": 1920, "genre": 0, "x": 0.2437072837080174, "y": -0.10750178778314307}, {"id": 9, "title": "My \u00c1ntonia", "author": "Willa Cather", "year": 1918, "genre": 0, "x": 0.48566174313245547, "y": -0.4333091734411742}, {"id": 10, "title": "Three Soldiers", "author": "John Dos Passos", "year": 1921, "genre": 0, "x": 0.3276816894296152, "y": -0.38812080628560064}, {"id": 11, "title": "The Covered Wagon", "author": "Emerson Hough", "year": 1922, "genre": 0, "x": 0.2778336498114365, "y": -0.7651144022379643}, {"id": 12, "title": "In Our Time", "author": "Ernest Hemingway", "year": 1925, "genre": 0, "x": 0.0026069395564707097, "y": -0.5872787728331388}, {"id": 13, "title": "Erewhon", "author": "Samuel Butler", "year": 1872, "genre": 0, "x": 0.16360353012106288, "y": -0.6107254364377779}, {"id": 14, "title": "The Adventures of Tom Sawyer", "author": "Mark Twain", "year": 1876, "genre": 0, "x": 0.6422794306521074, "y": -0.23936559797393825}, {"id": 15, "title": "King Solomon's Mines", "author": "H. Rider Haggard", "year": 1885, "genre": 0, "x": -0.031013231664118124, "y": -0.816525921420292}, {"id": 16, "title": "McTeague", "author": "Frank Norris", "year": 1899, "genre": 0, "x": 0.26072127577292215, "y": -0.30046229618334686}, {"id": 17, "title": "The Pioneers", "author": "James Fenimore Cooper", "year": 1823, "genre": 0, "x": 0.2076577355601648, "y": -0.46467091217108414}, {"id": 18, "title": "The Jungle Book", "author": "Rudyard Kipling", "year": 1894, "genre": 0, "x": 0.5184651407695768, "y": -0.6721329102411984}, {"id": 19, "title": "The House on the Borderland", "author": "William Hope Hodgson", "year": 1907, "genre": 0, "x": -0.16960635250861775, "y": -0.652089680253034}, {"id": 20, "title": "The Jungle", "author": "Upton Sinclair", "year": 1906, "genre": 0, "x": 0.233255431957744, "y": -0.1852291407396702}, {"id": 21, "title": "A Princess of Mars", "author": "Edgar Rice Burroughs", "year": 1912, "genre": 0, "x": -0.15150810441905502, "y": -0.5623385735067878}, {"id": 22, "title": "Herland", "author": "Charlotte Perkins Gilman", "year": 1915, "genre": 0, "x": 0.01983371134861892, "y": -0.7036202311856369}, {"id": 23, "title": "Rasselas", "author": "Samuel Johnson", "year": 1759, "genre": 0, "x": -0.07900558023396471, "y": -0.5182905571947324}, {"id": 24, "title": "Headlong Hall", "author": "Thomas Love Peacock", "year": 1815, "genre": 0, "x": -0.05156293862208838, "y": -0.3127959243461752}, {"id": 25, "title": "The Sketch Book of Geoffrey Crayon", "author": "Washington Irving", "year": 1820, "genre": 0, "x": -0.07920272660332354, "y": -0.2393895924629073}, {"id": 26, "title": "Rookwood", "author": "William Harrison Ainsworth", "year": 1834, "genre": 0, "x": 0.10744087356754586, "y": -0.25297383971314513}, {"id": 27, "title": "Walden", "author": "Henry David Thoreau", "year": 1854, "genre": 0, "x": 0.08281283307496526, "y": -0.31067394481390975}, {"id": 28, "title": "Under Two Flags", "author": "Ouida", "year": 1867, "genre": 0, "x": 0.3696094325170962, "y": -0.24067597377400637}, {"id": 29, "title": "The Battle of Dorking", "author": "George Tomkyns Chesney", "year": 1871, "genre": 0, "x": -0.21697149865325552, "y": -0.5505265605981331}, {"id": 30, "title": "Ben-Hur", "author": "Lew Wallace", "year": 1880, "genre": 0, "x": 0.24981931344112135, "y": -0.6089606640834385}, {"id": 31, "title": "With Fire and Sword", "author": "Henryk Sienkiewicz", "year": 1884, "genre": 0, "x": 0.07967317724098637, "y": -0.7543381425672276}, {"id": 32, "title": "The Rise of Silas Lapham", "author": "William Dean Howells", "year": 1885, "genre": 0, "x": 0.3242700041638326, "y": -0.20000029253535775}, {"id": 33, "title": "The Damnation of Theron Ware", "author": "Harold Frederic", "year": 1896, "genre": 0, "x": 0.3375817275167301, "y": -0.0535274581437717}, {"id": 34, "title": "The Wonderful Wizard of Oz", "author": "L. Frank Baum", "year": 1900, "genre": 0, "x": 0.7202812658868859, "y": -0.31027869306796413}, {"id": 35, "title": "Redburn", "author": "Herman Melville", "year": 1849, "genre": 1, "x": -0.17558972919984045, "y": -0.33080761659584224}, {"id": 36, "title": "Robinson Crusoe", "author": "Daniel Defoe", "year": 1719, "genre": 1, "x": -0.3279581936130192, "y": -0.5439331390046749}, {"id": 37, "title": "The Riddle of the Sands", "author": "Erskine Childers", "year": 1903, "genre": 1, "x": -0.16888506643766027, "y": -0.3787231902863662}, {"id": 38, "title": "The Narrative of Arthur Gordon Pym of Nantucket", "author": "Edgar Allan Poe", "year": 1838, "genre": 1, "x": -0.5756149767349166, "y": -0.3501931688369344}, {"id": 39, "title": "Prester John", "author": "John Buchan", "year": 1910, "genre": 1, "x": -0.08765712337078994, "y": -0.6952851362524581}, {"id": 40, "title": "Twenty Thousand Leagues Under the Sea", "author": "Jules Verne", "year": 1870, "genre": 1, "x": -0.4995055783352727, "y": -0.5092586544116227}, {"id": 41, "title": "Treasure Island", "author": "Robert Louis Stevenson", "year": 1883, "genre": 1, "x": -0.23082600879036916, "y": -0.14927826222250987}, {"id": 42, "title": "The Moon Pool", "author": "Abraham Merritt", "year": 1919, "genre": 1, "x": -0.28597255877069516, "y": -0.5807345111287857}, {"id": 43, "title": "Almayer's Folly", "author": "Joseph Conrad", "year": 1895, "genre": 1, "x": -0.33651266189272794, "y": -0.3781860606342586}, {"id": 44, "title": "The Purple Cloud", "author": "Matthew Phipps Shiel", "year": 1901, "genre": 1, "x": -0.3626420453726995, "y": -0.6220212281913383}, {"id": 45, "title": "Clementina", "author": "A.E.W. Mason", "year": 1901, "genre": 2, "x": 0.3526076603075137, "y": -0.3197564527184164}, {"id": 46, "title": "The Private Memoirs and Confessions of a Justified Sinner", "author": "James Hogg", "year": 1824, "genre": 2, "x": 0.3763086131752714, "y": -0.08948207324720313}, {"id": 47, "title": "Henry Esmond", "author": "William Makepeace Thackeray", "year": 1852, "genre": 2, "x": 0.5008128270587491, "y": 0.10807216551944876}, {"id": 48, "title": "The Fifth Queen", "author": "Ford Madox Ford", "year": 1908, "genre": 2, "x": 0.426098286899032, "y": -0.16211591807367462}, {"id": 49, "title": "Westward Ho!", "author": "Charles Kingsley", "year": 1855, "genre": 2, "x": 0.5580694913576145, "y": -0.15647076868645707}, {"id": 50, "title": "The Broad Highway", "author": "Jeffery Farnol", "year": 1910, "genre": 2, "x": -0.007654955098514669, "y": 0.2552276847266289}, {"id": 51, "title": "The Adventures of Roderick Random", "author": "Tobias Smollett", "year": 1748, "genre": 2, "x": 0.016565944972655008, "y": 0.06454475280125617}, {"id": 52, "title": "The Sea Hawk", "author": "Rafael Sabatini", "year": 1915, "genre": 2, "x": 0.37923949202363333, "y": 0.10248877412477013}, {"id": 53, "title": "Lorna Doone", "author": "R. D. Blackmore", "year": 1869, "genre": 2, "x": 0.29257321425412847, "y": -0.014722786262354359}, {"id": 54, "title": "Moon of Israel", "author": "Henry Rider Haggard", "year": 1918, "genre": 2, "x": 0.2655860404483977, "y": -0.5252661724339809}, {"id": 55, "title": "The Black Moth", "author": "Georgette Heyer", "year": 1921, "genre": 2, "x": 0.10826355686300715, "y": 0.44864505042691494}, {"id": 56, "title": "Hugh Wynne", "author": "S. Weir Mitchell", "year": 1897, "genre": 2, "x": 0.43837898584051604, "y": -0.09074417858366117}, {"id": 57, "title": "Richard Carvel", "author": "Winston Churchill", "year": 1899, "genre": 2, "x": 0.2901121318784961, "y": 0.11702640200309776}, {"id": 58, "title": "The Picture of Dorian Gray", "author": "Oscar Wilde", "year": 1890, "genre": 3, "x": -0.1460631880663277, "y": 0.5427326976020679}, {"id": 59, "title": "The Man of Property", "author": "John Galsworthy", "year": 1906, "genre": 3, "x": 0.054502490925695556, "y": 0.4088112985936638}, {"id": 60, "title": "New Grub Street", "author": "George Gissing", "year": 1891, "genre": 3, "x": -0.26867730593521005, "y": 0.5996438318164821}, {"id": 61, "title": "The Magnificent Ambersons", "author": "Booth Tarkington", "year": 1918, "genre": 3, "x": 0.062256430725880524, "y": 0.24996720183500418}, {"id": 62, "title": "This Side of Paradise", "author": "F. Scott Fitzgerald", "year": 1920, "genre": 3, "x": -0.14214143643089955, "y": 0.2949290888278469}, {"id": 63, "title": "Love in Excess", "author": "Eliza Haywood", "year": 1719, "genre": 3, "x": -0.1260873827858937, "y": 0.04492438250504627}, {"id": 64, "title": "A Room with a View", "author": "E. M. Forster", "year": 1908, "genre": 3, "x": -0.3890412701203965, "y": 0.4282821038634357}, {"id": 65, "title": "Memoirs of Miss Sidney Bidulph", "author": "Frances Sheridan", "year": 1761, "genre": 3, "x": 0.15543084094546858, "y": 0.5030883329523158}, {"id": 66, "title": "The Man of Feeling", "author": "Henry Mackenzie", "year": 1771, "genre": 3, "x": -0.06584790305930881, "y": 0.541606328359953}, {"id": 67, "title": "Cecilia", "author": "Frances Burney", "year": 1782, "genre": 3, "x": -0.17131749126636486, "y": 0.6545873254154264}, {"id": 68, "title": "The Coquette", "author": "Hannah Foster", "year": 1797, "genre": 3, "x": -0.29398795372751263, "y": 0.38232689810123077}, {"id": 69, "title": "The Voyage Out", "author": "Virginia Woolf", "year": 1915, "genre": 3, "x": -0.17049436143599125, "y": 0.06753165133972451}, {"id": 70, "title": "Sense and Sensibility", "author": "Jane Austen", "year": 1811, "genre": 3, "x": -0.06627874773049369, "y": 0.6853202511106243}, {"id": 71, "title": "Castle Rackrent", "author": "Maria Edgeworth", "year": 1800, "genre": 3, "x": 0.15016000576129612, "y": 0.07617049668301332}, {"id": 72, "title": "The Life and Opinions of Tristram Shandy, Gentleman", "author": "Laurence Sterne", "year": 1759, "genre": 3, "x": 0.4104552449475223, "y": 0.29112694597309546}, {"id": 73, "title": "The Power of Sympathy", "author": "William Hill Brown", "year": 1789, "genre": 3, "x": -0.21752741763705677, "y": 0.2595707065745373}, {"id": 74, "title": "Tarr", "author": "Wyndham Lewis", "year": 1918, "genre": 3, "x": -0.007352126763223943, "y": 0.36111294568127505}, {"id": 75, "title": "Heroine", "author": "Eaton Stannard Barrett", "year": 1813, "genre": 3, "x": -0.06255868546424626, "y": 0.16635699104750826}, {"id": 76, "title": "The House of Mirth", "author": "Edith Wharton", "year": 1905, "genre": 3, "x": -0.16332490055046933, "y": 0.4081463238907747}, {"id": 77, "title": "Marriage", "author": "Susan Ferrier", "year": 1818, "genre": 3, "x": 0.09194079670113849, "y": 0.30125456895034053}, {"id": 78, "title": "Evelina", "author": "Fanny Burney", "year": 1778, "genre": 3, "x": -0.3514741909192134, "y": 0.7200691772237247}, {"id": 79, "title": "Women in Love", "author": "D. H. Lawrence", "year": 1920, "genre": 3, "x": -0.05334831838160066, "y": 0.4597246443683011}, {"id": 80, "title": "Waverley", "author": "Sir Walter Scott", "year": 1814, "genre": 3, "x": -0.08438812609954179, "y": -0.06503800142168024}, {"id": 81, "title": "Antic Hay", "author": "Aldous Huxley", "year": 1923, "genre": 3, "x": 0.1128520257964573, "y": 0.2299137739001347}, {"id": 82, "title": "Vivian Grey", "author": "Benjamin Disraeli", "year": 1826, "genre": 3, "x": 0.047843252349219434, "y": 0.36767372105022533}, {"id": 83, "title": "The Female Quixote", "author": "Charlotte Lennox", "year": 1752, "genre": 3, "x": -0.238507167957209, "y": 0.5030470561698549}, {"id": 84, "title": "The Way We Live Now", "author": "Anthony Trollope", "year": 1875, "genre": 3, "x": 0.002903603814270083, "y": 0.8077556911263558}, {"id": 85, "title": "Guy Mannering", "author": "Walter Scott", "year": 1815, "genre": 3, "x": 0.17096177639703533, "y": -0.25630044204327473}, {"id": 86, "title": "News from Nowhere", "author": "William Morris", "year": 1890, "genre": 3, "x": -0.10732280027317619, "y": -0.2676005147666874}, {"id": 87, "title": "Where Angels Fear to Tread", "author": "E.M. Forster", "year": 1905, "genre": 3, "x": -0.02593701802682621, "y": 0.5932958611808948}, {"id": 88, "title": "The Rasp", "author": "Philip MacDonald", "year": 1924, "genre": 4, "x": -0.9761634508071034, "y": 0.44311179727329114}, {"id": 89, "title": "Trent's Last Case", "author": "E. C. Bentley", "year": 1913, "genre": 4, "x": -0.8268133567590902, "y": 0.45092938915011854}, {"id": 90, "title": "The Benson Murder Case", "author": "S. S. Van Dine", "year": 1926, "genre": 4, "x": -0.7309520536096602, "y": 0.29524353916490875}, {"id": 91, "title": "The Red Thumb Mark", "author": "R. Austin Freeman", "year": 1907, "genre": 4, "x": -0.7918124550577658, "y": 0.3568737237251013}, {"id": 92, "title": "The Cask", "author": "Freeman Wills Crofts", "year": 1920, "genre": 4, "x": -0.9484302859252876, "y": 0.1264266905445881}, {"id": 93, "title": "The Mysterious Affair at Styles", "author": "Agatha Christie", "year": 1920, "genre": 4, "x": -0.9123945418571402, "y": 0.6580368119643267}, {"id": 94, "title": "The Red House Mystery", "author": "A. A. Milne", "year": 1922, "genre": 4, "x": -0.612419561162519, "y": 0.485915596768293}, {"id": 95, "title": "The Circular Staircase", "author": "Mary Roberts Rinehart", "year": 1908, "genre": 4, "x": -0.45435139835016825, "y": 0.3029981888403198}, {"id": 96, "title": "The Mystery of the Yellow Room", "author": "Gaston Leroux", "year": 1907, "genre": 4, "x": -0.8830202365457446, "y": 0.16623284347290007}, {"id": 97, "title": "The Leavenworth Case", "author": "Anna Katharine Green", "year": 1878, "genre": 4, "x": -0.6966278430521649, "y": 0.14014819948983853}, {"id": 98, "title": "A Study in Scarlet", "author": "Arthur Conan Doyle", "year": 1887, "genre": 4, "x": -0.9187103640218827, "y": 0.3175306632526545}, {"id": 99, "title": "The Big Bow Mystery", "author": "Israel Zangwill", "year": 1892, "genre": 4, "x": -0.6607528644549845, "y": 0.19814892131882597}, {"id": 100, "title": "Whose Body?", "author": "Dorothy L. Sayers", "year": 1923, "genre": 4, "x": -1.0, "y": 0.48239395486299347}, {"id": 101, "title": "Jane Eyre", "author": "Charlotte Bront\u00eb", "year": 1847, "genre": 5, "x": 0.5234890035600901, "y": 0.3043548883235086}, {"id": 102, "title": "The Railway Children", "author": "E. Nesbit", "year": 1906, "genre": 5, "x": 0.7169858939983862, "y": -0.08863774862332809}, {"id": 103, "title": "Wuthering Heights", "author": "Emily Bront\u00eb", "year": 1847, "genre": 5, "x": 0.33667001310687017, "y": 0.18091880657603832}, {"id": 104, "title": "Three Lives", "author": "Gertrude Stein", "year": 1909, "genre": 5, "x": 0.24774686673887863, "y": 0.4899247338235014}, {"id": 105, "title": "The White Peacock", "author": "D.H. Lawrence", "year": 1910, "genre": 5, "x": 0.49827537891358836, "y": 0.39119983111156037}, {"id": 106, "title": "Vanity Fair", "author": "William Thackeray", "year": 1848, "genre": 5, "x": 0.3894989715214011, "y": 0.57747110254908}, {"id": 107, "title": "Alice's Adventures in Wonderland", "author": "Lewis Carroll", "year": 1865, "genre": 5, "x": 0.8207830894891555, "y": 0.19160194989438498}, {"id": 108, "title": "Pamela", "author": "Samuel Richardson", "year": 1740, "genre": 5, "x": 0.5483722837267531, "y": 0.17236585511846453}, {"id": 109, "title": "Peter Pan", "author": "J. M. Barrie", "year": 1911, "genre": 5, "x": 0.8109449135272598, "y": -0.15320790701034362}, {"id": 110, "title": "An Apology for the Life of Mrs. Shamela Andrews", "author": "Henry Fielding", "year": 1741, "genre": 5, "x": 0.6288616841816025, "y": -0.18032617440659807}, {"id": 111, "title": "Of Human Bondage", "author": "W. Somerset Maugham", "year": 1915, "genre": 5, "x": 0.3057578742090728, "y": 0.6748510385225992}, {"id": 112, "title": "Carmilla", "author": "Joseph Sheridan Le Fanu", "year": 1872, "genre": 5, "x": -0.008258046552541731, "y": 0.16294619286803458}, {"id": 113, "title": "Far from the Madding Crowd", "author": "Thomas Hardy", "year": 1874, "genre": 5, "x": 0.5064444465643888, "y": -0.10395930869158873}, {"id": 114, "title": "The Woman in White", "author": "Wilkie Collins", "year": 1859, "genre": 5, "x": -0.21959281817496015, "y": 0.3069381794767617}, {"id": 115, "title": "Uncle Silas", "author": "Sheridan Le Fanu", "year": 1864, "genre": 5, "x": 0.21601727915384245, "y": 0.5706393681724016}, {"id": 116, "title": "Mary Barton", "author": "Elizabeth Gaskell", "year": 1848, "genre": 5, "x": 0.6359038093161425, "y": 0.5028849283373832}, {"id": 117, "title": "Agnes Grey", "author": "Anne Bront\u00eb", "year": 1847, "genre": 5, "x": 0.30200638177964795, "y": 0.372132378831684}, {"id": 118, "title": "The Well of Loneliness", "author": "Radclyffe Hall", "year": 1928, "genre": 5, "x": 0.2178072029623647, "y": 0.35263943648589574}, {"id": 119, "title": "The Three Musketeers", "author": "Alexandre Dumas", "year": 1844, "genre": 5, "x": 0.21019365723043654, "y": 0.19378027232958694}, {"id": 120, "title": "Little Women", "author": "Louisa May Alcott", "year": 1868, "genre": 5, "x": 0.7155343107461668, "y": 0.07521923315584406}, {"id": 121, "title": "Silas Marner", "author": "George Eliot", "year": 1861, "genre": 5, "x": 0.6137874937196072, "y": 0.23490421182325696}, {"id": 122, "title": "Lady Audley's Secret", "author": "Mary Elizabeth Braddon", "year": 1862, "genre": 5, "x": -0.08692095639037677, "y": 0.014584599888923772}, {"id": 123, "title": "The Secret Garden", "author": "Frances Hodgson Burnett", "year": 1911, "genre": 5, "x": 0.7548070329860804, "y": 0.22650710208075286}, {"id": 124, "title": "Pointed Roofs", "author": "Dorothy Richardson", "year": 1915, "genre": 5, "x": 0.5035072299030472, "y": 0.4931052177764711}, {"id": 125, "title": "The Wind in the Willows", "author": "Kenneth Grahame", "year": 1908, "genre": 5, "x": 0.49187213207152275, "y": -0.0205514349629159}, {"id": 126, "title": "The Pilgrim's Progress", "author": "John Bunyan", "year": 1678, "genre": 5, "x": 0.6376774567399771, "y": -0.41856518702495993}, {"id": 127, "title": "War and Peace", "author": "Leo Tolstoy", "year": 1869, "genre": 5, "x": 0.3263501639638286, "y": 0.5026055837233053}, {"id": 128, "title": "Uncle Tom's Cabin", "author": "Harriet Beecher Stowe", "year": 1852, "genre": 5, "x": 0.6638606137291807, "y": 0.039788470141471854}, {"id": 129, "title": "Trilby", "author": "George du Maurier", "year": 1894, "genre": 5, "x": 0.35495418895123254, "y": 0.3356683468464555}, {"id": 130, "title": "Esther Waters", "author": "George Moore", "year": 1894, "genre": 5, "x": 0.654100479149833, "y": 0.27628239215470407}, {"id": 131, "title": "Three Men in a Boat", "author": "Jerome K. Jerome", "year": 1889, "genre": 5, "x": 0.2127580802386158, "y": -0.059875280770124}, {"id": 132, "title": "The Napoleon of Notting Hill", "author": "G. K. Chesterton", "year": 1904, "genre": 6, "x": -0.45632696890379765, "y": -0.06365488178837482}, {"id": 133, "title": "Hadrian the Seventh", "author": "Frederick Rolfe", "year": 1904, "genre": 6, "x": 0.13660566567470672, "y": -0.13896637760719943}, {"id": 134, "title": "Lord of the World", "author": "Robert Hugh Benson", "year": 1907, "genre": 6, "x": -0.275141318951565, "y": -0.2501568656411925}, {"id": 135, "title": "Melmoth the Wanderer", "author": "Charles Robert Maturin", "year": 1820, "genre": 6, "x": -0.178627134899942, "y": -0.10817017326339032}, {"id": 136, "title": "The American", "author": "Henry James", "year": 1877, "genre": 6, "x": 0.021407192638380087, "y": -0.18117053713715434}, {"id": 137, "title": "Zuleika Dobson", "author": "Max Beerbohm", "year": 1911, "genre": 7, "x": 0.06360553109583798, "y": 0.17286786723740719}, {"id": 138, "title": "The Time Machine", "author": "H.G. Wells", "year": 1895, "genre": 7, "x": -0.45449501255626545, "y": -0.3332226803955766}, {"id": 139, "title": "The Hampdenshire Wonder", "author": "John Davys Beresford", "year": 1911, "genre": 7, "x": -0.5664979375159153, "y": 0.04194098886190223}, {"id": 140, "title": "Ralph 124C 41+", "author": "Hugo Gernsback", "year": 1911, "genre": 7, "x": -0.6237705714904762, "y": -0.2568325367846165}, {"id": 141, "title": "Dubliners", "author": "James Joyce", "year": 1914, "genre": 7, "x": -0.3643477350418605, "y": 0.25760183711872015}, {"id": 142, "title": "The Castle of Otranto", "author": "Horace Walpole", "year": 1764, "genre": 7, "x": 0.08835708563611107, "y": -0.15037686092111344}, {"id": 143, "title": "Wieland; or, The Transformation: An American Tale", "author": "Charles Brockden Brown", "year": 1798, "genre": 7, "x": -0.3522375235243477, "y": 0.06039373161563795}, {"id": 144, "title": "The Monk", "author": "Matthew Lewis", "year": 1796, "genre": 7, "x": -0.18916441642340748, "y": 0.1796292197350736}, {"id": 145, "title": "Glenarvon", "author": "Lady Caroline Lamb", "year": 1816, "genre": 7, "x": -0.042531702712821445, "y": 0.24411895663268351}, {"id": 146, "title": "R.U.R.", "author": "Karel \u010capek", "year": 1921, "genre": 7, "x": -0.3979743175258616, "y": -0.03637443366102446}, {"id": 147, "title": "The Wild Irish Girl", "author": "Sydney Owenson, Lady Morgan", "year": 1806, "genre": 7, "x": -0.25249431849089876, "y": 0.03706926496875054}, {"id": 148, "title": "The Awakening", "author": "Kate Chopin", "year": 1899, "genre": 7, "x": 0.07983689552542748, "y": 0.08837777434899399}, {"id": 149, "title": "Frankenstein; or, The Modern Prometheus", "author": "Mary Shelley", "year": 1818, "genre": 7, "x": -0.31518872816706534, "y": -0.039595399069548634}, {"id": 150, "title": "The Waste Land", "author": "T. S. Eliot", "year": 1922, "genre": 7, "x": -0.06861339179860972, "y": -0.13466857053444042}, {"id": 151, "title": "Hope Leslie", "author": "Catharine Maria Sedgwick", "year": 1827, "genre": 7, "x": 0.015235050559498193, "y": -0.24213782008545934}, {"id": 152, "title": "The Clockwork Man", "author": "Edwin Vincent Odle", "year": 1923, "genre": 7, "x": -0.48238384029365644, "y": 0.11889648685960223}, {"id": 153, "title": "The Old Wives' Tale", "author": "Arnold Bennett", "year": 1908, "genre": 7, "x": 0.05058438213570084, "y": 0.019761938441989507}, {"id": 154, "title": "The Pickwick Papers", "author": "Charles Dickens", "year": 1837, "genre": 7, "x": -0.31090615441123465, "y": 0.03262206280247326}, {"id": 155, "title": "The House Without a Key", "author": "Earl Derr Biggers", "year": 1925, "genre": 7, "x": -0.4235709984043205, "y": 0.08197980838952426}, {"id": 156, "title": "The Old English Baron", "author": "Clara Reeve", "year": 1778, "genre": 7, "x": 0.15270657929404247, "y": 0.17165891699236466}, {"id": 157, "title": "The Mummy!", "author": "Jane C. Loudon", "year": 1827, "genre": 7, "x": -0.25072982001614635, "y": 0.13655542664578924}, {"id": 158, "title": "The Invisible Man", "author": "H. G. Wells", "year": 1897, "genre": 7, "x": -0.292079325766795, "y": -0.09027166813052775}, {"id": 159, "title": "Vathek", "author": "William Beckford", "year": 1786, "genre": 7, "x": -0.14099691173477003, "y": -0.29227556051748316}, {"id": 160, "title": "A Sicilian Romance", "author": "Ann Radcliffe", "year": 1790, "genre": 7, "x": -0.23841403768536654, "y": 0.08261727938907197}, {"id": 161, "title": "Caleb Williams", "author": "William Godwin", "year": 1794, "genre": 7, "x": -0.268268234980534, "y": 0.23037476515944164}, {"id": 162, "title": "Looking Backward", "author": "Edward Bellamy", "year": 1888, "genre": 7, "x": -0.31732114873365697, "y": -0.20271156116312858}, {"id": 163, "title": "The Great God Pan", "author": "Arthur Machen", "year": 1894, "genre": 7, "x": -0.4835416411098151, "y": -0.14095962458268932}, {"id": 164, "title": "The King in Yellow", "author": "Robert W. Chambers", "year": 1895, "genre": 7, "x": -0.36771439683986984, "y": -0.26470081008464763}, {"id": 165, "title": "When the Sleeper Wakes", "author": "Herbert George Wells", "year": 1899, "genre": 7, "x": -0.5857262104877872, "y": -0.14842623306386984}], "genres": [{"idx": 0, "name": "Bestsellers, American, 1895-1923", "z": -1.3, "emergent": false, "color": "#e6194B", "n": 35, "yearMin": 1726, "yearMax": 1925, "topTerms": [], "bookIds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]}, {"idx": 1, "name": "Adventure stories", "z": 0.5, "emergent": false, "color": "#3cb44b", "n": 10, "yearMin": 1719, "yearMax": 1919, "topTerms": ["deck", "cabin", "voyage", "shore", "forecastle", "crew"], "bookIds": [35, 36, 37, 38, 39, 40, 41, 42, 43, 44]}, {"idx": 2, "name": "Historical Fiction", "z": -0.3, "emergent": false, "color": "#4363d8", "n": 13, "yearMin": 1748, "yearMax": 1921, "topTerms": ["highness", "thee", "jack", "richard", "prince", "hath"], "bookIds": [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57]}, {"idx": 3, "name": "Bildungsromans", "z": 1.4, "emergent": false, "color": "#f58231", "n": 30, "yearMin": 1719, "yearMax": 1923, "topTerms": ["aunt", "literary", "lucy", "vulgar", "madam", "bye"], "bookIds": [58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87]}, {"idx": 4, "name": "Detective and mystery stories", "z": -2.9, "emergent": true, "color": "#911eb4", "n": 13, "yearMin": 1878, "yearMax": 1926, "topTerms": ["detective", "inspector", "murderer", "police", "murder", "inquest"], "bookIds": [88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]}, {"idx": 5, "name": "Domestic fiction", "z": 0.2, "emergent": false, "color": "#42d4f4", "n": 31, "yearMin": 1678, "yearMax": 1928, "topTerms": ["mary", "mamma", "nursery", "anna", "darling", "papa"], "bookIds": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131]}, {"idx": 6, "name": "Fantasy fiction", "z": -0.5, "emergent": false, "color": "#f032e6", "n": 5, "yearMin": 1820, "yearMax": 1907, "topTerms": ["catholics", "catholic", "archbishop", "priest", "cardinal", "lambert"], "bookIds": [132, 133, 134, 135, 136]}, {"idx": 7, "name": "Science fiction", "z": 0.2, "emergent": false, "color": "#469990", "n": 29, "yearMin": 1764, "yearMax": 1925, "topTerms": ["castle", "sensations", "veil", "madame", "trembled", "gallery"], "bookIds": [137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165]}], "edges": [[58, 73], [58, 74], [58, 62], [58, 59], [58, 137], [58, 75], [0, 17], [0, 7], [0, 11], [0, 44], [0, 3], [0, 18], [101, 103], [101, 124], [101, 117], [101, 148], [101, 153], [101, 105], [101, 123], [101, 128], [101, 116], [2, 19], [2, 13], [2, 25], [2, 112], [2, 159], [2, 26], [3, 29], [3, 10], [3, 7], [3, 11], [3, 19], [3, 136], [3, 14], [3, 16], [3, 63], [3, 28], [60, 84], [60, 161], [60, 77], [60, 70], [60, 143], [60, 76], [103, 105], [103, 117], [103, 135], [103, 116], [103, 120], [103, 111], [103, 113], [103, 46], [103, 115], [103, 14], [103, 158], [103, 125], [103, 123], [103, 124], [103, 128], [103, 53], [103, 112], [103, 51], [103, 75], [103, 121], [103, 130], [103, 102], [103, 95], [103, 104], [103, 50], [103, 109], [138, 19], [138, 165], [138, 158], [138, 162], [138, 143], [138, 159], [138, 24], [138, 140], [138, 42], [138, 152], [36, 35], [36, 37], [36, 41], [36, 15], [36, 38], [36, 4], [36, 44], [36, 39], [4, 40], [4, 22], [4, 8], [4, 27], [4, 29], [4, 45], [4, 69], [38, 44], [38, 37], [38, 35], [38, 40], [38, 149], [38, 41], [38, 92], [106, 57], [106, 82], [106, 47], [106, 105], [106, 115], [106, 117], [106, 84], [106, 127], [107, 105], [107, 125], [107, 102], [107, 109], [107, 117], [107, 120], [107, 123], [5, 162], [5, 143], [5, 25], [5, 17], [5, 27], [5, 26], [5, 46], [5, 85], [5, 59], [5, 151], [5, 121], [5, 136], [5, 33], [5, 133], [41, 35], [41, 57], [41, 51], [41, 37], [6, 8], [6, 33], [6, 20], [6, 162], [6, 76], [6, 160], [6, 16], [6, 32], [64, 83], [64, 69], [64, 87], [64, 73], [64, 149], [64, 144], [8, 27], [8, 9], [8, 1], [8, 62], [8, 10], [8, 72], [8, 16], [8, 20], [8, 61], [8, 63], [8, 110], [8, 108], [8, 51], [8, 71], [8, 122], [8, 32], [8, 33], [111, 117], [111, 118], [111, 66], [111, 124], [111, 87], [142, 48], [142, 144], [142, 160], [142, 137], [142, 145], [142, 54], [142, 156], [142, 45], [142, 12], [72, 33], [72, 74], [72, 81], [72, 129], [72, 118], [144, 145], [144, 160], [144, 137], [144, 157], [144, 159], [144, 148], [144, 83], [70, 145], [70, 67], [70, 117], [70, 77], [70, 78], [70, 68], [70, 84], [135, 147], [135, 75], [135, 26], [135, 143], [135, 133], [135, 159], [135, 154], [135, 163], [135, 134], [135, 141], [135, 42], [113, 53], [113, 121], [113, 13], [113, 26], [113, 17], [113, 130], [113, 105], [98, 91], [98, 88], [98, 99], [98, 154], [98, 100], [98, 96], [98, 92], [98, 93], [148, 122], [148, 160], [148, 25], [148, 151], [148, 16], [148, 127], [148, 155], [76, 143], [76, 77], [76, 67], [76, 73], [76, 145], [76, 157], [76, 83], [76, 87], [76, 137], [76, 66], [76, 74], [79, 105], [79, 157], [79, 73], [79, 161], [79, 145], [79, 69], [78, 67], [78, 68], [78, 55], [78, 84], [78, 73], [78, 93], [156, 157], [156, 52], [156, 80], [156, 145], [156, 118], [153, 161], [153, 160], [153, 149], [153, 159], [153, 81], [153, 16], [80, 26], [80, 85], [80, 77], [80, 21], [80, 161], [80, 25], [80, 86], [80, 71], [80, 119], [80, 139], [46, 85], [46, 151], [46, 51], [46, 52], [114, 117], [114, 161], [114, 112], [114, 160], [114, 149], [114, 25], [114, 115], [114, 122], [114, 91], [115, 112], [115, 129], [115, 117], [115, 127], [13, 17], [13, 30], [13, 19], [13, 25], [13, 39], [120, 14], [120, 129], [120, 128], [120, 125], [120, 105], [120, 123], [120, 124], [120, 126], [120, 108], [120, 34], [120, 102], [120, 109], [14, 128], [14, 33], [14, 9], [14, 34], [15, 39], [15, 43], [15, 29], [15, 22], [15, 11], [15, 18], [15, 12], [158, 154], [158, 165], [158, 152], [158, 19], [158, 95], [158, 50], [16, 20], [37, 35], [37, 131], [37, 25], [37, 40], [37, 125], [37, 43], [37, 29], [37, 44], [37, 39], [37, 69], [125, 131], [125, 9], [125, 110], [125, 65], [125, 109], [123, 117], [123, 105], [123, 34], [124, 129], [124, 74], [124, 118], [126, 30], [126, 18], [126, 27], [126, 102], [126, 49], [83, 55], [83, 61], [83, 63], [159, 26], [159, 160], [159, 30], [159, 23], [159, 164], [159, 165], [159, 44], [159, 54], [159, 150], [159, 81], [160, 143], [160, 149], [160, 147], [160, 145], [160, 157], [160, 161], [160, 112], [160, 97], [160, 68], [160, 163], [160, 164], [160, 165], [160, 104], [160, 155], [161, 149], [161, 145], [161, 143], [161, 162], [161, 99], [161, 59], [161, 139], [161, 69], [161, 74], [161, 152], [161, 118], [85, 77], [85, 71], [85, 26], [85, 39], [17, 21], [17, 26], [17, 25], [17, 27], [17, 136], [17, 22], [17, 24], [17, 151], [17, 30], [17, 31], [17, 32], [17, 56], [17, 1], [17, 7], [17, 9], [17, 11], [128, 117], [128, 10], [53, 26], [53, 51], [53, 57], [53, 49], [53, 86], [53, 50], [112, 149], [112, 143], [112, 122], [112, 127], [97, 95], [97, 143], [97, 154], [97, 90], [97, 99], [97, 96], [131, 35], [131, 102], [131, 69], [131, 154], [131, 130], [86, 132], [86, 27], [86, 26], [86, 69], [18, 9], [18, 30], [18, 34], [18, 7], [18, 109], [99, 100], [99, 88], [99, 27], [99, 90], [99, 89], [99, 132], [99, 91], [99, 95], [99, 96], [43, 40], [43, 151], [43, 149], [43, 25], [43, 157], [43, 42], [43, 155], [87, 145], [87, 117], [87, 73], [87, 75], [19, 21], [19, 7], [19, 42], [20, 27], [20, 1], [20, 9], [20, 73], [20, 61], [59, 66], [59, 73], [59, 74], [59, 77], [59, 65], [59, 84], [59, 32], [137, 147], [137, 145], [137, 157], [137, 47], [137, 28], [89, 90], [89, 88], [89, 100], [89, 73], [89, 94], [89, 92], [89, 93], [21, 140], [21, 7], [21, 22], [21, 26], [21, 29], [22, 25], [22, 27], [22, 23], [22, 11], [61, 68], [61, 62], [61, 154], [61, 82], [61, 108], [92, 152], [92, 88], [92, 91], [93, 91], [93, 88], [93, 100], [94, 100], [94, 67], [94, 88], [94, 51], [94, 90], [94, 95], [62, 73], [62, 68], [62, 82], [62, 155], [62, 149], [62, 81], [63, 73], [63, 74], [63, 152], [110, 108], [110, 133], [110, 102], [110, 10], [108, 55], [108, 102], [51, 50], [51, 55], [51, 57], [51, 152], [51, 45], [51, 10], [23, 143], [23, 30], [23, 25], [23, 27], [23, 31], [23, 134], [23, 54], [65, 55], [65, 67], [65, 69], [65, 74], [66, 73], [66, 152], [66, 141], [66, 105], [73, 145], [73, 68], [73, 149], [73, 157], [73, 75], [73, 132], [73, 133], [73, 134], [73, 69], [73, 146], [73, 74], [73, 55], [73, 81], [73, 155], [73, 90], [73, 118], [67, 68], [67, 117], [67, 145], [68, 145], [68, 136], [68, 143], [68, 90], [143, 162], [143, 149], [143, 145], [143, 151], [143, 157], [143, 163], [143, 165], [143, 91], [143, 139], [143, 152], [71, 147], [71, 77], [71, 82], [145, 149], [145, 157], [145, 147], [145, 151], [145, 117], [145, 48], [145, 104], [145, 141], [145, 52], [145, 118], [24, 25], [24, 27], [24, 82], [24, 26], [147, 149], [147, 25], [147, 157], [147, 164], [147, 132], [147, 139], [147, 141], [147, 74], [147, 150], [147, 155], [75, 26], [75, 77], [75, 25], [75, 69], [75, 150], [149, 157], [149, 25], [149, 117], [149, 40], [149, 162], [149, 163], [149, 44], [149, 96], [149, 139], [149, 140], [149, 141], [149, 146], [149, 12], [25, 27], [25, 26], [25, 154], [25, 35], [25, 122], [25, 163], [25, 33], [25, 39], [77, 82], [77, 56], [151, 30], [151, 150], [157, 82], [157, 164], [157, 132], [157, 69], [26, 49], [26, 122], [26, 28], [26, 164], [26, 7], [26, 52], [154, 152], [154, 29], [154, 50], [154, 119], [82, 84], [119, 136], [119, 129], [119, 127], [119, 47], [116, 105], [116, 121], [116, 117], [116, 130], [116, 104], [117, 118], [117, 121], [117, 130], [117, 33], [117, 104], [117, 105], [35, 10], [47, 56], [47, 45], [47, 49], [47, 57], [47, 48], [27, 162], [27, 9], [27, 30], [27, 32], [27, 33], [27, 34], [27, 146], [49, 57], [49, 56], [49, 52], [49, 28], [49, 48], [121, 130], [122, 141], [40, 44], [40, 42], [40, 140], [28, 118], [28, 7], [29, 162], [29, 31], [29, 164], [29, 12], [136, 57], [136, 56], [136, 31], [136, 132], [136, 133], [136, 134], [30, 31], [30, 54], [31, 11], [127, 129], [32, 1], [162, 140], [162, 146], [129, 74], [129, 118], [129, 150], [129, 81], [163, 69], [33, 133], [165, 152], [56, 57], [34, 9], [57, 55], [57, 52], [45, 54], [45, 48], [1, 7], [1, 9], [1, 11], [132, 134], [133, 134], [102, 109], [102, 9], [91, 100], [91, 90], [91, 96], [48, 54], [48, 52], [95, 90], [96, 90], [104, 118], [50, 55], [139, 152], [140, 146], [140, 90], [7, 11], [7, 9], [7, 42], [52, 55], [9, 11], [42, 150], [146, 74], [74, 81], [10, 11], [10, 12], [11, 12], [100, 88], [100, 90], [88, 90]]};
+(function(){
+  const svg = document.getElementById('graph-svg');
+  const svgNS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs){ const e=document.createElementNS(svgNS,tag); for(const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+  const books = DATA.books, genresMeta = DATA.genres, edges = DATA.edges;
+
+  const xs = books.map(b=>b.x), ys = books.map(b=>b.y);
+  const xMin=Math.min(...xs), xMax=Math.max(...xs), yMin=Math.min(...ys), yMax=Math.max(...ys);
+  const W = 900, H = 620, pad = 36;
+  function sx(x){ return pad + (x - xMin) / (xMax - xMin) * (W - 2*pad); }
+  function sy(y){ return pad + (y - yMin) / (yMax - yMin) * (H - 2*pad); }
+  books.forEach(b=>{ b.sx = sx(b.x); b.sy = sy(b.y); });
+
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+  const edgeEls = edges.map(([a,b])=>{
+    const A = books[a], B = books[b];
+    const path = el('path', {
+      class:'edge-path', d:`M ${A.sx} ${A.sy} L ${B.sx} ${B.sy}`, 'stroke-width':0.5
+    });
+    svg.appendChild(path);
+    return {path, a, b};
+  });
+
+  const nodeEls = books.map((b,i)=>{
+    const g = el('g', {class:'graph-node', 'data-id':i});
+    const genre = genresMeta[b.genre];
+    const r = genre.emergent ? 6 : 4.4;
+    g.appendChild(el('circle', {cx:b.sx, cy:b.sy, r, fill:genre.color,
+      stroke: genre.emergent ? 'black' : 'none', 'stroke-width': genre.emergent ? 1.2 : 0}));
+    svg.appendChild(g);
+    g.addEventListener('click', ()=> selectBook(i));
+    return g;
+  });
+
+  const side = document.getElementById('side');
+
+  function clearFocus(){
+    nodeEls.forEach(g=>g.classList.remove('dim','focus'));
+    edgeEls.forEach(({path})=>path.classList.remove('edge-focus','edge-context-dim'));
+    document.querySelectorAll('.legend-item').forEach(el=>el.classList.remove('active'));
+    document.querySelectorAll('.temporal-row').forEach(el=>el.classList.remove('active'));
+  }
+
+  function highlightGenre(gi){
+    const genre = genresMeta[gi];
+    const inGenre = new Set(genre.bookIds);
+    nodeEls.forEach((g,i)=>{
+      g.classList.toggle('focus', false);
+      g.classList.toggle('dim', !inGenre.has(i));
+    });
+    edgeEls.forEach(({path,a,b})=>{
+      const rel = inGenre.has(a) && inGenre.has(b);
+      path.classList.toggle('edge-focus', rel);
+      path.classList.toggle('edge-context-dim', !rel);
+    });
+    document.querySelectorAll('.legend-item').forEach(el=>
+      el.classList.toggle('active', +el.dataset.genre === gi));
+    document.querySelectorAll('.temporal-row').forEach(el=>
+      el.classList.toggle('active', +el.dataset.genre === gi));
+  }
+
+  function genreOverview(gi){
+    const genre = genresMeta[gi];
+    highlightGenre(gi);
+    const members = genre.bookIds.map(id=>books[id]).sort((a,b)=>(a.year||0)-(b.year||0));
+    const termsHtml = genre.topTerms.map(t=>`<span>${t}</span>`).join('');
+    const rows = members.map(b=>`<div class="book-row"><div class="t">${b.title}</div>
+      <div class="a">${b.author}${b.year?' · '+b.year:''}</div></div>`).join('');
+    side.innerHTML = `
+      <h3>${genre.name}${genre.emergent ? ' ★' : ''}</h3>
+      <div class="sub">${genre.n} novels · ${genre.yearMin}–${genre.yearMax} ·
+        z = ${genre.z >= 0 ? '+' : ''}${genre.z.toFixed(2)}${genre.emergent ? ' (temporally concentrated)' : ' (perennial mode)'}</div>
+      <div class="terms">${termsHtml}</div>
+      ${rows}
+    `;
+  }
+
+  function selectBook(i){
+    const b = books[i];
+    genreOverview(b.genre);
+    nodeEls[i].classList.add('focus');
+    // re-render side with this book pinned to the top
+    const genre = genresMeta[b.genre];
+    const members = genre.bookIds.map(id=>books[id]).sort((x,y)=>(x.year||0)-(y.year||0));
+    const termsHtml = genre.topTerms.map(t=>`<span>${t}</span>`).join('');
+    const rows = members.map(m=>`<div class="book-row${m.id===i?' focus-book':''}"><div class="t">${m.id===i?'▸ ':''}${m.title}</div>
+      <div class="a">${m.author}${m.year?' · '+m.year:''}</div></div>`).join('');
+    side.innerHTML = `
+      <h3>${genre.name}${genre.emergent ? ' ★' : ''}</h3>
+      <div class="sub">${genre.n} novels · ${genre.yearMin}–${genre.yearMax} ·
+        z = ${genre.z >= 0 ? '+' : ''}${genre.z.toFixed(2)}${genre.emergent ? ' (temporally concentrated)' : ' (perennial mode)'}</div>
+      <div class="terms">${termsHtml}</div>
+      ${rows}
+    `;
+  }
+
+  svg.addEventListener('click', e=>{ if(e.target === svg) clearFocus(); });
+
+  // legend
+  const legend = document.getElementById('legend');
+  genresMeta.forEach(genre=>{
+    const el2 = document.createElement('div');
+    el2.className = 'legend-item';
+    el2.dataset.genre = genre.idx;
+    el2.innerHTML = `<span class="sw" style="background:${genre.color}"></span>${genre.name}${genre.emergent?' <span class="star">★</span>':''}`;
+    el2.addEventListener('click', ()=> genreOverview(genre.idx));
+    legend.appendChild(el2);
+  });
+
+  // temporal concentration panel
+  const yearsAll = books.map(b=>b.year).filter(y=>y!=null);
+  const yMinAll = Math.min(...yearsAll), yMaxAll = Math.max(...yearsAll);
+  const temporalRoot = document.getElementById('temporal-rows');
+  const ranked = [...genresMeta].sort((a,b)=>a.z-b.z);
+  ranked.forEach(genre=>{
+    const row = document.createElement('div');
+    row.className = 'temporal-row';
+    row.dataset.genre = genre.idx;
+    const left = (genre.yearMin - yMinAll) / (yMaxAll - yMinAll) * 100;
+    const width = Math.max(1.5, (genre.yearMax - genre.yearMin) / (yMaxAll - yMinAll) * 100);
+    row.innerHTML = `
+      <div class="temporal-label"><b>${genre.name}</b>${genre.emergent?' ★':''}</div>
+      <div class="temporal-track"><div class="temporal-bar" style="left:${left}%;width:${width}%;background:${genre.color}"></div></div>
+      <div class="temporal-z">${genre.yearMin}–${genre.yearMax} <span class="${genre.emergent?'star':''}">z=${genre.z>=0?'+':''}${genre.z.toFixed(1)}</span></div>
+    `;
+    row.addEventListener('click', ()=> genreOverview(genre.idx));
+    temporalRoot.appendChild(row);
+  });
+
+  // stats header
+  const m = DATA.meta;
+  const stats = document.getElementById('stats');
+  const rows = [
+    [m.nBooks, 'novels'],
+    [m.nAuthors, 'authors (one book each, de-trended)'],
+    [m.nGenres, 'genre clusters recovered'],
+    [m.emergentGenre, 'the one temporally-concentrated genre', true],
+    [m.authorConfoundPct.toFixed(1) + '%', 'raw edges were same-author (controlled out)'],
+  ];
+  rows.forEach(([val,label,sig])=>{
+    const d = document.createElement('div');
+    d.className = 'stat';
+    d.innerHTML = `<div class="n${sig?' sig':''}">${val}</div><div class="l">${label}</div>`;
+    stats.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>
