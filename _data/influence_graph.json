@@ -98,7 +98,7 @@
     {
       "name": "Cicero",
       "earliest_year": -46,
-      "form": "philosophy",
+      "form": "other",
       "n_books_used": 6,
       "n_books_total": 7
     },
@@ -532,7 +532,7 @@
     {
       "name": "William Godwin",
       "earliest_year": 1831,
-      "form": "philosophy",
+      "form": "prose_fiction",
       "n_books_used": 1,
       "n_books_total": 1
     },
@@ -1854,7 +1854,7 @@
       "to": "Cicero",
       "stylistic": 0.0974,
       "conceptual": 0.7282,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 301
     },
     {
@@ -2318,7 +2318,7 @@
       "to": "William Godwin",
       "stylistic": 0.0616,
       "conceptual": 0.6245,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 2178
     },
     {
@@ -2734,7 +2734,7 @@
       "to": "William Godwin",
       "stylistic": 0.0496,
       "conceptual": 0.6452,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 18
     },
     {
@@ -3430,7 +3430,7 @@
       "to": "William Godwin",
       "stylistic": 0.0676,
       "conceptual": 0.6262,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1444
     },
     {
@@ -3918,7 +3918,7 @@
       "to": "William Godwin",
       "stylistic": 0.0401,
       "conceptual": 0.6401,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 154
     },
     {
@@ -5214,7 +5214,7 @@
       "to": "William Godwin",
       "stylistic": 0.1009,
       "conceptual": 0.6997,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 33
     },
     {
@@ -5222,7 +5222,7 @@
       "to": "Adam Smith",
       "stylistic": 0.0718,
       "conceptual": 0.6437,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1805
     },
     {
@@ -5262,7 +5262,7 @@
       "to": "Arthur Schopenhauer",
       "stylistic": 0.1207,
       "conceptual": 0.6853,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1859
     },
     {
@@ -5278,7 +5278,7 @@
       "to": "Augustine of Hippo",
       "stylistic": 0.0814,
       "conceptual": 0.707,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 433
     },
     {
@@ -5286,7 +5286,7 @@
       "to": "Baruch Spinoza",
       "stylistic": 0.0592,
       "conceptual": 0.6297,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1723
     },
     {
@@ -5302,7 +5302,7 @@
       "to": "Benjamin Franklin",
       "stylistic": 0.0879,
       "conceptual": 0.6294,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1797
     },
     {
@@ -5326,7 +5326,7 @@
       "to": "David Hume",
       "stylistic": 0.1645,
       "conceptual": 0.6724,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1785
     },
     {
@@ -5342,7 +5342,7 @@
       "to": "Emanuel Swedenborg",
       "stylistic": 0.1398,
       "conceptual": 0.634,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1804
     },
     {
@@ -5350,7 +5350,7 @@
       "to": "Epictetus",
       "stylistic": 0.0411,
       "conceptual": 0.6633,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 154
     },
     {
@@ -5366,7 +5366,7 @@
       "to": "Friedrich Engels",
       "stylistic": 0.1105,
       "conceptual": 0.6599,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1891
     },
     {
@@ -5374,7 +5374,7 @@
       "to": "Friedrich Nietzsche",
       "stylistic": 0.1694,
       "conceptual": 0.6689,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1918
     },
     {
@@ -5390,7 +5390,7 @@
       "to": "Georg Brandes",
       "stylistic": 0.1132,
       "conceptual": 0.6185,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1918
     },
     {
@@ -5398,7 +5398,7 @@
       "to": "Georg Wilhelm Friedrich Hegel",
       "stylistic": 0.0859,
       "conceptual": 0.6542,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1878
     },
     {
@@ -5430,7 +5430,7 @@
       "to": "Henry David Thoreau",
       "stylistic": 0.1022,
       "conceptual": 0.6511,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1895
     },
     {
@@ -5454,7 +5454,7 @@
       "to": "Immanuel Kant",
       "stylistic": 0.1079,
       "conceptual": 0.6738,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1827
     },
     {
@@ -5470,7 +5470,7 @@
       "to": "Jean-Jacques Rousseau",
       "stylistic": 0.0915,
       "conceptual": 0.6699,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1801
     },
     {
@@ -5486,7 +5486,7 @@
       "to": "John Dewey",
       "stylistic": 0.1592,
       "conceptual": 0.6902,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1933
     },
     {
@@ -5502,7 +5502,7 @@
       "to": "John Locke",
       "stylistic": 0.0531,
       "conceptual": 0.63,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1735
     },
     {
@@ -5518,7 +5518,7 @@
       "to": "John Muir",
       "stylistic": 0.095,
       "conceptual": 0.6086,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1940
     },
     {
@@ -5534,7 +5534,7 @@
       "to": "Karl Marx",
       "stylistic": 0.108,
       "conceptual": 0.66,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1894
     },
     {
@@ -5550,7 +5550,7 @@
       "to": "Ludwig Feuerbach",
       "stylistic": 0.0913,
       "conceptual": 0.627,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1887
     },
     {
@@ -5558,7 +5558,7 @@
       "to": "Marcus Aurelius",
       "stylistic": 0.0271,
       "conceptual": 0.6262,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 226
     },
     {
@@ -5566,7 +5566,7 @@
       "to": "Mary Austin",
       "stylistic": 0.1349,
       "conceptual": 0.6816,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1949
     },
     {
@@ -5574,7 +5574,7 @@
       "to": "Michel de Montaigne",
       "stylistic": 0.0665,
       "conceptual": 0.607,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1820
     },
     {
@@ -5614,7 +5614,7 @@
       "to": "Ralph Waldo Emerson",
       "stylistic": 0.1547,
       "conceptual": 0.6999,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1882
     },
     {
@@ -5654,7 +5654,7 @@
       "to": "Sigmund Freud",
       "stylistic": 0.1602,
       "conceptual": 0.6792,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1946
     },
     {
@@ -5662,7 +5662,7 @@
       "to": "Sir Thomas Browne",
       "stylistic": 0.0881,
       "conceptual": 0.6796,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1689
     },
     {
@@ -5678,7 +5678,7 @@
       "to": "Thomas Carlyle",
       "stylistic": 0.1086,
       "conceptual": 0.6964,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1871
     },
     {
@@ -5694,7 +5694,7 @@
       "to": "Thomas Hobbes",
       "stylistic": 0.0487,
       "conceptual": 0.6278,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1675
     },
     {
@@ -5702,7 +5702,7 @@
       "to": "Thomas Jefferson",
       "stylistic": 0.0619,
       "conceptual": 0.5952,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1822
     },
     {
@@ -5718,7 +5718,7 @@
       "to": "Thomas Paine",
       "stylistic": 0.1265,
       "conceptual": 0.6701,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 1822
     },
     {
@@ -5774,7 +5774,7 @@
       "to": "William Godwin",
       "stylistic": 0.1116,
       "conceptual": 0.6333,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1877
     },
     {
@@ -6758,7 +6758,7 @@
       "to": "William Godwin",
       "stylistic": 0.0583,
       "conceptual": 0.6628,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 92
     },
     {
@@ -7990,7 +7990,7 @@
       "to": "William Godwin",
       "stylistic": 0.0382,
       "conceptual": 0.6058,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1723
     },
     {
@@ -11694,7 +11694,7 @@
       "to": "William Godwin",
       "stylistic": 0.0173,
       "conceptual": 0.6414,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 50
     },
     {
@@ -12158,7 +12158,7 @@
       "to": "William Godwin",
       "stylistic": 0.028,
       "conceptual": 0.6784,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 76
     },
     {
@@ -13430,7 +13430,7 @@
       "to": "William Godwin",
       "stylistic": 0.0214,
       "conceptual": 0.6246,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 142
     },
     {
@@ -15558,7 +15558,7 @@
       "to": "William Godwin",
       "stylistic": 0.0742,
       "conceptual": 0.6128,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1651
     },
     {
@@ -16302,7 +16302,7 @@
       "to": "William Godwin",
       "stylistic": 0.0653,
       "conceptual": 0.6242,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 3
     },
     {
@@ -16846,7 +16846,7 @@
       "to": "Cicero",
       "stylistic": 0.0309,
       "conceptual": 0.735,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 353
     },
     {
@@ -17310,7 +17310,7 @@
       "to": "William Godwin",
       "stylistic": 0.1046,
       "conceptual": 0.6223,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 2230
     },
     {
@@ -20630,7 +20630,7 @@
       "to": "William Godwin",
       "stylistic": 0.0027,
       "conceptual": 0.5824,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 202
     },
     {
@@ -22486,7 +22486,7 @@
       "to": "William Godwin",
       "stylistic": 0.0585,
       "conceptual": 0.643,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 98
     },
     {
@@ -23070,7 +23070,7 @@
       "to": "Ambrose Bierce",
       "stylistic": 0.057,
       "conceptual": 0.6025,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 41
     },
     {
@@ -23078,7 +23078,7 @@
       "to": "Arthur Conan Doyle",
       "stylistic": 0.0549,
       "conceptual": 0.5984,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 56
     },
     {
@@ -23094,7 +23094,7 @@
       "to": "Edgar Allan Poe",
       "stylistic": 0.0833,
       "conceptual": 0.6411,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 7
     },
     {
@@ -23118,7 +23118,7 @@
       "to": "Friedrich Nietzsche",
       "stylistic": 0.0676,
       "conceptual": 0.6211,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 41
     },
     {
@@ -23134,7 +23134,7 @@
       "to": "Georg Wilhelm Friedrich Hegel",
       "stylistic": 0.0151,
       "conceptual": 0.6172,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 1
     },
     {
@@ -23150,7 +23150,7 @@
       "to": "Gustave Flaubert",
       "stylistic": 0.0388,
       "conceptual": 0.604,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 26
     },
     {
@@ -23174,7 +23174,7 @@
       "to": "Herman Melville",
       "stylistic": 0.0563,
       "conceptual": 0.619,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 18
     },
     {
@@ -23182,7 +23182,7 @@
       "to": "Hermann Hesse",
       "stylistic": 0.0569,
       "conceptual": 0.5869,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 88
     },
     {
@@ -23190,7 +23190,7 @@
       "to": "James Joyce",
       "stylistic": 0.0215,
       "conceptual": 0.5643,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 76
     },
     {
@@ -23198,7 +23198,7 @@
       "to": "John Dewey",
       "stylistic": 0.0377,
       "conceptual": 0.6513,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 56
     },
     {
@@ -23214,7 +23214,7 @@
       "to": "Jules Verne",
       "stylistic": 0.0636,
       "conceptual": 0.594,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 24
     },
     {
@@ -23230,7 +23230,7 @@
       "to": "Ludwig Feuerbach",
       "stylistic": 0.0363,
       "conceptual": 0.6218,
-      "same_form": true,
+      "same_form": false,
       "year_gap": 10
     },
     {
@@ -23286,7 +23286,7 @@
       "to": "Robert Louis Stevenson",
       "stylistic": 0.0319,
       "conceptual": 0.6328,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 47
     },
     {
@@ -23310,7 +23310,7 @@
       "to": "Thomas Hardy",
       "stylistic": 0.0322,
       "conceptual": 0.6123,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 42
     },
     {
@@ -23318,7 +23318,7 @@
       "to": "Thomas Mann",
       "stylistic": 0.0353,
       "conceptual": 0.5765,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 70
     },
     {
@@ -23326,7 +23326,7 @@
       "to": "Virginia Woolf",
       "stylistic": 0.0394,
       "conceptual": 0.5735,
-      "same_form": false,
+      "same_form": true,
       "year_gap": 84
     },
     {
@@ -23882,5 +23882,52 @@
       "z": 9.469,
       "n_pairs": 130
     }
+  },
+  "held_out_validation_wikidata": {
+    "source": "wikidata_p737",
+    "n_pairs_in_graph": 102,
+    "stylistic": {
+      "real_mean": 0.0823,
+      "null_mean": 0.0728,
+      "null_std": 0.0039,
+      "z": 2.454,
+      "n_pairs": 102
+    },
+    "conceptual": {
+      "real_mean": 0.6764,
+      "null_mean": 0.6466,
+      "null_std": 0.0042,
+      "z": 7.16,
+      "n_pairs": 102
+    }
+  },
+  "density_control": {
+    "book_count_confound_check": {
+      "real_mean": 4.3731,
+      "null_mean": 4.2081,
+      "null_std": 0.1144,
+      "z": 1.442,
+      "n_pairs": 130
+    },
+    "well_represented_subset": {
+      "min_books_used": 4,
+      "n_authors": 47,
+      "n_pairs": 46,
+      "stylistic": {
+        "real_mean": 0.1086,
+        "null_mean": 0.0932,
+        "null_std": 0.0052,
+        "z": 2.972,
+        "n_pairs": 46
+      },
+      "conceptual": {
+        "real_mean": 0.6971,
+        "null_mean": 0.6686,
+        "null_std": 0.0046,
+        "z": 6.25,
+        "n_pairs": 46
+      }
+    },
+    "verdict": "conceptual effect survives - not primarily a density artifact"
   }
 }

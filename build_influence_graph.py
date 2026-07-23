@@ -32,9 +32,25 @@
     a permutation z-test, same spirit as Phase 1's null-model discipline.
     It is never used to build or weight an edge.
 
+    A second, independent held-out source - wikidata_influences.json
+    (fetch_wikidata_influences.py, Wikidata's structured P737 "influenced
+    by" property, no LLM involved at all) - is checked the same way, kept
+    in its own output key, never merged with the LLM-enumerated result.
+
+    Density control: does an author's corpus size (n_books_used, already
+    computed per-author but otherwise unused) confound the held-out result -
+    are documented-influence pairs systematically drawn from better-
+    represented authors than the null sample? Checked directly (does
+    n_books_used itself show a permutation-z signal) and by a stratified
+    robustness re-run restricted to well-represented authors only. Adapted
+    from Phase 1's controls.py corpus-density control, whose actual
+    mechanism (subset to one book/author) doesn't map 1:1 since Phase 2's
+    nodes are already per-author, not per-book.
+
     Env:  GEMINI_API_KEY
     Run:  python build_influence_graph.py
-    In:   _data/bibliography_books.json, _data/known_influences.json
+    In:   _data/bibliography_books.json, _data/known_influences.json,
+          _data/wikidata_influences.json (optional)
     Out:  _data/influence_graph.json
 '''
 
@@ -57,10 +73,12 @@ from constants import shelved_books
 
 BOOKS_FILE = os.path.join(shelved_books, "bibliography_books.json")
 INFLUENCES_FILE = os.path.join(shelved_books, "known_influences.json")
+WIKIDATA_INFLUENCES_FILE = os.path.join(shelved_books, "wikidata_influences.json")
 OUT_FILE = os.path.join(shelved_books, "influence_graph.json")
 
 DIGEST_WORDS_PER_BOOK = 250     # per-book excerpt length in the author digest
 MAX_BOOKS_PER_AUTHOR = 6        # earliest N matched books, bounds prolific authors
+WELL_REPRESENTED_MIN_BOOKS = 4  # density-control subset threshold (of MAX_BOOKS_PER_AUTHOR=6)
 GEMINI_EMBED_MODEL = "gemini-embedding-001"
 CLAUDE_MODEL = "claude-sonnet-4-6"
 
@@ -247,6 +265,42 @@ def permutation_z(real_pairs, all_names, name_idx, years, sim, trials=5000, rng=
             "n_pairs": len(real_vals)}
 
 
+def resolve_held_out_pairs(filepath, name_idx, years):
+    '''Load a (from, to) influence-claim file and filter to pairs resolvable
+    in this graph with correct forward chronology - shared filter logic for
+    every held-out validation source (SS4).'''
+    if not os.path.isfile(filepath):
+        return []
+    raw = json.load(open(filepath, encoding="utf-8"))
+    return [(r["from"], r["to"]) for r in raw
+            if r["from"] in name_idx and r["to"] in name_idx
+            and years[name_idx[r["from"]]] < years[name_idx[r["to"]]]]
+
+
+def density_confound_z(real_pairs, names, name_idx, years, n_books, rng=None):
+    '''Are held-out real pairs drawn from systematically better-represented
+    authors than the null sample? Reuses permutation_z's exact machinery,
+    applied to book-count instead of similarity - if THIS z-score is large,
+    the similarity z-scores above could be partly a density artifact rather
+    than a real signal (the failure mode that killed Phase 1's mutation-rate
+    finding).'''
+    nb = np.array([n_books[a] for a in names], dtype=np.float64)
+    density_sim = (nb[:, None] + nb[None, :]) / 2.0
+    return permutation_z(real_pairs, names, name_idx, years, density_sim, rng=rng)
+
+
+def restrict_to_subset(names, years, sim, keep_mask):
+    '''Reindex names/years/sim down to a boolean subset - lets the exact same
+    permutation_z call run again on a well-represented-only slice, without a
+    second implementation of the test.'''
+    idx = np.where(keep_mask)[0]
+    sub_names = [names[i] for i in idx]
+    sub_years = years[idx]
+    sub_sim = sim[np.ix_(idx, idx)]
+    sub_name_idx = {a: i for i, a in enumerate(sub_names)}
+    return sub_names, sub_years, sub_sim, sub_name_idx
+
+
 def main():
     books = load_books()
     authors = aggregate_authors(books)
@@ -275,10 +329,7 @@ def main():
           f"{signal_corr:.3f}")
 
     name_idx = {a: i for i, a in enumerate(names)}
-    known = json.load(open(INFLUENCES_FILE, encoding="utf-8")) if os.path.isfile(INFLUENCES_FILE) else []
-    real_pairs = [(r["from"], r["to"]) for r in known
-                  if r["from"] in name_idx and r["to"] in name_idx
-                  and years[name_idx[r["from"]]] < years[name_idx[r["to"]]]]
+    real_pairs = resolve_held_out_pairs(INFLUENCES_FILE, name_idx, years)
     print(f"Held-out known_influences.json pairs resolvable in this graph: {len(real_pairs)}")
 
     rng = np.random.default_rng(0)
@@ -287,6 +338,46 @@ def main():
     conc_val = permutation_z(real_pairs, names, name_idx, years, conc_sim, rng=rng)
     print(f"Stylistic validation:  {styl_val}")
     print(f"Conceptual validation: {conc_val}")
+
+    # Second, independent, non-LLM held-out source (Wikidata P737) - same
+    # test, own output key, never merged with the LLM-enumerated result above.
+    wd_pairs = resolve_held_out_pairs(WIKIDATA_INFLUENCES_FILE, name_idx, years)
+    print(f"Held-out wikidata_influences.json pairs resolvable in this graph: {len(wd_pairs)}")
+    rng = np.random.default_rng(0)
+    wd_styl_val = permutation_z(wd_pairs, names, name_idx, years, styl_sim, rng=rng)
+    rng = np.random.default_rng(0)
+    wd_conc_val = permutation_z(wd_pairs, names, name_idx, years, conc_sim, rng=rng)
+    print(f"Stylistic validation (Wikidata):  {wd_styl_val}")
+    print(f"Conceptual validation (Wikidata): {wd_conc_val}")
+
+    # Density control: is the held-out result confounded by which authors
+    # happen to have more resolved books? Checked directly on known_influences
+    # (the source the z=9.47 headline result rests on), plus a stratified
+    # robustness re-run restricted to well-represented authors only.
+    n_books = {a: authors[a]["n_books_used"] for a in names}
+    rng = np.random.default_rng(0)
+    density_val = density_confound_z(real_pairs, names, name_idx, years, n_books, rng=rng)
+    print(f"Density confound check (known_influences pairs): {density_val}")
+
+    well_rep_mask = np.array([n_books[a] >= WELL_REPRESENTED_MIN_BOOKS for a in names])
+    wr_names, wr_years, wr_styl_sim, wr_name_idx = restrict_to_subset(names, years, styl_sim, well_rep_mask)
+    _, _, wr_conc_sim, _ = restrict_to_subset(names, years, conc_sim, well_rep_mask)
+    wr_real_pairs = [(a, b) for a, b in real_pairs if a in wr_name_idx and b in wr_name_idx]
+    rng = np.random.default_rng(0)
+    wr_styl_val = permutation_z(wr_real_pairs, wr_names, wr_name_idx, wr_years, wr_styl_sim, rng=rng)
+    rng = np.random.default_rng(0)
+    wr_conc_val = permutation_z(wr_real_pairs, wr_names, wr_name_idx, wr_years, wr_conc_sim, rng=rng)
+    print(f"Well-represented subset (n_books_used>={WELL_REPRESENTED_MIN_BOOKS}, "
+          f"n={len(wr_names)} authors, {len(wr_real_pairs)} pairs): "
+          f"stylistic={wr_styl_val}, conceptual={wr_conc_val}")
+
+    density_verdict = (
+        "conceptual effect survives - not primarily a density artifact"
+        if wr_conc_val and wr_conc_val["z"] > 3
+        else "conceptual effect weakens substantially in the well-represented "
+             "subset - density may be a real confound, investigate further"
+    )
+    print(f"Density control verdict: {density_verdict}")
 
     out = {
         "n_authors": len(names),
@@ -302,6 +393,23 @@ def main():
             "n_known_pairs_in_graph": len(real_pairs),
             "stylistic": styl_val,
             "conceptual": conc_val,
+        },
+        "held_out_validation_wikidata": {
+            "source": "wikidata_p737",
+            "n_pairs_in_graph": len(wd_pairs),
+            "stylistic": wd_styl_val,
+            "conceptual": wd_conc_val,
+        },
+        "density_control": {
+            "book_count_confound_check": density_val,
+            "well_represented_subset": {
+                "min_books_used": WELL_REPRESENTED_MIN_BOOKS,
+                "n_authors": len(wr_names),
+                "n_pairs": len(wr_real_pairs),
+                "stylistic": wr_styl_val,
+                "conceptual": wr_conc_val,
+            },
+            "verdict": density_verdict,
         },
     }
     os.makedirs(shelved_books, exist_ok=True)

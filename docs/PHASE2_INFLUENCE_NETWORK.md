@@ -1,7 +1,8 @@
 # Phase 2 — Author Influence Network
 
-**Status:** first real, validated result landed 2026-07-22 (see §9). Design
-decided 2026-07-21 (§7); built end-to-end same week.
+**Status:** first real, validated result landed 2026-07-22 (see §9); an
+independent validation source and a density control closed out 2026-07-23
+(see §10). Design decided 2026-07-21 (§7); built end-to-end same week.
 **Author of this doc:** Claude, at Aidan's request, 2026-07-21.
 
 ---
@@ -359,9 +360,73 @@ cases like Wagner (music/drama) → Nietzsche (philosophy).
   author digest (≤6 works × 250 words) - a specific, reproducible
   operationalization, not a claim to have measured "ideas" directly.
 
-**Not yet done:** the corpus-density control (§5 point 1, direct Phase-1
-analogue) wasn't ported over explicitly - author-level aggregation already
-subsumes the author-voice control (point 3), and style-drift detrending
-(point 2) and the form confound (point 4) are both implemented in
-`build_influence_graph.py`. Visualization remains deliberately deferred
-per §6 until/unless this result is extended further.
+**Not yet done (as of 2026-07-22):** the corpus-density control (§5 point 1,
+direct Phase-1 analogue) wasn't ported over explicitly - author-level
+aggregation already subsumes the author-voice control (point 3), and
+style-drift detrending (point 2) and the form confound (point 4) are both
+implemented in `build_influence_graph.py`. Visualization remains
+deliberately deferred per §6 until/unless this result is extended further.
+
+---
+
+## 10. Two follow-ups closed out (2026-07-23)
+
+Both addressed §9's honest limits directly rather than expanding scope.
+
+**Independent validation source.** The originally proposed method - parsing
+Wikipedia's `influences`/`influenced` infobox fields - was checked live
+against all 77 authors before any pipeline code was written, and found
+non-viable: only 2 of 77 (Arthur Conan Doyle, Jules Verne) have those fields
+populated. Wikipedia deprecated them as unsourced/POV-prone years ago and
+stripped them from most articles - the design doc's proposal in §3 was
+written without knowing this, and the check disproved it before it cost any
+build time. **Pivoted to Wikidata's P737 ("influenced by") property**
+instead - a separate, still-actively-maintained structured store, unrelated
+to the infobox display. Coverage: 44/77 authors, 350 raw claims, 110 unique
+pairs resolving inside this graph (`fetch_wikidata_influences.py` →
+`_data/wikidata_influences.json`). No LLM involved anywhere in this script -
+stricter than `known_influences.json` on the project's own "signal is
+real, never model-originated" rule (§8), since it isn't even LLM-enumerated.
+
+Run through the same held-out permutation test (102 of the 110 pairs survive
+the graph's resolvability + chronology filter):
+
+| signal | real mean | null mean | z |
+|---|---|---|---|
+| stylistic (TF-IDF) | 0.082 | 0.073 | **2.454** — significant |
+| conceptual (embedding) | 0.676 | 0.647 | **7.16** — highly significant |
+
+The conceptual result replicates independently (z=7.16 vs the original
+z=9.47) - a second, non-LLM source corroborates the headline finding. The
+stylistic result does not replicate the original null: **it's significant
+here (z=2.45) where it wasn't against known_influences.json (z=0.91)** -
+an honest discrepancy, not resolved, worth investigating rather than
+picking whichever number is more convenient. See below - it recurs.
+
+**Corpus-density control.** Phase 1's actual mechanism (subset to one book
+per author) doesn't map 1:1 onto Phase 2, whose nodes are already
+per-author, not per-book. Adapted as two checks in `build_influence_graph.py`:
+(a) run the exact `permutation_z` machinery on `n_books_used` itself instead
+of similarity, asking whether documented-influence pairs are drawn from
+systematically better-represented authors than the null sample; (b) a
+stratified robustness re-run of the full held-out test, restricted to the
+47 authors with `n_books_used >= 4` (of a max of 6).
+
+- Book-count confound check: z=1.44 - not significant. Documented pairs
+  aren't meaningfully denser than the null sample.
+- Well-represented subset (47 authors, 46 known-influence pairs):
+  conceptual z=6.25 (down from 9.47 on the full 130, but still highly
+  significant) - **the headline result is not primarily a density
+  artifact.** Stylistic z=2.97 in this subset - significant, same
+  direction as the Wikidata discrepancy above.
+
+**Open thread, not yet resolved:** stylistic similarity looks non-significant
+on the full known_influences.json sample (z=0.91) but turns significant in
+both independent checks that narrow the sample - the Wikidata pairs (z=2.45)
+and the well-represented-authors subset (z=2.97). Two honest readings, not
+adjudicated here: (a) the full-sample null is genuinely flat and both
+narrower samples are small-N noise in the same lucky direction, or (b) the
+full sample's non-significance was itself partly an artifact (of density,
+or of the specific 130 LLM-enumerated pairs) that both independent narrower
+checks happen to correct. Worth a dedicated pass before either claiming or
+dismissing a stylistic effect.
