@@ -1,0 +1,83 @@
+{
+ "meta": {
+  "n_authors": 77,
+  "n_pairs": 130,
+  "trials": 5000,
+  "bin_edges": [
+   1,
+   2,
+   3,
+   6
+  ]
+ },
+ "bins": [
+  {
+   "lo": 1,
+   "hi": 2,
+   "n_pairs": 14,
+   "stylistic": {
+    "real_mean": 0.0492,
+    "null_mean": 0.042,
+    "null_std": 0.0072,
+    "diff": 0.0072,
+    "z": 0.998,
+    "n_pairs": 14
+   },
+   "conceptual": {
+    "real_mean": 0.6393,
+    "null_mean": 0.6022,
+    "null_std": 0.0096,
+    "diff": 0.0371,
+    "z": 3.864,
+    "n_pairs": 14
+   }
+  },
+  {
+   "lo": 2,
+   "hi": 3,
+   "n_pairs": 22,
+   "stylistic": {
+    "real_mean": 0.0471,
+    "null_mean": 0.0658,
+    "null_std": 0.0079,
+    "diff": -0.0188,
+    "z": -2.365,
+    "n_pairs": 22
+   },
+   "conceptual": {
+    "real_mean": 0.6682,
+    "null_mean": 0.6381,
+    "null_std": 0.0069,
+    "diff": 0.0301,
+    "z": 4.357,
+    "n_pairs": 22
+   }
+  },
+  {
+   "lo": 3,
+   "hi": 6,
+   "n_pairs": 94,
+   "stylistic": {
+    "real_mean": 0.0866,
+    "null_mean": 0.0854,
+    "null_std": 0.0037,
+    "diff": 0.0012,
+    "z": 0.331,
+    "n_pairs": 94
+   },
+   "conceptual": {
+    "real_mean": 0.6912,
+    "null_mean": 0.6643,
+    "null_std": 0.0034,
+    "diff": 0.027,
+    "z": 7.982,
+    "n_pairs": 94
+   }
+  }
+ ],
+ "continuous": {
+  "spearman_rho": 0.157,
+  "p": 0.0742,
+  "n": 130
+ }
+}
