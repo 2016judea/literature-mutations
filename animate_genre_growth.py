@@ -15,10 +15,21 @@
     running underneath so the divisive-vs-agglomerative balance is legible as it
     happens rather than asserted afterwards.
 
-    Two outputs, because a PDF cannot hold a video:
-      genre_growth.mp4                  - the animation (supplementary material)
-      figure_genre_growth_panels.pdf    - the same growth as six stills, which
-        .png                              is what actually goes in the paper
+    Outputs:
+      genre_growth.mp4                  - 2560x1440, for the desktop web edition
+      genre_growth_portrait.mp4         - 1080x1620, for phones. NOT the same
+                                          film letterboxed: at 390px wide the
+                                          16:9 cut's captions land around 2px
+                                          tall, so the portrait version is
+                                          re-laid-out with type sized for a
+                                          phone and the baked-in provenance
+                                          note dropped (it moves to the page's
+                                          <figcaption>, where it is real
+                                          selectable text at a readable size).
+      genre_growth_poster.png           - last-frame poster for both players
+        _portrait.png
+      figure_genre_growth_panels.pdf    - the same growth as six stills, for
+        .png                              any print/PDF rendering of the paper
 
     DATA PROVENANCE (same constraint, and same solution, as visualize_genres.py)
     _data/books.json - the real Gutenberg full-text corpus - is not in this
@@ -75,7 +86,25 @@ RESULTS = "results.json"
 OUT_MP4 = "genre_growth.mp4"
 OUT_PANELS = "figure_genre_growth_panels"
 
-# --- theme: the warm paper of research/literature-mutations.html -------------
+# --- theme: the warm paper of the research page, both of its modes -----------
+# research/index.html switches on prefers-color-scheme with no toggle, so a
+# light-only film glares on every dark-mode visitor. The dark ledger colours are
+# NOT a flip of the light ones - they are re-stepped and re-validated against the
+# dark surface with the dataviz skill's validate_palette.js (all six checks pass
+# on both). Do not hand-tune either set without re-running that script.
+THEMES = {
+    "light": dict(bg="#f7f3ec", bg2="#efe9dd", ink="#1c1814", ink2="#544e44",
+                  rule=(0.235, 0.196, 0.157, 0.16),
+                  neutral_node=[0.62, 0.59, 0.55, 1.0],
+                  neutral_edge=[0.235, 0.196, 0.157, 1.0],
+                  split="#c2412a", merge="#0f6fb3", birth="#94690a"),
+    "dark": dict(bg="#15120f", bg2="#1d1916", ink="#e9e3d5", ink2="#b3aa9a",
+                 rule=(0.90, 0.86, 0.78, 0.16),
+                 neutral_node=[0.49, 0.47, 0.43, 1.0],
+                 neutral_edge=[0.90, 0.86, 0.78, 1.0],
+                 split="#d4553a", merge="#2f86cc", birth="#a87d18"),
+}
+
 BG = "#f7f3ec"
 BG2 = "#efe9dd"
 INK = "#1c1814"
@@ -88,6 +117,16 @@ SYMBOL = ["DejaVu Sans"]          # the serif faces have no ★ glyph — it tof
 # A novel whose community has not yet cohered, and the links between them.
 NEUTRAL_NODE = [0.62, 0.59, 0.55, 1.0]
 NEUTRAL_EDGE = [0.235, 0.196, 0.157, 1.0]
+
+
+def apply_theme(name):
+    '''Swap the module palette. Rendering is sequential, so globals are safe.'''
+    global BG, BG2, INK, INK2, RULE, NEUTRAL_NODE, NEUTRAL_EDGE
+    global C_SPLIT, C_MERGE, C_BIRTH
+    t = THEMES[name]
+    BG, BG2, INK, INK2, RULE = t["bg"], t["bg2"], t["ink"], t["ink2"], t["rule"]
+    NEUTRAL_NODE, NEUTRAL_EDGE = t["neutral_node"], t["neutral_edge"]
+    C_SPLIT, C_MERGE, C_BIRTH = t["split"], t["merge"], t["birth"]
 
 # Ledger series. Not the genre palette - these encode event type, not identity,
 # and a viewer must never read them as a ninth and tenth genre. Validated with
@@ -182,11 +221,11 @@ class Scene:
         '''
         return self.counts(ynow) >= 3
 
-    def node_state(self, ynow):
+    def node_state(self, ynow, L):
         age = (ynow - self.year) * SUB
         live = age >= 0
         flash = np.where(live, np.exp(-np.clip(age, 0, None) / FLASH_TAU), 0.0)
-        sizes = np.where(live, 26 + 190 * flash, 0.0)
+        sizes = np.where(live, L["node_base"] + L["flash_size"] * flash, 0.0)
         face = self.node_colors(ynow)
         face[:, 3] = np.where(live, 1.0, 0.0)
         return live, flash, sizes, face
@@ -233,53 +272,112 @@ def style_network_axes(ax, scene, pad=0.06, top_pad=0.06):
     ax.set_facecolor(BG)
 
 
-def style_ledger_axes(ax, ledger):
+def style_ledger_axes(ax, ledger, L):
     ax.set_facecolor(BG)
     ax.set_xlim(YEAR0, YEAR1)
     top = max(ledger["splits"][-1], ledger["merges"][-1], ledger["births"][-1])
-    ax.set_ylim(0, top * 1.18)
+    # Landscape seats the readouts inside the axes and needs headroom above the
+    # curves; portrait puts them in a row above it, so the plot can fill its box.
+    ax.set_ylim(0, top * (1.18 if L["key"] == "landscape" else 1.06))
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
     for s in ("bottom", "left"):
         ax.spines[s].set_color(RULE)
         ax.spines[s].set_linewidth(0.8)
-    ax.tick_params(colors=INK2, labelsize=9, length=3, width=0.8)
+    ax.tick_params(colors=INK2, labelsize=L["led_tick_fs"], length=3, width=0.8)
+    if L["key"] == "portrait":
+        ax.set_xticks([1700, 1800, 1900])
+        ax.set_yticks([0, 15, 30])
     for lbl in ax.get_xticklabels() + ax.get_yticklabels():
         lbl.set_fontfamily(MONO)
     ax.grid(axis="y", color=RULE, linewidth=0.6, alpha=0.7)
     ax.set_axisbelow(True)
 
 
-def build_figure(scene):
+# --- the two cuts ------------------------------------------------------------
+# One scene, two framings. The phone is not a smaller desktop: at 390px wide the
+# landscape cut's 10.5pt provenance note renders around 2px tall, so the portrait
+# cut is re-laid-out rather than scaled, and the note it cannot carry is moved to
+# the page's <figcaption> where it becomes real, selectable, resizable text.
+LANDSCAPE = dict(
+    key="landscape", out="genre_growth.mp4",
+    figsize=(16, 9), dpi=160,                       # 2560 x 1440
+    net=[0.025, 0.115, 0.455, 0.730], net_top_pad=0.18,
+    leg=[0.525, 0.435, 0.450, 0.410], leg_cols=1,
+    led=[0.565, 0.150, 0.400, 0.215],
+    title_y=0.945, title_fs=26, sub_y=0.900, sub_fs=12.5, text_x=0.025,
+    year_xy=(0.472, 0.840), year_fs=44, count_y=0.786, count_fs=12.5,
+    footer=True, leg_note=True,
+    leg_name_fs=11.5, leg_count_fs=10.5, leg_head_fs=9.5, note_fs=9.5,
+    led_title_fs=13.5, led_label_fs=11, led_tick_fs=9, led_ylabel_fs=10.5,
+    edge_lw=1.0, node_lw=1.1, node_base=26, flash_size=190, ring_size=620,
+    crf="18",
+)
+
+# The ledger is deliberately absent here. Fitting it under the network at a size
+# a phone can actually read left every element cramped, and the first render came
+# out with the title over the year and the legend over the ledger. It is a second
+# idea on a screen that has room for one: the network IS the film on a phone. The
+# ledger stays in the landscape cut, and its numbers are restated as real text in
+# the page's <figcaption>, where they are legible at any size.
+PORTRAIT = dict(
+    key="portrait", out="genre_growth_portrait.mp4",
+    figsize=(9, 12), dpi=120,                       # 1080 x 1440
+    net=[0.040, 0.157, 0.920, 0.633], net_top_pad=0.14,
+    leg=[0.055, 0.022, 0.890, 0.118], leg_cols=2,
+    led=None,
+    title_y=0.980, title_fs=30, sub_y=0.880, sub_fs=16, text_x=0.040,
+    year_xy=(0.960, 0.884), year_fs=54, count_y=0.812, count_fs=17,
+    footer=False, leg_note=False,
+    leg_name_fs=17, leg_count_fs=17, leg_head_fs=14, note_fs=14,
+    led_title_fs=18, led_label_fs=16, led_tick_fs=14, led_ylabel_fs=None,
+    edge_lw=1.4, node_lw=1.5, node_base=44, flash_size=330, ring_size=1000,
+    crf="20",
+)
+
+
+def build_figure(scene, L):
     '''Explicit axes rather than a gridspec.
 
     The layout is a network with equal aspect, and the layout's data is 1.09:1 -
     near square. Dropped into a wide gridspec cell, equal aspect shrank the graph
     to the cell's HEIGHT and left half the frame empty, with the year label
     stranded in the middle. So the network gets a near-square box sized to the
-    data, and everything else lives in the column that frees up.
+    data, and everything else lives in the space that frees up.
     '''
-    fig = plt.figure(figsize=(16, 9), dpi=120, facecolor=BG)
-    ax_net = fig.add_axes([0.025, 0.115, 0.455, 0.730])
-    style_network_axes(ax_net, scene, top_pad=0.18)
-    ax_leg = fig.add_axes([0.525, 0.435, 0.450, 0.410])
+    fig = plt.figure(figsize=L["figsize"], dpi=L["dpi"], facecolor=BG)
+    ax_net = fig.add_axes(L["net"])
+    style_network_axes(ax_net, scene, top_pad=L["net_top_pad"])
+    ax_leg = fig.add_axes(L["leg"])
     ax_leg.axis("off"); ax_leg.set_facecolor(BG)
-    ax_led = fig.add_axes([0.565, 0.150, 0.400, 0.215])
-    style_ledger_axes(ax_led, scene.ledger)
+    ax_led = None
+    if L["led"]:
+        ax_led = fig.add_axes(L["led"])
+        style_ledger_axes(ax_led, scene.ledger, L)
     return fig, ax_net, ax_leg, ax_led
 
 
-def draw_titles(fig, scene):
+def draw_titles(fig, scene, L):
     m = scene.meta
-    fig.text(0.035, 0.945, "How the genre system of English fiction assembled itself",
-             family=SERIF, fontsize=25, color=INK, va="center")
-    fig.text(0.035, 0.900,
-             f"{m['nAuthors']} novels, one per author  ·  positions fixed from the final "
-             "k-NN layout, only publication is temporal  ·  a novel stays grey until its "
-             "community reaches three members",
-             family=SERIF, fontsize=12.5, color=INK2, va="center", style="italic")
+    x = L["text_x"]
+    title = ("How the genre system of English fiction assembled itself"
+             if L["key"] == "landscape" else
+             "How the genre system of\nEnglish fiction assembled itself")
+    fig.text(x, L["title_y"], title, family=SERIF, fontsize=L["title_fs"],
+             color=INK, va="top", linespacing=1.25)
+    sub = (f"{m['nAuthors']} novels, one per author  ·  positions fixed from the final "
+           "k-NN layout, only publication is temporal  ·  a novel stays grey until its "
+           "community reaches three members"
+           if L["key"] == "landscape" else
+           f"{m['nAuthors']} novels, one per author. Positions are fixed;\n"
+           "only publication is temporal.")
+    fig.text(x, L["sub_y"], sub, family=SERIF, fontsize=L["sub_fs"], color=INK2,
+             va="top", style="italic", linespacing=1.45)
+
+    if not L["footer"]:
+        return
     n = scene.ledger["null"]
-    fig.text(0.025, 0.062,
+    fig.text(x, 0.062,
              f"Ledger from the full {scene.ledger['n_books']}-novel run (results.json); "
              f"network is the {m['nAuthors']}-novel author-controlled layout "
              "(genre_network.html). Edges are the final k-NN graph induced on novels\n"
@@ -290,7 +388,7 @@ def draw_titles(fig, scene):
              family=SERIF, fontsize=10.5, color=INK2, va="center", linespacing=1.6)
 
 
-def draw_legend(ax, scene):
+def draw_legend(ax, scene, L):
     '''Genre rail. Swatch, name and running count per community.
 
     Returns the handles the animation mutates each frame: a community stays grey
@@ -299,32 +397,47 @@ def draw_legend(ax, scene):
     key to the finished answer.
     '''
     ax.set_xlim(0, 1); ax.set_ylim(0, 1)
-    ax.text(0.0, 0.975, "C O M M U N I T I E S", family=MONO, fontsize=9.5,
-            color=INK2)
     swatches, names, counts = [], [], []
-    rows = len(scene.genres)
+    cols = L["leg_cols"]
+    rows = (len(scene.genres) + cols - 1) // cols
+    maxlen = 30 if cols == 1 else 25
+
+    if L["key"] == "landscape":
+        ax.text(0.0, 0.975, "C O M M U N I T I E S", family=MONO,
+                fontsize=L["leg_head_fs"], color=INK2)
+        # Compressed into the top 62%: at 80% the footnote below overflowed the
+        # axes and printed across the ledger's title and y-axis.
+        ys = [0.905 - i * (0.62 / rows) for i in range(rows)]
+        xs = [0.0]
+        col_w, sw_w, sw_h = 1.0, 0.021, 0.030
+    else:
+        ys = [0.88 - i * 0.26 for i in range(rows)]
+        xs = [0.0, 0.52]
+        col_w, sw_w, sw_h = 0.45, 0.016, 0.10
+
     for i, g in enumerate(scene.genres):
-        # The block is deliberately compressed into the top 62% of the axes: at
-        # 80% the footnote below it overflowed the axes and printed across the
-        # ledger's title and y-axis.
-        y = 0.905 - i * (0.62 / rows)
-        sw = plt.Rectangle((0.0, y - 0.015), 0.021, 0.030,
-                           color=NEUTRAL_NODE, transform=ax.transAxes, lw=0)
+        cx = xs[i // rows] if cols > 1 else xs[0]
+        y = ys[i % rows]
+        sw = plt.Rectangle((cx, y - sw_h / 2), sw_w, sw_h, color=NEUTRAL_NODE,
+                           transform=ax.transAxes, lw=0)
         ax.add_patch(sw)
         swatches.append(sw)
-        label = g["name"] if len(g["name"]) <= 30 else g["name"][:29] + "…"
-        t = ax.text(0.038, y, label, family=SERIF, fontsize=11.5, color=INK2,
-                    va="center", alpha=0.45,
-                    weight="bold" if g["emergent"] else "normal")
-        names.append(t)
-        counts.append(ax.text(1.0, y, "0", family=MONO, fontsize=10.5, color=INK2,
+        label = g["name"] if len(g["name"]) <= maxlen else g["name"][:maxlen - 1] + "…"
+        names.append(ax.text(cx + sw_w * 1.8, y, label, family=SERIF,
+                             fontsize=L["leg_name_fs"], color=INK2, va="center",
+                             alpha=0.45,
+                             weight="bold" if g["emergent"] else "normal"))
+        counts.append(ax.text(cx + col_w, y, "0", family=MONO,
+                              fontsize=L["leg_count_fs"], color=INK2,
                               va="center", ha="right"))
-    ax.text(0.0, 0.235,
-            "Grey until a community reaches three members — the pipeline's own\n"
-            "threshold for calling one real. In bold: the one community with a\n"
-            "datable emergence (z ≈ −3.0); the other seven are perennial modes.",
-            family=SERIF, fontsize=9.5, color=INK2, va="top", style="italic",
-            linespacing=1.5)
+
+    if L["leg_note"]:
+        ax.text(0.0, 0.235,
+                "Grey until a community reaches three members — the pipeline's own\n"
+                "threshold for calling one real. In bold: the one community with a\n"
+                "datable emergence (z ≈ −3.0); the other seven are perennial modes.",
+                family=SERIF, fontsize=L["note_fs"], color=INK2, va="top",
+                style="italic", linespacing=1.5)
     return swatches, names, counts
 
 
@@ -337,96 +450,124 @@ def frame_years():
     return seq
 
 
-def render_video(scene, out=OUT_MP4):
+def render_video(scene, L, theme="light"):
     import imageio_ffmpeg
     plt.rcParams["animation.ffmpeg_path"] = imageio_ffmpeg.get_ffmpeg_exe()
+    apply_theme(theme)
+    out = L["out"] if theme == "light" else L["out"].replace(".mp4", "_dark.mp4")
+    portrait = L["key"] == "portrait"
 
-    fig, ax_net, ax_leg, ax_led = build_figure(scene)
-    draw_titles(fig, scene)
-    swatches, name_handles, count_handles = draw_legend(ax_leg, scene)
+    fig, ax_net, ax_leg, ax_led = build_figure(scene, L)
+    draw_titles(fig, scene, L)
+    swatches, name_handles, count_handles = draw_legend(ax_leg, scene, L)
 
-    lc = LineCollection(scene.segs, linewidths=1.0, capstyle="round")
+    lc = LineCollection(scene.segs, linewidths=L["edge_lw"], capstyle="round")
     lc.set_color(scene.edge_state(YEAR0 - 1))
     ax_net.add_collection(lc)
 
-    # A 2px surface ring on every node so overlapping marks stay separable.
+    # A surface ring on every node so overlapping marks stay separable.
     nodes = ax_net.scatter(scene.xy[:, 0], scene.xy[:, 1], s=0,
                            facecolors=scene.colors, edgecolors=BG,
-                           linewidths=1.1, zorder=3)
+                           linewidths=L["node_lw"], zorder=3)
     rings = ax_net.scatter(scene.xy[:, 0], scene.xy[:, 1], s=0,
                            facecolors="none", edgecolors=scene.colors,
-                           linewidths=1.4, zorder=2)
+                           linewidths=L["node_lw"] * 1.3, zorder=2)
 
     # Figure coords, not axes coords: with equal aspect the axes box is not the
     # box matplotlib reports, so transAxes placement drifts to the middle.
-    year_txt = fig.text(0.472, 0.840, str(YEAR0), family=MONO, fontsize=44,
+    yx, yy = L["year_xy"]
+    year_txt = fig.text(yx, yy, str(YEAR0), family=MONO, fontsize=L["year_fs"],
                         color=INK, ha="right", va="top", alpha=0.88)
-    n_txt = fig.text(0.472, 0.786, "0 novels", family=MONO, fontsize=12.5,
-                     color=INK2, ha="right", va="top")
+    n_txt = fig.text(yx, L["count_y"], "0 novels", family=MONO,
+                     fontsize=L["count_fs"], color=INK2, ha="right", va="top")
 
     led = scene.ledger
-    lines, readouts = {}, {}
-    series = [("splits", C_SPLIT, "splits  — one community differentiating"),
-              ("merges", C_MERGE, "merges  — communities coalescing"),
-              ("births", C_BIRTH, "births  — no ancestor in the prior year")]
-    for i, (key, col, label) in enumerate(series):
-        (ln,) = ax_led.plot([], [], color=col, lw=2.0, solid_capstyle="round")
-        lines[key] = ln
-        # A surface plate behind the readouts: they sit in the upper-left, where
-        # the cumulative curves are still near zero, so this masks gridlines
-        # only. Without it the y=30 rule strikes through "merges".
-        plate = dict(boxstyle="square,pad=0.22", facecolor=BG, edgecolor="none")
-        readouts[key] = ax_led.text(
-            0.042, 0.95 - i * 0.135, "", transform=ax_led.transAxes,
-            family=MONO, fontsize=11, color=col, va="top", ha="right",
-            bbox=plate, zorder=4)
-        ax_led.text(0.058, 0.95 - i * 0.135, label, transform=ax_led.transAxes,
-                    family=SERIF, fontsize=11, color=INK2, va="top",
-                    bbox=plate, zorder=4)
-    ax_led.set_title("The mutation ledger — divisive (splits) against agglomerative (merges)",
-                     family=SERIF, fontsize=13.5, color=INK, loc="left", pad=8)
-    ax_led.set_ylabel("cumulative events", family=SERIF, fontsize=10.5, color=INK2)
-    marker = ax_led.axvline(YEAR0, color=INK, lw=0.9, alpha=0.35)
+    lines, readouts, marker = {}, {}, None
+    if ax_led is not None:
+        series = [("splits", C_SPLIT, "splits  — one community differentiating"),
+                  ("merges", C_MERGE, "merges  — communities coalescing"),
+                  ("births", C_BIRTH, "births  — no ancestor in the prior year")]
+        # One surface plate behind the whole readout block. Per-text bboxes left
+        # a hairline of the y=30 gridline showing through the gap between the
+        # number and its label. The block sits in the upper-left, where the
+        # cumulative curves are still near zero, so this masks gridlines only.
+        ax_led.add_patch(plt.Rectangle(
+            (0.004, 0.545), 0.46, 0.452, transform=ax_led.transAxes,
+            facecolor=BG, edgecolor="none", zorder=3.5))
+        for i, (key, col, label) in enumerate(series):
+            (ln,) = ax_led.plot([], [], color=col, lw=2.0, solid_capstyle="round")
+            lines[key] = ln
+            readouts[key] = ax_led.text(
+                0.042, 0.95 - i * 0.135, "", transform=ax_led.transAxes,
+                family=MONO, fontsize=L["led_label_fs"], color=col, va="top",
+                ha="right", zorder=4)
+            ax_led.text(0.058, 0.95 - i * 0.135, label, transform=ax_led.transAxes,
+                        family=SERIF, fontsize=L["led_label_fs"], color=INK2,
+                        va="top", zorder=4)
+        ax_led.set_title(
+            "The mutation ledger — divisive (splits) against agglomerative (merges)",
+            family=SERIF, fontsize=L["led_title_fs"], color=INK, loc="left", pad=8)
+        if L["led_ylabel_fs"]:
+            ax_led.set_ylabel("cumulative events", family=SERIF,
+                              fontsize=L["led_ylabel_fs"], color=INK2)
+        marker = ax_led.axvline(YEAR0, color=INK, lw=0.9, alpha=0.35)
 
     seq = frame_years()
 
     def update(fi):
         ynow = seq[fi]
-        live, flash, sizes, face = scene.node_state(ynow)
+        live, flash, sizes, face = scene.node_state(ynow, L)
         nodes.set_sizes(sizes)
         nodes.set_facecolors(face)
         ring_face = face.copy()
         ring_face[:, 3] = flash * 0.9
-        rings.set_sizes(np.where(live, 40 + 620 * flash, 0.0))
+        rings.set_sizes(np.where(live, L["node_base"] * 1.6
+                                 + L["ring_size"] * flash, 0.0))
         rings.set_edgecolors(ring_face)
         lc.set_color(scene.edge_state(ynow))
 
         year_txt.set_text(str(int(ynow)))
         active = scene.genre_active(ynow)
-        n_txt.set_text(f"{int(live.sum())} novels  ·  "
-                       f"{int(active.sum())}/{len(scene.genres)} communities cohered")
+        cohered = f"{int(active.sum())}/{len(scene.genres)}"
+        # The opening hold sits on a one-novel corpus for ~1.5s, so "1 novels"
+        # is the first thing every viewer reads.
+        n = int(live.sum())
+        novels = f"{n} novel" + ("" if n == 1 else "s")
+        n_txt.set_text(f"{novels}  ·  {cohered} cohered" if portrait
+                       else f"{novels}  ·  {cohered} communities cohered")
         for i, (c, on) in enumerate(zip(scene.counts(ynow), active)):
             count_handles[i].set_text(str(int(c)))
             swatches[i].set_color(scene.genres[i]["color"] if on else NEUTRAL_NODE)
             name_handles[i].set_color(INK if on else INK2)
             name_handles[i].set_alpha(1.0 if on else 0.45)
 
-        m = led["years"] <= ynow
-        for key in lines:
-            lines[key].set_data(led["years"][m], led[key][m])
-            v = int(led[key][m][-1]) if m.any() else 0
-            readouts[key].set_text(f"{v:>3d}")
-        marker.set_xdata([ynow, ynow])
+        if marker is not None:
+            m = led["years"] <= ynow
+            for key in lines:
+                lines[key].set_data(led["years"][m], led[key][m])
+                v = int(led[key][m][-1]) if m.any() else 0
+                readouts[key].set_text(f"{v:>3d}")
+            marker.set_xdata([ynow, ynow])
         return ()
 
     anim = FuncAnimation(fig, update, frames=len(seq), interval=1000 / FPS, blit=False)
-    writer = FFMpegWriter(fps=FPS, bitrate=6000, codec="libx264",
-                          extra_args=["-pix_fmt", "yuv420p", "-preset", "slow"])
+    # CRF rather than a target bitrate: this is flat colour and hairline strokes,
+    # where a fixed bitrate spends too much on the still frames and mosquitoes
+    # the edges during the busy years. +faststart puts the moov atom first so a
+    # browser can start playing before the whole file lands.
+    writer = FFMpegWriter(fps=FPS, bitrate=-1, codec="libx264",
+                          extra_args=["-pix_fmt", "yuv420p", "-preset", "slow",
+                                      "-crf", L["crf"], "-movflags", "+faststart"])
     print(f"rendering {len(seq)} frames -> {out}")
     anim.save(out, writer=writer,
-              progress_callback=lambda i, n: (i % 50 == 0) and print(f"  {i}/{n}"))
+              progress_callback=lambda i, n: (i % 100 == 0) and print(f"  {i}/{n}"))
+
+    # Poster: the finished graph, so the player shows the answer before playback.
+    update(len(seq) - 1)
+    poster = out.replace(".mp4", "_poster.jpg")
+    fig.savefig(poster, facecolor=BG, dpi=L["dpi"], pil_kwargs={"quality": 88})
     plt.close(fig)
-    print(f"wrote {out}")
+    print(f"wrote {out} + {poster}")
 
 
 # --- the stills that go in the paper ----------------------------------------
@@ -545,8 +686,16 @@ def main():
     report(scene)
     years = render_panels(scene)
     print(f"panel years       {years}")
-    if "--panels" not in sys.argv:
-        render_video(scene)
+    if "--panels" in sys.argv:
+        return
+    cuts = [PORTRAIT] if "--portrait" in sys.argv else \
+           [LANDSCAPE] if "--landscape" in sys.argv else [LANDSCAPE, PORTRAIT]
+    themes = ["light"] if "--light" in sys.argv else \
+             ["dark"] if "--dark" in sys.argv else ["light", "dark"]
+    for L in cuts:
+        for theme in themes:
+            render_video(scene, L, theme)
+    apply_theme("light")
 
 
 if __name__ == "__main__":
