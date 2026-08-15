@@ -304,7 +304,8 @@ LANDSCAPE = dict(
     figsize=(16, 9), dpi=160,                       # 2560 x 1440
     net=[0.025, 0.115, 0.455, 0.730], net_top_pad=0.18,
     leg=[0.525, 0.435, 0.450, 0.410], leg_cols=1,
-    led=[0.565, 0.150, 0.400, 0.215],
+    led=[0.565, 0.140, 0.400, 0.190],
+    led_title_y=0.448, led_row_y=[0.420, 0.396, 0.372],
     title_y=0.945, title_fs=26, sub_y=0.900, sub_fs=12.5, text_x=0.025,
     year_xy=(0.472, 0.840), year_fs=44, count_y=0.786, count_fs=12.5,
     footer=True, leg_note=True,
@@ -325,7 +326,7 @@ PORTRAIT = dict(
     figsize=(9, 12), dpi=120,                       # 1080 x 1440
     net=[0.040, 0.157, 0.920, 0.633], net_top_pad=0.14,
     leg=[0.055, 0.022, 0.890, 0.118], leg_cols=2,
-    led=None,
+    led=None, led_title_y=None, led_row_y=None,
     title_y=0.980, title_fs=30, sub_y=0.880, sub_fs=16, text_x=0.040,
     year_xy=(0.960, 0.884), year_fs=54, count_y=0.812, count_fs=17,
     footer=False, leg_note=False,
@@ -432,7 +433,9 @@ def draw_legend(ax, scene, L):
                               va="center", ha="right"))
 
     if L["leg_note"]:
-        ax.text(0.0, 0.235,
+        # 0.30, not 0.235: this note is three lines and hangs below the axes,
+        # where at 0.235 its last line printed through the ledger's title.
+        ax.text(0.0, 0.30,
                 "Grey until a community reaches three members — the pipeline's own\n"
                 "threshold for calling one real. In bold: the one community with a\n"
                 "datable emergence (z ≈ −3.0); the other seven are perennial modes.",
@@ -487,26 +490,23 @@ def render_video(scene, L, theme="light"):
         series = [("splits", C_SPLIT, "splits  — one community differentiating"),
                   ("merges", C_MERGE, "merges  — communities coalescing"),
                   ("births", C_BIRTH, "births  — no ancestor in the prior year")]
-        # One surface plate behind the whole readout block. Per-text bboxes left
-        # a hairline of the y=30 gridline showing through the gap between the
-        # number and its label. The block sits in the upper-left, where the
-        # cumulative curves are still near zero, so this masks gridlines only.
-        ax_led.add_patch(plt.Rectangle(
-            (0.004, 0.545), 0.46, 0.452, transform=ax_led.transAxes,
-            facecolor=BG, edgecolor="none", zorder=3.5))
+        # The readouts live ABOVE the axes, not inside it. Inside, they sat on
+        # top of the gridlines and needed a surface plate to stay legible - and
+        # the plate then masked the left end of the y=20 and y=30 rules, so the
+        # grid read as broken. Nothing is drawn over the plot area now, and the
+        # gridlines run their full width.
+        x0 = L["led"][0]
         for i, (key, col, label) in enumerate(series):
             (ln,) = ax_led.plot([], [], color=col, lw=2.0, solid_capstyle="round")
             lines[key] = ln
-            readouts[key] = ax_led.text(
-                0.042, 0.95 - i * 0.135, "", transform=ax_led.transAxes,
-                family=MONO, fontsize=L["led_label_fs"], color=col, va="top",
-                ha="right", zorder=4)
-            ax_led.text(0.058, 0.95 - i * 0.135, label, transform=ax_led.transAxes,
-                        family=SERIF, fontsize=L["led_label_fs"], color=INK2,
-                        va="top", zorder=4)
-        ax_led.set_title(
-            "The mutation ledger — divisive (splits) against agglomerative (merges)",
-            family=SERIF, fontsize=L["led_title_fs"], color=INK, loc="left", pad=8)
+            readouts[key] = fig.text(x0 + 0.026, L["led_row_y"][i], "", family=MONO,
+                                     fontsize=L["led_label_fs"], color=col,
+                                     va="bottom", ha="right")
+            fig.text(x0 + 0.034, L["led_row_y"][i], label, family=SERIF,
+                     fontsize=L["led_label_fs"], color=INK2, va="bottom")
+        fig.text(x0, L["led_title_y"],
+                 "The mutation ledger — divisive (splits) against agglomerative (merges)",
+                 family=SERIF, fontsize=L["led_title_fs"], color=INK, va="bottom")
         if L["led_ylabel_fs"]:
             ax_led.set_ylabel("cumulative events", family=SERIF,
                               fontsize=L["led_ylabel_fs"], color=INK2)
