@@ -199,6 +199,32 @@ def main():
               f"{c['diff']:>16.4f}{c['z']:>8.2f}")
         report["bins"].append(row)
 
+    # --- the threshold sweep -------------------------------------------------
+    # The primary result. Restrict AUTHORS to n_books_used >= t and draw the
+    # null from that same subset - build_influence_graph.restrict_to_subset's
+    # exact shape, so t=1 and t=4 must reproduce the published z-scores. If they
+    # ever stop reproducing, this file is wrong, not the paper.
+    print(f"\n{'t':>3}{'authors':>9}{'pairs':>7}   {'STYL diff':>10}{'z':>8}"
+          f"   {'CONC diff':>10}{'z':>8}")
+    print("-" * 62)
+    sweep = []
+    for t in range(1, int(nbooks.max()) + 1):
+        keep = nbooks >= t
+        ok = keep[pair_i] & keep[pair_j]
+        if ok.sum() < 5:
+            continue
+        pool = keep[ci] & keep[cj]
+        row = {"threshold": t, "n_authors": int(keep.sum()),
+               "n_pairs": int(ok.sum())}
+        for key, sim in (("stylistic", styl), ("conceptual", conc)):
+            row[key] = permutation_z(sim[pair_i[ok], pair_j[ok]],
+                                     ci[pool], cj[pool], sim, rng)
+        s, c = row["stylistic"], row["conceptual"]
+        print(f"{t:>3}{row['n_authors']:>9}{row['n_pairs']:>7}   "
+              f"{s['diff']:>10.4f}{s['z']:>8.2f}   {c['diff']:>10.4f}{c['z']:>8.2f}")
+        sweep.append(row)
+    report["threshold_sweep"] = sweep
+
     # Continuous check, free of any binning choice: does a pair's stylistic
     # excess over its own book-count baseline grow with representation?
     base = {}
