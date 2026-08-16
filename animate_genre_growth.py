@@ -26,6 +26,13 @@
     below the frame, so baking them in made the page introduce itself three times
     and pushed the graph below the fold on a phone. What is left in frame is only
     what text cannot do: a thing happening over time.
+
+    The one exception is the opening. The corpus starts with a single novel in
+    1678 and the next does not arrive until 1719 - ~3.8 seconds of one unlabelled
+    dot - so that novel is named beside itself, and only until the second lands.
+    That label is not chrome: it identifies a specific mark on the graph, which
+    the surrounding prose cannot do, and it is temporal like everything else in
+    frame. No other arrival is labelled; 166 of them would be a word cloud.
       genre_growth_poster.png           - last-frame poster for both players
         _portrait.png
       figure_genre_growth_panels.pdf    - the same growth as six stills, for
@@ -195,7 +202,19 @@ class Scene:
         self.year = np.array([b["year"] for b in books], dtype=float)
         self.gidx = np.array([b["genre"] for b in books])
         self.titles = [b["title"] for b in books]
+        self.authors = [b["author"] for b in books]
         self.colors = np.array([_rgba(self.genres[g]["color"]) for g in self.gidx])
+
+        # The opening is one dot, alone, for 41 years of corpus time - 1678 to
+        # 1719 at SUB frames a year is ~3.8 seconds of screen time on a single
+        # unlabelled mark. Long enough that the viewer asks what it is, and the
+        # only frame in the film where naming a novel is not clutter: there is
+        # nothing else on screen to compete with, and by 1719 it is gone. Every
+        # other arrival is anonymous by design - 166 labels would be a word
+        # cloud, not a network.
+        self.first = int(np.argmin(self.year))
+        later = self.year[self.year > self.year[self.first]]
+        self.solo_until = float(later.min()) if len(later) else float(YEAR1)
 
         e = np.array(data["edges"])
         self.segs = np.stack([self.xy[e[:, 0]], self.xy[e[:, 1]]], axis=1)
@@ -316,6 +335,7 @@ LANDSCAPE = dict(
     leg_name_fs=11.5, leg_count_fs=10.5, leg_head_fs=9.5, note_fs=9.5,
     led_title_fs=13.5, led_label_fs=11, led_tick_fs=9, led_ylabel_fs=10.5,
     edge_lw=1.0, node_lw=1.1, node_base=26, flash_size=190, ring_size=620,
+    first_fs=14, first_sub_fs=11.5, first_gap=19,
     crf="18",
 )
 
@@ -338,6 +358,7 @@ PORTRAIT = dict(
     leg_name_fs=17, leg_count_fs=17, leg_head_fs=14, note_fs=14,
     led_title_fs=18, led_label_fs=16, led_tick_fs=14, led_ylabel_fs=None,
     edge_lw=1.4, node_lw=1.5, node_base=44, flash_size=330, ring_size=1000,
+    first_fs=20, first_sub_fs=16.5, first_gap=24,
     crf="20",
 )
 
@@ -404,6 +425,49 @@ def draw_titles(fig, scene, L):
              f"publication years (z = {n['z']}) — so the ledger shows the shape of genre "
              "formation, never a rate.",
              family=SERIF, fontsize=10.5, color=INK2, va="center", linespacing=1.6)
+
+
+def draw_first_label(ax, scene, L):
+    '''Name the one novel that is alone on screen, and only while it is.
+
+    Offsets are in POINTS, not data units, so the same numbers clear the node's
+    flash ring at both cuts' dpi. Which side the label hangs on is computed from
+    where the node actually falls, not hardcoded: Pilgrim's Progress sits at 86%
+    across the layout, and a left-anchored label would run off the frame - but
+    the layout comes from a rebuilt artifact and may not always put it there.
+    '''
+    i = scene.first
+    x, y = scene.xy[i]
+    right_half = x > scene.xy[:, 0].mean()
+    dx = -L["first_gap"] if right_half else L["first_gap"]
+    ha = "right" if right_half else "left"
+    common = dict(xycoords="data", textcoords="offset points", ha=ha,
+                  family=SERIF, annotation_clip=False, zorder=6)
+    title = ax.annotate(scene.titles[i], (x, y), xytext=(dx, 3), va="bottom",
+                        fontsize=L["first_fs"], color=INK, style="italic",
+                        alpha=0.0, **common)
+    author = ax.annotate(scene.authors[i], (x, y), xytext=(dx, -4), va="top",
+                         fontsize=L["first_sub_fs"], color=INK2,
+                         alpha=0.0, **common)
+    return title, author
+
+
+def first_label_alpha(ynow, fi, scene):
+    '''In as the arrival flash decays, out as the second novel lands.
+
+    It fades in rather than existing at frame zero because the film opens on a
+    hold and the node itself arrives flashing - text already sitting there reads
+    as chrome, text that resolves alongside the mark reads as its name. It is
+    gone before 1719 so it never competes with a second dot, and because the
+    page loops the whole gesture replays every cycle.
+    '''
+    if ynow >= scene.solo_until:
+        return 0.0
+    fade_in = np.clip((fi - HOLD_START * 0.4) / (FPS * 0.5), 0.0, 1.0)
+    # Corpus-time distance to the second novel, in frames, so the fade-out is
+    # keyed to the event rather than to a frame number that moves if SUB does.
+    out = np.clip((scene.solo_until - ynow) * SUB / (FPS * 0.5), 0.0, 1.0)
+    return float(fade_in * out)
 
 
 def draw_legend(ax, scene, L):
@@ -493,6 +557,8 @@ def render_video(scene, L, theme="light"):
                            facecolors="none", edgecolors=scene.colors,
                            linewidths=L["node_lw"] * 1.3, zorder=2)
 
+    first_title, first_author = draw_first_label(ax_net, scene, L)
+
     # Figure coords, not axes coords: with equal aspect the axes box is not the
     # box matplotlib reports, so transAxes placement drifts to the middle.
     yx, yy = L["year_xy"]
@@ -541,6 +607,10 @@ def render_video(scene, L, theme="light"):
                                  + L["ring_size"] * flash, 0.0))
         rings.set_edgecolors(ring_face)
         lc.set_color(scene.edge_state(ynow))
+
+        a = first_label_alpha(ynow, fi, scene)
+        first_title.set_alpha(a)
+        first_author.set_alpha(a)
 
         year_txt.set_text(str(int(ynow)))
         active = scene.genre_active(ynow)
