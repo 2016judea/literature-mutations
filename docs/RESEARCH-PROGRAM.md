@@ -1,0 +1,343 @@
+# Research program: getting the right data
+
+Scoped 2026-08-15, from the session that asked "how do we get more data — the
+*right* data?" Each section below is a **self-contained session brief**: a fresh
+Claude session with no context should be able to read one and one-shot it.
+
+Read [`../README.md`](../README.md) first for what the project claims. This
+document is only about what to do next and why.
+
+---
+
+## State of play — read this before scoping any work
+
+Three facts about the checkout that are not in the README and change what is
+possible:
+
+**1. The Phase 1 corpus does not exist on disk.** `_data/books.json` and
+`_data/canon.json` are absent, and `git ls-files _data` shows they were *never
+committed* (only the Phase 2 bibliography/influence files were). **The published
+Phase 1 results are currently unreproducible.**
+
+**2. But the corpus identity survives.** `results.json` → `communities[].titles`
+holds **all 345 titles**, unique and complete. `genre_network.html` → the
+embedded `DATA` object holds the 166 author-controlled books with
+title/author/year/community. So the corpus can be *reconstructed* from
+checked-in artifacts without re-running the LLM enumeration — which matters,
+because re-running `build_canon.py` produces a **different** corpus (two LLMs,
+non-deterministic) and would silently break comparability with every published
+number.
+
+**3. The surviving positive finding rests on 13 books.** `controls_results.json`
+→ detective fiction: n = 13, 1878–1926, year_std 14.9, z = −3.04.
+
+### The eight controlled communities, for reference
+
+| n | years | std | z | held-out label | had a genre bucket? |
+|---:|---|---:|---:|---|---|
+| 13 | 1878–1926 | 14.9 | **−3.04** | Detective and mystery stories | **yes** |
+| 35 | 1726–1925 | 44.6 | −1.24 | Best Books Ever Listings | no |
+| 5 | 1820–1907 | 33.0 | −0.60 | Fantasy fiction | no |
+| 13 | 1748–1921 | 47.4 | −0.30 | Historical Fiction | **yes** |
+| 31 | 1678–1928 | 54.3 | +0.20 | Domestic fiction | no |
+| 29 | 1764–1925 | 54.3 | +0.21 | Science fiction | **yes** |
+| 10 | 1719–1919 | 55.8 | +0.43 | Adventure stories | **yes** |
+| 30 | 1719–1923 | 63.3 | +1.45 | Bildungsromans | no |
+
+---
+
+## The three problems, ranked
+
+### P1 — The genre system is in the sampling frame
+
+[`build_canon.py`](../build_canon.py) recruits from 14 buckets, four of which
+name a genre ("foundational detective and mystery novels in English before
+1929", and the same for Gothic, science fiction, adventure/historical romance).
+A project whose claim is that genre structure is recoverable *from prose alone*
+partly selected its corpus **by genre**.
+
+**Calibration, from this repo's own data:** three of those four buckets produced
+perennial communities (sf +0.21, adventure +0.43, historical −0.30). A genre
+bucket does **not** mechanically manufacture temporal concentration. So P1 is a
+real hole in the argument's hygiene, not a likely explanation of the detective
+result. Audit it because n = 13, not because it is probably wrong.
+
+**Blocker:** [`build_canon.py:147-149`](../build_canon.py#L147-L149) writes
+`n_lists` as a *count* and discards which lists a title came from. The
+provenance needed to run the audit is thrown away at write time.
+
+### P2 — Canon is survivorship-filtered, and genres form in the books that didn't survive
+
+166 author-controlled books over 250 years is **0.66 books/year**. A year-by-year
+process cannot be observed at less than one observation per year. Worse, canon is
+filtered *by the outcome*: a genre becomes a genre when it gets formulaic enough
+for hacks to mass-produce, and those books are exactly the ones canon discards.
+Detective fiction may be the only datable emergence because it is the only
+formation violent enough to leak through canonization.
+
+### P3 — The instrument is noisy regardless of corpus size
+
+[`temporal_network.py:134`](../temporal_network.py#L134) re-runs Louvain from
+scratch on every cumulative snapshot and matches communities by Jaccard ≥ 0.3.
+Louvain re-partitions the **whole** graph, so one added book can renumber
+communities and manufacture a "split" that is an artifact of the algorithm. The
+README already concedes this ("the rate question isn't dead, the *instrument*
+is"). No amount of data repairs a statistic this unstable.
+
+---
+
+## Dependency order
+
+```
+S2 (Ngrams) ─────────────────────── independent, start any time
+S6 (reception) ──────────────────── independent, longest lead
+
+S0 (reconstruct) ──┬── S1 (provenance audit)
+                   └── S3 (instrument) ── S4 (NovelTM) ── S5 (HathiTrust EF)
+```
+
+S0 blocks everything downstream of it: four of these sessions need a corpus that
+is not currently on disk.
+
+---
+
+## S0 — Reconstruct the corpus and re-verify the published numbers
+
+**Blocks:** S1, S3, S4, S5. Do this first.
+**Effort:** half a day, most of it waiting on Gutenberg fetches.
+
+**Goal.** Put `_data/books.json` back on disk, containing the *same* 345 books
+that produced the published results, and prove it by reproducing them.
+
+**Method.**
+1. Read the 345 titles from `results.json` → `communities[].titles`.
+2. Read author + year for 166 of them from the `DATA` object embedded in
+   `genre_network.html` (see `extract_data()` in
+   [`animate_genre_growth.py`](../animate_genre_growth.py) — it already parses
+   this exact object; reuse it, do not write a second parser).
+3. Re-resolve author + year for the remaining ~179 via Gutendex/Open Library —
+   the same path [`gutenberg_ingest.py`](../gutenberg_ingest.py) already uses.
+4. Write a reconstructed `_data/canon.json`, then run
+   [`build_corpus.py`](../build_corpus.py) to re-fetch real Gutenberg text.
+5. Run `analyze.py` and diff against the checked-in `results.json`.
+
+**Rules.**
+- **Do not run `build_canon.py`.** Two non-deterministic LLMs will return a
+  different canon and silently invalidate comparison with every published
+  number. The title list is the ground truth now.
+- Expect drift: Gutenberg IDs and editions change, and `build_corpus.py` pulls
+  ~20k words from whatever edition it matches. Some titles will not re-resolve.
+  **Log every miss and every substitution** rather than quietly proceeding.
+- Commit the corpus this time, or if it is too large, commit a manifest of
+  (title, author, year, gutenberg_id, sha256 of the extracted text) so the next
+  session can verify rather than trust.
+
+**Done when.** `analyze.py` reproduces n_books = 345, null model z = −0.27, and
+detective z = −3.04, or the deviation is documented with its cause. Corpus or
+manifest committed.
+
+---
+
+## S1 — Provenance audit of the sampling frame
+
+**Depends on:** S0. **Effort:** an afternoon.
+**Addresses:** P1.
+
+**Goal.** Answer one question: does detective fiction's z = −3.04 survive
+removing the books that entered the corpus *only* through a genre-named bucket?
+
+**Method.**
+1. Fix [`build_canon.py:147-149`](../build_canon.py#L147-L149) to persist
+   `"lists": sorted(rec["lists"])` alongside the count. One line. This is the
+   permanent fix and it must land regardless of what the audit finds.
+2. For the *existing* corpus, recover provenance without perturbing it: re-run
+   **only the four genre-bucket prompts** and intersect the returned titles
+   against the known 345. Tag each book `genre_bucket_reachable: true/false`.
+3. Re-run the concentration test excluding titles reachable *only* via a genre
+   bucket, and report all eight communities before/after.
+
+**Rules.**
+- Step 2 must not overwrite `_data/canon.json` or `books.json`. It is a
+  read-only tagging pass over a fixed corpus.
+- Report the three counter-examples honestly: sf, adventure and historical
+  fiction all had buckets and all came out perennial. If detective survives, say
+  so plainly — this audit is as likely to harden the finding as to kill it.
+- With n = 13, removing even 4 books moves z materially. Report the z **as a
+  function of how many were removed**, not a single after-number.
+
+**Done when.** A before/after table over the eight communities, plus a one-line
+verdict on whether the project's only surviving positive result is sampling-
+independent.
+
+---
+
+## S2 — The reception clock (Google Ngrams)
+
+**Depends on:** nothing. Can start immediately, in parallel with S0.
+**Effort:** an afternoon. **Addresses:** validates the instrument externally.
+
+**Goal.** Date each genre by when its *name* entered the language, using a source
+with zero dependence on the text pipeline — then check whether the two clocks
+agree.
+
+**Verified working** (2026-08-15, no auth, 320 years returned):
+
+```
+https://books.google.com/ngrams/json?content=detective+story,science+fiction
+  &year_start=1700&year_end=2019&corpus=en-2019&smoothing=3
+```
+
+Send a browser User-Agent. Response is a JSON array of
+`{ngram, timeseries[320]}`.
+
+**Method.** Pull curves for the genre vocabulary — "detective story", "science
+fiction", "sensation novel", "ghost story", "historical romance", "adventure
+story", "domestic novel", "Bildungsroman" and their plausible period variants
+("scientific romance" matters more than "science fiction" before ~1930). For
+each, extract a take-off year (first sustained rise above baseline). Tabulate
+against the textual `year_min` from the table above.
+
+**Rules.**
+- Google Books' corpus composition drifts over time. Use the normalized
+  frequencies Ngrams returns, and **do not read anything pre-1800** as signal.
+- Period terms, not modern ones. "Science fiction" is anachronistic for Verne
+  and Wells; the period word is "scientific romance". Getting this wrong
+  produces a fake late emergence.
+- This is a *validator*, not a finding. If the clocks agree on detective fiction,
+  that licenses the instrument. If the seven perennial modes also have flat
+  name-curves, the null becomes a result rather than an absence — which is the
+  most valuable outcome available here.
+
+**Done when.** One figure plus a table of textual-emergence vs name-adoption per
+genre, and a stated verdict on whether the two clocks agree on detective fiction.
+
+---
+
+## S3 — Replace the instrument
+
+**Depends on:** S0. **Effort:** 2–3 days. **Addresses:** P3.
+
+**Goal.** Stop counting Louvain births/splits/merges. Measure per-genre
+**coherence over time** instead, so the statistic is stable enough to survive a
+100× larger corpus.
+
+**Read first.** Underwood, *The Life Cycles of Genres*, Journal of Cultural
+Analytics 2016 — <https://culturalanalytics.org/article/1209>, data and scripts
+at <https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XKQOQM>.
+This is the same question, already done, with a supervised per-genre approach
+rather than clustering-event counting. *(The journal sits behind an Anubis
+challenge; fetch the Dataverse copy or the Semantic Scholar PDF.)*
+
+**Method.** For each genre, train a period-windowed classifier and track its
+accuracy/coherence across windows; a genre that "consolidates" becomes more
+predictable from its own vocabulary over time. Validate on the existing 345-book
+corpus, where detective fiction is the known-positive control.
+
+**Also do, as a cheap control on the old instrument:** run the existing Louvain
+timeline across N seeds and report event counts as a **distribution**, not a
+point estimate. If the ±spread across seeds swamps the 90-vs-94 null-model gap,
+that alone explains the null and is worth stating in the README.
+
+**Done when.** The new statistic recovers detective fiction's consolidation on
+the same corpus and returns a defensible number for the other seven; the
+seed-sweep spread on the old statistic is quantified.
+
+---
+
+## S4 — Re-sample from NovelTM instead of from canon
+
+**Depends on:** S3 (runnable before it, but the results are only trustworthy with
+the new instrument). **Effort:** ~1 week. **Addresses:** P1, P2.
+
+**Goal.** Replace a canon-selected sample with a sampling *frame*, and measure
+how much of the answer was canon.
+
+**Data.** [`tedunderwood/noveltmmeta`](https://github.com/tedunderwood/noveltmmeta)
+— 210,305 HathiTrust volumes identified as English-language fiction, 1700–2009,
+MIT-licensed TSVs in `/metadata`. Ships seven subsets, including
+`frequently_reprinted_subset` (canon-like) and `gender_balanced_subset`.
+
+**Method.** Draw a year-stratified random sample from the full frame, resolve to
+text with [`gutenberg_ingest.py`](../gutenberg_ingest.py) (already built, already
+scales, already has **no** canon filter — it was superseded by the canon-first
+approach, which for the *temporal* question was backwards). Run the S3
+instrument. Then run the identical pipeline on `frequently_reprinted_subset`.
+
+**The experiment is the delta between those two runs.** That is the direct
+measurement of P2 and it is the single most valuable number this program can
+produce.
+
+**Rules.**
+- Target the pre-1929 Gutenberg-resolvable overlap first (a few thousand
+  volumes); do not wait for HathiTrust text to start.
+- Keep one-book-per-author. The 19.5% author confound does not go away at scale.
+- Note the upstream caveat: NovelTM is an explicitly frozen 2019 snapshot its
+  authors do not intend to correct or maintain.
+
+**Done when.** The same statistic reported at two canonicity levels, with the
+delta stated and interpreted.
+
+---
+
+## S5 — Break the 1929 ceiling with HathiTrust Extracted Features
+
+**Depends on:** S4. **Effort:** ~1 week. **Addresses:** P2, and the README's
+"pre-1929 ceiling" limitation.
+
+**Data.** [Extracted Features
+v2.0](https://htrc.atlassian.net/wiki/spaces/COM/pages/43295914/Extracted+Features+v.2.0)
+— 17.1M volumes, page-level POS-tagged token counts, **public domain and
+in-copyright**, non-consumptive, rsync-able, MARC-derived metadata.
+
+**Why it fits this pipeline specifically.** [`semantic_edges.py`](../semantic_edges.py)
+builds TF-IDF over prose. EF ships per-page *token counts* — already the bag of
+words TF-IDF wants. No full text required, which is the entire reason the
+dataset can include in-copyright works. The adaptation is a loader change, not a
+method change.
+
+**Done when.** The instrument runs on in-copyright volumes and the genre timeline
+extends past 1929 — cyberpunk, modern fantasy, postmodernism become reachable
+for the first time.
+
+---
+
+## S6 — The period reception dataset
+
+**Depends on:** nothing, longest lead. **Effort:** weeks. **This is the
+contribution slot.**
+
+**Why it is worth the most.** The README lists this as honest next step #3. It is
+also, by his own account, the thing the leading prior art did *not* do:
+Underwood defines genre membership with **modern retrospective labels** and names
+that as a limitation. Genre also lives in how period readers, critics, publishers
+and librarians classified books *at the time* — and nobody has built that series.
+
+**Sources, ascending cost.**
+- **Publishers' series labels and back-matter advertisements.** Genre formation
+  as a dated marketing act: the moment a publisher creates "The Detective
+  Series" and starts recruiting into it. These ad pages are **bound into the
+  Gutenberg and Internet Archive scans already being downloaded and discarded.**
+  Cheapest real reception signal available, and nobody is mining it.
+- **Circulating-library catalogues** (Mudie's, W.H. Smith) — classification at
+  the point of consumption, dated.
+- **Periodical reviews** (*Athenaeum*, *Spectator*, *Publishers' Weekly*) —
+  where a critic first writes "one of those detective stories". First attestation
+  plus diffusion rate is a direct measurement of genre formation.
+
+**Rule.** Period evidence only. Modern retrospective reviews back-project today's
+categories and would reintroduce exactly the circularity of P1.
+
+**Done when.** A dated reception series per genre that can be regressed against
+the textual series from S3/S4.
+
+---
+
+## Housekeeping found while scoping
+
+- **README number mismatch.** The README says detective fiction is "concentrated
+  in ~1840s–1920s"; `controls_results.json` says **1878–1926**. If the 1840s
+  refers to Poe as literary-historical context rather than to the corpus, say so
+  explicitly — as written it reads as a corpus figure and is wrong by ~35 years.
+- **`_data/` is committed for Phase 2 but not Phase 1.** Whatever S0 concludes,
+  make the two phases consistent so the next person cannot lose a corpus the
+  same way.
