@@ -20,12 +20,21 @@
       genre_growth_portrait.mp4         - 1080x1440, for phones. NOT the same
                                           film letterboxed but re-laid-out, with
                                           type sized for a phone.
+      genre_growth_story.mp4            - 1080x1920, Instagram stories. Opt-in
+                                          (--story); not built by default.
 
-    Neither cut carries a title, a subtitle or a provenance footer. The page that
-    hosts them states all three in real selectable text immediately above and
+    Neither WEB cut carries a title, a subtitle or a provenance footer. The page
+    that hosts them states all three in real selectable text immediately above and
     below the frame, so baking them in made the page introduce itself three times
     and pushed the graph below the fold on a phone. What is left in frame is only
     what text cannot do: a thing happening over time.
+
+    The story cut inverts that, for the same reason rather than against it: it
+    plays full-bleed with no page around it, between someone else's photo and an
+    ad, so the paper's subtitle has to travel in the pixels or the viewer gets a
+    handsome graph of nothing in particular. It is also inset from all four edges,
+    because Instagram's own chrome covers roughly the outer 250px of a 1920-tall
+    frame. See the STORY dict for the layout arithmetic.
 
     The one exception is the opening. The corpus starts with a single novel in
     1678 and the next does not arrive until 1719 - ~3.8 seconds of one unlabelled
@@ -362,6 +371,36 @@ PORTRAIT = dict(
     crf="20",
 )
 
+# The Instagram-story cut, and the one place the film DOES introduce itself.
+# Everywhere else the chrome is off because the hosting page states the paper's
+# title and subtitle in real text right above the frame (see draw_titles). A
+# story has no page around it - it plays full-bleed between someone else's
+# photo and an ad - so the subtitle has to travel with the pixels or the viewer
+# gets a beautiful graph of nothing in particular.
+#
+# The layout is inset rather than full-bleed because Instagram's own UI owns the
+# outer edges of the frame: the progress bar and profile row cover roughly the
+# top 250px of a 1920-tall story, and the reply bar the bottom 250. Header,
+# graph and legend all sit inside 250..1670, which costs the network ~9% of the
+# height it gets in the portrait cut. That is the whole trade: a smaller graph
+# that is never cropped and never captioned by Instagram's blurred auto-fill.
+STORY = dict(
+    key="story", out="genre_growth_story.mp4",
+    figsize=(9, 16), dpi=120,                       # 1080 x 1920
+    chrome=True,
+    net=[0.030, 0.250, 0.940, 0.442], net_top_pad=0.06,
+    leg=[0.055, 0.138, 0.890, 0.100], leg_cols=2,
+    led=None, led_title_y=None, led_row_y=None,
+    title_y=None, title_fs=None, sub_y=0.866, sub_fs=24, text_x=0.045,
+    year_xy=(0.955, 0.775), year_fs=54, count_y=0.716, count_fs=18,
+    footer=False, leg_note=False,
+    leg_name_fs=17, leg_count_fs=17, leg_head_fs=14, note_fs=14,
+    led_title_fs=18, led_label_fs=16, led_tick_fs=14, led_ylabel_fs=None,
+    edge_lw=1.4, node_lw=1.5, node_base=44, flash_size=330, ring_size=1000,
+    first_fs=20, first_sub_fs=16.5, first_gap=24,
+    crf="20",
+)
+
 
 def build_figure(scene, L):
     '''Explicit axes rather than a gridspec.
@@ -399,6 +438,22 @@ def draw_titles(fig, scene, L):
         return
     m = scene.meta
     x = L["text_x"]
+
+    # The story cut carries the paper's own subtitle, verbatim from the <p
+    # class="paper-sub"> on the research page, and nothing else. It is the only
+    # cut that plays with no surrounding text, so this line is doing the whole
+    # job of orienting a stranger who is one thumb-flick from leaving: it names
+    # the question before the graph starts moving. Hand-wrapped to three roughly
+    # even lines - textwrap on a proportional serif gave a 12-character orphan.
+    if L["key"] == "story":
+        fig.text(x, L["sub_y"],
+                 "Measuring the rate at which fiction's\n"
+                 "genres form and mutate, by modeling\n"
+                 "literature as a growing network",
+                 family=SERIF, fontsize=L["sub_fs"], color=INK,
+                 va="top", linespacing=1.42)
+        return
+
     title = ("How the genre system of English fiction assembled itself"
              if L["key"] == "landscape" else
              "How the genre system of\nEnglish fiction assembled itself")
@@ -539,7 +594,9 @@ def render_video(scene, L, theme="light"):
     plt.rcParams["animation.ffmpeg_path"] = imageio_ffmpeg.get_ffmpeg_exe()
     apply_theme(theme)
     out = L["out"] if theme == "light" else L["out"].replace(".mp4", "_dark.mp4")
-    portrait = L["key"] == "portrait"
+    # Both 1080-wide cuts need the short readout; only the 2560-wide one has
+    # room to spell "communities cohered" out.
+    compact = L["key"] in ("portrait", "story")
 
     fig, ax_net, ax_leg, ax_led = build_figure(scene, L)
     draw_titles(fig, scene, L)
@@ -619,7 +676,7 @@ def render_video(scene, L, theme="light"):
         # is the first thing every viewer reads.
         n = int(live.sum())
         novels = f"{n} novel" + ("" if n == 1 else "s")
-        n_txt.set_text(f"{novels}  ·  {cohered} cohered" if portrait
+        n_txt.set_text(f"{novels}  ·  {cohered} cohered" if compact
                        else f"{novels}  ·  {cohered} communities cohered")
         for i, (c, on) in enumerate(zip(scene.counts(ynow), active)):
             count_handles[i].set_text(str(int(c)))
@@ -774,8 +831,11 @@ def main():
     print(f"panel years       {years}")
     if "--panels" in sys.argv:
         return
+    # STORY is not in the default set: it is a social cut with the paper's
+    # subtitle burned in, not a web asset the page embeds. Ask for it by name.
     cuts = [PORTRAIT] if "--portrait" in sys.argv else \
-           [LANDSCAPE] if "--landscape" in sys.argv else [LANDSCAPE, PORTRAIT]
+           [LANDSCAPE] if "--landscape" in sys.argv else \
+           [STORY] if "--story" in sys.argv else [LANDSCAPE, PORTRAIT]
     themes = ["light"] if "--light" in sys.argv else \
              ["dark"] if "--dark" in sys.argv else ["light", "dark"]
     for L in cuts:
