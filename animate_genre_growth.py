@@ -17,15 +17,15 @@
 
     Outputs:
       genre_growth.mp4                  - 2560x1440, for the desktop web edition
-      genre_growth_portrait.mp4         - 1080x1620, for phones. NOT the same
-                                          film letterboxed: at 390px wide the
-                                          16:9 cut's captions land around 2px
-                                          tall, so the portrait version is
-                                          re-laid-out with type sized for a
-                                          phone and the baked-in provenance
-                                          note dropped (it moves to the page's
-                                          <figcaption>, where it is real
-                                          selectable text at a readable size).
+      genre_growth_portrait.mp4         - 1080x1440, for phones. NOT the same
+                                          film letterboxed but re-laid-out, with
+                                          type sized for a phone.
+
+    Neither cut carries a title, a subtitle or a provenance footer. The page that
+    hosts them states all three in real selectable text immediately above and
+    below the frame, so baking them in made the page introduce itself three times
+    and pushed the graph below the fold on a phone. What is left in frame is only
+    what text cannot do: a thing happening over time.
       genre_growth_poster.png           - last-frame poster for both players
         _portrait.png
       figure_genre_growth_panels.pdf    - the same growth as six stills, for
@@ -140,7 +140,10 @@ C_BIRTH = "#94690a"
 YEAR0, YEAR1 = 1678, 1928
 SUB = 2            # animation frames per publication year
 FPS = 24
-HOLD_START = 36    # ~1.5s on the empty frame so the title can be read
+HOLD_START = 10    # ~0.4s. Was 36 (~1.5s) to give the frame's title time to be
+                   # read - there is no longer a title, and with the poster
+                   # showing the finished graph, a long empty hold made autoplay
+                   # snap from full to blank and read as a failed load.
 HOLD_END = 96      # ~4s on the finished graph so the answer can be read
 FLASH_TAU = 6.0    # frames; how fast a newly published novel stops flashing
 EDGE_FADE = 8.0    # frames; how fast a new edge reaches full (low) alpha
@@ -302,13 +305,14 @@ def style_ledger_axes(ax, ledger, L):
 LANDSCAPE = dict(
     key="landscape", out="genre_growth.mp4",
     figsize=(16, 9), dpi=160,                       # 2560 x 1440
-    net=[0.025, 0.115, 0.455, 0.730], net_top_pad=0.18,
-    leg=[0.525, 0.435, 0.450, 0.410], leg_cols=1,
-    led=[0.565, 0.140, 0.400, 0.190],
-    led_title_y=0.448, led_row_y=[0.420, 0.396, 0.372],
+    chrome=False,
+    net=[0.018, 0.050, 0.552, 0.900], net_top_pad=0.14,
+    leg=[0.622, 0.445, 0.360, 0.400], leg_cols=1,
+    led=[0.640, 0.105, 0.340, 0.200],
+    led_title_y=0.415, led_row_y=[0.385, 0.360, 0.335],
     title_y=0.945, title_fs=26, sub_y=0.900, sub_fs=12.5, text_x=0.025,
-    year_xy=(0.472, 0.840), year_fs=44, count_y=0.786, count_fs=12.5,
-    footer=True, leg_note=True,
+    year_xy=(0.982, 0.968), year_fs=52, count_y=0.902, count_fs=13,
+    footer=False, leg_note=True,
     leg_name_fs=11.5, leg_count_fs=10.5, leg_head_fs=9.5, note_fs=9.5,
     led_title_fs=13.5, led_label_fs=11, led_tick_fs=9, led_ylabel_fs=10.5,
     edge_lw=1.0, node_lw=1.1, node_base=26, flash_size=190, ring_size=620,
@@ -324,11 +328,12 @@ LANDSCAPE = dict(
 PORTRAIT = dict(
     key="portrait", out="genre_growth_portrait.mp4",
     figsize=(9, 12), dpi=120,                       # 1080 x 1440
-    net=[0.040, 0.157, 0.920, 0.633], net_top_pad=0.14,
-    leg=[0.055, 0.022, 0.890, 0.118], leg_cols=2,
+    chrome=False,
+    net=[0.030, 0.190, 0.940, 0.647], net_top_pad=0.12,
+    leg=[0.055, 0.022, 0.890, 0.135], leg_cols=2,
     led=None, led_title_y=None, led_row_y=None,
     title_y=0.980, title_fs=30, sub_y=0.880, sub_fs=16, text_x=0.040,
-    year_xy=(0.960, 0.884), year_fs=54, count_y=0.812, count_fs=17,
+    year_xy=(0.955, 0.962), year_fs=62, count_y=0.892, count_fs=19,
     footer=False, leg_note=False,
     leg_name_fs=17, leg_count_fs=17, leg_head_fs=14, note_fs=14,
     led_title_fs=18, led_label_fs=16, led_tick_fs=14, led_ylabel_fs=None,
@@ -359,6 +364,18 @@ def build_figure(scene, L):
 
 
 def draw_titles(fig, scene, L):
+    """The film's own title, subtitle and provenance footer.
+
+    Off by default. The page that hosts this film already states its title, its
+    corpus and its null model in real selectable text, immediately above and
+    below the frame - so baking them into pixels made the page introduce itself
+    three times over, and on a phone pushed the graph itself below the fold.
+    They are not deleted, they are relocated to the surface that does them
+    better. What is left in the frame is only what text cannot do: a thing
+    happening over time.
+    """
+    if not L["chrome"]:
+        return
     m = scene.meta
     x = L["text_x"]
     title = ("How the genre system of English fiction assembled itself"
@@ -504,8 +521,7 @@ def render_video(scene, L, theme="light"):
                                      va="bottom", ha="right")
             fig.text(x0 + 0.034, L["led_row_y"][i], label, family=SERIF,
                      fontsize=L["led_label_fs"], color=INK2, va="bottom")
-        fig.text(x0, L["led_title_y"],
-                 "The mutation ledger — divisive (splits) against agglomerative (merges)",
+        fig.text(x0, L["led_title_y"], "The mutation ledger",
                  family=SERIF, fontsize=L["led_title_fs"], color=INK, va="bottom")
         if L["led_ylabel_fs"]:
             ax_led.set_ylabel("cumulative events", family=SERIF,
