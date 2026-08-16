@@ -9,6 +9,44 @@ document is only about what to do next and why.
 
 ---
 
+## Standing decisions
+
+Settled with Aidan 2026-08-16. **Do not re-ask these.** If a session's work makes
+one of them look wrong, say so and stop — don't quietly reinterpret it.
+
+**Destination: a paper *and* the site.** Full program as scoped, ~1 month of
+sessions, with the site as a byproduct rather than the target. The bar is peer
+review, not internal honesty — S3 and S4 have to be defensible to a reviewer who
+knows the prior art.
+
+**What that means for the shape of the program.** S0–S5 substantially rebuild
+machinery Underwood already published (see S3). **S6 is the contribution** — the
+period-reception series is the thing nobody has built, and the paper's claim is
+the regression of that series against the textual one. Sessions S0–S5 are
+infrastructure serving S6. Scope them accordingly: solid, not gold-plated.
+
+**Drift rule: report and stop.** If a session's numbers disagree with the
+published ones, it reports the delta and **halts**. No session adopts a new
+ground truth, rationalizes a near-miss, or decides a deviation is acceptable.
+Aidan calls it each time, with the numbers in front of him.
+
+**The live site is frozen for the duration.** No session touches
+`writing-topology/research/`. It gets updated **once**, at the end, from the
+final substrate.
+
+> Accepted risk, logged deliberately: the page currently states figures
+> (33 splits / 25 merges / 32 births; 90 real vs 94 ± 15, z = −0.27) that
+> **cannot currently be reproduced**, because the corpus behind them is not on
+> disk. Aidan has accepted this for the duration rather than churn the page or
+> take it down. It is a known state, not an oversight — do not "fix" it.
+
+**Phase 2 is out of scope.** The author-influence work
+([`PHASE2_INFLUENCE_NETWORK.md`](PHASE2_INFLUENCE_NETWORK.md)) stays parked,
+including its unresolved stylistic-similarity question. It is already honest
+about being unresolved; leave it that way.
+
+---
+
 ## State of play — read this before scoping any work
 
 Three facts about the checkout that are not in the README and change what is
@@ -89,8 +127,11 @@ is"). No amount of data repairs a statistic this unstable.
 ## Dependency order
 
 ```
-S2 (Ngrams) ─────────────────────── independent, start any time
-S6 (reception) ──────────────────── independent, longest lead
+S6 (reception) ──────────────────── START EARLY. Weeks long, depends on
+                                    nothing, and it is the paper's actual
+                                    contribution. Finishing last is fine;
+                                    starting last puts it on the critical path.
+S2 (Ngrams) ─────────────────────── independent, an afternoon, any time
 
 S0 (reconstruct) ──┬── S1 (provenance audit)
                    └── S3 (instrument) ── S4 (NovelTM) ── S5 (HathiTrust EF)
@@ -98,6 +139,9 @@ S0 (reconstruct) ──┬── S1 (provenance audit)
 
 S0 blocks everything downstream of it: four of these sessions need a corpus that
 is not currently on disk.
+
+S6 blocks nothing and is blocked by nothing, which is exactly why it is easy to
+defer until it becomes the reason the paper is late.
 
 ---
 
@@ -303,8 +347,12 @@ for the first time.
 
 ## S6 — The period reception dataset
 
-**Depends on:** nothing, longest lead. **Effort:** weeks. **This is the
-contribution slot.**
+**Depends on:** nothing. **Effort:** weeks. **Start this early — it is the
+paper's contribution, not its appendix.**
+
+Everything else in this program rebuilds instrumentation that already exists in
+the literature. This is the part that doesn't. If only one session survives a
+change of plan, it should be this one.
 
 **Why it is worth the most.** The README lists this as honest next step #3. It is
 also, by his own account, the thing the leading prior art did *not* do:

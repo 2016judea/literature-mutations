@@ -1,11 +1,13 @@
 Continuing work on `literature-mutations`. **Read
 [`docs/RESEARCH-PROGRAM.md`](RESEARCH-PROGRAM.md) in full before touching
-anything** — "State of play" and "S0" are your brief. Don't re-litigate the
-scoping; it was done 2026-08-15 against the real artifacts.
+anything** — "Standing decisions", "State of play" and "S0" are your brief.
+Don't re-litigate the scoping; it was done 2026-08-15 against the real
+artifacts, and the four standing decisions were settled with Aidan 2026-08-16.
 
-Phase 2 (author influence) is out of scope this session. Its design and results
-live in [`docs/PHASE2_INFLUENCE_NETWORK.md`](PHASE2_INFLUENCE_NETWORK.md) and
-are not affected by anything here.
+Phase 2 (author influence) is out of scope — permanently, not just this session.
+Its design and results live in
+[`docs/PHASE2_INFLUENCE_NETWORK.md`](PHASE2_INFLUENCE_NETWORK.md) and are not
+affected by anything here.
 
 ---
 
@@ -45,11 +47,19 @@ layout position and community in the `DATA` object embedded in
   and `build_corpus.py` pulls ~20k words from whatever edition it matches. A
   title that resolves to a different edition is a silent corpus change. Never
   proceed quietly past one.
-- **Do not touch the live site.** `writing-topology/research/index.html` carries
-  three typed stat spans (33 splits / 25 merges / 32 births) plus the null model
-  in prose (90 real, 94 ± 15, z = −0.27). If your numbers differ, **report the
-  delta and stop** — whether the page gets updated is Aidan's call, not this
-  session's.
+- **Report and stop on any deviation.** This is a standing decision, not a
+  judgment call. If your numbers disagree with the published ones — in either
+  direction, by any margin — write up the delta and **halt**. Do not adopt the
+  reconstruction as the new ground truth, do not update the README, do not
+  decide a near-miss is close enough. Aidan calls it with the numbers in front
+  of him. A session that rationalizes a 5-book shortfall has destroyed the only
+  reproducibility check the project has.
+- **Do not touch the live site.** It is frozen for the duration of the program.
+  `writing-topology/research/index.html` carries three typed stat spans
+  (33 splits / 25 merges / 32 births) plus the null model in prose (90 real,
+  94 ± 15, z = −0.27). Those figures are currently unreproducible and Aidan has
+  **accepted that knowingly** for the duration — it is a logged decision, not an
+  oversight. Don't fix it, don't add a disclaimer, don't take it down.
 
 ### Verification targets
 
@@ -74,7 +84,8 @@ The eight-community table in `RESEARCH-PROGRAM.md` is the full expected shape.
   verify rather than trust. Phase 2's `_data` is committed; make Phase 1
   consistent so nobody loses a corpus this way again.
 - A short written verdict: is the published Phase 1 result reproducible, yes or
-  no?
+  no? The destination is a paper — "probably, roughly" is not an answer a
+  reviewer accepts, and it isn't one this session should give either.
 
 ---
 
