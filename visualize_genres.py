@@ -110,6 +110,29 @@ TEMPLATE = r"""<!DOCTYPE html>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Genre Network — literature-mutations Phase 1</title>
+<!-- THE PUBLISHED PAGE IS THE ONE THAT MATTERS, SO THE GENERATOR EMITS IT WHOLE.
+     These cards, the absolute repo links, the .nd-dot touch targets, the narrow
+     -viewport media queries and the postMessage height report were hand-patched
+     into the deployed copy at aidanjude.vercel.app/research/ and never existed
+     here — so any regeneration silently reverted all of them. Same trap as the
+     influence page; fixed in the same pass, 2026-08-16. Anything the live page
+     needs is emitted here or it does not survive the next run. -->
+<meta property="og:site_name" content="Aidan Jude" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aidanjude.vercel.app/research/genre-network" />
+<meta property="og:title" content="Genre Network — literature-mutations Phase 1" />
+<meta property="og:description" content="Genre network — literature-mutations, Aidan Jude." />
+<meta property="og:image" content="https://aidanjude.vercel.app/og/research.png" />
+<meta property="og:image:secure_url" content="https://aidanjude.vercel.app/og/research.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Genre Network — literature-mutations Phase 1" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Genre Network — literature-mutations Phase 1" />
+<meta name="twitter:description" content="Genre network — literature-mutations, Aidan Jude." />
+<meta name="twitter:image" content="https://aidanjude.vercel.app/og/research.png" />
 <style>
   :root{--bg:#f7f3ec;--bg2:#efe9dd;--ink:#1c1814;--ink2:#544e44;--faint:#8b8478;
         --rule:rgba(60,50,40,.16);--accent:#b8442f;--accent-soft:rgba(184,68,47,.14)}
@@ -155,9 +178,19 @@ TEMPLATE = r"""<!DOCTYPE html>
   .graph-wrap svg{display:block;width:100%;height:100%}
   .graph-node{cursor:pointer}
   .graph-node circle{transition:opacity .2s}
-  .graph-node:hover circle{stroke:var(--ink);stroke-width:1.5}
+  .graph-node:hover circle.nd-dot{stroke:var(--ink);stroke-width:1.5}
   .graph-node.dim circle{opacity:.12}
-  .graph-node.focus circle{stroke:var(--accent);stroke-width:2}
+  .graph-node.focus circle.nd-dot{stroke:var(--accent);stroke-width:2}
+  .graph-node:focus{outline:none}
+  .graph-node:focus-visible circle.nd-dot{stroke:var(--accent);stroke-width:2.5}
+  /* Below the two-column breakpoint the graph is the full column width, so a
+     fixed 620px box would letterbox it. Aspect-ratio keeps the embedding's own
+     proportions — this is a similarity layout, and stretching it would stretch
+     the distances it encodes, which are the entire claim. */
+  @media (max-width:979px){
+    .graph-wrap{height:auto;aspect-ratio:900/620}
+    .side{height:auto;max-height:64vh}
+  }
   .edge-path{fill:none;stroke:var(--ink2);pointer-events:none;opacity:.12}
   .edge-path.edge-focus{opacity:.7 !important;stroke:var(--accent);stroke-width:1.4px}
   .edge-path.edge-context-dim{opacity:.02 !important}
@@ -190,6 +223,12 @@ TEMPLATE = r"""<!DOCTYPE html>
   .temporal-bar{position:absolute;top:0;height:10px;border-radius:99px}
   .temporal-z{width:96px;flex:none;font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:var(--faint)}
   .temporal-z .star{color:var(--accent);font-weight:600}
+  @media (max-width:600px){
+    .temporal-row{flex-wrap:wrap;row-gap:5px;padding:8px 0}
+    .temporal-label{width:100%;text-align:left}
+    .temporal-track{flex:1 1 auto}
+    .temporal-z{width:auto;margin-left:8px}
+  }
 
   .caveats{margin-top:26px;padding-top:16px;border-top:1px solid var(--rule);
     font-size:13px;line-height:1.6;color:var(--ink2);max-width:78ch}
@@ -212,8 +251,8 @@ TEMPLATE = r"""<!DOCTYPE html>
       subject label (never used to build the graph, only to check it after)
       is shown alongside. <b>Click a novel, or a genre below, to trace its
       cluster.</b> Full method:
-      <a href="docs/PHASE2_INFLUENCE_NETWORK.md">design doc</a>,
-      <a href="README.md">README</a>.</p>
+      <a href="https://github.com/2016judea/literature-mutations/blob/master/docs/PHASE2_INFLUENCE_NETWORK.md" target="_blank" rel="noopener">design doc</a>,
+      <a href="https://github.com/2016judea/literature-mutations/blob/master/README.md" target="_blank" rel="noopener">README</a>.</p>
     <div class="stats" id="stats"></div>
   </header>
 
@@ -241,7 +280,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     span, and a null model (shuffled publication years) can't be
     distinguished from real chronology overall (z = -0.27).</p>
 
-  <footer>literature-mutations · <a href="README.md">repo</a> ·
+  <footer>literature-mutations · <a href="https://github.com/2016judea/literature-mutations" target="_blank" rel="noopener">repo</a> ·
     generated by <span class="mono">visualize_genres.py</span> from
     <span class="mono">literary_genres.html</span> + <span class="mono">controls_results.json</span></footer>
 </div>
@@ -264,6 +303,18 @@ const DATA = __DATA__;
 
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  /* The drawing states what its own position channels mean, because they mean
+     less than a viewer assumes: x and y are k-NN embedding coordinates with no
+     units and no direction — only PROXIMITY carries information. A reader who
+     cannot see it would otherwise have no way to know that, and neither would a
+     reader who can. */
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label',
+    `${books.length} novels positioned by prose similarity — closeness means similar `
+    + `opening prose, and the axes themselves carry no meaning. Colour marks the `
+    + `${genresMeta.length} communities the model recovered without ever being shown a `
+    + `genre label. Each community, its date range and its temporal-concentration `
+    + `score are listed in the table below the graph.`);
 
   const edgeEls = edges.map(([a,b])=>{
     const A = books[a], B = books[b];
@@ -274,16 +325,71 @@ const DATA = __DATA__;
     return {path, a, b};
   });
 
+  /* THE MARKS ARE SIZED IN SCREEN PIXELS; ONLY THE LAYOUT IS SIZED IN LAYOUT UNITS.
+     A dot written as r=4.4 is 4.4px at 1:1 and 1.7px inside a 350px phone column,
+     because the whole 900x620 viewBox scales to fit. Measured 2026-08-16: the
+     research page embeds this at 350px, the graph renders 318x218, and 166 novels
+     become a grey smear in which no cluster is separable — the one thing the
+     figure exists to show. Nothing was clipped and nothing errored; it just
+     quietly stopped being a drawing.
+
+     So marks are re-derived from the live scale on every fit: divide the target
+     SCREEN size by the scale to get the layout-unit size that renders at it. Same
+     move canvas cards make when they multiply ctx.font by the page's type scale —
+     an SVG's coordinates scale, and the reader's eye does not.
+
+     THE GROWTH IS CAPPED AT 2x. Held at a true 4.4px on a phone, 166 dots put more
+     ink in the box than the box has room for and the clusters merge into one
+     shape — the same illegibility from the other direction. 2x lands them near
+     3.4px: smaller than desktop, still separable, still honest about density.
+
+     The LAYOUT is never rescaled, only the marks. This is a similarity embedding;
+     stretching it to fit a phone would stretch the distances that are the claim. */
+  const DOT_PX = 4.4, EMERGENT_PX = 6, HIT_PX = 11, EDGE_PX = 0.5, MAX_GROWTH = 2;
+  const graphWrapEl = document.querySelector('.graph-wrap');
+
+  function markScale(){
+    const cw = graphWrapEl.clientWidth || W, ch = graphWrapEl.clientHeight || H;
+    return Math.min(cw / W, ch / H) || 1;
+  }
+  // screen px -> layout units, never shrinking a mark below its designed size and
+  // never inflating it past MAX_GROWTH
+  const units = (px, base) => Math.min(Math.max(px / markScale(), base), base * MAX_GROWTH);
+
   const nodeEls = books.map((b,i)=>{
     const g = el('g', {class:'graph-node', 'data-id':i});
     const genre = genresMeta[b.genre];
-    const r = genre.emergent ? 6 : 4.4;
-    g.appendChild(el('circle', {cx:b.sx, cy:b.sy, r, fill:genre.color,
+    // Invisible hit circle at a real finger's radius: the visible dot is ~4px and
+    // was never a tap target on a phone. .nd-dot is the mark, so hover/focus CSS
+    // names it or it lights the hit area instead.
+    g.appendChild(el('circle', {class:'nd-hit', cx:b.sx, cy:b.sy, r:HIT_PX,
+      fill:'transparent', 'pointer-events':'all'}));
+    g.appendChild(el('circle', {class:'nd-dot', cx:b.sx, cy:b.sy,
+      r: genre.emergent ? EMERGENT_PX : DOT_PX, fill:genre.color,
       stroke: genre.emergent ? 'black' : 'none', 'stroke-width': genre.emergent ? 1.2 : 0}));
     svg.appendChild(g);
     g.addEventListener('click', ()=> selectBook(i));
     return g;
   });
+
+  function fitMarks(){
+    const s = markScale();
+    nodeEls.forEach((g,i)=>{
+      const genre = genresMeta[books[i].genre];
+      const base = genre.emergent ? EMERGENT_PX : DOT_PX;
+      g.querySelector('.nd-dot').setAttribute('r', units(base, base).toFixed(2));
+      g.querySelector('.nd-hit').setAttribute('r', Math.max(HIT_PX / s, base).toFixed(2));
+      if (genre.emergent) g.querySelector('.nd-dot').setAttribute('stroke-width',
+        Math.min(1.2 / s, 2.4).toFixed(2));
+    });
+    const ew = Math.min(EDGE_PX / s, EDGE_PX * MAX_GROWTH).toFixed(2);
+    edgeEls.forEach(({path})=> path.setAttribute('stroke-width', ew));
+  }
+  fitMarks();
+  // Re-fit on rotate and on the two-column breakpoint. Computing the scale once at
+  // build time leaves a phone that was loaded in landscape wrong for the rest of
+  // the session.
+  new ResizeObserver(fitMarks).observe(graphWrapEl);
 
   const side = document.getElementById('side');
 
@@ -357,6 +463,14 @@ const DATA = __DATA__;
     el2.dataset.genre = genre.idx;
     el2.innerHTML = `<span class="sw" style="background:${genre.color}"></span>${genre.name}${genre.emergent?' <span class="star">★</span>':''}`;
     el2.addEventListener('click', ()=> genreOverview(genre.idx));
+    /* Keyboard reaches the graph through these pills and the temporal rows, not
+       through the dots. Making all 166 novels tabbable would technically be
+       "accessible" and would in practice bury the page's real controls behind 166
+       tab stops; 8 pills reach all 8 clusters, which is what the dots are for. */
+    el2.tabIndex = 0; el2.setAttribute('role','button');
+    el2.addEventListener('keydown', e=>{
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); genreOverview(genre.idx); }
+    });
     legend.appendChild(el2);
   });
 
@@ -377,8 +491,27 @@ const DATA = __DATA__;
       <div class="temporal-z">${genre.yearMin}–${genre.yearMax} <span class="${genre.emergent?'star':''}">z=${genre.z>=0?'+':''}${genre.z.toFixed(1)}</span></div>
     `;
     row.addEventListener('click', ()=> genreOverview(genre.idx));
+    row.tabIndex = 0; row.setAttribute('role','button');
+    row.addEventListener('keydown', e=>{
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); genreOverview(genre.idx); }
+    });
     temporalRoot.appendChild(row);
   });
+
+  /* THE PARENT PAGE SIZES THIS IFRAME FROM WHAT WE TELL IT.
+     research/index.html listens for this; without it the iframe falls back to a
+     hardcoded 1480px (1860px on phones), which clips on one viewport and leaves
+     dead space on the other. Re-sent on resize because the wrapped temporal rows
+     and the stacked layout change our height at a breakpoint. */
+  function reportHeight(){
+    if (window.parent === window) return;
+    window.parent.postMessage({source:'research-iframe',
+      height: document.documentElement.scrollHeight}, location.origin);
+  }
+  reportHeight();
+  window.addEventListener('load', reportHeight);
+  let resizeT;
+  window.addEventListener('resize', ()=>{ clearTimeout(resizeT); resizeT = setTimeout(reportHeight, 150); });
 
   // stats header
   const m = DATA.meta;

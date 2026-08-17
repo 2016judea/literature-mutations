@@ -3,7 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Author Influence Network — literature-mutations Phase 2</title>
+<title>Author Influence Network — Literature Mutations, Aidan Jude</title>
+<!-- THE PUBLISHED PAGE IS THE ONE THAT MATTERS, SO THE GENERATOR EMITS IT WHOLE.
+     This block, the absolute repo links below, the .nd-dot touch targets and the
+     postMessage height report were all hand-patched into the deployed copy at
+     aidanjude.vercel.app/research/ and never existed here. That is the wrong way
+     round: this file is the source, the deployed page is its output, and a
+     regeneration silently reverted every one of those fixes (done exactly that,
+     2026-08-16). Anything the live page needs is emitted here or it does not
+     survive the next run. -->
+<meta property="og:site_name" content="Aidan Jude" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aidanjude.vercel.app/research/influence-network" />
+<meta property="og:title" content="Author Influence Network — Literature Mutations, Aidan Jude" />
+<meta property="og:description" content="Author influence network — literature-mutations, Aidan Jude." />
+<meta property="og:image" content="https://aidanjude.vercel.app/og/research.png" />
+<meta property="og:image:secure_url" content="https://aidanjude.vercel.app/og/research.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Author Influence Network — Literature Mutations, Aidan Jude" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Author Influence Network — Literature Mutations, Aidan Jude" />
+<meta name="twitter:description" content="Author influence network — literature-mutations, Aidan Jude." />
+<meta name="twitter:image" content="https://aidanjude.vercel.app/og/research.png" />
 <style>
   :root{--bg:#f7f3ec;--bg2:#efe9dd;--ink:#1c1814;--ink2:#544e44;--faint:#8b8478;
         --rule:rgba(60,50,40,.16);--accent:#b8442f;--accent-soft:rgba(184,68,47,.14)}
@@ -44,13 +68,50 @@
     background:var(--bg2);overflow:hidden}
   .graph-scroll{overflow-x:auto;overflow-y:hidden}
   .graph-scroll svg{display:block}
+
+  /* THE GRAPH HAS ALWAYS SCROLLED SIDEWAYS AND NOTHING EVER SAID SO.
+     The x axis is the full author sequence, so the SVG is 1848px wide against a
+     1174px column at 1440px and a 360px one at 390px: 36% of the graph is right
+     of the edge on a desktop and 81% on a phone. Both are reachable — .graph-scroll
+     is overflow-x:auto — but a touch device paints no scrollbar and the cut lands
+     mid-figure, so the visitor reads the visible slice as the whole graph and
+     leaves having seen antiquity. Measured 2026-08-16 at both widths.
+     A mark on each side is the affordance, and each side retracts when its
+     direction is exhausted, so "there is more this way" is never claimed falsely.
+
+     A GRADIENT ALONE IS NOT AN AFFORDANCE ON THIS FIGURE. The first cut faded
+     var(--bg2) into transparent and it was invisible: dark-on-dark, and the right
+     edge of this graph is sparse, so there is often no ink there to fade. The
+     gradient still earns its place — it softens the guillotine cut through
+     whatever edges DO reach the border — but the thing that says "more this way"
+     has to be a mark, so each side carries a chevron. */
+  .graph-fade{position:absolute;top:0;bottom:0;width:52px;pointer-events:none;
+    opacity:0;transition:opacity .25s;z-index:1;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:19px;
+    color:var(--accent)}
+  .graph-fade.l{left:0;background:linear-gradient(90deg,var(--bg2) 22%,transparent)}
+  .graph-fade.r{right:0;background:linear-gradient(270deg,var(--bg2) 22%,transparent)}
+  .graph-wrap.can-l .graph-fade.l,.graph-wrap.can-r .graph-fade.r{opacity:1}
+  /* The hint names the axis as well as the gesture, because "you can scroll" is
+     only worth a line if it also says what you would be scrolling through. It is
+     removed outright the first time the visitor scrolls — a hint that survives
+     being obeyed is furniture. */
+  .scroll-hint{display:none;margin:7px 1px 0;font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;color:var(--faint);letter-spacing:.02em}
+  .scroll-hint.on{display:block}
+  .scroll-hint b{color:var(--ink2);font-weight:500}
   .graph-node{cursor:pointer}
   .graph-node circle{transition:opacity .2s}
-  .graph-node:hover circle{stroke:var(--ink);stroke-width:1.5}
+  .graph-node:hover circle.nd-dot{stroke:var(--ink);stroke-width:1.5}
   .graph-node.dim circle,.graph-node.dim text{opacity:.15}
-  .graph-node.focus circle{stroke:var(--accent);stroke-width:2}
+  .graph-node.focus circle.nd-dot{stroke:var(--accent);stroke-width:2}
   .graph-label{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;font-size:9px;
     fill:var(--ink2);pointer-events:none;transition:opacity .2s}
+  .label-tie{stroke:var(--rule);stroke-width:1;pointer-events:none}
+  .graph-node.dim .label-tie{opacity:.15}
+  .graph-node:focus{outline:none}
+  .graph-node:focus-visible circle.nd-dot{stroke:var(--accent);stroke-width:2.5}
   .edge-path{fill:none;pointer-events:none}
   .edge-path.candidate{stroke:var(--ink2)}
   .edge-path.validated{stroke:var(--accent)}
@@ -96,10 +157,10 @@
       <b>two independent similarity scores, never merged</b>: stylistic (word choice,
       syntax — TF-IDF) and conceptual (ideas, themes — embeddings). Held-out against real,
       independently-documented influence claims, conceptual similarity is significant
-      and replicates across two separate validation sources; stylistic similarity is a
-      genuinely open, unresolved question (see caveats below).
+      and replicates across two separate validation sources; stylistic similarity does not
+      hold up under a proper sweep (see caveats below).
       <b>Click any author to trace their edges.</b> Full method:
-      <a href="docs/PHASE2_INFLUENCE_NETWORK.md">design doc</a>.</p>
+      <a href="https://github.com/2016judea/literature-mutations/blob/master/docs/PHASE2_INFLUENCE_NETWORK.md" target="_blank" rel="noopener">design doc</a>.</p>
     <div class="stats" id="stats"></div>
   </header>
 
@@ -112,9 +173,12 @@
 
   <div class="graph-wrap">
     <div class="graph-scroll"><svg id="graph-svg"></svg></div>
+    <div class="graph-fade l" aria-hidden="true">‹</div>
+    <div class="graph-fade r" aria-hidden="true">›</div>
     <div class="panel" id="panel"><span class="panel-close" id="panel-close">✕ close</span>
       <div id="panel-body"></div></div>
   </div>
+  <p class="scroll-hint" id="scroll-hint"></p>
 
   <p class="caveats">
     <b>What this is:</b> chronologically-valid candidate edges with a measured similarity
@@ -125,13 +189,17 @@
     higher than a shuffled-timeline null, twice over, on two independent sources (z=9.47
     on 130 held-out pairs, z=7.16 replicated on 102 independent Wikidata pairs) — and it
     survives a density-confound check on the best-represented authors (z=6.25).
-    <b>What's open:</b> stylistic similarity is <i>not</i> significant on the full held-out
-    sample (z=0.91) but <i>is</i> significant in two narrower checks (Wikidata z=2.45,
-    well-represented subset z=2.97) — an honest, unresolved discrepancy, not adjudicated
-    here. n=77 authors is real but modest scale.
+    <b>What's most likely null:</b> stylistic similarity is <i>not</i> significant on the
+    full held-out sample (z=0.91), and the two narrower checks that <i>are</i> significant
+    (Wikidata z=2.45, well-represented subset z=2.97) turn out not to sit on a trend.
+    Raising the minimum books per author and re-testing at every level — each against a
+    null drawn from that same subset — gives 0.9, then −0.7, then 0.3, then a single
+    excursion at ≥4 books that decays again. Conceptual, run identically as a control, is
+    significant at every level and declines smoothly as pairs are lost. The published trio
+    were three non-nested samples, not a series. n=77 authors is real but modest scale.
   </p>
 
-  <footer>literature-mutations · <a href="README.md">repo</a> ·
+  <footer>literature-mutations · <a href="https://github.com/2016judea/literature-mutations" target="_blank" rel="noopener">repo</a> ·
     generated by <span class="mono">visualize_influence.py</span> from
     <span class="mono">_data/influence_graph.json</span></footer>
 </div>
@@ -152,6 +220,8 @@ const DATA = {"meta": {"nAuthors": 77, "nEdges": 2915, "nValidated": 188, "signa
     drama:'drama', other:'other (essay/history/etc.)'
   };
 
+  const STILL = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const authors = DATA.authors;
   const edges = DATA.edges;
   const n = authors.length;
@@ -170,6 +240,16 @@ const DATA = {"meta": {"nAuthors": 77, "nEdges": 2915, "nValidated": 188, "signa
   svg.setAttribute('width', W);
   svg.setAttribute('height', H);
   svg.setAttribute('preserveAspectRatio', 'xMinYMid meet');
+  // The drawing states its own axes to a reader who cannot see it. Both channels
+  // are arbitrary without this: x is sequence, not a dated timeline, and y is form
+  // alone — a fact a sighted visitor infers from the band labels and no one else can.
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label',
+    `${n} authors from ${authors[0].name} to ${authors[n-1].name}, left to right in ` +
+    `chronological order, in five horizontal bands by form: ` +
+    `${bandOrder.map(f=>FORM_LABEL[f]).join(', ')}. Curves join authors whose work is ` +
+    `similar; the highlighted subset is independently documented influence. ` +
+    `Each author is focusable in turn for their own edge list.`);
   document.querySelector('.graph-wrap').style.height = H + 'px';
 
   // band labels
@@ -205,15 +285,89 @@ const DATA = {"meta": {"nAuthors": 77, "nEdges": 2915, "nValidated": 188, "signa
     return path;
   });
 
+  /* LABELS SHARE A BAND, SO THEY OVERPRINT EACH OTHER, NOT THE GRAPH.
+     Every label used to sit at a fixed offset above its own dot. x is the author's
+     position in the sequence and y is only their form, so any run of same-form
+     authors close in time stacks their names on one line: 19 overprinting pairs
+     among 77 at 1440px before this, worst offenders Sophocles/Euripides and
+     Montaigne/Jefferson at 26px of overlap each — two names rendered as one
+     unreadable smear, on a figure whose whole claim is which author is which.
+
+     Lane packing fixes it without moving a single dot: walk each band left to
+     right (author order IS x order, since x is i/(n-1)) and drop each label into
+     the topmost lane whose previous label has already cleared. A crowded stretch
+     stacks upward; a sparse one stays tight against its dot.
+
+     FOUR LANES, AND THE LAST IS THE GIVE-UP LANE. Bands sit ~117px apart and the
+     tallest stack reaches r + 4 + 3*11 ≈ 44px, so four lanes cannot touch the band
+     above — checked against bandY, not assumed. Three lanes left 4 pairs still
+     overprinting (Aurelius/Hippo, Jefferson/Paine, Hawthorne/Godwin, Verne/Flaubert);
+     four clears them. When every lane is occupied the label takes the top one and
+     overprints anyway — better a known, bounded collision in the least-crowded lane
+     than a name silently dropped, because an author who is missing from the drawing
+     is indistinguishable from an author who is missing from the corpus.
+
+     LANES ARE A BAND-WIDE BASELINE, NOT AN OFFSET FROM EACH DOT. Measuring each
+     lane up from the node's own radius is the obvious way to write this and it is
+     wrong: dot radius encodes how many of the author's works are in the corpus, so
+     a lane-1 label above a small dot can sit BELOW a lane-0 label above a large
+     one. That is how the first cut of this still left 4 overlapping pairs at
+     1.3px — Aurelius on lane 1 landing 9.2px from Hippo on lane 0, against a
+     10.5px glyph box. Anchoring every lane in a band to that band's largest radius
+     makes the spacing exactly LANE_STEP everywhere, which is the only version of
+     this that can be reasoned about at all.
+
+     LABEL_CH is the 9px monospace advance width (~0.6em). It is an estimate, but
+     an estimate of a MONOSPACE face, where every glyph is the same width — the one
+     case where character count predicts pixels exactly. LANE_STEP clears the 10.5px
+     box that a 9px face actually renders, which is not the same number as 9. */
+  const LANES = 4, LANE_STEP = 11, LABEL_CH = 5.4, LABEL_GAP = 5;
+  const laneEnds = {};
+  const bandMaxR = {};
+  authors.forEach(a=>{
+    const r = 3 + a.nBooksUsed * 0.9;
+    if (!(a.form in bandMaxR) || r > bandMaxR[a.form]) bandMaxR[a.form] = r;
+  });
+
   const nodeEls = authors.map((a,i)=>{
     const g = el('g', {class:'graph-node', 'data-id':i});
     const r = 3 + a.nBooksUsed * 0.9;
-    g.appendChild(el('circle', {cx:a.x, cy:a.y, r, fill:FORM_COLOR[a.form], stroke:'none'}));
-    const t = el('text', {class:'graph-label', x:a.x, y:a.y - r - 4, 'text-anchor':'middle'});
-    t.textContent = a.name.split(' ').slice(-1)[0];
+    // Radius encodes corpus depth, so the least-represented authors get the
+    // smallest dots — and a 3.9px dot is not a tap target. An invisible circle at
+    // a real finger's radius sits under each one; .nd-dot is the visible mark, so
+    // hover and focus styling has to name it or it lights the hit area instead.
+    g.appendChild(el('circle', {cx:a.x, cy:a.y, r: Math.max(r, 11),
+                                fill:'transparent', 'pointer-events':'all'}));
+    g.appendChild(el('circle', {class:'nd-dot', cx:a.x, cy:a.y, r,
+                                fill:FORM_COLOR[a.form], stroke:'none'}));
+
+    const short = a.name.split(' ').slice(-1)[0];
+    const halfW = (short.length * LABEL_CH) / 2;
+    const ends = laneEnds[a.form] || (laneEnds[a.form] = new Array(LANES).fill(-Infinity));
+    let lane = ends.findIndex(end => a.x - halfW > end + LABEL_GAP);
+    if (lane < 0) lane = LANES - 1;
+    ends[lane] = a.x + halfW;
+
+    const labelY = a.y - bandMaxR[a.form] - 4 - lane * LANE_STEP;
+    const t = el('text', {class:'graph-label', x:a.x, y:labelY, 'text-anchor':'middle'});
+    t.textContent = short;
     g.appendChild(t);
+    // A label lifted off its dot has to be tied back to it: with 77 dots in five
+    // bands the nearest dot below a floating name is not reliably its own. Drawn
+    // whenever the lift is big enough to read as a gap rather than as kerning.
+    if (a.y - r - labelY > 9) {
+      g.appendChild(el('line', {class:'label-tie', x1:a.x, y1:a.y - r - 2,
+                                x2:a.x, y2:labelY + 2}));
+    }
+
+    g.setAttribute('tabindex', '0');
+    g.setAttribute('role', 'button');
+    g.setAttribute('aria-label', `${a.name}, ${FORM_LABEL[a.form]}`);
     svg.appendChild(g);
     g.addEventListener('click', ()=> selectNode(i));
+    g.addEventListener('keydown', e=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectNode(i); }
+    });
     return g;
   });
 
@@ -263,7 +417,10 @@ const DATA = {"meta": {"nAuthors": 77, "nEdges": 2915, "nValidated": 188, "signa
     const panelW = Math.min(400, wrapW * 0.92);
     const safeW = Math.max(200, wrapW - panelW);
     const targetLeft = a.x - safeW * 0.4;
-    scrollEl.scrollTo({left: Math.max(0, targetLeft), behavior: 'smooth'});
+    // A visitor who asked not to be moved is still owed the node they clicked;
+    // reduced motion removes the travel, not the destination.
+    scrollEl.scrollTo({left: Math.max(0, targetLeft),
+                       behavior: STILL ? 'auto' : 'smooth'});
   }
 
   function selectNode(i){
@@ -316,6 +473,40 @@ const DATA = {"meta": {"nAuthors": 77, "nEdges": 2915, "nValidated": 188, "signa
     if(e.target.tagName === 'svg' || e.target.tagName === 'text' && !e.target.closest('.graph-node')) clearFocus();
   });
 
+  /* THE OFF-SCREEN SHARE, SAID OUT LOUD.
+     Both the fades and the hint are driven off ONE measurement of the live
+     scroller rather than a breakpoint, because the width that decides this is the
+     iframe's, not the phone's — the research page embeds this at 350px inside a
+     390px screen, and any media query written against the viewport would be
+     measuring the wrong box. It re-measures on resize for the same reason.
+
+     The hint quotes the share it can actually see hidden. A hint that says "scroll
+     for more" on a graph with 40px hidden has spent the visitor's attention on
+     nothing; one that says 81% has earned it. Under 15% hidden, neither appears. */
+  const scroller = document.querySelector('.graph-scroll');
+  const wrap = document.querySelector('.graph-wrap');
+  const hint = document.getElementById('scroll-hint');
+  let hintLive = true;
+
+  function scrollState(){
+    const hidden = scroller.scrollWidth - scroller.clientWidth;
+    wrap.classList.toggle('can-l', scroller.scrollLeft > 8);
+    wrap.classList.toggle('can-r', scroller.scrollLeft < hidden - 8);
+    if (hintLive) {
+      const share = hidden / scroller.scrollWidth;
+      hint.classList.toggle('on', share > 0.15);
+      hint.innerHTML = `<b>${Math.round(share * 100)}% of the graph is off to the right.</b> ` +
+        `Scroll or swipe it sideways — authors run oldest (Homer) to newest (${authors[n-1].name}).`;
+    }
+  }
+  scroller.addEventListener('scroll', ()=>{
+    scrollState();
+    // Obeyed once is enough. Keep the fades, retire the sentence.
+    if (hintLive && scroller.scrollLeft > 24) { hintLive = false; hint.classList.remove('on'); }
+  }, {passive:true});
+  new ResizeObserver(scrollState).observe(scroller);
+  scrollState();
+
   // legend
   const legend = document.getElementById('legend');
   bandOrder.forEach(f=>{
@@ -326,6 +517,22 @@ const DATA = {"meta": {"nAuthors": 77, "nEdges": 2915, "nValidated": 188, "signa
   const vs = document.createElement('span');
   vs.innerHTML = `<span class="validated-sw"></span>independently documented`;
   legend.appendChild(vs);
+
+  /* THE PARENT PAGE SIZES THIS IFRAME FROM WHAT WE TELL IT.
+     research/index.html embeds both network pages and listens for this message;
+     without it the iframe falls back to a hardcoded 1480px (1860px on phones),
+     which clips the caveats on one viewport and leaves dead space on another.
+     Re-sent on resize because the fades, the hint line and the wrapped stat rows
+     all change our height at a breakpoint. */
+  function reportHeight(){
+    if (window.parent === window) return;
+    window.parent.postMessage({source:'research-iframe',
+      height: document.documentElement.scrollHeight}, location.origin);
+  }
+  reportHeight();
+  window.addEventListener('load', reportHeight);
+  let resizeT;
+  window.addEventListener('resize', ()=>{ clearTimeout(resizeT); resizeT = setTimeout(reportHeight, 150); });
 
   // stats header
   const m = DATA.meta;
