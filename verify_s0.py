@@ -46,6 +46,23 @@ def jaccard(a, b):
     return len(a & b) / max(len(a | b), 1)
 
 
+def pick_key(pub_comms, new_comms, preferred="titles"):
+    '''Choose a field both sides actually carry.
+
+    The published controls_results.json records no membership - `titles` was
+    added to controls.py during S0 - so matching on it silently scored every
+    pair 0.0 and the first run of this script announced that all eight
+    controlled communities had vanished and the detective result was gone.
+    They had not; controls.py had just printed z = -3.0 for detective on
+    screen. A checker that reports a catastrophe should be suspected of
+    breaking before the data is.
+    '''
+    for key in (preferred, "top_terms"):
+        if any(c.get(key) for c in pub_comms) and any(c.get(key) for c in new_comms):
+            return key
+    return None
+
+
 def match(pub_comms, new_comms, key="titles"):
     '''Greedy best-Jaccard pairing, strongest pair first, so one strong match
     cannot be stolen by a weaker row processed earlier.'''
@@ -121,9 +138,14 @@ def main():
 
     # --- the controlled communities, matched by membership -------------------
     if new_c:
-        print("\n=== controlled communities (matched by title overlap) ===")
+        ckey = pick_key(pub_c["communities"], new_c["communities"])
+        print(f"\n=== controlled communities (matched on '{ckey}') ===")
+        if ckey != "titles":
+            print("  NOTE: the published file records no membership, so these "
+                  "are matched on top_terms overlap.")
         print(f"  {'published':38s} -> {'reconstructed':38s}  jacc")
-        pairs = match(pub_c["communities"], new_c["communities"])
+        pairs = match(pub_c["communities"], new_c["communities"], ckey)
+        report["communities"]["match_key"] = ckey
         rows = []
         for i, j, s in pairs:
             p = pub_c["communities"][i]
@@ -167,8 +189,9 @@ def main():
 
     # --- the final communities from results.json -----------------------------
     if new_r:
-        print("\n=== results.json communities (matched by title overlap) ===")
-        pairs = match(pub_r["communities"], new_r["communities"])
+        rkey = pick_key(pub_r["communities"], new_r["communities"])
+        print(f"\n=== results.json communities (matched on '{rkey}') ===")
+        pairs = match(pub_r["communities"], new_r["communities"], rkey)
         rows = []
         for i, j, s in pairs:
             p = pub_r["communities"][i]

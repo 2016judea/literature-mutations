@@ -818,9 +818,26 @@ def main():
             continue
         sur = surname(cands[0]["author"])
         p = ol_all.get(probe_key(t, sur))
-        year, _ = (pick_year(p, t, floor_for(sur), sur, series) if p else (None, 0))
+        # A second floor, and a provable one. genre_network.html's 166 are
+        # controls.py's one-book-per-author pick, i.e. each author's EARLIEST
+        # book in the corpus - so no other book by that author can predate it.
+        # Open Library's error skews early, and without this the too-early
+        # years quietly displace the real earliest book: Huckleberry Finn came
+        # back as 1875 and took Tom Sawyer's place as Twain's earliest, Jekyll
+        # and Hyde as 1875 took Treasure Island's, Kenilworth as 1798 took
+        # Waverley's. Eight of the 166 controlled books were the wrong book
+        # for exactly this reason. The floor is the earliest across every
+        # spelling of the surname, since those spellings are one person.
+        person_floor = min(c["earliest"] for c in cands)
+        fl = max(floor_for(sur), person_floor)
+        year, _ = (pick_year(p, t, fl, sur, series) if p else (None, 0))
         if year is None and p:
-            year, _ = pick_year(p, t, floor_for(sur))
+            # Relax the SERIES filter if it left nothing, never the floor.
+            # An earlier version fell back to the loose floor here and let
+            # The Singing Bone through at 1900 against Freeman's 1907 - a
+            # fallback that quietly discards the guard it is falling back
+            # from is worse than no guard, because the log then says clean.
+            year, _ = pick_year(p, t, fl)
         ysrc = "openlibrary"
         if year is None:
             b = bib_by_title.get(norm_title(t))

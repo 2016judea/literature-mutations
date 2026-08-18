@@ -7,10 +7,8 @@
         "Frankenstein"
       ],
       "years": [
-        1816,
         1818
-      ],
-      "resolved_to": 1818
+      ]
     },
     {
       "gutenberg_id": 792,
@@ -146,19 +144,6 @@
     }
   ],
   "year_conflicts_fixed": [
-    {
-      "gutenberg_id": 84,
-      "titles": [
-        "Frankenstein; or, The Modern Prometheus",
-        "Frankenstein"
-      ],
-      "was": [
-        1816,
-        1818
-      ],
-      "now": 1818,
-      "rule": "published value from 'Frankenstein; or, The Modern Prometheus'"
-    },
     {
       "gutenberg_id": 32954,
       "titles": [

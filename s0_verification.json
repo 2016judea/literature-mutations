@@ -1,0 +1,429 @@
+{
+  "targets": [
+    {
+      "figure": "corpus size (books)",
+      "published": 345,
+      "reconstructed": 343,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "corpus size (authors)",
+      "published": 166,
+      "reconstructed": 166,
+      "tolerance": 0,
+      "reproduced": true
+    },
+    {
+      "figure": "one-per-author subset",
+      "published": 166,
+      "reconstructed": 166,
+      "tolerance": 0,
+      "reproduced": true
+    },
+    {
+      "figure": "author confound %",
+      "published": 19.5,
+      "reconstructed": 20.7,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "timeline births",
+      "published": 32,
+      "reconstructed": 34,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "timeline splits",
+      "published": 33,
+      "reconstructed": 31,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "timeline merges",
+      "published": 25,
+      "reconstructed": 23,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "timeline mutations (total)",
+      "published": 90,
+      "reconstructed": 88,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "null: real mutations",
+      "published": 90,
+      "reconstructed": 88,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "null: shuffled mean",
+      "published": 94.1,
+      "reconstructed": 102.2,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "null: shuffled std",
+      "published": 15.2,
+      "reconstructed": 17.5,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "null: z",
+      "published": -0.27,
+      "reconstructed": -0.82,
+      "tolerance": 0,
+      "reproduced": false
+    },
+    {
+      "figure": "detective n",
+      "published": 13,
+      "reconstructed": 13,
+      "tolerance": 0,
+      "reproduced": true
+    },
+    {
+      "figure": "detective year_min",
+      "published": 1878,
+      "reconstructed": 1878,
+      "tolerance": 0,
+      "reproduced": true
+    },
+    {
+      "figure": "detective year_max",
+      "published": 1926,
+      "reconstructed": 1926,
+      "tolerance": 0,
+      "reproduced": true
+    },
+    {
+      "figure": "detective year_std",
+      "published": 14.9,
+      "reconstructed": 14.9,
+      "tolerance": 0,
+      "reproduced": true
+    },
+    {
+      "figure": "detective z",
+      "published": -3.04,
+      "reconstructed": -3.04,
+      "tolerance": 0,
+      "reproduced": true
+    }
+  ],
+  "communities": {
+    "match_key": "top_terms",
+    "controls": [
+      {
+        "published": {
+          "n": 13,
+          "year_min": 1878,
+          "year_max": 1926,
+          "year_std": 14.9,
+          "concentration_z": -3.04,
+          "held_out_label": "Detective and mystery stories",
+          "top_terms": [
+            "detective",
+            "inspector",
+            "murderer",
+            "police",
+            "murder",
+            "inquest"
+          ]
+        },
+        "reconstructed": {
+          "n": 13,
+          "year_min": 1878,
+          "year_max": 1926,
+          "year_std": 14.9,
+          "concentration_z": -3.04,
+          "held_out_label": "Detective and mystery stories",
+          "top_terms": [
+            "detective",
+            "inspector",
+            "murderer",
+            "police",
+            "murder",
+            "inquest"
+          ]
+        },
+        "title_jaccard": 1.0
+      },
+      {
+        "published": {
+          "n": 35,
+          "year_min": 1726,
+          "year_max": 1925,
+          "year_std": 44.6,
+          "concentration_z": -1.24,
+          "held_out_label": "Best Books Ever Listings",
+          "top_terms": [
+            "cattle",
+            "mountain",
+            "wagon",
+            "camp",
+            "gray",
+            "rock"
+          ]
+        },
+        "reconstructed": {
+          "n": 24,
+          "year_min": 1678,
+          "year_max": 1915,
+          "year_std": 57.4,
+          "concentration_z": 0.59,
+          "held_out_label": "Historical fiction",
+          "top_terms": [
+            "mountain",
+            "mountains",
+            "rock",
+            "tribes",
+            "valley",
+            "forest"
+          ]
+        },
+        "title_jaccard": 0.2
+      },
+      {
+        "published": {
+          "n": 5,
+          "year_min": 1820,
+          "year_max": 1907,
+          "year_std": 33.0,
+          "concentration_z": -0.6,
+          "held_out_label": "Fantasy fiction",
+          "top_terms": [
+            "catholics",
+            "catholic",
+            "archbishop",
+            "priest",
+            "cardinal",
+            "lambert"
+          ]
+        },
+        "reconstructed": null,
+        "title_jaccard": 0.0
+      },
+      {
+        "published": {
+          "n": 13,
+          "year_min": 1748,
+          "year_max": 1921,
+          "year_std": 47.4,
+          "concentration_z": -0.3,
+          "held_out_label": "Historical Fiction",
+          "top_terms": [
+            "highness",
+            "thee",
+            "jack",
+            "richard",
+            "prince",
+            "hath"
+          ]
+        },
+        "reconstructed": null,
+        "title_jaccard": 0.0
+      },
+      {
+        "published": {
+          "n": 31,
+          "year_min": 1678,
+          "year_max": 1928,
+          "year_std": 54.3,
+          "concentration_z": 0.2,
+          "held_out_label": "Domestic fiction",
+          "top_terms": [
+            "mary",
+            "mamma",
+            "nursery",
+            "anna",
+            "darling",
+            "papa"
+          ]
+        },
+        "reconstructed": {
+          "n": 25,
+          "year_min": 1740,
+          "year_max": 1928,
+          "year_std": 47.7,
+          "concentration_z": -0.59,
+          "held_out_label": "Children's Literature",
+          "top_terms": [
+            "mary",
+            "em",
+            "baby",
+            "aunt",
+            "missis",
+            "funny"
+          ]
+        },
+        "title_jaccard": 0.091
+      },
+      {
+        "published": {
+          "n": 29,
+          "year_min": 1764,
+          "year_max": 1925,
+          "year_std": 54.3,
+          "concentration_z": 0.21,
+          "held_out_label": "Science fiction",
+          "top_terms": [
+            "castle",
+            "sensations",
+            "veil",
+            "madame",
+            "trembled",
+            "gallery"
+          ]
+        },
+        "reconstructed": {
+          "n": 25,
+          "year_min": 1764,
+          "year_max": 1925,
+          "year_std": 50.6,
+          "concentration_z": -0.23,
+          "held_out_label": "Gothic fiction",
+          "top_terms": [
+            "madame",
+            "castle",
+            "prince",
+            "duke",
+            "princess",
+            "guards"
+          ]
+        },
+        "title_jaccard": 0.2
+      },
+      {
+        "published": {
+          "n": 10,
+          "year_min": 1719,
+          "year_max": 1919,
+          "year_std": 55.8,
+          "concentration_z": 0.43,
+          "held_out_label": "Adventure stories",
+          "top_terms": [
+            "deck",
+            "cabin",
+            "voyage",
+            "shore",
+            "forecastle",
+            "crew"
+          ]
+        },
+        "reconstructed": {
+          "n": 15,
+          "year_min": 1719,
+          "year_max": 1915,
+          "year_std": 55.6,
+          "concentration_z": 0.39,
+          "held_out_label": "Adventure stories",
+          "top_terms": [
+            "deck",
+            "voyage",
+            "mate",
+            "sail",
+            "cabin",
+            "shore"
+          ]
+        },
+        "title_jaccard": 0.5
+      },
+      {
+        "published": {
+          "n": 30,
+          "year_min": 1719,
+          "year_max": 1923,
+          "year_std": 63.3,
+          "concentration_z": 1.45,
+          "held_out_label": "Bildungsromans",
+          "top_terms": [
+            "aunt",
+            "literary",
+            "lucy",
+            "vulgar",
+            "madam",
+            "bye"
+          ]
+        },
+        "reconstructed": {
+          "n": 27,
+          "year_min": 1719,
+          "year_max": 1923,
+          "year_std": 60.2,
+          "concentration_z": 0.98,
+          "held_out_label": "Love stories",
+          "top_terms": [
+            "ladyship",
+            "madam",
+            "aunt",
+            "lordship",
+            "novel",
+            "sex"
+          ]
+        },
+        "title_jaccard": 0.2
+      }
+    ],
+    "results": [
+      {
+        "published_size": 35,
+        "published_label": "Best Books Ever Listings",
+        "reconstructed_size": 30,
+        "title_jaccard": 0.711
+      },
+      {
+        "published_size": 50,
+        "published_label": "England -- Fiction",
+        "reconstructed_size": 50,
+        "title_jaccard": 0.923
+      },
+      {
+        "published_size": 50,
+        "published_label": "Historical fiction",
+        "reconstructed_size": 52,
+        "title_jaccard": 0.789
+      },
+      {
+        "published_size": 31,
+        "published_label": "England -- Fiction",
+        "reconstructed_size": 27,
+        "title_jaccard": 0.871
+      },
+      {
+        "published_size": 55,
+        "published_label": "Best Books Ever Listings",
+        "reconstructed_size": 35,
+        "title_jaccard": 0.525
+      },
+      {
+        "published_size": 27,
+        "published_label": "Bildungsromans",
+        "reconstructed_size": 14,
+        "title_jaccard": 0.025
+      },
+      {
+        "published_size": 43,
+        "published_label": "Detective and mystery stories",
+        "reconstructed_size": 35,
+        "title_jaccard": 0.773
+      },
+      {
+        "published_size": 54,
+        "published_label": "Psychological fiction",
+        "reconstructed_size": 64,
+        "title_jaccard": 0.475
+      }
+    ]
+  },
+  "unmatched": {}
+}

@@ -1,5 +1,5 @@
 {
- "n_books": 344,
+ "n_books": 343,
  "n_authors": 166,
  "year_min": 1678,
  "year_max": 1928,
@@ -724,22 +724,6 @@
    }
   },
   {
-   "title": "Kenilworth",
-   "author": "Sir Walter Scott",
-   "year": 1798,
-   "gutenberg_id": 1606,
-   "sha256": "0893b2aaa7a72b2e2fd932e7f8322e332e12f2dcda6d4dccd34cb80c0e373e30",
-   "words": 20000,
-   "n_labels": 8,
-   "recon": {
-    "author_src": "gutendex",
-    "year_src": "openlibrary",
-    "spelling": "displaces_earliest",
-    "note": "gutenberg_id=1606 overlap=1.00",
-    "results_community": 2
-   }
-  },
-  {
    "title": "Wieland",
    "author": "Charles Brockden Brown",
    "year": 1798,
@@ -1332,6 +1316,22 @@
    }
   },
   {
+   "title": "Kenilworth",
+   "author": "Sir Walter Scott",
+   "year": 1827,
+   "gutenberg_id": 1606,
+   "sha256": "0893b2aaa7a72b2e2fd932e7f8322e332e12f2dcda6d4dccd34cb80c0e373e30",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=1606 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
    "title": "The Mummy!",
    "author": "Jane C. Loudon",
    "year": 1827,
@@ -1430,7 +1430,7 @@
   {
    "title": "Oliver Twist",
    "author": "Charles Dickens",
-   "year": 1835,
+   "year": 1837,
    "gutenberg_id": 47530,
    "sha256": "c51ef3c4b5325f38a851b075906456548fc51dcb93a7d9cc7bd9574319061ab6",
    "words": 20000,
@@ -2100,22 +2100,6 @@
    }
   },
   {
-   "title": "The Ambassadors",
-   "author": "Henry James",
-   "year": 1868,
-   "gutenberg_id": 432,
-   "sha256": "2c8374d2ff2ac351cd6fc05fd4f417b13dd6bbf12368da9964a8bf6dfd1ba2dd",
-   "words": 20000,
-   "n_labels": 7,
-   "recon": {
-    "author_src": "gutendex",
-    "year_src": "openlibrary",
-    "spelling": "single",
-    "note": "gutenberg_id=432 overlap=1.00",
-    "results_community": 7
-   }
-  },
-  {
    "title": "The Moonstone",
    "author": "Wilkie Collins",
    "year": 1868,
@@ -2276,38 +2260,6 @@
    }
   },
   {
-   "title": "The Adventures of Huckleberry Finn",
-   "author": "Mark Twain",
-   "year": 1875,
-   "gutenberg_id": 32325,
-   "sha256": "19b8b0d4a318599c0d1f32a0b7f3ee4d3499f9257451c07fa2766c18c45b65d6",
-   "words": 20000,
-   "n_labels": 8,
-   "recon": {
-    "author_src": "gutendex",
-    "year_src": "openlibrary",
-    "spelling": "single",
-    "note": "gutenberg_id=32325 overlap=1.00",
-    "results_community": 4
-   }
-  },
-  {
-   "title": "The Strange Case of Dr Jekyll and Mr Hyde",
-   "author": "Robert Louis Stevenson",
-   "year": 1875,
-   "gutenberg_id": 43,
-   "sha256": "57208d916cb2f5ad2d92d4a06f596103f9a349623028bc365fbef55369379f74",
-   "words": 20000,
-   "n_labels": 8,
-   "recon": {
-    "author_src": "gutendex",
-    "year_src": "openlibrary",
-    "spelling": "single",
-    "note": "gutenberg_id=43 overlap=1.00",
-    "results_community": 6
-   }
-  },
-  {
    "title": "The Way We Live Now",
    "author": "Anthony Trollope",
    "year": 1875,
@@ -2452,6 +2404,22 @@
    }
   },
   {
+   "title": "The Adventures of Huckleberry Finn",
+   "author": "Mark Twain",
+   "year": 1884,
+   "gutenberg_id": 32325,
+   "sha256": "19b8b0d4a318599c0d1f32a0b7f3ee4d3499f9257451c07fa2766c18c45b65d6",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=32325 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
    "title": "The Mayor of Casterbridge",
    "author": "Thomas Hardy",
    "year": 1884,
@@ -2545,6 +2513,22 @@
     "spelling": "year_constrained",
     "note": "gutenberg_id=3155 title='She'",
     "results_community": 2
+   }
+  },
+  {
+   "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+   "author": "Robert Louis Stevenson",
+   "year": 1886,
+   "gutenberg_id": 43,
+   "sha256": "57208d916cb2f5ad2d92d4a06f596103f9a349623028bc365fbef55369379f74",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=43 overlap=1.00",
+    "results_community": 6
    }
   },
   {
@@ -2769,22 +2753,6 @@
     "spelling": "single",
     "note": "gutenberg_id=903 overlap=1.00",
     "results_community": 2
-   }
-  },
-  {
-   "title": "Tono-Bungay",
-   "author": "H.G. Wells",
-   "year": 1890,
-   "gutenberg_id": 718,
-   "sha256": "a08a8dfcfbd135ebfbc83db85eca9e42e403a953cbfbfb49a7568213858432f9",
-   "words": 20000,
-   "n_labels": 8,
-   "recon": {
-    "author_src": "gutendex",
-    "year_src": "openlibrary",
-    "spelling": "displaces_earliest",
-    "note": "gutenberg_id=718 overlap=1.00",
-    "results_community": 4
    }
   },
   {
@@ -3268,22 +3236,6 @@
    }
   },
   {
-   "title": "The Singing Bone",
-   "author": "R. Austin Freeman",
-   "year": 1900,
-   "gutenberg_id": 59478,
-   "sha256": "8c628bb9383309426ef8529e742b83ff33871dc2e7b3e9a425d8e87c56793a14",
-   "words": 20000,
-   "n_labels": 7,
-   "recon": {
-    "author_src": "gutendex",
-    "year_src": "openlibrary",
-    "spelling": "single",
-    "note": "gutenberg_id=59478 overlap=1.00",
-    "results_community": 6
-   }
-  },
-  {
    "title": "The Wonderful Wizard of Oz",
    "author": "L. Frank Baum",
    "year": 1900,
@@ -3440,6 +3392,22 @@
     "year_src": "genre_network.html",
     "spelling": "known",
     "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Ambassadors",
+   "author": "Henry James",
+   "year": 1903,
+   "gutenberg_id": 432,
+   "sha256": "2c8374d2ff2ac351cd6fc05fd4f417b13dd6bbf12368da9964a8bf6dfd1ba2dd",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=432 overlap=1.00",
     "results_community": 7
    }
   },
@@ -3937,6 +3905,22 @@
     "spelling": "known",
     "note": "",
     "results_community": 5
+   }
+  },
+  {
+   "title": "Tono-Bungay",
+   "author": "H.G. Wells",
+   "year": 1908,
+   "gutenberg_id": 718,
+   "sha256": "a08a8dfcfbd135ebfbc83db85eca9e42e403a953cbfbfb49a7568213858432f9",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=718 overlap=1.00",
+    "results_community": 4
    }
   },
   {

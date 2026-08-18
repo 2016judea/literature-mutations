@@ -1,0 +1,132 @@
+{
+  "n_books": 343,
+  "seeds": 12,
+  "runs": [
+    {
+      "seed": 0,
+      "births": 39,
+      "splits": 28,
+      "merges": 26,
+      "mutations": 93,
+      "n_communities_final": 11
+    },
+    {
+      "seed": 1,
+      "births": 31,
+      "splits": 26,
+      "merges": 21,
+      "mutations": 78,
+      "n_communities_final": 10
+    },
+    {
+      "seed": 2,
+      "births": 33,
+      "splits": 30,
+      "merges": 27,
+      "mutations": 90,
+      "n_communities_final": 9
+    },
+    {
+      "seed": 3,
+      "births": 43,
+      "splits": 20,
+      "merges": 17,
+      "mutations": 80,
+      "n_communities_final": 9
+    },
+    {
+      "seed": 4,
+      "births": 34,
+      "splits": 26,
+      "merges": 26,
+      "mutations": 86,
+      "n_communities_final": 9
+    },
+    {
+      "seed": 5,
+      "births": 29,
+      "splits": 34,
+      "merges": 32,
+      "mutations": 95,
+      "n_communities_final": 9
+    },
+    {
+      "seed": 6,
+      "births": 27,
+      "splits": 33,
+      "merges": 31,
+      "mutations": 91,
+      "n_communities_final": 10
+    },
+    {
+      "seed": 7,
+      "births": 42,
+      "splits": 30,
+      "merges": 30,
+      "mutations": 102,
+      "n_communities_final": 10
+    },
+    {
+      "seed": 8,
+      "births": 31,
+      "splits": 23,
+      "merges": 20,
+      "mutations": 74,
+      "n_communities_final": 9
+    },
+    {
+      "seed": 9,
+      "births": 33,
+      "splits": 28,
+      "merges": 22,
+      "mutations": 83,
+      "n_communities_final": 9
+    },
+    {
+      "seed": 10,
+      "births": 31,
+      "splits": 33,
+      "merges": 27,
+      "mutations": 91,
+      "n_communities_final": 10
+    },
+    {
+      "seed": 11,
+      "births": 36,
+      "splits": 28,
+      "merges": 26,
+      "mutations": 90,
+      "n_communities_final": 9
+    }
+  ],
+  "births": {
+    "mean": 34.1,
+    "std": 4.8,
+    "min": 27,
+    "max": 43
+  },
+  "splits": {
+    "mean": 28.2,
+    "std": 4.0,
+    "min": 20,
+    "max": 34
+  },
+  "merges": {
+    "mean": 25.4,
+    "std": 4.4,
+    "min": 17,
+    "max": 32
+  },
+  "mutations": {
+    "mean": 87.8,
+    "std": 7.6,
+    "min": 74,
+    "max": 102
+  },
+  "n_communities_final": {
+    "mean": 9.5,
+    "std": 0.6,
+    "min": 9,
+    "max": 11
+  }
+}

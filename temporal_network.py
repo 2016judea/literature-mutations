@@ -43,6 +43,13 @@ EDGE_MIN_OVERLAP = 0.5     # genre-overlap threshold for an edge (matches paper)
 # threshold yields one blob. Linking each book to its k most-similar peers
 # recovers genre structure robustly regardless of the absolute cosine scale.
 EDGE_KNN = 6
+LOUVAIN_SEED = int(os.environ.get("LOUVAIN_SEED", "42"))
+                           # Louvain re-partitions the WHOLE graph each
+                           # snapshot, so the seed is not cosmetic: it changes
+                           # which communities are judged "the same" from year
+                           # to year and therefore the event counts. Exposed
+                           # so the counts can be reported as a distribution
+                           # rather than a point estimate (RESEARCH-PROGRAM S3).
 MATCH_MIN_JACCARD = 0.3    # how much membership overlap counts as "the same"
                            # community persisting from one year to the next
 
@@ -131,7 +138,7 @@ def detect_communities(G):
     if G.number_of_nodes() == 0:
         return []
     try:
-        comms = nx_comm.louvain_communities(G, seed=42)
+        comms = nx_comm.louvain_communities(G, seed=LOUVAIN_SEED)
     except Exception:
         comms = nx_comm.greedy_modularity_communities(G)
     return [frozenset(c) for c in comms if len(c) >= 3]   # ignore tiny specks

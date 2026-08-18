@@ -7,10 +7,9 @@
     "unresolved": 1
   },
   "spelling_choice": {
-    "single": 141,
-    "year_constrained": 28,
-    "given_name": 7,
-    "displaces_earliest": 2
+    "single": 140,
+    "year_constrained": 30,
+    "given_name": 7
   },
   "collisions": [
     {
@@ -202,14 +201,14 @@
     },
     {
       "title": "Kenilworth",
-      "year": 1798,
+      "year": 1827,
       "gutendex_name": "Walter Scott",
       "candidates": [
         "Sir Walter Scott",
         "Walter Scott"
       ],
-      "chosen": "Sir Walter Scott",
-      "rule": "displaces_earliest"
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
     },
     {
       "title": "The Tenant of Wildfell Hall",
@@ -260,15 +259,15 @@
     },
     {
       "title": "Tono-Bungay",
-      "year": 1890,
+      "year": 1908,
       "gutendex_name": "H. G. (Herbert George) Wells",
       "candidates": [
         "H.G. Wells",
         "H. G. Wells",
         "Herbert George Wells"
       ],
-      "chosen": "H.G. Wells",
-      "rule": "displaces_earliest"
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
     },
     {
       "title": "Ann Veronica",
@@ -435,61 +434,13 @@
     }
   ],
   "year_source": {
-    "openlibrary": 178
+    "openlibrary": 177
   },
   "year_missing": [
-    "Death Comes for the Archbishop"
+    "Death Comes for the Archbishop",
+    "The Singing Bone"
   ],
-  "year_before_author_earliest": [
-    {
-      "title": "Frankenstein",
-      "author": "Mary Shelley",
-      "resolved_year": 1816,
-      "author_earliest_in_corpus": 1818
-    },
-    {
-      "title": "Kenilworth",
-      "author": "Sir Walter Scott",
-      "resolved_year": 1798,
-      "author_earliest_in_corpus": 1814
-    },
-    {
-      "title": "Oliver Twist",
-      "author": "Charles Dickens",
-      "resolved_year": 1835,
-      "author_earliest_in_corpus": 1837
-    },
-    {
-      "title": "Tono-Bungay",
-      "author": "H.G. Wells",
-      "resolved_year": 1890,
-      "author_earliest_in_corpus": 1895
-    },
-    {
-      "title": "The Adventures of Huckleberry Finn",
-      "author": "Mark Twain",
-      "resolved_year": 1875,
-      "author_earliest_in_corpus": 1876
-    },
-    {
-      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
-      "author": "Robert Louis Stevenson",
-      "resolved_year": 1875,
-      "author_earliest_in_corpus": 1883
-    },
-    {
-      "title": "The Singing Bone",
-      "author": "R. Austin Freeman",
-      "resolved_year": 1900,
-      "author_earliest_in_corpus": 1907
-    },
-    {
-      "title": "The Ambassadors",
-      "author": "Henry James",
-      "resolved_year": 1868,
-      "author_earliest_in_corpus": 1877
-    }
-  ],
+  "year_before_author_earliest": [],
   "calibration": {
     "what": "Open Library year, scored against the 166 canon years that survive in genre_network.html. This is the error rate the same source injects into the 179 reconstructed years.",
     "n_probed": 162,
@@ -681,18 +632,7 @@
       }
     ]
   },
-  "displaces_earliest": [
-    {
-      "title": "Kenilworth",
-      "year": 1798,
-      "chosen": "Sir Walter Scott"
-    },
-    {
-      "title": "Tono-Bungay",
-      "year": 1890,
-      "chosen": "H.G. Wells"
-    }
-  ],
+  "displaces_earliest": [],
   "guard_suspect": [
     "Jonathan Wild",
     "The Italian",
@@ -784,6 +724,10 @@
   "dropped": [
     {
       "title": "Death Comes for the Archbishop",
+      "why": "no year from any source"
+    },
+    {
+      "title": "The Singing Bone",
       "why": "no year from any source"
     }
   ]
