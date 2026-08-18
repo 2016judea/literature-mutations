@@ -62,22 +62,42 @@ passed 2026-08-14**, so the next conference cycle is ~Aug 2027.
 
 ## State of play — read this before scoping any work
 
-Three facts about the checkout that are not in the README and change what is
-possible:
+> **Updated 2026-08-18 by S0.** Facts 1 and 2 below are now HISTORY — the corpus
+> is back on disk and committed. Full report:
+> [`S0-CORPUS-RECONSTRUCTION.md`](S0-CORPUS-RECONSTRUCTION.md). What changed:
+>
+> - **`_data/books.json` exists and is committed**, 343 of the 345 books, plus
+>   `_data/canon.json`, every raw catalogue pull, and a 344-row manifest of
+>   `(title, author, year, gutenberg_id, sha256, words)`. Phase 1 is now
+>   committed like Phase 2.
+> - **Detective fiction reproduces exactly** — n = 13, 1878–1926, std 14.9,
+>   **z = −3.04**, same six top terms — from published artifacts alone. Fact 3
+>   stands, and now has an internal leg to go with S2's external one.
+> - **The Louvain event counts do not reproduce and cannot.** Changing only the
+>   random seed on a fixed corpus moves the mutation total by **±7.6**
+>   (range 74–102), so the published 90 and the reconstruction's 88 are the same
+>   number. This makes P3 quantitative — see the note under P3.
+> - **Nothing in the repo writes `honest_metrics`**; only
+>   `animate_genre_growth.py` reads it. The producer of the null-model figures
+>   was missing too, and `null_model.py` is a *reconstruction* of it.
+> - **Two defects in the published corpus**, both left in place deliberately:
+>   14 works appear twice under two titles (345 books ≈ 331 works), and
+>   `n_authors = 166` counts ~157 people because H. G. Wells and six others
+>   appear under several spellings — which partly defeats `controls.py`'s
+>   one-book-per-author control. Read §B and §C of the S0 report before S1.
 
-**1. The Phase 1 corpus does not exist on disk.** `_data/books.json` and
-`_data/canon.json` are absent, and `git ls-files _data` shows they were *never
-committed* (only the Phase 2 bibliography/influence files were). **The published
-Phase 1 results are currently unreproducible.**
+**1. ~~The Phase 1 corpus does not exist on disk.~~** *Resolved by S0.*
+`_data/books.json` and `_data/canon.json` were absent and had never been
+committed; the published Phase 1 results were unreproducible until 2026-08-18.
 
-**2. But the corpus identity survives.** `results.json` → `communities[].titles`
+**2. The corpus identity survives.** `results.json` → `communities[].titles`
 holds **all 345 titles**, unique and complete. `genre_network.html` → the
 embedded `DATA` object holds the 166 author-controlled books with
-title/author/year/community. So the corpus can be *reconstructed* from
-checked-in artifacts without re-running the LLM enumeration — which matters,
-because re-running `build_canon.py` produces a **different** corpus (two LLMs,
-non-deterministic) and would silently break comparability with every published
-number.
+title/author/year/community. That is what S0 rebuilt from, without re-running
+the LLM enumeration — because re-running `build_canon.py` produces a
+**different** corpus (two LLMs, non-deterministic) and would silently break
+comparability with every published number. **The rule still stands for every
+later session: do not run `build_canon.py`.**
 
 **3. The surviving positive finding rests on 13 books.** `controls_results.json`
 → detective fiction: n = 13, 1878–1926, year_std 14.9, z = −3.04.
@@ -128,6 +148,14 @@ formation violent enough to leak through canonization.
 
 ### P3 — The instrument is noisy regardless of corpus size
 
+> **Measured by S0, 2026-08-18.** On ONE fixed corpus, changing only the Louvain
+> seed: mutations **87.8 ± 7.6** (range 74–102), births 34.1 ± 4.8, splits
+> 28.2 ± 4.0, merges 25.4 ± 4.4, final communities 9.5 ± 0.6. The published null
+> model's entire effect — 90 real vs 94.1 shuffled, a gap of **4.1** — is
+> roughly half the instrument's own seed noise. The README's negative claim
+> survives; its stated reason does not. `seed_sweep.py`, and the seed is now
+> `LOUVAIN_SEED` instead of a hardcoded 42.
+
 [`temporal_network.py:134`](../temporal_network.py#L134) re-runs Louvain from
 scratch on every cumulative snapshot and matches communities by Jaccard ≥ 0.3.
 Louvain re-partitions the **whole** graph, so one added book can renumber
@@ -147,12 +175,15 @@ S6 (reception) ──────────────────── STAR
 S2 (Ngrams) ─────────────────────── DONE 2026-08-18. Detective agrees on both
                                     clocks; the null holds on both too.
 
-S0 (reconstruct) ──┬── S1 (provenance audit)
+S0 (reconstruct) ──┬── S1 (provenance audit)     DONE 2026-08-18. Corpus is on
+                   │                            disk and committed; detective
+                   │                            reproduces at z = -3.04.
                    └── S3 (instrument) ── S4 (NovelTM) ── S5 (HathiTrust EF)
 ```
 
-S0 blocks everything downstream of it: four of these sessions need a corpus that
-is not currently on disk.
+S0 is done, so S1/S3/S4/S5 are unblocked. S3 gained the strongest possible
+argument for itself: S0 measured the old instrument's seed noise and it swamps
+the null-model effect the README rests on.
 
 S6 blocks nothing and is blocked by nothing, which is exactly why it is easy to
 defer until it becomes the reason the paper is late.
@@ -160,6 +191,13 @@ defer until it becomes the reason the paper is late.
 ---
 
 ## S0 — Reconstruct the corpus and re-verify the published numbers
+
+> **DONE 2026-08-18 — full report in
+> [`S0-CORPUS-RECONSTRUCTION.md`](S0-CORPUS-RECONSTRUCTION.md).** Detective
+> fiction reproduces exactly (n=13, 1878-1926, std 14.9, z=-3.04); the Louvain
+> event counts do not and cannot, because seed noise alone is +/-7.6 mutations.
+> Corpus, canon, raw pulls and a sha256 manifest are committed. Deviations are
+> reported, not adopted — the drift rule applies and Aidan calls it.
 
 **Blocks:** S1, S3, S4, S5. Do this first.
 **Effort:** half a day, most of it waiting on Gutenberg fetches.
@@ -419,6 +457,14 @@ the textual series from S3/S4.
   in ~1840s–1920s"; `controls_results.json` says **1878–1926**. If the 1840s
   refers to Poe as literary-historical context rather than to the corpus, say so
   explicitly — as written it reads as a corpus figure and is wrong by ~35 years.
-- **`_data/` is committed for Phase 2 but not Phase 1.** Whatever S0 concludes,
-  make the two phases consistent so the next person cannot lose a corpus the
-  same way.
+- **~~`_data/` is committed for Phase 2 but not Phase 1.~~** Fixed by S0
+  2026-08-18: `books.json`, `canon.json`, every raw catalogue pull and a
+  `(title, author, year, gutenberg_id, sha256)` manifest are committed.
+- **New, from S0 — three things to fix once Aidan has ruled on the report.**
+  (a) 14 works are in the corpus twice under two titles, because
+  `build_canon.py` dedups on `norm(title) + surname` and a subtitle survives
+  that key; (b) `n_authors = 166` counts ~157 people, because H. G. Wells and
+  six others appear under several spellings, which partly defeats
+  `controls.py`'s one-book-per-author control; (c) nothing in the repo writes
+  `results.json.honest_metrics` — the null-model producer is missing, and
+  `null_model.py` is a reconstruction of it, not a recovery.
