@@ -1,0 +1,149 @@
+{
+ "Jonathan Wild": {
+  "hits": [
+   {
+    "id": 5256,
+    "gutenberg_title": "The History of the Life of the Late Mr. Jonathan Wild the Great",
+    "surname": "fielding",
+    "via": "surname_sweep"
+   }
+  ],
+  "surnames": [
+   "fielding"
+  ]
+ },
+ "The Italian": {
+  "hits": [
+   {
+    "id": 7881,
+    "gutenberg_title": "Passages from the French and Italian Notebooks, Complete",
+    "surname": "hawthorne",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 7880,
+    "gutenberg_title": "Passages from the French and Italian Notebooks, Volume 2.",
+    "surname": "hawthorne",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 7879,
+    "gutenberg_title": "Passages from the French and Italian Notebooks, Volume 1.",
+    "surname": "hawthorne",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 53495,
+    "gutenberg_title": "Italian Villas and Their Gardens",
+    "surname": "wharton",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 9299,
+    "gutenberg_title": "Italian Letters, Vols. I and II; Or, The History of the Count de St. Julian",
+    "surname": "godwin",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 74643,
+    "gutenberg_title": "The Italian, Volume 1 (of 3) : $b or, the confessional of the Black Penitents",
+    "surname": "radcliffe",
+    "via": "surname_sweep"
+   }
+  ],
+  "surnames": [
+   "godwin",
+   "hawthorne",
+   "radcliffe",
+   "wharton"
+  ]
+ },
+ "The Wanderer": {
+  "hits": [
+   {
+    "id": 60102,
+    "gutenberg_title": "Wanderer of the Wasteland",
+    "surname": "grey",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 3097,
+    "gutenberg_title": "The Wanderer's Necklace",
+    "surname": "haggard",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 30852,
+    "gutenberg_title": "The Tin Woodman of Oz: A Faithful Story of the Astonishing Adventure Undertaken; by the Tin Woodman, assisted by Woot the Wanderer, the; Scarecrow of Oz, and Polychrome, the Rainbow's Daughter",
+    "surname": "baum",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 960,
+    "gutenberg_title": "The Tin Woodman of Oz: A Faithful Story of the Astonishing Adventure Undertaken by the Tin Woodman, Assisted by Woot the Wanderer, the Scarecrow of Oz, and Polychrome, the Rainbow's Daughter",
+    "surname": "baum",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 37437,
+    "gutenberg_title": "The Wanderer; or, Female Difficulties (Volume 1 of 5)",
+    "surname": "burney",
+    "via": "surname_sweep"
+   },
+   {
+    "id": 37439,
+    "gutenberg_title": "The Wanderer; or, Female Difficulties (Volume 3 of 5)",
+    "surname": "burney",
+    "via": "surname_sweep"
+   }
+  ],
+  "surnames": [
+   "baum",
+   "burney",
+   "grey",
+   "haggard",
+   "maturin",
+   "reeve",
+   "rolfe"
+  ]
+ },
+ "She": {
+  "hits": [
+   {
+    "id": 3155,
+    "gutenberg_title": "She",
+    "surname": "haggard",
+    "via": "deep_page"
+   }
+  ],
+  "surnames": [
+   "haggard"
+  ]
+ },
+ "The Rainbow": {
+  "hits": [
+   {
+    "id": 28948,
+    "gutenberg_title": "The Rainbow",
+    "surname": "lawrence",
+    "via": "deep_page"
+   }
+  ],
+  "surnames": [
+   "lawrence"
+  ]
+ },
+ "The Roger Ackroyd": {
+  "hits": [
+   {
+    "id": 69087,
+    "gutenberg_title": "The murder of Roger Ackroyd",
+    "surname": "christie",
+    "via": "surname_sweep"
+   }
+  ],
+  "surnames": [
+   "christie"
+  ]
+ }
+}

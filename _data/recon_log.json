@@ -1,0 +1,790 @@
+{
+  "unresolved_author": [
+    "She"
+  ],
+  "author_source": {
+    "gutendex": 178,
+    "unresolved": 1
+  },
+  "spelling_choice": {
+    "single": 141,
+    "year_constrained": 28,
+    "given_name": 7,
+    "displaces_earliest": 2
+  },
+  "collisions": [
+    {
+      "title": "Cecilia; or, Memoirs of an Heiress",
+      "year": 1782,
+      "gutendex_name": "Fanny Burney",
+      "candidates": [
+        "Fanny Burney",
+        "Frances Burney"
+      ],
+      "chosen": "Fanny Burney",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Clarissa",
+      "year": 1747,
+      "gutendex_name": "Samuel Richardson",
+      "candidates": [
+        "Samuel Richardson",
+        "Dorothy Richardson"
+      ],
+      "chosen": "Samuel Richardson",
+      "rule": "given_name"
+    },
+    {
+      "title": "Camilla",
+      "year": 1796,
+      "gutendex_name": "Fanny Burney",
+      "candidates": [
+        "Fanny Burney",
+        "Frances Burney"
+      ],
+      "chosen": "Frances Burney",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Camilla; or, A Picture of Youth",
+      "year": 1796,
+      "gutendex_name": "Fanny Burney",
+      "candidates": [
+        "Fanny Burney",
+        "Frances Burney"
+      ],
+      "chosen": "Frances Burney",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Wanderer",
+      "year": 1814,
+      "gutendex_name": "Fanny Burney",
+      "candidates": [
+        "Fanny Burney",
+        "Frances Burney"
+      ],
+      "chosen": "Frances Burney",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Wieland",
+      "year": 1798,
+      "gutendex_name": "Charles Brockden Brown",
+      "candidates": [
+        "William Hill Brown",
+        "Charles Brockden Brown"
+      ],
+      "chosen": "Charles Brockden Brown",
+      "rule": "given_name"
+    },
+    {
+      "title": "The Talisman",
+      "year": 1825,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Virginians",
+      "year": 1857,
+      "gutendex_name": "William Makepeace Thackeray",
+      "candidates": [
+        "William Thackeray",
+        "William Makepeace Thackeray"
+      ],
+      "chosen": "William Makepeace Thackeray",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Fortunes of Nigel",
+      "year": 1822,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Antiquary",
+      "year": 1816,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Quentin Durward",
+      "year": 1821,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Pirate",
+      "year": 1822,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Old Mortality",
+      "year": 1830,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Rob Roy",
+      "year": 1817,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Redgauntlet",
+      "year": 1824,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Ivanhoe",
+      "year": 1819,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Walter Scott",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "She",
+      "year": 1886,
+      "gutendex_name": "H. Rider Haggard",
+      "candidates": [
+        "H. Rider Haggard",
+        "Henry Rider Haggard"
+      ],
+      "chosen": "H. Rider Haggard",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Kenilworth",
+      "year": 1798,
+      "gutendex_name": "Walter Scott",
+      "candidates": [
+        "Sir Walter Scott",
+        "Walter Scott"
+      ],
+      "chosen": "Sir Walter Scott",
+      "rule": "displaces_earliest"
+    },
+    {
+      "title": "The Tenant of Wildfell Hall",
+      "year": 1847,
+      "gutendex_name": "Anne Brontë",
+      "candidates": [
+        "Charlotte Brontë",
+        "Emily Brontë",
+        "Anne Brontë"
+      ],
+      "chosen": "Anne Brontë",
+      "rule": "given_name"
+    },
+    {
+      "title": "Middlemarch",
+      "year": 1871,
+      "gutendex_name": "George Eliot",
+      "candidates": [
+        "George Eliot",
+        "T. S. Eliot"
+      ],
+      "chosen": "George Eliot",
+      "rule": "given_name"
+    },
+    {
+      "title": "Shirley",
+      "year": 1849,
+      "gutendex_name": "Charlotte Brontë",
+      "candidates": [
+        "Charlotte Brontë",
+        "Emily Brontë",
+        "Anne Brontë"
+      ],
+      "chosen": "Charlotte Brontë",
+      "rule": "given_name"
+    },
+    {
+      "title": "The Island of Doctor Moreau",
+      "year": 1896,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "H.G. Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Tono-Bungay",
+      "year": 1890,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "H.G. Wells",
+      "rule": "displaces_earliest"
+    },
+    {
+      "title": "Ann Veronica",
+      "year": 1909,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The World Set Free",
+      "year": 1914,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Research Magnificent",
+      "year": 1915,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Food of the Gods",
+      "year": 1904,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The History of Mr Polly",
+      "year": 1909,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Kipps",
+      "year": 1905,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Food of the Gods and How It Came to Earth",
+      "year": 1904,
+      "gutendex_name": "H. G. (Herbert George) Wells",
+      "candidates": [
+        "H.G. Wells",
+        "H. G. Wells",
+        "Herbert George Wells"
+      ],
+      "chosen": "Herbert George Wells",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Rainbow",
+      "year": 1915,
+      "gutendex_name": "D.H. Lawrence",
+      "candidates": [
+        "D.H. Lawrence",
+        "D. H. Lawrence"
+      ],
+      "chosen": "D.H. Lawrence",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Sons and Lovers",
+      "year": 1913,
+      "gutendex_name": "D. H. (David Herbert) Lawrence",
+      "candidates": [
+        "D.H. Lawrence",
+        "D. H. Lawrence"
+      ],
+      "chosen": "D.H. Lawrence",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Elmer Gantry",
+      "year": 1927,
+      "gutendex_name": "Sinclair Lewis",
+      "candidates": [
+        "Matthew Lewis",
+        "Wyndham Lewis",
+        "Sinclair Lewis"
+      ],
+      "chosen": "Sinclair Lewis",
+      "rule": "given_name"
+    },
+    {
+      "title": "Lady Chatterley's Lover",
+      "year": 1913,
+      "gutendex_name": "D. H. (David Herbert) Lawrence",
+      "candidates": [
+        "D.H. Lawrence",
+        "D. H. Lawrence"
+      ],
+      "chosen": "D.H. Lawrence",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "The Longest Journey",
+      "year": 1907,
+      "gutendex_name": "E. M. (Edward Morgan) Forster",
+      "candidates": [
+        "E.M. Forster",
+        "E. M. Forster"
+      ],
+      "chosen": "E.M. Forster",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "A Passage to India",
+      "year": 1924,
+      "gutendex_name": "E. M. (Edward Morgan) Forster",
+      "candidates": [
+        "E.M. Forster",
+        "E. M. Forster"
+      ],
+      "chosen": "E. M. Forster",
+      "rule": "year_constrained"
+    },
+    {
+      "title": "Babbitt",
+      "year": 1922,
+      "gutendex_name": "Sinclair Lewis",
+      "candidates": [
+        "Matthew Lewis",
+        "Wyndham Lewis",
+        "Sinclair Lewis"
+      ],
+      "chosen": "Sinclair Lewis",
+      "rule": "given_name"
+    }
+  ],
+  "year_source": {
+    "openlibrary": 178
+  },
+  "year_missing": [
+    "Death Comes for the Archbishop"
+  ],
+  "year_before_author_earliest": [
+    {
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "resolved_year": 1816,
+      "author_earliest_in_corpus": 1818
+    },
+    {
+      "title": "Kenilworth",
+      "author": "Sir Walter Scott",
+      "resolved_year": 1798,
+      "author_earliest_in_corpus": 1814
+    },
+    {
+      "title": "Oliver Twist",
+      "author": "Charles Dickens",
+      "resolved_year": 1835,
+      "author_earliest_in_corpus": 1837
+    },
+    {
+      "title": "Tono-Bungay",
+      "author": "H.G. Wells",
+      "resolved_year": 1890,
+      "author_earliest_in_corpus": 1895
+    },
+    {
+      "title": "The Adventures of Huckleberry Finn",
+      "author": "Mark Twain",
+      "resolved_year": 1875,
+      "author_earliest_in_corpus": 1876
+    },
+    {
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "author": "Robert Louis Stevenson",
+      "resolved_year": 1875,
+      "author_earliest_in_corpus": 1883
+    },
+    {
+      "title": "The Singing Bone",
+      "author": "R. Austin Freeman",
+      "resolved_year": 1900,
+      "author_earliest_in_corpus": 1907
+    },
+    {
+      "title": "The Ambassadors",
+      "author": "Henry James",
+      "resolved_year": 1868,
+      "author_earliest_in_corpus": 1877
+    }
+  ],
+  "calibration": {
+    "what": "Open Library year, scored against the 166 canon years that survive in genre_network.html. This is the error rate the same source injects into the 179 reconstructed years.",
+    "n_probed": 162,
+    "exact": 105,
+    "within_2y": 129,
+    "exact_pct": 64.8,
+    "within_2y_pct": 79.6,
+    "mean_abs_err": 2.5,
+    "worst": [
+      {
+        "title": "Vathek",
+        "canon": 1786,
+        "openlibrary": 1834,
+        "delta": 48
+      },
+      {
+        "title": "Robinson Crusoe",
+        "canon": 1719,
+        "openlibrary": 1686,
+        "delta": -33
+      },
+      {
+        "title": "The Scarlet Letter",
+        "canon": 1850,
+        "openlibrary": 1874,
+        "delta": 24
+      },
+      {
+        "title": "The Mystery of the Yellow Room",
+        "canon": 1907,
+        "openlibrary": 1928,
+        "delta": 21
+      },
+      {
+        "title": "Little Women",
+        "canon": 1868,
+        "openlibrary": 1848,
+        "delta": -20
+      },
+      {
+        "title": "Sister Carrie",
+        "canon": 1900,
+        "openlibrary": 1917,
+        "delta": 17
+      },
+      {
+        "title": "Westward Ho!",
+        "canon": 1855,
+        "openlibrary": 1839,
+        "delta": -16
+      },
+      {
+        "title": "The Sea Hawk",
+        "canon": 1915,
+        "openlibrary": 1900,
+        "delta": -15
+      },
+      {
+        "title": "Where Angels Fear to Tread",
+        "canon": 1905,
+        "openlibrary": 1920,
+        "delta": 15
+      },
+      {
+        "title": "Lorna Doone",
+        "canon": 1869,
+        "openlibrary": 1855,
+        "delta": -14
+      },
+      {
+        "title": "Ralph 124C 41+",
+        "canon": 1911,
+        "openlibrary": 1925,
+        "delta": 14
+      },
+      {
+        "title": "Trent's Last Case",
+        "canon": 1913,
+        "openlibrary": 1900,
+        "delta": -13
+      },
+      {
+        "title": "When the Sleeper Wakes",
+        "canon": 1899,
+        "openlibrary": 1910,
+        "delta": 11
+      },
+      {
+        "title": "Prester John",
+        "canon": 1910,
+        "openlibrary": 1900,
+        "delta": -10
+      },
+      {
+        "title": "King Solomon's Mines",
+        "canon": 1885,
+        "openlibrary": 1876,
+        "delta": -9
+      },
+      {
+        "title": "Ben-Hur",
+        "canon": 1880,
+        "openlibrary": 1872,
+        "delta": -8
+      },
+      {
+        "title": "Dubliners",
+        "canon": 1914,
+        "openlibrary": 1906,
+        "delta": -8
+      },
+      {
+        "title": "The Jungle Book",
+        "canon": 1894,
+        "openlibrary": 1887,
+        "delta": -7
+      },
+      {
+        "title": "With Fire and Sword",
+        "canon": 1884,
+        "openlibrary": 1891,
+        "delta": 7
+      },
+      {
+        "title": "Women in Love",
+        "canon": 1920,
+        "openlibrary": 1913,
+        "delta": -7
+      },
+      {
+        "title": "Peter Pan",
+        "canon": 1911,
+        "openlibrary": 1904,
+        "delta": -7
+      },
+      {
+        "title": "Jane Eyre",
+        "canon": 1847,
+        "openlibrary": 1841,
+        "delta": -6
+      },
+      {
+        "title": "The Railway Children",
+        "canon": 1906,
+        "openlibrary": 1900,
+        "delta": -6
+      },
+      {
+        "title": "Walden",
+        "canon": 1854,
+        "openlibrary": 1849,
+        "delta": -5
+      },
+      {
+        "title": "Almayer's Folly",
+        "canon": 1895,
+        "openlibrary": 1890,
+        "delta": -5
+      },
+      {
+        "title": "The Voyage Out",
+        "canon": 1915,
+        "openlibrary": 1920,
+        "delta": 5
+      },
+      {
+        "title": "War and Peace",
+        "canon": 1869,
+        "openlibrary": 1864,
+        "delta": -5
+      },
+      {
+        "title": "The American",
+        "canon": 1877,
+        "openlibrary": 1872,
+        "delta": -5
+      },
+      {
+        "title": "Esther Waters",
+        "canon": 1894,
+        "openlibrary": 1890,
+        "delta": -4
+      },
+      {
+        "title": "Twenty Thousand Leagues Under the Sea",
+        "canon": 1870,
+        "openlibrary": 1873,
+        "delta": 3
+      }
+    ]
+  },
+  "displaces_earliest": [
+    {
+      "title": "Kenilworth",
+      "year": 1798,
+      "chosen": "Sir Walter Scott"
+    },
+    {
+      "title": "Tono-Bungay",
+      "year": 1890,
+      "chosen": "H.G. Wells"
+    }
+  ],
+  "guard_suspect": [
+    "Jonathan Wild",
+    "The Italian",
+    "The Wanderer",
+    "She",
+    "The Rainbow",
+    "The Roger Ackroyd"
+  ],
+  "guard_corrections": [
+    {
+      "title": "The Italian",
+      "was": "Edith Wharton",
+      "now_surname": "radcliffe",
+      "evidence": [
+        {
+          "id": 7881,
+          "gutenberg_title": "Passages from the French and Italian Notebooks, Complete",
+          "surname": "hawthorne",
+          "via": "surname_sweep"
+        },
+        {
+          "id": 7880,
+          "gutenberg_title": "Passages from the French and Italian Notebooks, Volume 2.",
+          "surname": "hawthorne",
+          "via": "surname_sweep"
+        }
+      ]
+    },
+    {
+      "title": "The Wanderer",
+      "was": "Frederick Rolfe",
+      "now_surname": "burney",
+      "evidence": [
+        {
+          "id": 60102,
+          "gutenberg_title": "Wanderer of the Wasteland",
+          "surname": "grey",
+          "via": "surname_sweep"
+        },
+        {
+          "id": 3097,
+          "gutenberg_title": "The Wanderer's Necklace",
+          "surname": "haggard",
+          "via": "surname_sweep"
+        }
+      ]
+    },
+    {
+      "title": "She",
+      "was": null,
+      "now_surname": "haggard",
+      "evidence": [
+        {
+          "id": 3155,
+          "gutenberg_title": "She",
+          "surname": "haggard",
+          "via": "deep_page"
+        }
+      ]
+    },
+    {
+      "title": "The Rainbow",
+      "was": "Samuel Johnson",
+      "now_surname": "lawrence",
+      "evidence": [
+        {
+          "id": 28948,
+          "gutenberg_title": "The Rainbow",
+          "surname": "lawrence",
+          "via": "deep_page"
+        }
+      ]
+    }
+  ],
+  "guard_ambiguous": [
+    {
+      "title": "Jonathan Wild",
+      "surnames": [
+        "fielding"
+      ]
+    },
+    {
+      "title": "The Roger Ackroyd",
+      "surnames": [
+        "christie"
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "title": "Death Comes for the Archbishop",
+      "why": "no year from any source"
+    }
+  ]
+}

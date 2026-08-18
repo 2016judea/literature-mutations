@@ -35,6 +35,7 @@ from constants import shelved_books
 
 K = 6
 SEED = 42
+OUT = os.environ.get("CONTROLS_OUT", "controls_results.json")
 
 
 def load():
@@ -147,10 +148,10 @@ def main():
                     "drift, and author voice, detective fiction is the one robust, "
                     "label-validated temporal emergence; the rest are perennial modes."),
     }
-    json.dump(out, open("controls_results.json", "w"), indent=2)
+    json.dump(out, open(OUT, "w"), indent=2)
     print(f"\nEmergent (z<=-2): "
           f"{[r['held_out_label'] for r in emergent]}")
-    print("Wrote controls_results.json")
+    print(f"Wrote {OUT}")
 
 
 if __name__ == "__main__":

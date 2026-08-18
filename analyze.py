@@ -28,7 +28,7 @@ import temporal_network as tn
 from semantic_edges import attach_embeddings
 
 CLAUDE_MODEL = "claude-sonnet-4-6"
-RESULTS = "results.json"
+RESULTS = os.environ.get("RESULTS_OUT", "results.json")
 
 
 def load_corpus():
