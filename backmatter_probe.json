@@ -1,0 +1,5483 @@
+{
+ "summary": {
+  "sampled": 150,
+  "fetched": 150,
+  "carrying_ad": 0,
+  "rate": 0.0,
+  "by_period": {
+   "pre-1850": {
+    "n": 50,
+    "ads": 0
+   },
+   "1850-1889": {
+    "n": 50,
+    "ads": 0
+   },
+   "1890-1928": {
+    "n": 50,
+    "ads": 0
+   }
+  },
+  "back_only": 0,
+  "front_only": 0,
+  "both": 0,
+  "any_marker_anywhere": 13,
+  "corroborated_anywhere": 0,
+  "family_totals": {
+   "same_author": 0,
+   "series_or_list": 0,
+   "trade_format": 0,
+   "price": 30,
+   "trade_puffery": 3
+  },
+  "books_per_family": {
+   "same_author": 0,
+   "series_or_list": 0,
+   "trade_format": 0,
+   "price": 11,
+   "trade_puffery": 2
+  }
+ },
+ "books": [
+  {
+   "title": "Camilla",
+   "author": "Frances Burney",
+   "year": 1796,
+   "gutenberg_id": 40619,
+   "fetched": true,
+   "raw_chars": 2117082,
+   "body_chars": 2097269,
+   "body_words": 357412,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Tristram Shandy",
+   "author": "Laurence Sterne",
+   "year": 1759,
+   "gutenberg_id": 1079,
+   "fetched": true,
+   "raw_chars": 1057539,
+   "body_chars": 1038092,
+   "body_words": 181007,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Clarissa",
+   "author": "Samuel Richardson",
+   "year": 1747,
+   "gutenberg_id": 9296,
+   "fetched": true,
+   "raw_chars": 610762,
+   "body_chars": 590918,
+   "body_words": 106975,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "David Copperfield",
+   "author": "Charles Dickens",
+   "year": 1849,
+   "gutenberg_id": 766,
+   "fetched": true,
+   "raw_chars": 1954062,
+   "body_chars": 1934735,
+   "body_words": 354826,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Roderick Random",
+   "author": "Tobias Smollett",
+   "year": 1748,
+   "gutenberg_id": 4085,
+   "fetched": true,
+   "raw_chars": 1110551,
+   "body_chars": 1090822,
+   "body_words": 190589,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 2
+    },
+    "positions": {
+     "price": [
+      0.114
+     ]
+    },
+    "samples": {
+     "price": [
+      "8s. 7d.",
+      "8s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Glenarvon",
+   "author": "Lady Caroline Lamb",
+   "year": 1816,
+   "gutenberg_id": 68773,
+   "fetched": true,
+   "raw_chars": 359158,
+   "body_chars": 339304,
+   "body_words": 58715,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Life of Jonathan Wild the Great",
+   "author": "Henry Fielding",
+   "year": 1754,
+   "gutenberg_id": 5256,
+   "fetched": true,
+   "raw_chars": 431669,
+   "body_chars": 411758,
+   "body_words": 71829,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Melmoth the Wanderer",
+   "author": "Charles Robert Maturin",
+   "year": 1820,
+   "gutenberg_id": 53685,
+   "fetched": true,
+   "raw_chars": 350935,
+   "body_chars": 331022,
+   "body_words": 56592,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Roxana",
+   "author": "Daniel Defoe",
+   "year": 1724,
+   "gutenberg_id": 30344,
+   "fetched": true,
+   "raw_chars": 871955,
+   "body_chars": 851987,
+   "body_words": 163278,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 1
+    },
+    "positions": {
+     "price": [
+      0.539
+     ]
+    },
+    "samples": {
+     "price": [
+      "9s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "A Sicilian Romance",
+   "author": "Ann Radcliffe",
+   "year": 1790,
+   "gutenberg_id": 7371,
+   "fetched": true,
+   "raw_chars": 426039,
+   "body_chars": 406341,
+   "body_words": 67569,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Cecilia; or, Memoirs of an Heiress",
+   "author": "Fanny Burney",
+   "year": 1782,
+   "gutenberg_id": 6346,
+   "fetched": true,
+   "raw_chars": 649747,
+   "body_chars": 629838,
+   "body_words": 107840,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Crotchet Castle",
+   "author": "Thomas Love Peacock",
+   "year": 1831,
+   "gutenberg_id": 2075,
+   "fetched": true,
+   "raw_chars": 240282,
+   "body_chars": 220958,
+   "body_words": 37515,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Mysteries of Udolpho",
+   "author": "Ann Radcliffe",
+   "year": 1794,
+   "gutenberg_id": 3268,
+   "fetched": true,
+   "raw_chars": 1730077,
+   "body_chars": 1710376,
+   "body_words": 290378,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Nicholas Nickleby",
+   "author": "Charles Dickens",
+   "year": 1838,
+   "gutenberg_id": 967,
+   "fetched": true,
+   "raw_chars": 1905308,
+   "body_chars": 1885627,
+   "body_words": 322307,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Sybil",
+   "author": "Benjamin Disraeli",
+   "year": 1830,
+   "gutenberg_id": 3760,
+   "fetched": true,
+   "raw_chars": 935267,
+   "body_chars": 915521,
+   "body_words": 158019,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Redburn",
+   "author": "Herman Melville",
+   "year": 1849,
+   "gutenberg_id": 8118,
+   "fetched": true,
+   "raw_chars": 692682,
+   "body_chars": 672966,
+   "body_words": 118563,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Heroine",
+   "author": "Eaton Stannard Barrett",
+   "year": 1813,
+   "gutenberg_id": 43065,
+   "fetched": true,
+   "raw_chars": 631141,
+   "body_chars": 611302,
+   "body_words": 105039,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Quentin Durward",
+   "author": "Walter Scott",
+   "year": 1821,
+   "gutenberg_id": 7853,
+   "fetched": true,
+   "raw_chars": 1095616,
+   "body_chars": 1075946,
+   "body_words": 183847,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Fortunes of Nigel",
+   "author": "Walter Scott",
+   "year": 1822,
+   "gutenberg_id": 5950,
+   "fetched": true,
+   "raw_chars": 1178676,
+   "body_chars": 1158865,
+   "body_words": 197492,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [
+      "price"
+     ],
+     "n_families": 1,
+     "corroborated": false,
+     "counts": {
+      "price": 5
+     },
+     "excerpt": "NEB, nose, point. NEEDSNA, need not. NICHER, snigger. NICKS, notches. NIFFER, exchange. NOBLE, a gold coin, value 6s. 8d. sterling. NOWTE, black cattle. NUNCHION, luncheon, food taken between meals. OR, before. OTHER GATE, other kind of. OWER SICKER, too careful. PAIK, fight, chastise. PANGED, crammed. PAPISTRIE, Popery. PEASE-BOGLE, scarecrow among th"
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 5
+    },
+    "positions": {
+     "price": [
+      0.99,
+      0.997,
+      0.998
+     ]
+    },
+    "samples": {
+     "price": [
+      "6s. 8d.",
+      "6s. 8d.",
+      "10s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Female Quixote",
+   "author": "Charlotte Lennox",
+   "year": 1752,
+   "gutenberg_id": 50054,
+   "fetched": true,
+   "raw_chars": 856797,
+   "body_chars": 837333,
+   "body_words": 147296,
+   "regions": {
+    "front": {
+     "families": [
+      "trade_puffery"
+     ],
+     "n_families": 1,
+     "corroborated": false,
+     "counts": {
+      "trade_puffery": 1
+     },
+     "excerpt": "THE FEMALE QUIXOTE; OR, THE ADVENTURES OF ARABELLA. BY CHARLOTTE LENNOX In Two Volumes. The Second Edition: Revised and Corrected. Transcribers' note: The text of this digital edition was prepared from printed edition of 1752 (the revised and corrected 2nd edition) with some further standardisation of spelling and punctuation (also making use of the 1820 edition) PREFACE TO THE RIGHT HONOURABLE THE"
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "trade_puffery"
+    ],
+    "counts": {
+     "trade_puffery": 1
+    },
+    "positions": {
+     "trade_puffery": [
+      0.0
+     ]
+    },
+    "samples": {
+     "trade_puffery": [
+      "Second Edition"
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Peregrine Pickle",
+   "author": "Tobias Smollett",
+   "year": 1751,
+   "gutenberg_id": 4084,
+   "fetched": true,
+   "raw_chars": 1905740,
+   "body_chars": 1885994,
+   "body_words": 317209,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Old Mortality",
+   "author": "Walter Scott",
+   "year": 1830,
+   "gutenberg_id": 6941,
+   "fetched": true,
+   "raw_chars": 1085356,
+   "body_chars": 1065665,
+   "body_words": 179818,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Coquette",
+   "author": "Hannah Foster",
+   "year": 1797,
+   "gutenberg_id": 12431,
+   "fetched": true,
+   "raw_chars": 354273,
+   "body_chars": 334794,
+   "body_words": 59002,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Persuasion",
+   "author": "Jane Austen",
+   "year": 1817,
+   "gutenberg_id": 105,
+   "fetched": true,
+   "raw_chars": 492872,
+   "body_chars": 473195,
+   "body_words": 83335,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Memoirs of Miss Sidney Bidulph",
+   "author": "Frances Sheridan",
+   "year": 1761,
+   "gutenberg_id": 43437,
+   "fetched": true,
+   "raw_chars": 1070810,
+   "body_chars": 1051361,
+   "body_words": 193813,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Life and Opinions of Tristram Shandy, Gentleman",
+   "author": "Laurence Sterne",
+   "year": 1759,
+   "gutenberg_id": 1079,
+   "fetched": true,
+   "raw_chars": 1057539,
+   "body_chars": 1038092,
+   "body_words": 181007,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Shirley",
+   "author": "Charlotte Bront\u00eb",
+   "year": 1849,
+   "gutenberg_id": 30486,
+   "fetched": true,
+   "raw_chars": 1247866,
+   "body_chars": 1228555,
+   "body_words": 216243,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Pride and Prejudice",
+   "author": "Jane Austen",
+   "year": 1813,
+   "gutenberg_id": 1342,
+   "fetched": true,
+   "raw_chars": 763082,
+   "body_chars": 743289,
+   "body_words": 127359,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Gulliver's Travels",
+   "author": "Jonathan Swift",
+   "year": 1726,
+   "gutenberg_id": 17157,
+   "fetched": true,
+   "raw_chars": 313902,
+   "body_chars": 293970,
+   "body_words": 52119,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Sense and Sensibility",
+   "author": "Jane Austen",
+   "year": 1811,
+   "gutenberg_id": 21839,
+   "fetched": true,
+   "raw_chars": 709454,
+   "body_chars": 690085,
+   "body_words": 121870,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Kenilworth",
+   "author": "Sir Walter Scott",
+   "year": 1827,
+   "gutenberg_id": 1606,
+   "fetched": true,
+   "raw_chars": 1112382,
+   "body_chars": 1092730,
+   "body_words": 186652,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Oliver Twist",
+   "author": "Charles Dickens",
+   "year": 1837,
+   "gutenberg_id": 47530,
+   "fetched": true,
+   "raw_chars": 313145,
+   "body_chars": 293247,
+   "body_words": 50643,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Tenant of Wildfell Hall",
+   "author": "Anne Bront\u00eb",
+   "year": 1847,
+   "gutenberg_id": 969,
+   "fetched": true,
+   "raw_chars": 973343,
+   "body_chars": 953611,
+   "body_words": 168710,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Evelina",
+   "author": "Fanny Burney",
+   "year": 1778,
+   "gutenberg_id": 6053,
+   "fetched": true,
+   "raw_chars": 887583,
+   "body_chars": 868139,
+   "body_words": 154859,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Last of the Mohicans",
+   "author": "James Fenimore Cooper",
+   "year": 1826,
+   "gutenberg_id": 940,
+   "fetched": true,
+   "raw_chars": 881380,
+   "body_chars": 861595,
+   "body_words": 148434,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Castle of Otranto",
+   "author": "Horace Walpole",
+   "year": 1764,
+   "gutenberg_id": 696,
+   "fetched": true,
+   "raw_chars": 234600,
+   "body_chars": 214914,
+   "body_words": 36595,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Monk",
+   "author": "Matthew Lewis",
+   "year": 1796,
+   "gutenberg_id": 601,
+   "fetched": true,
+   "raw_chars": 821322,
+   "body_chars": 801642,
+   "body_words": 137140,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Old English Baron",
+   "author": "Clara Reeve",
+   "year": 1778,
+   "gutenberg_id": 5182,
+   "fetched": true,
+   "raw_chars": 330010,
+   "body_chars": 310250,
+   "body_words": 54947,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Caleb Williams",
+   "author": "William Godwin",
+   "year": 1794,
+   "gutenberg_id": 11323,
+   "fetched": true,
+   "raw_chars": 858079,
+   "body_chars": 838287,
+   "body_words": 145917,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Pickwick Papers",
+   "author": "Charles Dickens",
+   "year": 1837,
+   "gutenberg_id": 580,
+   "fetched": true,
+   "raw_chars": 1802653,
+   "body_chars": 1782981,
+   "body_words": 300083,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Jonathan Wild",
+   "author": "Henry Fielding",
+   "year": 1754,
+   "gutenberg_id": 5256,
+   "fetched": true,
+   "raw_chars": 423842,
+   "body_chars": 404308,
+   "body_words": 71829,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Narrative of Arthur Gordon Pym of Nantucket",
+   "author": "Edgar Allan Poe",
+   "year": 1838,
+   "gutenberg_id": 51060,
+   "fetched": true,
+   "raw_chars": 429360,
+   "body_chars": 409573,
+   "body_words": 71322,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Marriage",
+   "author": "Susan Ferrier",
+   "year": 1818,
+   "gutenberg_id": 12669,
+   "fetched": true,
+   "raw_chars": 951581,
+   "body_chars": 931955,
+   "body_words": 159869,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Pioneers",
+   "author": "James Fenimore Cooper",
+   "year": 1823,
+   "gutenberg_id": 2275,
+   "fetched": true,
+   "raw_chars": 985060,
+   "body_chars": 965627,
+   "body_words": 171831,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 1
+    },
+    "positions": {
+     "price": [
+      0.593
+     ]
+    },
+    "samples": {
+     "price": [
+      "net.\n"
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Wuthering Heights",
+   "author": "Emily Bront\u00eb",
+   "year": 1847,
+   "gutenberg_id": 768,
+   "fetched": true,
+   "raw_chars": 664881,
+   "body_chars": 645615,
+   "body_words": 115945,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Wieland; or, The Transformation: An American Tale",
+   "author": "Charles Brockden Brown",
+   "year": 1798,
+   "gutenberg_id": 792,
+   "fetched": true,
+   "raw_chars": 501434,
+   "body_chars": 481612,
+   "body_words": 82683,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Rasselas",
+   "author": "Samuel Johnson",
+   "year": 1759,
+   "gutenberg_id": 652,
+   "fetched": true,
+   "raw_chars": 243891,
+   "body_chars": 224136,
+   "body_words": 37997,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Castle Rackrent",
+   "author": "Maria Edgeworth",
+   "year": 1800,
+   "gutenberg_id": 1424,
+   "fetched": true,
+   "raw_chars": 264168,
+   "body_chars": 244817,
+   "body_words": 45079,
+   "regions": {
+    "front": {
+     "families": [
+      "price"
+     ],
+     "n_families": 1,
+     "corroborated": false,
+     "counts": {
+      "price": 2
+     },
+     "excerpt": "more passionately eloquent letters and appeals. There are also records of a pleasanter nature; merrymakings, and festive preparations, and 12s. 6d. for a pair of silk stockings for Miss Margaret Edgeworth to dance in, carefully entered into the family budget. All the people whose portraits are hanging up, beruffled, dignified, calm, and periwigged, on the old walls of Edgeworthstown certainly had extraordinarily str"
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 4
+    },
+    "positions": {
+     "price": [
+      0.007,
+      0.066
+     ]
+    },
+    "samples": {
+     "price": [
+      "12s. 6d.",
+      "1s. 4d.",
+      "12s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "An Apology for the Life of Mrs. Shamela Andrews",
+   "author": "Henry Fielding",
+   "year": 1741,
+   "gutenberg_id": 30962,
+   "fetched": true,
+   "raw_chars": 105094,
+   "body_chars": 85111,
+   "body_words": 15499,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Antiquary",
+   "author": "Walter Scott",
+   "year": 1816,
+   "gutenberg_id": 7005,
+   "fetched": true,
+   "raw_chars": 1041983,
+   "body_chars": 1022292,
+   "body_words": 172247,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [
+      "trade_puffery"
+     ],
+     "n_families": 1,
+     "corroborated": false,
+     "counts": {
+      "trade_puffery": 2
+     },
+     "excerpt": "of stuff to the same purpose with that placed in the mouth of the German adept, may be found in Reginald Scott\u2019s Discovery of Witchcraft, Third Edition, folio, London, 1665. The Appendix is entitled, \u201cAn Excellent Discourse of the Nature and Substances of Devils and Spirits, in two Books; the first by the aforesaid author (Reginald Scott), the Second now added in this Third Edition as succedaneous to the former"
+    }
+   },
+   "whole_body": {
+    "families": [
+     "trade_puffery"
+    ],
+    "counts": {
+     "trade_puffery": 2
+    },
+    "positions": {
+     "trade_puffery": [
+      0.987
+     ]
+    },
+    "samples": {
+     "trade_puffery": [
+      "Third Edition",
+      "Third Edition"
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Bleak House",
+   "author": "Charles Dickens",
+   "year": 1852,
+   "gutenberg_id": 1023,
+   "fetched": true,
+   "raw_chars": 1958834,
+   "body_chars": 1939465,
+   "body_words": 353463,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Under Two Flags",
+   "author": "Ouida",
+   "year": 1867,
+   "gutenberg_id": 3465,
+   "fetched": true,
+   "raw_chars": 1385118,
+   "body_chars": 1365370,
+   "body_words": 241036,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "With Fire and Sword",
+   "author": "Henryk Sienkiewicz",
+   "year": 1884,
+   "gutenberg_id": 37027,
+   "fetched": true,
+   "raw_chars": 1782398,
+   "body_chars": 1762532,
+   "body_words": 306528,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Pathfinder",
+   "author": "James Fenimore Cooper",
+   "year": 1860,
+   "gutenberg_id": 1880,
+   "fetched": true,
+   "raw_chars": 1020314,
+   "body_chars": 1000558,
+   "body_words": 177294,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Leavenworth Case",
+   "author": "Anna Katharine Green",
+   "year": 1878,
+   "gutenberg_id": 4047,
+   "fetched": true,
+   "raw_chars": 651574,
+   "body_chars": 631891,
+   "body_words": 111297,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Westward Ho!",
+   "author": "Charles Kingsley",
+   "year": 1855,
+   "gutenberg_id": 1860,
+   "fetched": true,
+   "raw_chars": 1405681,
+   "body_chars": 1385782,
+   "body_words": 251935,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Cranford",
+   "author": "Elizabeth Gaskell",
+   "year": 1853,
+   "gutenberg_id": 394,
+   "fetched": true,
+   "raw_chars": 408706,
+   "body_chars": 389395,
+   "body_words": 70985,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Rise of Silas Lapham",
+   "author": "William Dean Howells",
+   "year": 1885,
+   "gutenberg_id": 154,
+   "fetched": true,
+   "raw_chars": 734006,
+   "body_chars": 714287,
+   "body_words": 128735,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Wives and Daughters",
+   "author": "Elizabeth Gaskell",
+   "year": 1866,
+   "gutenberg_id": 4274,
+   "fetched": true,
+   "raw_chars": 1529400,
+   "body_chars": 1509699,
+   "body_words": 270271,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Uncle Silas",
+   "author": "Sheridan Le Fanu",
+   "year": 1864,
+   "gutenberg_id": 14851,
+   "fetched": true,
+   "raw_chars": 945302,
+   "body_chars": 925480,
+   "body_words": 162992,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Pierre",
+   "author": "Herman Melville",
+   "year": 1852,
+   "gutenberg_id": 34970,
+   "fetched": true,
+   "raw_chars": 931582,
+   "body_chars": 911850,
+   "body_words": 152084,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "She",
+   "author": "H. Rider Haggard",
+   "year": 1886,
+   "gutenberg_id": 3155,
+   "fetched": true,
+   "raw_chars": 693040,
+   "body_chars": 673402,
+   "body_words": 112272,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Three Men in a Boat",
+   "author": "Jerome K. Jerome",
+   "year": 1889,
+   "gutenberg_id": 308,
+   "fetched": true,
+   "raw_chars": 388644,
+   "body_chars": 368855,
+   "body_words": 66823,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Moby-Dick",
+   "author": "Herman Melville",
+   "year": 1851,
+   "gutenberg_id": 15,
+   "fetched": true,
+   "raw_chars": 1280842,
+   "body_chars": 1261167,
+   "body_words": 212670,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Battle of Dorking",
+   "author": "George Tomkyns Chesney",
+   "year": 1871,
+   "gutenberg_id": 65882,
+   "fetched": true,
+   "raw_chars": 154990,
+   "body_chars": 135081,
+   "body_words": 24177,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Silas Marner",
+   "author": "George Eliot",
+   "year": 1861,
+   "gutenberg_id": 550,
+   "fetched": true,
+   "raw_chars": 411700,
+   "body_chars": 392475,
+   "body_words": 70982,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Uncle Tom's Cabin",
+   "author": "Harriet Beecher Stowe",
+   "year": 1852,
+   "gutenberg_id": 203,
+   "fetched": true,
+   "raw_chars": 1046689,
+   "body_chars": 1026991,
+   "body_words": 180924,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "North and South",
+   "author": "Elizabeth Gaskell",
+   "year": 1854,
+   "gutenberg_id": 4276,
+   "fetched": true,
+   "raw_chars": 1030098,
+   "body_chars": 1010389,
+   "body_words": 180830,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Black Arrow",
+   "author": "Robert Louis Stevenson",
+   "year": 1888,
+   "gutenberg_id": 32954,
+   "fetched": true,
+   "raw_chars": 470411,
+   "body_chars": 450534,
+   "body_words": 80166,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Looking Backward",
+   "author": "Edward Bellamy",
+   "year": 1888,
+   "gutenberg_id": 624,
+   "fetched": true,
+   "raw_chars": 458812,
+   "body_chars": 439445,
+   "body_words": 77845,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Micah Clarke",
+   "author": "Arthur Conan Doyle",
+   "year": 1889,
+   "gutenberg_id": 9504,
+   "fetched": true,
+   "raw_chars": 1004447,
+   "body_chars": 984776,
+   "body_words": 178221,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Confidence-Man",
+   "author": "Herman Melville",
+   "year": 1857,
+   "gutenberg_id": 21816,
+   "fetched": true,
+   "raw_chars": 572050,
+   "body_chars": 552286,
+   "body_words": 93686,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Way of All Flesh",
+   "author": "Samuel Butler",
+   "year": 1882,
+   "gutenberg_id": 2084,
+   "fetched": true,
+   "raw_chars": 893428,
+   "body_chars": 874146,
+   "body_words": 162253,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 8
+    },
+    "positions": {
+     "price": [
+      0.389,
+      0.753,
+      0.768
+     ]
+    },
+    "samples": {
+     "price": [
+      "1s. 6d.",
+      "2s. 6d.",
+      "1s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Alice's Adventures in Wonderland",
+   "author": "Lewis Carroll",
+   "year": 1865,
+   "gutenberg_id": 11,
+   "fetched": true,
+   "raw_chars": 163950,
+   "body_chars": 144605,
+   "body_words": 26525,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Sign of the Four",
+   "author": "Arthur Conan Doyle",
+   "year": 1889,
+   "gutenberg_id": 2097,
+   "fetched": true,
+   "raw_chars": 251394,
+   "body_chars": 232131,
+   "body_words": 43095,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+   "author": "Robert Louis Stevenson",
+   "year": 1886,
+   "gutenberg_id": 43,
+   "fetched": true,
+   "raw_chars": 161132,
+   "body_chars": 141378,
+   "body_words": 25631,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "King Solomon's Mines",
+   "author": "H. Rider Haggard",
+   "year": 1885,
+   "gutenberg_id": 2166,
+   "fetched": true,
+   "raw_chars": 463698,
+   "body_chars": 444379,
+   "body_words": 82213,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "A Study in Scarlet",
+   "author": "Arthur Conan Doyle",
+   "year": 1887,
+   "gutenberg_id": 244,
+   "fetched": true,
+   "raw_chars": 263856,
+   "body_chars": 244182,
+   "body_words": 43427,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Portrait of a Lady",
+   "author": "Henry James",
+   "year": 1881,
+   "gutenberg_id": 2833,
+   "fetched": true,
+   "raw_chars": 689719,
+   "body_chars": 669975,
+   "body_words": 116833,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Virginians",
+   "author": "William Makepeace Thackeray",
+   "year": 1857,
+   "gutenberg_id": 8123,
+   "fetched": true,
+   "raw_chars": 1998251,
+   "body_chars": 1978950,
+   "body_words": 354983,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 1
+    },
+    "positions": {
+     "price": [
+      0.303
+     ]
+    },
+    "samples": {
+     "price": [
+      "10s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Treasure Island",
+   "author": "Robert Louis Stevenson",
+   "year": 1883,
+   "gutenberg_id": 120,
+   "fetched": true,
+   "raw_chars": 391657,
+   "body_chars": 372005,
+   "body_words": 68637,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Erewhon",
+   "author": "Samuel Butler",
+   "year": 1872,
+   "gutenberg_id": 1906,
+   "fetched": true,
+   "raw_chars": 490397,
+   "body_chars": 470695,
+   "body_words": 84238,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Twenty Thousand Leagues Under the Sea",
+   "author": "Jules Verne",
+   "year": 1870,
+   "gutenberg_id": 164,
+   "fetched": true,
+   "raw_chars": 630046,
+   "body_chars": 610281,
+   "body_words": 104672,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Mayor of Casterbridge",
+   "author": "Thomas Hardy",
+   "year": 1884,
+   "gutenberg_id": 143,
+   "fetched": true,
+   "raw_chars": 684543,
+   "body_chars": 664850,
+   "body_words": 115251,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "A Tale of Two Cities",
+   "author": "Charles Dickens",
+   "year": 1859,
+   "gutenberg_id": 98,
+   "fetched": true,
+   "raw_chars": 793195,
+   "body_chars": 773517,
+   "body_words": 135886,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Moonstone",
+   "author": "Wilkie Collins",
+   "year": 1868,
+   "gutenberg_id": 155,
+   "fetched": true,
+   "raw_chars": 1114040,
+   "body_chars": 1094391,
+   "body_words": 194909,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Carmilla",
+   "author": "Joseph Sheridan Le Fanu",
+   "year": 1872,
+   "gutenberg_id": 10007,
+   "fetched": true,
+   "raw_chars": 175145,
+   "body_chars": 155853,
+   "body_words": 28103,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Henry Esmond",
+   "author": "William Makepeace Thackeray",
+   "year": 1852,
+   "gutenberg_id": 29363,
+   "fetched": true,
+   "raw_chars": 1925153,
+   "body_chars": 1905339,
+   "body_words": 330057,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Middlemarch",
+   "author": "George Eliot",
+   "year": 1871,
+   "gutenberg_id": 145,
+   "fetched": true,
+   "raw_chars": 1833067,
+   "body_chars": 1813473,
+   "body_words": 316381,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Prairie",
+   "author": "James Fenimore Cooper",
+   "year": 1859,
+   "gutenberg_id": 6450,
+   "fetched": true,
+   "raw_chars": 976040,
+   "body_chars": 956359,
+   "body_words": 167402,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Kidnapped",
+   "author": "Robert Louis Stevenson",
+   "year": 1886,
+   "gutenberg_id": 421,
+   "fetched": true,
+   "raw_chars": 442402,
+   "body_chars": 423111,
+   "body_words": 81903,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Way We Live Now",
+   "author": "Anthony Trollope",
+   "year": 1875,
+   "gutenberg_id": 5231,
+   "fetched": true,
+   "raw_chars": 1927987,
+   "body_chars": 1908645,
+   "body_words": 350775,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Walden",
+   "author": "Henry David Thoreau",
+   "year": 1854,
+   "gutenberg_id": 205,
+   "fetched": true,
+   "raw_chars": 654203,
+   "body_chars": 634795,
+   "body_words": 115813,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Master of Ballantrae",
+   "author": "Robert Louis Stevenson",
+   "year": 1888,
+   "gutenberg_id": 864,
+   "fetched": true,
+   "raw_chars": 493196,
+   "body_chars": 473446,
+   "body_words": 87078,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Lorna Doone",
+   "author": "R. D. Blackmore",
+   "year": 1869,
+   "gutenberg_id": 17460,
+   "fetched": true,
+   "raw_chars": 1473356,
+   "body_chars": 1454010,
+   "body_words": 275292,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Scarlet Letter",
+   "author": "Nathaniel Hawthorne",
+   "year": 1850,
+   "gutenberg_id": 25344,
+   "fetched": true,
+   "raw_chars": 511493,
+   "body_chars": 492065,
+   "body_words": 83826,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Ben-Hur",
+   "author": "Lew Wallace",
+   "year": 1880,
+   "gutenberg_id": 2145,
+   "fetched": true,
+   "raw_chars": 1119828,
+   "body_chars": 1100483,
+   "body_words": 197854,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Tess of the D'Urbervilles",
+   "author": "Thomas Hardy",
+   "year": 1889,
+   "gutenberg_id": 110,
+   "fetched": true,
+   "raw_chars": 878187,
+   "body_chars": 858393,
+   "body_words": 150042,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Adventures of Huckleberry Finn",
+   "author": "Mark Twain",
+   "year": 1884,
+   "gutenberg_id": 32325,
+   "fetched": true,
+   "raw_chars": 599234,
+   "body_chars": 579278,
+   "body_words": 110614,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Lady Audley's Secret",
+   "author": "Mary Elizabeth Braddon",
+   "year": 1862,
+   "gutenberg_id": 8954,
+   "fetched": true,
+   "raw_chars": 857023,
+   "body_chars": 837315,
+   "body_words": 148989,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Wonderful Wizard of Oz",
+   "author": "L. Frank Baum",
+   "year": 1900,
+   "gutenberg_id": 55,
+   "fetched": true,
+   "raw_chars": 232242,
+   "body_chars": 212582,
+   "body_words": 39649,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The King in Yellow",
+   "author": "Robert W. Chambers",
+   "year": 1895,
+   "gutenberg_id": 8492,
+   "fetched": true,
+   "raw_chars": 431211,
+   "body_chars": 411419,
+   "body_words": 71644,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "A Passage to India",
+   "author": "E. M. Forster",
+   "year": 1924,
+   "gutenberg_id": 61221,
+   "fetched": true,
+   "raw_chars": 605936,
+   "body_chars": 586237,
+   "body_words": 101789,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "News from Nowhere",
+   "author": "William Morris",
+   "year": 1890,
+   "gutenberg_id": 3261,
+   "fetched": true,
+   "raw_chars": 450485,
+   "body_chars": 430689,
+   "body_words": 77841,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Awakening",
+   "author": "Kate Chopin",
+   "year": 1899,
+   "gutenberg_id": 160,
+   "fetched": true,
+   "raw_chars": 386536,
+   "body_chars": 366777,
+   "body_words": 64028,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Riddle of the Sands",
+   "author": "Erskine Childers",
+   "year": 1903,
+   "gutenberg_id": 2360,
+   "fetched": true,
+   "raw_chars": 636534,
+   "body_chars": 616881,
+   "body_words": 108493,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Circular Staircase",
+   "author": "Mary Roberts Rinehart",
+   "year": 1908,
+   "gutenberg_id": 434,
+   "fetched": true,
+   "raw_chars": 410039,
+   "body_chars": 390388,
+   "body_words": 69915,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Trilby",
+   "author": "George du Maurier",
+   "year": 1894,
+   "gutenberg_id": 39858,
+   "fetched": true,
+   "raw_chars": 620006,
+   "body_chars": 600189,
+   "body_words": 101330,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Rainbow",
+   "author": "D.H. Lawrence",
+   "year": 1915,
+   "gutenberg_id": 28948,
+   "fetched": true,
+   "raw_chars": 1072064,
+   "body_chars": 1052436,
+   "body_words": 185891,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Amateur Gentleman",
+   "author": "Jeffery Farnol",
+   "year": 1913,
+   "gutenberg_id": 9879,
+   "fetched": true,
+   "raw_chars": 1044132,
+   "body_chars": 1024742,
+   "body_words": 175860,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Herland",
+   "author": "Charlotte Perkins Gilman",
+   "year": 1915,
+   "gutenberg_id": 32,
+   "fetched": true,
+   "raw_chars": 322823,
+   "body_chars": 303230,
+   "body_words": 52158,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Mystery of the Blue Train",
+   "author": "Agatha Christie",
+   "year": 1928,
+   "gutenberg_id": 72824,
+   "fetched": true,
+   "raw_chars": 429161,
+   "body_chars": 409371,
+   "body_words": 70205,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Innocence of Father Brown",
+   "author": "G. K. Chesterton",
+   "year": 1911,
+   "gutenberg_id": 204,
+   "fetched": true,
+   "raw_chars": 468789,
+   "body_chars": 449080,
+   "body_words": 78917,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 2
+    },
+    "positions": {
+     "price": [
+      0.053
+     ]
+    },
+    "samples": {
+     "price": [
+      "4s.",
+      "14s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Big Four",
+   "author": "Agatha Christie",
+   "year": 1927,
+   "gutenberg_id": 70114,
+   "fetched": true,
+   "raw_chars": 338049,
+   "body_chars": 318263,
+   "body_words": 55561,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Railway Children",
+   "author": "E. Nesbit",
+   "year": 1906,
+   "gutenberg_id": 1874,
+   "fetched": true,
+   "raw_chars": 346020,
+   "body_chars": 326714,
+   "body_words": 59353,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "In Our Time",
+   "author": "Ernest Hemingway",
+   "year": 1925,
+   "gutenberg_id": 61085,
+   "fetched": true,
+   "raw_chars": 40513,
+   "body_chars": 20788,
+   "body_words": 3772,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Ghost Pirates",
+   "author": "William Hope Hodgson",
+   "year": 1909,
+   "gutenberg_id": 10966,
+   "fetched": true,
+   "raw_chars": 282669,
+   "body_chars": 262951,
+   "body_words": 47489,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Canary Murder Case",
+   "author": "S. S. Van Dine",
+   "year": 1927,
+   "gutenberg_id": 70788,
+   "fetched": true,
+   "raw_chars": 517327,
+   "body_chars": 497606,
+   "body_words": 83398,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Secret of Chimneys",
+   "author": "Agatha Christie",
+   "year": 1925,
+   "gutenberg_id": 65238,
+   "fetched": true,
+   "raw_chars": 446500,
+   "body_chars": 427124,
+   "body_words": 74617,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 2
+    },
+    "positions": {
+     "price": [
+      0.314
+     ]
+    },
+    "samples": {
+     "price": [
+      "21s.",
+      "price 2"
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Dark Flower",
+   "author": "John Galsworthy",
+   "year": 1913,
+   "gutenberg_id": 2192,
+   "fetched": true,
+   "raw_chars": 457439,
+   "body_chars": 437767,
+   "body_words": 78258,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The White Peacock",
+   "author": "D.H. Lawrence",
+   "year": 1910,
+   "gutenberg_id": 38561,
+   "fetched": true,
+   "raw_chars": 716220,
+   "body_chars": 696567,
+   "body_words": 122517,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "New Grub Street",
+   "author": "George Gissing",
+   "year": 1891,
+   "gutenberg_id": 1709,
+   "fetched": true,
+   "raw_chars": 1071102,
+   "body_chars": 1051433,
+   "body_words": 185808,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Murder of Roger Ackroyd",
+   "author": "Agatha Christie",
+   "year": 1926,
+   "gutenberg_id": 69087,
+   "fetched": true,
+   "raw_chars": 432857,
+   "body_chars": 412921,
+   "body_words": 70727,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Waste Land",
+   "author": "T. S. Eliot",
+   "year": 1922,
+   "gutenberg_id": 1321,
+   "fetched": true,
+   "raw_chars": 51700,
+   "body_chars": 32022,
+   "body_words": 4697,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Sea-Wolf",
+   "author": "Jack London",
+   "year": 1904,
+   "gutenberg_id": 1074,
+   "fetched": true,
+   "raw_chars": 611315,
+   "body_chars": 591687,
+   "body_words": 105655,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Golden Bowl",
+   "author": "Henry James",
+   "year": 1904,
+   "gutenberg_id": 4264,
+   "fetched": true,
+   "raw_chars": 1195674,
+   "body_chars": 1175964,
+   "body_words": 204485,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Some Do Not",
+   "author": "Ford Madox Ford",
+   "year": 1924,
+   "gutenberg_id": 64248,
+   "fetched": true,
+   "raw_chars": 690511,
+   "body_chars": 670736,
+   "body_words": 118816,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 3
+    },
+    "positions": {
+     "price": [
+      0.39,
+      0.522
+     ]
+    },
+    "samples": {
+     "price": [
+      "1s. 6d.",
+      "1s.",
+      "10s."
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Lord of the World",
+   "author": "Robert Hugh Benson",
+   "year": 1907,
+   "gutenberg_id": 14021,
+   "fetched": true,
+   "raw_chars": 598597,
+   "body_chars": 578937,
+   "body_words": 99972,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Island of Doctor Moreau",
+   "author": "H.G. Wells",
+   "year": 1896,
+   "gutenberg_id": 159,
+   "fetched": true,
+   "raw_chars": 265588,
+   "body_chars": 245889,
+   "body_words": 43545,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Voyage Out",
+   "author": "Virginia Woolf",
+   "year": 1915,
+   "gutenberg_id": 144,
+   "fetched": true,
+   "raw_chars": 798739,
+   "body_chars": 779084,
+   "body_words": 136348,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Covered Wagon",
+   "author": "Emerson Hough",
+   "year": 1922,
+   "gutenberg_id": 13384,
+   "fetched": true,
+   "raw_chars": 506706,
+   "body_chars": 486959,
+   "body_words": 86662,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Damnation of Theron Ware",
+   "author": "Harold Frederic",
+   "year": 1896,
+   "gutenberg_id": 133,
+   "fetched": true,
+   "raw_chars": 700309,
+   "body_chars": 680573,
+   "body_words": 118275,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Victory",
+   "author": "Joseph Conrad",
+   "year": 1915,
+   "gutenberg_id": 6378,
+   "fetched": true,
+   "raw_chars": 690727,
+   "body_chars": 671025,
+   "body_words": 117470,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Roger Ackroyd",
+   "author": "Agatha Christie",
+   "year": 1926,
+   "gutenberg_id": 69087,
+   "fetched": true,
+   "raw_chars": 421781,
+   "body_chars": 402224,
+   "body_words": 70727,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Research Magnificent",
+   "author": "Herbert George Wells",
+   "year": 1915,
+   "gutenberg_id": 1138,
+   "fetched": true,
+   "raw_chars": 665774,
+   "body_chars": 646064,
+   "body_words": 110888,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Invisible Man",
+   "author": "H. G. Wells",
+   "year": 1897,
+   "gutenberg_id": 5230,
+   "fetched": true,
+   "raw_chars": 292176,
+   "body_chars": 272824,
+   "body_words": 48500,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Wisdom of Father Brown",
+   "author": "G. K. Chesterton",
+   "year": 1913,
+   "gutenberg_id": 223,
+   "fetched": true,
+   "raw_chars": 426895,
+   "body_chars": 407178,
+   "body_words": 71669,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Trent's Last Case",
+   "author": "E. C. Bentley",
+   "year": 1913,
+   "gutenberg_id": 2568,
+   "fetched": true,
+   "raw_chars": 431994,
+   "body_chars": 412325,
+   "body_words": 74440,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The World Set Free",
+   "author": "Herbert George Wells",
+   "year": 1914,
+   "gutenberg_id": 1059,
+   "fetched": true,
+   "raw_chars": 402945,
+   "body_chars": 383271,
+   "body_words": 65018,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Riders of the Purple Sage",
+   "author": "Zane Grey",
+   "year": 1912,
+   "gutenberg_id": 1300,
+   "fetched": true,
+   "raw_chars": 611809,
+   "body_chars": 592107,
+   "body_words": 104050,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Well of Loneliness",
+   "author": "Radclyffe Hall",
+   "year": 1928,
+   "gutenberg_id": 73042,
+   "fetched": true,
+   "raw_chars": 970789,
+   "body_chars": 950915,
+   "body_words": 163651,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Clayhanger",
+   "author": "Arnold Bennett",
+   "year": 1910,
+   "gutenberg_id": 21249,
+   "fetched": true,
+   "raw_chars": 1129051,
+   "body_chars": 1109397,
+   "body_words": 185502,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [
+     "price"
+    ],
+    "counts": {
+     "price": 1
+    },
+    "positions": {
+     "price": [
+      0.703
+     ]
+    },
+    "samples": {
+     "price": [
+      "net.\r\n\r"
+     ]
+    }
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": true,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Elmer Gantry",
+   "author": "Sinclair Lewis",
+   "year": 1927,
+   "gutenberg_id": 72609,
+   "fetched": true,
+   "raw_chars": 919211,
+   "body_chars": 899463,
+   "body_words": 152719,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "A Princess of Mars",
+   "author": "Edgar Rice Burroughs",
+   "year": 1912,
+   "gutenberg_id": 62,
+   "fetched": true,
+   "raw_chars": 390321,
+   "body_chars": 371065,
+   "body_words": 67436,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Jungle Book",
+   "author": "Rudyard Kipling",
+   "year": 1894,
+   "gutenberg_id": 236,
+   "fetched": true,
+   "raw_chars": 298043,
+   "body_chars": 278429,
+   "body_words": 50839,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Jude the Obscure",
+   "author": "Thomas Hardy",
+   "year": 1894,
+   "gutenberg_id": 153,
+   "fetched": true,
+   "raw_chars": 836632,
+   "body_chars": 816952,
+   "body_words": 144508,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Jacob's Room",
+   "author": "Virginia Woolf",
+   "year": 1922,
+   "gutenberg_id": 5670,
+   "fetched": true,
+   "raw_chars": 340012,
+   "body_chars": 320294,
+   "body_words": 54524,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Lost World",
+   "author": "Arthur Conan Doyle",
+   "year": 1912,
+   "gutenberg_id": 139,
+   "fetched": true,
+   "raw_chars": 451720,
+   "body_chars": 432041,
+   "body_words": 75759,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "Hadrian the Seventh",
+   "author": "Frederick Rolfe",
+   "year": 1904,
+   "gutenberg_id": 67369,
+   "fetched": true,
+   "raw_chars": 754527,
+   "body_chars": 734627,
+   "body_words": 123172,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  },
+  {
+   "title": "The Secret Garden",
+   "author": "Frances Hodgson Burnett",
+   "year": 1911,
+   "gutenberg_id": 113,
+   "fetched": true,
+   "raw_chars": 457764,
+   "body_chars": 438132,
+   "body_words": 80632,
+   "regions": {
+    "front": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    },
+    "back": {
+     "families": [],
+     "n_families": 0,
+     "corroborated": false,
+     "counts": {},
+     "excerpt": null
+    }
+   },
+   "whole_body": {
+    "families": [],
+    "counts": {},
+    "positions": {},
+    "samples": {}
+   },
+   "carries_ad": false,
+   "any_marker_anywhere": false,
+   "corroborated_anywhere": false
+  }
+ ]
+}

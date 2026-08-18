@@ -431,12 +431,36 @@ Underwood defines genre membership with **modern retrospective labels** and name
 that as a limitation. Genre also lives in how period readers, critics, publishers
 and librarians classified books *at the time* — and nobody has built that series.
 
+> **Slice 1 done 2026-08-18 — [`S6-SLICE1-BACKMATTER-PROBE.md`](S6-SLICE1-BACKMATTER-PROBE.md).**
+> The go/no-go on the cheapest source came back **NO-GO for Gutenberg**: across
+> all 343 books and 42.2M words of FULL text, only **4** carry a publisher
+> advertisement, and one of the five flagged is a false positive. `Crown 8vo`
+> appears in 4 of 343 novels. Gutenberg transcribers strip the ads, exactly as
+> this brief predicted.
+>
+> The artifact itself is worth what was hoped, though — John Lane's 1904
+> back-matter ad in *The Napoleon of Notting Hill* is headed **"THE NEW MILITARY
+> NOVEL"**, a publisher naming a genre in a dated recruitment ad, and Alcott 1868
+> constitutes "THE LITTLE WOMEN SERIES" in back matter. So the source is
+> Internet Archive page scans, not Gutenberg text — and tellingly, the one
+> Gutenberg text that kept its trade list was transcribed *from IA scans*.
+>
+> Two things that probe hands S6: ads sit above 98% or below 1% of the volume
+> (a strong page-position prior for OCR cost), and **"by the same author" lists
+> are a different artifact from genre-series ads** — only the second measures
+> genre formation, and conflating them would inflate the series with data that
+> cannot speak to genre. The doc also names a cheaper intermediate worth pricing
+> first: the trade catalogues (*Publishers' Circular*, *English Catalogue of
+> Books*), which concentrate the same headings in bulk.
+
 **Sources, ascending cost.**
 - **Publishers' series labels and back-matter advertisements.** Genre formation
   as a dated marketing act: the moment a publisher creates "The Detective
   Series" and starts recruiting into it. These ad pages are **bound into the
   Gutenberg and Internet Archive scans already being downloaded and discarded.**
   Cheapest real reception signal available, and nobody is mining it.
+  *Measured 2026-08-18: bound into the IA scans, yes; into the Gutenberg
+  transcriptions, almost never (4/343).*
 - **Circulating-library catalogues** (Mudie's, W.H. Smith) — classification at
   the point of consumption, dated.
 - **Periodical reviews** (*Athenaeum*, *Spectator*, *Publishers' Weekly*) —
