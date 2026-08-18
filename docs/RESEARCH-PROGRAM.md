@@ -45,6 +45,19 @@ final substrate.
 including its unresolved stylistic-similarity question. It is already honest
 about being unresolved; leave it that way.
 
+**When the program concludes, email Stanford's Literary Lab.** Decided 2026-08-18
+and deliberately deferred to the end: Aidan writes to Mark Algee-Hewitt
+(malgeehe@stanford.edu), director, on one hook — their active *Castle at the
+Crossroads: The Gothic and Other Genres* project models the gothic **supervised**,
+and our unsupervised run says the gothic is a perennial *mode* (z ≈ 0) while
+detective fiction is the one datable birth (z ≈ −3.0). A falsifiable question about
+their live work, not a submission — LitLab has no submission path at all. Gated on
+S0 (the corpus must be back on disk; the first thing distant reading asks for is
+the corpus) and on S6 existing. Full plan and the draft email:
+`~/.claude/projects/-Users-aidan-Desktop-writing-topology/memory/litlab-outreach-plan.md`.
+Real venues for the paper itself are in that file too — note **CHR 2027's deadline
+passed 2026-08-14**, so the next conference cycle is ~Aug 2027.
+
 ---
 
 ## State of play — read this before scoping any work
