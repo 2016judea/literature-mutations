@@ -144,7 +144,8 @@ S6 (reception) ──────────────────── STAR
                                     nothing, and it is the paper's actual
                                     contribution. Finishing last is fine;
                                     starting last puts it on the critical path.
-S2 (Ngrams) ─────────────────────── independent, an afternoon, any time
+S2 (Ngrams) ─────────────────────── DONE 2026-08-18. Detective agrees on both
+                                    clocks; the null holds on both too.
 
 S0 (reconstruct) ──┬── S1 (provenance audit)
                    └── S3 (instrument) ── S4 (NovelTM) ── S5 (HathiTrust EF)
@@ -229,6 +230,25 @@ independent.
 ---
 
 ## S2 — The reception clock (Google Ngrams)
+
+> **DONE 2026-08-18 — findings in [`S2-RECEPTION-CLOCK.md`](S2-RECEPTION-CLOCK.md).**
+> The two clocks **agree on detective fiction**: name take-off 1889 (1883/1897 at
+> 5 %/20 % of peak) against books of 1878–1926, name peaking 1932. The instrument
+> is externally licensed on the one positive result. The null also holds from the
+> reception side — five of eight genre names were already current before the
+> readable window opens, which is what a perennial mode looks like in a source
+> that never touched the corpus.
+>
+> Two things it handed downstream, neither of them in this brief's original scope:
+> **(a)** dating a cluster by its held-out label instead of its own vocabulary
+> moves the answer +62 to +142 years and invents 20th-century emergences — a
+> methods caution for the paper, drawn as Fig. 7; **(b)** `sensation novel`
+> take-off 1859, mass width 16 y, peak 1867 sits *inside* the "perennial" Gothic
+> cluster, which is a concrete target for S3/S4 rather than a result.
+>
+> Code: `pull_ngrams.py` → `analyze_reception_clock.py` → `emit_reception_figure.py`.
+> The raw pull is committed (`_data/ngrams_raw.json`) so the next session verifies
+> rather than re-fetches.
 
 **Depends on:** nothing. Can start immediately, in parallel with S0.
 **Effort:** an afternoon. **Addresses:** validates the instrument externally.

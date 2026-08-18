@@ -89,13 +89,26 @@ The eight-community table in `RESEARCH-PROGRAM.md` is the full expected shape.
 
 ---
 
-## If there's time left: S2 is independent
+## S2 is already done — don't redo it
 
-S2 (the Google Ngrams reception clock) depends on **nothing** — not on S0, not on
-the corpus. Brief is in `RESEARCH-PROGRAM.md`. The endpoint was verified live on
-2026-08-15 (320 years, no auth) and the working call is in the brief. It's an
-afternoon, and it's the only external validator in the whole program.
+The Google Ngrams reception clock ran 2026-08-18. Findings in
+[`S2-RECEPTION-CLOCK.md`](S2-RECEPTION-CLOCK.md); code is `pull_ngrams.py` →
+`analyze_reception_clock.py` → `emit_reception_figure.py`, and the raw pull is
+committed at `_data/ngrams_raw.json` so nothing needs re-fetching.
 
-The one trap worth repeating: use *period* genre terms. "Scientific romance",
-not "science fiction", before ~1930 — getting this wrong manufactures a fake
-late emergence.
+**The two clocks agree on detective fiction** (name take-off 1889 against books of
+1878–1926, name peaking 1932), and the null holds from the reception side as well.
+S2 recomputed **no** published number, so the drift rule was never engaged — the
+reproducibility question above is still entirely open and still yours.
+
+Two S2 results change what you should expect downstream:
+
+- **Do not trust `held_out_label` for anything but "this cluster is recognised".**
+  Three of eight labels name a genre their cluster is not, and dating a cluster by
+  its label instead of its own `top_terms` moves the answer +62 to +142 years.
+  `emit_paper_figures.py:70-74` found the same thing independently. If S0's
+  reconstruction makes you reach for a label, reach for the vocabulary instead.
+- **`sensation novel` looks like a real dated formation (1859, 16 y wide, peak
+  1867) hiding inside the "perennial" Gothic cluster.** That is a lead for
+  S3/S4, not a result — and it is exactly the kind of thing 166 books cannot
+  settle, per the sub-clustering note in the brief.
