@@ -46,16 +46,36 @@ def surname(author):
     return a[-1].lower() if a else ""
 
 
-def find_on_gutenberg(rec):
-    '''Return (gutenberg_id, subjects) for the best matching English text, or None.'''
-    q = f"{rec['title']} {surname(rec['author'])}"
+def _search(q):
     url = GUTENDEX + "?" + urllib.parse.urlencode({"search": q, "languages": "en"})
     try:
-        results = _http(url).get("results", [])
+        return _http(url).get("results", [])
     except Exception:                                # noqa: BLE001
-        return None
+        return []
+
+
+def find_on_gutenberg(rec):
+    '''Return (gutenberg_id, subjects, text_url) for the best matching English
+    text, or None.'''
     want_title = norm(rec["title"])
     want_sur = surname(rec["author"])
+    # Gutendex relevance is thrown by a leading article: "The Man in Lower Ten
+    # rinehart" returns thirteen unrelated books and no Rinehart at all, while
+    # "Man in Lower Ten" returns the novel (id 1869) as the second hit. So try
+    # the query as written, then again with the article dropped, before
+    # concluding Gutenberg does not have the book.
+    queries = [f"{rec['title']} {want_sur}"]
+    bare = re.sub(r"^(the|a|an)\s+", "", rec["title"], flags=re.I)
+    if bare != rec["title"]:
+        queries.append(f"{bare} {want_sur}")
+
+    results = []
+    for q in queries:
+        results = _search(q)
+        if any(want_sur in " ".join(a.get("name", "")
+                                    for a in (b.get("authors") or [])).lower()
+               for b in results[:6]):
+            break
     for b in results[:6]:
         if not text_plain_url(b.get("formats") or {}):
             continue
@@ -65,7 +85,10 @@ def find_on_gutenberg(rec):
         if overlap >= 0.5 and (want_sur in authors_blob or not want_sur):
             labels = list(dict.fromkeys((b.get("bookshelves") or []) +
                                         (b.get("subjects") or [])))[:8]
-            return b["id"], labels
+            # The text URL was computed to decide whether this record is
+            # usable and then thrown away, leaving fetch_opening_prose to
+            # guess the cache/epub layout. Legacy ids are not published there.
+            return b["id"], labels, text_plain_url(b.get("formats") or {})
     return None
 
 
@@ -73,8 +96,9 @@ def resolve(rec):
     hit = find_on_gutenberg(rec)
     if not hit:
         return None
-    book_id, labels = hit
-    prose = fetch_opening_prose(book_id, max_words=CORPUS_WORDS)
+    book_id, labels, text_url = hit
+    prose = fetch_opening_prose(book_id, max_words=CORPUS_WORDS,
+                                fallback_url=text_url)
     if not prose:
         return None
     return {

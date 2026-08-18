@@ -1,0 +1,176 @@
+{
+  "duplicate_works": [
+    {
+      "gutenberg_id": 84,
+      "titles": [
+        "Frankenstein; or, The Modern Prometheus",
+        "Frankenstein"
+      ],
+      "years": [
+        1816,
+        1818
+      ],
+      "resolved_to": 1818
+    },
+    {
+      "gutenberg_id": 792,
+      "titles": [
+        "Wieland; or, The Transformation: An American Tale",
+        "Wieland"
+      ],
+      "years": [
+        1798
+      ]
+    },
+    {
+      "gutenberg_id": 1079,
+      "titles": [
+        "Tristram Shandy",
+        "The Life and Opinions of Tristram Shandy, Gentleman"
+      ],
+      "years": [
+        1759
+      ]
+    },
+    {
+      "gutenberg_id": 2097,
+      "titles": [
+        "The Sign of Four",
+        "The Sign of the Four"
+      ],
+      "years": [
+        1889
+      ]
+    },
+    {
+      "gutenberg_id": 2160,
+      "titles": [
+        "The Expedition of Humphry Clinker",
+        "Humphry Clinker"
+      ],
+      "years": [
+        1771
+      ]
+    },
+    {
+      "gutenberg_id": 4084,
+      "titles": [
+        "The Adventures of Peregrine Pickle",
+        "Peregrine Pickle"
+      ],
+      "years": [
+        1751
+      ]
+    },
+    {
+      "gutenberg_id": 4085,
+      "titles": [
+        "The Adventures of Roderick Random",
+        "Roderick Random"
+      ],
+      "years": [
+        1748
+      ]
+    },
+    {
+      "gutenberg_id": 5256,
+      "titles": [
+        "Jonathan Wild",
+        "The Life of Jonathan Wild the Great"
+      ],
+      "years": [
+        1754
+      ]
+    },
+    {
+      "gutenberg_id": 6346,
+      "titles": [
+        "Cecilia; or, Memoirs of an Heiress",
+        "Cecilia"
+      ],
+      "years": [
+        1782
+      ]
+    },
+    {
+      "gutenberg_id": 6761,
+      "titles": [
+        "Ferdinand Count Fathom",
+        "The Adventures of Ferdinand Count Fathom"
+      ],
+      "years": [
+        1753
+      ]
+    },
+    {
+      "gutenberg_id": 11696,
+      "titles": [
+        "The Food of the Gods",
+        "The Food of the Gods and How It Came to Earth"
+      ],
+      "years": [
+        1904
+      ]
+    },
+    {
+      "gutenberg_id": 32954,
+      "titles": [
+        "The Black Arrow: A Tale of the Two Roses",
+        "The Black Arrow"
+      ],
+      "years": [
+        1888,
+        1923
+      ],
+      "resolved_to": 1888
+    },
+    {
+      "gutenberg_id": 40619,
+      "titles": [
+        "Camilla",
+        "Camilla; or, A Picture of Youth"
+      ],
+      "years": [
+        1796
+      ]
+    },
+    {
+      "gutenberg_id": 69087,
+      "titles": [
+        "The Murder of Roger Ackroyd",
+        "The Roger Ackroyd"
+      ],
+      "years": [
+        1926
+      ]
+    }
+  ],
+  "year_conflicts_fixed": [
+    {
+      "gutenberg_id": 84,
+      "titles": [
+        "Frankenstein; or, The Modern Prometheus",
+        "Frankenstein"
+      ],
+      "was": [
+        1816,
+        1818
+      ],
+      "now": 1818,
+      "rule": "published value from 'Frankenstein; or, The Modern Prometheus'"
+    },
+    {
+      "gutenberg_id": 32954,
+      "titles": [
+        "The Black Arrow: A Tale of the Two Roses",
+        "The Black Arrow"
+      ],
+      "was": [
+        1888,
+        1923
+      ],
+      "now": 1888,
+      "rule": "earliest of the reconstructed years"
+    }
+  ]
+}

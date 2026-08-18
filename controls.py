@@ -119,6 +119,7 @@ def main():
         labs = collections.Counter(g for i in idx for g in clean_label(books[keep[i]]))
         results.append({
             "n": len(idx),
+            "titles": sorted(books[keep[i]]["title"] for i in idx),
             "year_min": int(ys.min()), "year_max": int(ys.max()),
             "year_std": round(float(ys.std()), 1),
             "concentration_z": round(float(concentration_z(ys, yk, rng)), 2),

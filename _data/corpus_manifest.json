@@ -1,0 +1,5527 @@
+{
+ "n_books": 344,
+ "n_authors": 166,
+ "year_min": 1678,
+ "year_max": 1928,
+ "edition_drift_vs_phase2_2026_07_21": {
+  "compared": 29,
+  "same_id_same_text": 28,
+  "same_id_diff_text": 1,
+  "diff_id": [],
+  "text_changed": [
+   {
+    "title": "Pierre",
+    "gutenberg_id": 34970,
+    "words_then": 20000,
+    "words_now": 20000,
+    "shared_prefix_words": 0
+   }
+  ]
+ },
+ "books": [
+  {
+   "title": "The Pilgrim's Progress",
+   "author": "John Bunyan",
+   "year": 1678,
+   "gutenberg_id": 131,
+   "sha256": "afb6b19daf29ce5394c580d1f740354ca62d2a0e79a4319f331a5c10f8797ef6",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Love in Excess",
+   "author": "Eliza Haywood",
+   "year": 1719,
+   "gutenberg_id": 67612,
+   "sha256": "4bd397714db466972a7e1aa4f06756894ff680d08ef06b1aec92e934ad7089f9",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Robinson Crusoe",
+   "author": "Daniel Defoe",
+   "year": 1719,
+   "gutenberg_id": 521,
+   "sha256": "11e4517233e111fb7dbef9cf8f2467dc4c2413c9e0831a7e8f8f59c26b0efe05",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Captain Singleton",
+   "author": "Daniel Defoe",
+   "year": 1720,
+   "gutenberg_id": 6422,
+   "sha256": "0bc4d2e3084cffdd253bfc7ad5bd0dabb91023644e88c0ae85c2fc2a28eaa023",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9679 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Roxana",
+   "author": "Daniel Defoe",
+   "year": 1724,
+   "gutenberg_id": 30344,
+   "sha256": "54823cb5b12ede16ec95a73dea36cb7f9f67c57a0ce95b1502cd603a7420b006",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=30344 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Gulliver's Travels",
+   "author": "Jonathan Swift",
+   "year": 1726,
+   "gutenberg_id": 17157,
+   "sha256": "c9dbd74fcb22a4799465921eabe0fe62a5f47e6f8f28b34db3719de6fdbd3786",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Pamela",
+   "author": "Samuel Richardson",
+   "year": 1740,
+   "gutenberg_id": 6124,
+   "sha256": "b18cfc7ca3bd7dfb2e11ac39876104bd9c14572b3ec0a223bf7b82f92f6e0340",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "An Apology for the Life of Mrs. Shamela Andrews",
+   "author": "Henry Fielding",
+   "year": 1741,
+   "gutenberg_id": 30962,
+   "sha256": "a730f1b964155df7ea9c04cfd901223bb150a6d819a8cd466a655b4fb4908aac",
+   "words": 15499,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Joseph Andrews",
+   "author": "Henry Fielding",
+   "year": 1742,
+   "gutenberg_id": 9611,
+   "sha256": "1ec6549cd8be4d7c1c82cea896a5e733c865428579f6210f94ae18e1ec11ddd1",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9611 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Clarissa",
+   "author": "Samuel Richardson",
+   "year": 1747,
+   "gutenberg_id": 9296,
+   "sha256": "ed51c74868fc3940cdf63e59adb49a21825113407c69237e9e2f11c56fff34fc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "given_name",
+    "note": "gutenberg_id=9296 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Roderick Random",
+   "author": "Tobias Smollett",
+   "year": 1748,
+   "gutenberg_id": 4085,
+   "sha256": "1a24045da31a1aae921055ffd41b09cf81faa11663770ac3613d42a03aa36a42",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4085 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Adventures of Roderick Random",
+   "author": "Tobias Smollett",
+   "year": 1748,
+   "gutenberg_id": 4085,
+   "sha256": "1a24045da31a1aae921055ffd41b09cf81faa11663770ac3613d42a03aa36a42",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Tom Jones",
+   "author": "Henry Fielding",
+   "year": 1749,
+   "gutenberg_id": 6593,
+   "sha256": "8ae109ae23465a9144ac8b0dc5a0cfd3cdd27f1bbc14aed71555c52c15ff696a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=6593 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Amelia",
+   "author": "Henry Fielding",
+   "year": 1751,
+   "gutenberg_id": 6098,
+   "sha256": "539b3a70456e19848d251e0d0dcc690adaabddc124bec3bb5d078aa8984a0664",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=6098 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Peregrine Pickle",
+   "author": "Tobias Smollett",
+   "year": 1751,
+   "gutenberg_id": 4084,
+   "sha256": "6739d57e14d50f23beb18a640e673888dce00a49188e705da53cf20f14e23ae4",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4084 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Adventures of Peregrine Pickle",
+   "author": "Tobias Smollett",
+   "year": 1751,
+   "gutenberg_id": 4084,
+   "sha256": "6739d57e14d50f23beb18a640e673888dce00a49188e705da53cf20f14e23ae4",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4084 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Female Quixote",
+   "author": "Charlotte Lennox",
+   "year": 1752,
+   "gutenberg_id": 50054,
+   "sha256": "b3a00213f86c9ed475ed1382c3c76bfe68706ad3901660f0c91d9c7f1bed5dc2",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Ferdinand Count Fathom",
+   "author": "Tobias Smollett",
+   "year": 1753,
+   "gutenberg_id": 6761,
+   "sha256": "508586f61abfec1ce2761ecf8efd285863b3b294888b8f57a278bf4f3e27ed36",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=6761 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Adventures of Ferdinand Count Fathom",
+   "author": "Tobias Smollett",
+   "year": 1753,
+   "gutenberg_id": 6761,
+   "sha256": "508586f61abfec1ce2761ecf8efd285863b3b294888b8f57a278bf4f3e27ed36",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=6761 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Jonathan Wild",
+   "author": "Henry Fielding",
+   "year": 1754,
+   "gutenberg_id": 5256,
+   "sha256": "2f260b6c60c0d83f6864983b1b5316cf13e19b398d70e848097dfd87003073fe",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=5256 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Life of Jonathan Wild the Great",
+   "author": "Henry Fielding",
+   "year": 1754,
+   "gutenberg_id": 5256,
+   "sha256": "2f260b6c60c0d83f6864983b1b5316cf13e19b398d70e848097dfd87003073fe",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=5256 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Rasselas",
+   "author": "Samuel Johnson",
+   "year": 1759,
+   "gutenberg_id": 652,
+   "sha256": "c7dfeabffaab55a40c5b90634ddc70a05d82301df76b3d2f0050663387eb1dfc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Life and Opinions of Tristram Shandy, Gentleman",
+   "author": "Laurence Sterne",
+   "year": 1759,
+   "gutenberg_id": 1079,
+   "sha256": "cc878954f8873ca564c909d8d3bffaaed08202b3eb6f1333b9985709a4e0ef2d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Tristram Shandy",
+   "author": "Laurence Sterne",
+   "year": 1759,
+   "gutenberg_id": 1079,
+   "sha256": "cc878954f8873ca564c909d8d3bffaaed08202b3eb6f1333b9985709a4e0ef2d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1079 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Memoirs of Miss Sidney Bidulph",
+   "author": "Frances Sheridan",
+   "year": 1761,
+   "gutenberg_id": 43437,
+   "sha256": "aaf1709286b656cc7c044b9c83ab4193ceb560cdb14242400227a1c3795d930c",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Castle of Otranto",
+   "author": "Horace Walpole",
+   "year": 1764,
+   "gutenberg_id": 696,
+   "sha256": "d2d467061690f6993804d01119f801724beb78f80de04490c2afbe3b94524723",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "A Sentimental Journey Through France and Italy",
+   "author": "Laurence Sterne",
+   "year": 1766,
+   "gutenberg_id": 804,
+   "sha256": "41ab5952974c6797eb95a7a3fe43714c3d8b5914c2fe24a4ab26435695b492ea",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=804 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Humphry Clinker",
+   "author": "Tobias Smollett",
+   "year": 1771,
+   "gutenberg_id": 2160,
+   "sha256": "97d84cb70a1473ada0e997b62743f4cd69a5c4f763a9a962863fb2547091397b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2160 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Expedition of Humphry Clinker",
+   "author": "Tobias Smollett",
+   "year": 1771,
+   "gutenberg_id": 2160,
+   "sha256": "97d84cb70a1473ada0e997b62743f4cd69a5c4f763a9a962863fb2547091397b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2160 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Man of Feeling",
+   "author": "Henry Mackenzie",
+   "year": 1771,
+   "gutenberg_id": 5083,
+   "sha256": "148712fa75458573529f6184936c71bf3b6ceec38b29f453cdcdd31b59fb355a",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Evelina",
+   "author": "Fanny Burney",
+   "year": 1778,
+   "gutenberg_id": 6053,
+   "sha256": "1693fbc71619c145a34f75743d6196721324a971d3cb7518d8fbf6ea76f54dfc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Old English Baron",
+   "author": "Clara Reeve",
+   "year": 1778,
+   "gutenberg_id": 5182,
+   "sha256": "66b19b1efcc53934b0d5c383d42e32b5eadf8cb27ea261313c23772f1eb25f2b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Cecilia",
+   "author": "Frances Burney",
+   "year": 1782,
+   "gutenberg_id": 6346,
+   "sha256": "00d941937fbf732a41150b71cf64be7d53dcac661637f10b4026aa764591b017",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Cecilia; or, Memoirs of an Heiress",
+   "author": "Fanny Burney",
+   "year": 1782,
+   "gutenberg_id": 6346,
+   "sha256": "00d941937fbf732a41150b71cf64be7d53dcac661637f10b4026aa764591b017",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=6346 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Vathek",
+   "author": "William Beckford",
+   "year": 1786,
+   "gutenberg_id": 42401,
+   "sha256": "22c2f78ca1bd495aa64bcb241d96dbebd543d3ad747f388cf670e6a48cbec305",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Power of Sympathy",
+   "author": "William Hill Brown",
+   "year": 1789,
+   "gutenberg_id": 69250,
+   "sha256": "1db4aeec4066f729d44eac65b218bcd750655a74c25f3545d98c5700dedda78e",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "A Sicilian Romance",
+   "author": "Ann Radcliffe",
+   "year": 1790,
+   "gutenberg_id": 7371,
+   "sha256": "5ce3345c6f2fcf47eed42f0c5a80727ba85ebdb6927144be4e4e8bd57135e6e2",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Caleb Williams",
+   "author": "William Godwin",
+   "year": 1794,
+   "gutenberg_id": 11323,
+   "sha256": "d199fc3a25a0673a6f8775ba00068c311e6858b0fe186b3a3979f518b4ed32e0",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Mysteries of Udolpho",
+   "author": "Ann Radcliffe",
+   "year": 1794,
+   "gutenberg_id": 3268,
+   "sha256": "aa22f5049e68fc4e7d94615910d394a8d32a726ffef77b317e14302b35d2e276",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=3268 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Camilla",
+   "author": "Frances Burney",
+   "year": 1796,
+   "gutenberg_id": 40619,
+   "sha256": "7b11eff4242c1066414a6e70db8f04a43f40215a01b14c4ad3653118a93ec5e1",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=40619 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Camilla; or, A Picture of Youth",
+   "author": "Frances Burney",
+   "year": 1796,
+   "gutenberg_id": 40619,
+   "sha256": "7b11eff4242c1066414a6e70db8f04a43f40215a01b14c4ad3653118a93ec5e1",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=40619 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Italian",
+   "author": "Ann Radcliffe",
+   "year": 1796,
+   "gutenberg_id": 74643,
+   "sha256": "06b0dd565509e239d0b33878201acffd7b57bce71ed571179d2ba7e7c28707ba",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex_sweep",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=7881 title='Passages from the French and Italian Notebooks, Complete'",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Monk",
+   "author": "Matthew Lewis",
+   "year": 1796,
+   "gutenberg_id": 601,
+   "sha256": "babdbb21f3370c7786409cab84a5a7e32e2ac72c36981d96d7bdec2f4faf151d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Coquette",
+   "author": "Hannah Foster",
+   "year": 1797,
+   "gutenberg_id": 12431,
+   "sha256": "40af5144ac01b17abbd599813523fcaf78904a93f00e527517db1543e1f00350",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Kenilworth",
+   "author": "Sir Walter Scott",
+   "year": 1798,
+   "gutenberg_id": 1606,
+   "sha256": "0893b2aaa7a72b2e2fd932e7f8322e332e12f2dcda6d4dccd34cb80c0e373e30",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "displaces_earliest",
+    "note": "gutenberg_id=1606 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Wieland",
+   "author": "Charles Brockden Brown",
+   "year": 1798,
+   "gutenberg_id": 792,
+   "sha256": "04377a966b5d660ea250839fbbd2121b8dda4e712f237ddf3fd0d26d983a0c2d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "given_name",
+    "note": "gutenberg_id=792 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Wieland; or, The Transformation: An American Tale",
+   "author": "Charles Brockden Brown",
+   "year": 1798,
+   "gutenberg_id": 792,
+   "sha256": "04377a966b5d660ea250839fbbd2121b8dda4e712f237ddf3fd0d26d983a0c2d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "St. Leon",
+   "author": "William Godwin",
+   "year": 1799,
+   "gutenberg_id": 53707,
+   "sha256": "e5ea88ab29c35c10705b748c0661adf348c37cdeea54fe5a5c8a8d5c1f0ef135",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=53707 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Castle Rackrent",
+   "author": "Maria Edgeworth",
+   "year": 1800,
+   "gutenberg_id": 1424,
+   "sha256": "4c6f7efeb4a72ee29b72cfe794ad777ea2893e8034a6122ac87976e9efa6fd81",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Belinda",
+   "author": "Maria Edgeworth",
+   "year": 1801,
+   "gutenberg_id": 9455,
+   "sha256": "7c08745d10eda4d9dbbac6db73cf6049dc116ef6cdbd777224f9624ed1741df8",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9455 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Wild Irish Girl",
+   "author": "Sydney Owenson, Lady Morgan",
+   "year": 1806,
+   "gutenberg_id": 54683,
+   "sha256": "a5d6a97012649f500f15368d22e602f7d0c00554667aa7041bb931188dd97209",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Sense and Sensibility",
+   "author": "Jane Austen",
+   "year": 1811,
+   "gutenberg_id": 21839,
+   "sha256": "6fda64fe1c10ef840536cd817d957a537b9bd30316e41d1a8cc9c76150579e38",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Heroine",
+   "author": "Eaton Stannard Barrett",
+   "year": 1813,
+   "gutenberg_id": 43065,
+   "sha256": "f2e65600a5b9b1b4251f88aba3f0d00a8bf5cb47869a2dbb8a408891d410c067",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Pride and Prejudice",
+   "author": "Jane Austen",
+   "year": 1813,
+   "gutenberg_id": 1342,
+   "sha256": "523779ad494905db4ccfd50d9883c9c8a8bff8ceb17d02700bdf2ec31ee2520e",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1342 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Wanderer",
+   "author": "Frances Burney",
+   "year": 1814,
+   "gutenberg_id": 37437,
+   "sha256": "69f9e15e3d1a0507ae189490428a9e0e84b06bd3ec33f51a16e091b63d727959",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex_sweep",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=60102 title='Wanderer of the Wasteland'",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Waverley",
+   "author": "Sir Walter Scott",
+   "year": 1814,
+   "gutenberg_id": 5998,
+   "sha256": "be6c85049a455a55e10585ce4c4269add854a4126b55ff50e843fb98546b583d",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Emma",
+   "author": "Jane Austen",
+   "year": 1815,
+   "gutenberg_id": 158,
+   "sha256": "94bdb9eecc2052682f0a328290912041f5bcfaca7b14748327ce3b6d50f4ea16",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=158 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Guy Mannering",
+   "author": "Walter Scott",
+   "year": 1815,
+   "gutenberg_id": 5999,
+   "sha256": "0bdef91f9f31058506f69f3989507b62bd286d8cadae3fed3133818932a856df",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Headlong Hall",
+   "author": "Thomas Love Peacock",
+   "year": 1815,
+   "gutenberg_id": 12803,
+   "sha256": "061c2b2702a6c7bf4903c17148aa0fbf4da9411e95fe6b315b2d877585fae3fa",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Glenarvon",
+   "author": "Lady Caroline Lamb",
+   "year": 1816,
+   "gutenberg_id": 68773,
+   "sha256": "152497f245c12a75a74f10893a91e84c905076844df3adc9868f8baee4a71b76",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Antiquary",
+   "author": "Walter Scott",
+   "year": 1816,
+   "gutenberg_id": 7005,
+   "sha256": "9582b21d31f69bf9f04f3013cae9ead302629b82b042f4d419d3876ec614cb8f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=7005 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Northanger Abbey",
+   "author": "Jane Austen",
+   "year": 1817,
+   "gutenberg_id": 121,
+   "sha256": "03465d8a83ba0c2d97e538d09f113bc869715f6e96b6375cfe03d57655f84bf7",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=121 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Persuasion",
+   "author": "Jane Austen",
+   "year": 1817,
+   "gutenberg_id": 105,
+   "sha256": "889ac7d18cbc27f2ac3cd94d8873afeb584a63d90a3e410122e13a2ddcadc57d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=105 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Rob Roy",
+   "author": "Walter Scott",
+   "year": 1817,
+   "gutenberg_id": 7025,
+   "sha256": "7f4acf7163f7afcf686b252403e84616a7486936bd36db5104925719d660a312",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=7025 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Frankenstein",
+   "author": "Mary Shelley",
+   "year": 1818,
+   "gutenberg_id": 84,
+   "sha256": "ccf7719330c70c0490e09a3af0e5994c9250d40133f59dd3b41617656b77e0d5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=84 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Frankenstein; or, The Modern Prometheus",
+   "author": "Mary Shelley",
+   "year": 1818,
+   "gutenberg_id": 84,
+   "sha256": "ccf7719330c70c0490e09a3af0e5994c9250d40133f59dd3b41617656b77e0d5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Marriage",
+   "author": "Susan Ferrier",
+   "year": 1818,
+   "gutenberg_id": 12669,
+   "sha256": "c2c6e5c739e6d47bcde8e0e6830c24944ef69545381d9a68ca3ee3b36597de23",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Nightmare Abbey",
+   "author": "Thomas Love Peacock",
+   "year": 1818,
+   "gutenberg_id": 9909,
+   "sha256": "e19df4f023e28b2494efd65fa8c5b480a12f0905f60f87e827927913aa16d032",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9909 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Ivanhoe",
+   "author": "Walter Scott",
+   "year": 1819,
+   "gutenberg_id": 82,
+   "sha256": "078e55da4a8f79a61f54473c8ccb82675caebf243b227d4a64fcbcbd043d9823",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=82 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Melmoth the Wanderer",
+   "author": "Charles Robert Maturin",
+   "year": 1820,
+   "gutenberg_id": 53685,
+   "sha256": "8290a9934e7d13c7de8e1a2703291440056d4cde0aa4675ed6fdcd742265fd92",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Sketch Book of Geoffrey Crayon",
+   "author": "Washington Irving",
+   "year": 1820,
+   "gutenberg_id": 2048,
+   "sha256": "9ec37d46988d279760d3b5ec24da1b18fc3afa8ced8756011036f48a9f141bc3",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Quentin Durward",
+   "author": "Walter Scott",
+   "year": 1821,
+   "gutenberg_id": 7853,
+   "sha256": "d410c09e1177015350d5197eae4674fb7275debe2862fc39a1fdbe4d2d9a0eaf",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=7853 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Fortunes of Nigel",
+   "author": "Walter Scott",
+   "year": 1822,
+   "gutenberg_id": 5950,
+   "sha256": "c7b5e2933f100be8f70f03dcedea93942423109d29d22434d574cb8265e62cd0",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=5950 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Pirate",
+   "author": "Walter Scott",
+   "year": 1822,
+   "gutenberg_id": 42389,
+   "sha256": "46806caf3273399fa01fb814fda07f8115ef801f10a678a89d0890a4585e7c6c",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=42389 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Pioneers",
+   "author": "James Fenimore Cooper",
+   "year": 1823,
+   "gutenberg_id": 2275,
+   "sha256": "70159e6cd7e8d54ca5ea2ee7b44664ba0a03c6437a477632f1e7b50e7c746fbc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Redgauntlet",
+   "author": "Walter Scott",
+   "year": 1824,
+   "gutenberg_id": 2516,
+   "sha256": "fe61b850f0e9f4a41974de8df562c3a958c8f7e36ad468eced7a45301e5275e7",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=2516 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Private Memoirs and Confessions of a Justified Sinner",
+   "author": "James Hogg",
+   "year": 1824,
+   "gutenberg_id": 2276,
+   "sha256": "4810c4db869673231bf303e7c48c66b80093cae2be0266dcea08322c71d96c15",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Talisman",
+   "author": "Walter Scott",
+   "year": 1825,
+   "gutenberg_id": 1377,
+   "sha256": "4a44bd5e1490cd46192ce21222a7ae34ade37d9b69dca3deb251249b711be71f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=1377 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Last Man",
+   "author": "Mary Shelley",
+   "year": 1826,
+   "gutenberg_id": 18247,
+   "sha256": "982c7121814d4031fbdbfea62773db2b068a095880b3ecc75f25843fd5e049dc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=18247 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Last of the Mohicans",
+   "author": "James Fenimore Cooper",
+   "year": 1826,
+   "gutenberg_id": 940,
+   "sha256": "1016473fcd6a8c40c5636ce7c5ca0117321aa4f843295cd7ac2480e942a815a5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=940 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Vivian Grey",
+   "author": "Benjamin Disraeli",
+   "year": 1826,
+   "gutenberg_id": 9840,
+   "sha256": "1dbbdc9afea84a3c0cf84cd1fbc06be73160cb57aaaa25e43a95ab0ffebf8d5c",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Hope Leslie",
+   "author": "Catharine Maria Sedgwick",
+   "year": 1827,
+   "gutenberg_id": 76018,
+   "sha256": "1f29bb1528f78d6f8a0618046543460c6894580210ae1a4b5b6da575cb083842",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Mummy!",
+   "author": "Jane C. Loudon",
+   "year": 1827,
+   "gutenberg_id": 56426,
+   "sha256": "bb4e7f88a8748dbd603162f72cb1bb8ecc8a62686926a56d089f1c77a3fa58ea",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Wept of Wish-ton-Wish",
+   "author": "James Fenimore Cooper",
+   "year": 1829,
+   "gutenberg_id": 8888,
+   "sha256": "dce2d424e623b5be6e4a3728fa536701975707566d67548e49b9edcacdf4d09c",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=8888 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Old Mortality",
+   "author": "Walter Scott",
+   "year": 1830,
+   "gutenberg_id": 6941,
+   "sha256": "6414fa737edf6e4884245254f815b534ea29a6c68511f33ad5566c72cca25453",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=6941 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Sybil",
+   "author": "Benjamin Disraeli",
+   "year": 1830,
+   "gutenberg_id": 3760,
+   "sha256": "e4cd2d3c0b270d6b221b4755943e95ff419fd7251ef04850c336d2733a4f865b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=3760 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Crotchet Castle",
+   "author": "Thomas Love Peacock",
+   "year": 1831,
+   "gutenberg_id": 2075,
+   "sha256": "ad026c9f1ed994744ec390a9f7f6e62eeeaa83958c8b23af1d8dc010fa97bdde",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2075 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Rookwood",
+   "author": "William Harrison Ainsworth",
+   "year": 1834,
+   "gutenberg_id": 23564,
+   "sha256": "6f230756189ad0026e1e0e5e57d98137c0fd5ff7917bc5274778961ea45d4cc7",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Oliver Twist",
+   "author": "Charles Dickens",
+   "year": 1835,
+   "gutenberg_id": 47530,
+   "sha256": "c51ef3c4b5325f38a851b075906456548fc51dcb93a7d9cc7bd9574319061ab6",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=47530 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Pickwick Papers",
+   "author": "Charles Dickens",
+   "year": 1837,
+   "gutenberg_id": 580,
+   "sha256": "dff75b7423599a49c7c87666361083596b44962bc40a9ac838a863cce245b6fc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Great Expectations",
+   "author": "Charles Dickens",
+   "year": 1838,
+   "gutenberg_id": 1400,
+   "sha256": "969c5edad905b4b189c2d999aa103c66d93d657f30f415960865b39788f6be78",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1400 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Nicholas Nickleby",
+   "author": "Charles Dickens",
+   "year": 1838,
+   "gutenberg_id": 967,
+   "sha256": "7d8ae538f1c7ede68647cc05da47e3314726a1eadd2ded3e96a66a8277677726",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=967 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Narrative of Arthur Gordon Pym of Nantucket",
+   "author": "Edgar Allan Poe",
+   "year": 1838,
+   "gutenberg_id": 51060,
+   "sha256": "0bb09c30d96727b34f040c442d6dad3a7b5c261da7cdc17fd16c94c184bc16b6",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Jack Sheppard",
+   "author": "William Harrison Ainsworth",
+   "year": 1839,
+   "gutenberg_id": 16215,
+   "sha256": "bad94f6eb3ff25ff9a6d88d3011b8f87ad8b8f49afc0de3482454ba277698800",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=16215 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Barnaby Rudge",
+   "author": "Charles Dickens",
+   "year": 1840,
+   "gutenberg_id": 917,
+   "sha256": "df4ad6053863f29b9728a920da7a0b535ada2898b7905f2972b160ae6dc50459",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=917 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Deerslayer",
+   "author": "James Fenimore Cooper",
+   "year": 1841,
+   "gutenberg_id": 3285,
+   "sha256": "49b575ac3095c91d962a97d4362445795985d643a521cd7a37dcc596382ce922",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=3285 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Three Musketeers",
+   "author": "Alexandre Dumas",
+   "year": 1844,
+   "gutenberg_id": 1257,
+   "sha256": "1dbb3d64a9ca17f5cf09277edf8b49bbdf2e998dc54653ea260a7f2e08cfb1b5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Count of Monte Cristo",
+   "author": "Alexandre Dumas",
+   "year": 1846,
+   "gutenberg_id": 1184,
+   "sha256": "51ea993e21eb3ac637f511c0cfba062412707e5b5a0b32c3e8d66e93f5a89b66",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1184 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Agnes Grey",
+   "author": "Anne Bront\u00eb",
+   "year": 1847,
+   "gutenberg_id": 767,
+   "sha256": "782c7342c34aeee823b97dce0b62c4ecffa6bfd11e3f1727984573acada558b9",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Jane Eyre",
+   "author": "Charlotte Bront\u00eb",
+   "year": 1847,
+   "gutenberg_id": 1260,
+   "sha256": "ae7cc070aa8ac9bfd626d136cf170de73e453ea7e0e9c98fe9a378cc38ea60d3",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Tenant of Wildfell Hall",
+   "author": "Anne Bront\u00eb",
+   "year": 1847,
+   "gutenberg_id": 969,
+   "sha256": "823686dd6190ecc4d315144bf34023de6019256a893424b8431abf049a869c04",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "given_name",
+    "note": "gutenberg_id=969 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Wuthering Heights",
+   "author": "Emily Bront\u00eb",
+   "year": 1847,
+   "gutenberg_id": 768,
+   "sha256": "1bdbd30322c2d71614fdc5400caebaaf4a368b6cd4486f5b90384a4a3fbc5ad6",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Mary Barton",
+   "author": "Elizabeth Gaskell",
+   "year": 1848,
+   "gutenberg_id": 2153,
+   "sha256": "b652d8167917b26fca8e13e1e70328cd325c402877ccf07d2496164c9eb7fe44",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Vanity Fair",
+   "author": "William Thackeray",
+   "year": 1848,
+   "gutenberg_id": 599,
+   "sha256": "e0c39d7823a7bb756a545d94f53b7f3070b38117366e3c35adb36e536ee22b12",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "David Copperfield",
+   "author": "Charles Dickens",
+   "year": 1849,
+   "gutenberg_id": 766,
+   "sha256": "855c81c13b0ecee826c87ee9e4006a17e9f159debe4d96aa9441646362ed392a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=766 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Redburn",
+   "author": "Herman Melville",
+   "year": 1849,
+   "gutenberg_id": 8118,
+   "sha256": "33ebafde43599d15fad716a50919ec87b3c4cf20797ac2e84f7fc1c50109e2fc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Shirley",
+   "author": "Charlotte Bront\u00eb",
+   "year": 1849,
+   "gutenberg_id": 30486,
+   "sha256": "a426a6935ba43cccc10690f7f604a7739ab007ae6e5053bc4fd41d36ce2413f2",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "given_name",
+    "note": "gutenberg_id=30486 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Scarlet Letter",
+   "author": "Nathaniel Hawthorne",
+   "year": 1850,
+   "gutenberg_id": 25344,
+   "sha256": "be52660947d3a31df02e4c4465d7c09de31dccfb5fff1ed26ebc398aeb8599c5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Moby-Dick",
+   "author": "Herman Melville",
+   "year": 1851,
+   "gutenberg_id": 15,
+   "sha256": "cc2ed622a0fa4a8657eb7370545770ee549bc943df22838dedb54948a5f3a2ab",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=15 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Bleak House",
+   "author": "Charles Dickens",
+   "year": 1852,
+   "gutenberg_id": 1023,
+   "sha256": "4f365358606cf84c353c6ed740c29014e7c71c58be0f45cce007e9deeb55559f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1023 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Henry Esmond",
+   "author": "William Makepeace Thackeray",
+   "year": 1852,
+   "gutenberg_id": 29363,
+   "sha256": "7fb29550668070208643ea966691fb1c423752c01fde01eed775ab5271ed480b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Pierre",
+   "author": "Herman Melville",
+   "year": 1852,
+   "gutenberg_id": 34970,
+   "sha256": "53250c05806c106d398980b499f3dd836d442e34a4438f6bd43b2faeb50aa406",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=34970 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Uncle Tom's Cabin",
+   "author": "Harriet Beecher Stowe",
+   "year": 1852,
+   "gutenberg_id": 203,
+   "sha256": "3942fa8b47aeda3be28acbe98672a3f55b739b5e685ce6ff42fbbe4b193c9e92",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Cranford",
+   "author": "Elizabeth Gaskell",
+   "year": 1853,
+   "gutenberg_id": 394,
+   "sha256": "adfbeb4165569fbee1516490be4d6e6a729f00f4f244f69660712afb84bf0bb9",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=394 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "North and South",
+   "author": "Elizabeth Gaskell",
+   "year": 1854,
+   "gutenberg_id": 4276,
+   "sha256": "d63506a62482e95969c86d7c9b7a8346dd84f9e1a86306e5a606dd11142a18df",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4276 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Walden",
+   "author": "Henry David Thoreau",
+   "year": 1854,
+   "gutenberg_id": 205,
+   "sha256": "5bbb9bc8e06e545b0bf6732a4af943d4904cd1551463ba4f8df87ff76aa85e9d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Westward Ho!",
+   "author": "Charles Kingsley",
+   "year": 1855,
+   "gutenberg_id": 1860,
+   "sha256": "202889521569875c678225ffdcfe1d3bb5424ad4fb54cf6222d0e18d8895dff6",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Confidence-Man",
+   "author": "Herman Melville",
+   "year": 1857,
+   "gutenberg_id": 21816,
+   "sha256": "ca29c3ba4f48978e47b5593387aff4f5c7dc32e8d9a8190ea081895622a1bc29",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=21816 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Virginians",
+   "author": "William Makepeace Thackeray",
+   "year": 1857,
+   "gutenberg_id": 8123,
+   "sha256": "da909920b5ffd4aab89583a0171a353378510d92e5fa61f3e46307499834edd8",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=8123 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "A Tale of Two Cities",
+   "author": "Charles Dickens",
+   "year": 1859,
+   "gutenberg_id": 98,
+   "sha256": "bbb09a92a1171e6ec802a505c541800f89e00b8250fc2b254b32a70015c255ce",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=98 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Prairie",
+   "author": "James Fenimore Cooper",
+   "year": 1859,
+   "gutenberg_id": 6450,
+   "sha256": "61bd2f0b78eb61e723a9d16a5dfeac8c9468f77a4726343cd0ba124fa4528fb1",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=6450 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Woman in White",
+   "author": "Wilkie Collins",
+   "year": 1859,
+   "gutenberg_id": 583,
+   "sha256": "2cf0e2a942b996d2f2a74e386e95612d711a7c0f8e62ac74365a0ba96e01def3",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Pathfinder",
+   "author": "James Fenimore Cooper",
+   "year": 1860,
+   "gutenberg_id": 1880,
+   "sha256": "45ddb9db6bc75bd092cc75134ec8c3ce12505e1a7402db16ce0089c1a30a0ef0",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1880 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Silas Marner",
+   "author": "George Eliot",
+   "year": 1861,
+   "gutenberg_id": 550,
+   "sha256": "0b40549ad0fe4108ec56df072fde5d886f85286a22149bb96969a05bc20ea49a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Lady Audley's Secret",
+   "author": "Mary Elizabeth Braddon",
+   "year": 1862,
+   "gutenberg_id": 8954,
+   "sha256": "d28a2502bf761cb3a82ec9f27c14bab99a060a8918b3210869a8be27b0b793cd",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Uncle Silas",
+   "author": "Sheridan Le Fanu",
+   "year": 1864,
+   "gutenberg_id": 14851,
+   "sha256": "57dc732aeb0b8e232f2a737ee0d0e7541b9cc2d5e6154be18c184136135935e4",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Alice's Adventures in Wonderland",
+   "author": "Lewis Carroll",
+   "year": 1865,
+   "gutenberg_id": 11,
+   "sha256": "074eb05d6e177302e9c9f5b104753fcb8f235797020552159e54626000aa6dcb",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Wives and Daughters",
+   "author": "Elizabeth Gaskell",
+   "year": 1866,
+   "gutenberg_id": 4274,
+   "sha256": "9e0d430c316c61e5ffb1b4cbb660cb54dabc18b77c2dfc63a06f48c27a8784ff",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4274 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Under Two Flags",
+   "author": "Ouida",
+   "year": 1867,
+   "gutenberg_id": 3465,
+   "sha256": "acb06ec479ffef3f5d4bd52090399c67a9b691f43a7034fd180a9bb02a2397a4",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Little Women",
+   "author": "Louisa May Alcott",
+   "year": 1868,
+   "gutenberg_id": 37106,
+   "sha256": "fbd26ab50f59362bc9950ea1779f69c85b50949922f06c05c9b083674c40927f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Ambassadors",
+   "author": "Henry James",
+   "year": 1868,
+   "gutenberg_id": 432,
+   "sha256": "2c8374d2ff2ac351cd6fc05fd4f417b13dd6bbf12368da9964a8bf6dfd1ba2dd",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=432 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Moonstone",
+   "author": "Wilkie Collins",
+   "year": 1868,
+   "gutenberg_id": 155,
+   "sha256": "aec0906f3c8edc8c9f40ad3691c790cfaca8e9ac3b939819568109cfe60efd7e",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=155 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Lorna Doone",
+   "author": "R. D. Blackmore",
+   "year": 1869,
+   "gutenberg_id": 17460,
+   "sha256": "d7f426c24efdd7ac7572773dcbe9d774c654416cb8e64a5fa54acbcf1a44c44c",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "War and Peace",
+   "author": "Leo Tolstoy",
+   "year": 1869,
+   "gutenberg_id": 2600,
+   "sha256": "cd730a770119b6ea3688406e143d185eafda3e30e365cea6dc60e4d03450535a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Twenty Thousand Leagues Under the Sea",
+   "author": "Jules Verne",
+   "year": 1870,
+   "gutenberg_id": 164,
+   "sha256": "283a12438b06eb984e07b1cc6b67628b4aa05321809042e572e95c214423ed29",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Middlemarch",
+   "author": "George Eliot",
+   "year": 1871,
+   "gutenberg_id": 145,
+   "sha256": "f9ec7f740101cb92502e1296ea1a1c5a595e7dbf8fa71c19f6c14ea114f26daa",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "given_name",
+    "note": "gutenberg_id=145 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Battle of Dorking",
+   "author": "George Tomkyns Chesney",
+   "year": 1871,
+   "gutenberg_id": 65882,
+   "sha256": "14086fa2594110fc0f54ef96e14b5853a0f6f461fa0523db955e2e7469b1e8fa",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Around the World in Eighty Days",
+   "author": "Jules Verne",
+   "year": 1872,
+   "gutenberg_id": 103,
+   "sha256": "c7dfd4c27a328f2561f0f2976c83f86281f7f8117678439687521508f357d61f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=103 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Carmilla",
+   "author": "Joseph Sheridan Le Fanu",
+   "year": 1872,
+   "gutenberg_id": 10007,
+   "sha256": "cf3a3ea5652729c2f70a23655f051fc02e4f2703754eb7b17cbee6c982dc3035",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Erewhon",
+   "author": "Samuel Butler",
+   "year": 1872,
+   "gutenberg_id": 1906,
+   "sha256": "9c32f5cf267f34d6b29259bcb995ad558e46d943ee138894c62c75f598f447b3",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Far from the Madding Crowd",
+   "author": "Thomas Hardy",
+   "year": 1874,
+   "gutenberg_id": 107,
+   "sha256": "c266cdbcde27204e80f7ff29a0b7ec94ffd0a3502571f2d39ad3b5fafb2b40ae",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Adventures of Huckleberry Finn",
+   "author": "Mark Twain",
+   "year": 1875,
+   "gutenberg_id": 32325,
+   "sha256": "19b8b0d4a318599c0d1f32a0b7f3ee4d3499f9257451c07fa2766c18c45b65d6",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=32325 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+   "author": "Robert Louis Stevenson",
+   "year": 1875,
+   "gutenberg_id": 43,
+   "sha256": "57208d916cb2f5ad2d92d4a06f596103f9a349623028bc365fbef55369379f74",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=43 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Way We Live Now",
+   "author": "Anthony Trollope",
+   "year": 1875,
+   "gutenberg_id": 5231,
+   "sha256": "8d18e1965325fb262a7ab25c923c7ff0fb0643bbbe4c9555c27c039357fdc572",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Adventures of Tom Sawyer",
+   "author": "Mark Twain",
+   "year": 1876,
+   "gutenberg_id": 74,
+   "sha256": "1da3ca48a09de96b8e0b72c8b07ae7b7e850c921df432d972d5ffd9722f45dfc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The American",
+   "author": "Henry James",
+   "year": 1877,
+   "gutenberg_id": 45634,
+   "sha256": "891e4e553598f0393f1013c91b1496abe5825c94ea6329d873b0e037d52ef2aa",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Anna Karenina",
+   "author": "Leo Tolstoy",
+   "year": 1878,
+   "gutenberg_id": 1399,
+   "sha256": "1aad7776bd0f7fee155b4554cd0519d08c49a2c9b0a7ba42d08bdc5361813521",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1399 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Leavenworth Case",
+   "author": "Anna Katharine Green",
+   "year": 1878,
+   "gutenberg_id": 4047,
+   "sha256": "917d191bd110998302592a0d6c8ab21e237e53b18f35f378026c242e7af320fd",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Ben-Hur",
+   "author": "Lew Wallace",
+   "year": 1880,
+   "gutenberg_id": 2145,
+   "sha256": "f0fafbcbf712890bb4b0a0c04aedb63b4ad70bccd993b14ad3393455af73c521",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Portrait of a Lady",
+   "author": "Henry James",
+   "year": 1881,
+   "gutenberg_id": 2833,
+   "sha256": "b66eaaee840a5116ae83d83efcca8359ad3513b57867c5cdc0f8b8edfcdcd31f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2833 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Way of All Flesh",
+   "author": "Samuel Butler",
+   "year": 1882,
+   "gutenberg_id": 2084,
+   "sha256": "192be6ddd58ca0ae21cfa8a830bc3d194e12d5e02d729aba0d557ea9dfd4f2f4",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2084 overlap=1.00",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "Treasure Island",
+   "author": "Robert Louis Stevenson",
+   "year": 1883,
+   "gutenberg_id": 120,
+   "sha256": "f16d2684729eac5df872cd73d698976154c73a58bbbaacd85abd0e68bba7f9a7",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Mayor of Casterbridge",
+   "author": "Thomas Hardy",
+   "year": 1884,
+   "gutenberg_id": 143,
+   "sha256": "7fe617c7e134d4f7689981384cb5eb3e75fd300c1cbb004d9cedf7743e11457a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=143 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "With Fire and Sword",
+   "author": "Henryk Sienkiewicz",
+   "year": 1884,
+   "gutenberg_id": 37027,
+   "sha256": "7d95c420d0d8ef9640d4d5e7d2cca16e8d92f7610009af910462e93b74c2a8ee",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "King Solomon's Mines",
+   "author": "H. Rider Haggard",
+   "year": 1885,
+   "gutenberg_id": 2166,
+   "sha256": "bb3c21ba67bb8a2a2e317baa6b6f08151b3afea22e88ab7b6f6d89491935ba30",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Rise of Silas Lapham",
+   "author": "William Dean Howells",
+   "year": 1885,
+   "gutenberg_id": 154,
+   "sha256": "1de3075a47470eaf7d6f58ff2ffa6794d3bda071689c311fd9cff6718d915f2b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Kidnapped",
+   "author": "Robert Louis Stevenson",
+   "year": 1886,
+   "gutenberg_id": 421,
+   "sha256": "cecec19e48a4580b47837a32d23bf47dfe19ad6ef9c3095d6ec17a923e05cf40",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=421 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "She",
+   "author": "H. Rider Haggard",
+   "year": 1886,
+   "gutenberg_id": 3155,
+   "sha256": "23743acf9171a92ba04702c04c0a6fce24c585a94b03049a182cf7b1d49010fe",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex_sweep",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=3155 title='She'",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "A Study in Scarlet",
+   "author": "Arthur Conan Doyle",
+   "year": 1887,
+   "gutenberg_id": 244,
+   "sha256": "dee4d2f25699b98aa919cd559542bf4819c749d2eb207311f6f99bf368ecc324",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Looking Backward",
+   "author": "Edward Bellamy",
+   "year": 1888,
+   "gutenberg_id": 624,
+   "sha256": "be66b67a87db163151cf6406fc0639c38bc284caf2514819d3ae464e74480103",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 1
+   }
+  },
+  {
+   "title": "The Black Arrow",
+   "author": "Robert Louis Stevenson",
+   "year": 1888,
+   "gutenberg_id": 32954,
+   "sha256": "9cb08de460aa91a1ceeea7d04a95c286c5e1f1d54703a5a27542373dd4a58d28",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=32954 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Black Arrow: A Tale of the Two Roses",
+   "author": "Robert Louis Stevenson",
+   "year": 1888,
+   "gutenberg_id": 32954,
+   "sha256": "9cb08de460aa91a1ceeea7d04a95c286c5e1f1d54703a5a27542373dd4a58d28",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=32954 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Master of Ballantrae",
+   "author": "Robert Louis Stevenson",
+   "year": 1888,
+   "gutenberg_id": 864,
+   "sha256": "ada04f3e11e5b2ea7c3a45b0b48343eccbe36da00a695ec07fb940bd7c50b67a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=864 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "A Connecticut Yankee in King Arthur's Court",
+   "author": "Mark Twain",
+   "year": 1889,
+   "gutenberg_id": 86,
+   "sha256": "920a9f7cdd4610ff639fa94909378ea5ef309cc0563c79550993d132fe8cd3c2",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=86 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Micah Clarke",
+   "author": "Arthur Conan Doyle",
+   "year": 1889,
+   "gutenberg_id": 9504,
+   "sha256": "c82c02ff1be474ca69741a8df57d2879757506e00fc3426f9566ab80c4ac28a9",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9504 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Tess of the D'Urbervilles",
+   "author": "Thomas Hardy",
+   "year": 1889,
+   "gutenberg_id": 110,
+   "sha256": "bb233f240324098804f26d38d1e9b507c5a50d8cfec1d31008d12c9df286c9b1",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=110 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Sign of Four",
+   "author": "Arthur Conan Doyle",
+   "year": 1889,
+   "gutenberg_id": 2097,
+   "sha256": "b3b96220cce314111679f550e230563970018377903395095606a1e507db2ec0",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2097 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Sign of the Four",
+   "author": "Arthur Conan Doyle",
+   "year": 1889,
+   "gutenberg_id": 2097,
+   "sha256": "b3b96220cce314111679f550e230563970018377903395095606a1e507db2ec0",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2097 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Three Men in a Boat",
+   "author": "Jerome K. Jerome",
+   "year": 1889,
+   "gutenberg_id": 308,
+   "sha256": "fb2a168d6e369db8cb85c9dd648591410a8b6bd48ea61f1620c051437edde635",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "News from Nowhere",
+   "author": "William Morris",
+   "year": 1890,
+   "gutenberg_id": 3261,
+   "sha256": "9f1353a94297e56f9b52ddb253ae24bf85df35ae71a8dab2acd33486e2d50848",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Picture of Dorian Gray",
+   "author": "Oscar Wilde",
+   "year": 1890,
+   "gutenberg_id": 174,
+   "sha256": "5ebb7f1825868be27656d9fbfae0343a0c69b6150dbb982609258e56f103f93d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The White Company",
+   "author": "Arthur Conan Doyle",
+   "year": 1890,
+   "gutenberg_id": 903,
+   "sha256": "992ce3c1e9186ec8fe6d7b145698b1f0ead26d7d9605500d5ce8d5c13a999d97",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=903 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Tono-Bungay",
+   "author": "H.G. Wells",
+   "year": 1890,
+   "gutenberg_id": 718,
+   "sha256": "a08a8dfcfbd135ebfbc83db85eca9e42e403a953cbfbfb49a7568213858432f9",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "displaces_earliest",
+    "note": "gutenberg_id=718 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "New Grub Street",
+   "author": "George Gissing",
+   "year": 1891,
+   "gutenberg_id": 1709,
+   "sha256": "e9b9ed71cd2b40b729f64b33e809578563272a136b88572821dc2b90c0553703",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Adventures of Sherlock Holmes",
+   "author": "Arthur Conan Doyle",
+   "year": 1892,
+   "gutenberg_id": 1661,
+   "sha256": "eb5684a939a1fd7c7691abf32a30de901495f680916836dd547035c8654ac8f4",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1661 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Big Bow Mystery",
+   "author": "Israel Zangwill",
+   "year": 1892,
+   "gutenberg_id": 28164,
+   "sha256": "d683278a76804f1084a961ce2641758fb2005248bbdbfb1c509f5a8b7968cbe4",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Odd Women",
+   "author": "George Gissing",
+   "year": 1893,
+   "gutenberg_id": 4313,
+   "sha256": "d4439fc24f136df4678101cc79ac312a299a94747a8f074fa448f899aaecbcd5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4313 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Esther Waters",
+   "author": "George Moore",
+   "year": 1894,
+   "gutenberg_id": 8157,
+   "sha256": "d0bcc15ee09b9261b6aab37dfa537b03488f4806bf1f05808b44dee6f41ed9f6",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Jude the Obscure",
+   "author": "Thomas Hardy",
+   "year": 1894,
+   "gutenberg_id": 153,
+   "sha256": "3046b9ef9e5e233510fb806ba27d9b85a630f0964ba35cb1cc66a5f3376f763a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=153 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Great God Pan",
+   "author": "Arthur Machen",
+   "year": 1894,
+   "gutenberg_id": 389,
+   "sha256": "9b5a7123b0047a971cbb6460d42a244f2a1e82496a86a32ddf06e1d8f2ebd6d6",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Jungle Book",
+   "author": "Rudyard Kipling",
+   "year": 1894,
+   "gutenberg_id": 236,
+   "sha256": "2ff811a4f38d97fc468a1cc4f827525bb9532c6091b332dbcbc45346c6247616",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Trilby",
+   "author": "George du Maurier",
+   "year": 1894,
+   "gutenberg_id": 39858,
+   "sha256": "193b42f738802c5ca262f2e98d11f8ba1a51cd0d331ded5ed70d4bc534338aa3",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Almayer's Folly",
+   "author": "Joseph Conrad",
+   "year": 1895,
+   "gutenberg_id": 720,
+   "sha256": "9568a1c2efd1ef9b720a8fbf42f69909141b78b00c9734ee0ee1d26a3458bb1e",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Quo Vadis",
+   "author": "Henryk Sienkiewicz",
+   "year": 1895,
+   "gutenberg_id": 2853,
+   "sha256": "808c5b6056632b5d91695242abd9d210ebc60ce56acb16b9aad24284394bf38b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=8816 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The King in Yellow",
+   "author": "Robert W. Chambers",
+   "year": 1895,
+   "gutenberg_id": 8492,
+   "sha256": "9fd5f3ac9fb783ccbec08139c7e408bb51a9abc9fa6aaf5b38c616c31f030c72",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Red Badge of Courage",
+   "author": "Stephen Crane",
+   "year": 1895,
+   "gutenberg_id": 73,
+   "sha256": "4c2071cd2cf7ab17721232b65aafe12d7a84b5d84d1bce71f447115a2b0d8577",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Time Machine",
+   "author": "H.G. Wells",
+   "year": 1895,
+   "gutenberg_id": 35,
+   "sha256": "8b51a800c2aad229b1ef104c334443e91a992704fd23bd65124d4289d990129c",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Captains Courageous",
+   "author": "Rudyard Kipling",
+   "year": 1896,
+   "gutenberg_id": 2186,
+   "sha256": "9b1f368336fb29ccabe312199480549d560b8e0848c60d1613b7ccd01deecae5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2186 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Damnation of Theron Ware",
+   "author": "Harold Frederic",
+   "year": 1896,
+   "gutenberg_id": 133,
+   "sha256": "499acec3cb63be46e2c105178176cf0c412e1d7cfe59516d58c6a5cadec7eada",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Island of Doctor Moreau",
+   "author": "H.G. Wells",
+   "year": 1896,
+   "gutenberg_id": 159,
+   "sha256": "a4e2c20f17b1a0637cd06a994dc1c52baf558b3e6759d231353ede5ebe355a7a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=159 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Dracula",
+   "author": "Bram Stoker",
+   "year": 1897,
+   "gutenberg_id": 345,
+   "sha256": "3648da9a1336539e9b54a3caab16c5b9742c3bdb34131c0289c9f08f834a46ae",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Hugh Wynne",
+   "author": "S. Weir Mitchell",
+   "year": 1897,
+   "gutenberg_id": 6485,
+   "sha256": "3ed50bb871a3260f35cf154af77fa55c2e0b06bad908145486b3e8fa7c1ea74b",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "That Affair Next Door",
+   "author": "Anna Katharine Green",
+   "year": 1897,
+   "gutenberg_id": 21617,
+   "sha256": "fdd99583be25f0fcfa4a83febf8e47ec7fda6cc4ebf70ef11fcd6bed48f11929",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=21617 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Invisible Man",
+   "author": "H. G. Wells",
+   "year": 1897,
+   "gutenberg_id": 5230,
+   "sha256": "4228fa9a613096285e4bfae8ede8702475b0f85f7ea38e63652669322e23a3a4",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Nigger of the Narcissus",
+   "author": "Joseph Conrad",
+   "year": 1897,
+   "gutenberg_id": 17731,
+   "sha256": "d71e5a43af45dbd7753eb8f6566f5073482548b36a7db33dcfecb53f2a1b9504",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=17731 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "What Maisie Knew",
+   "author": "Henry James",
+   "year": 1897,
+   "gutenberg_id": 7118,
+   "sha256": "42461a8817b00e8075c2f50ea7304b0087c352677aedc5c594026cf184920509",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=7118 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Turn of the Screw",
+   "author": "Henry James",
+   "year": 1898,
+   "gutenberg_id": 209,
+   "sha256": "8a53638560b82aefbb2db86d38be88cda8ae581d6d0da91676079d1b14863500",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=209 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Heart of Darkness",
+   "author": "Joseph Conrad",
+   "year": 1899,
+   "gutenberg_id": 219,
+   "sha256": "4e689a7154edc8925157b9150e2a9672258a3606e093d1e8b3074fb886a34ce6",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=219 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "McTeague",
+   "author": "Frank Norris",
+   "year": 1899,
+   "gutenberg_id": 165,
+   "sha256": "8e29a9e96be6aec22bc7e835c957cd311ac89d2d9fc74e68f84bfdb15f37b7ca",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Richard Carvel",
+   "author": "Winston Churchill",
+   "year": 1899,
+   "gutenberg_id": 5373,
+   "sha256": "af1d01a88e67e47c8312f6cf387631afeab25059c8e438c1a8a7ed74cd9115d2",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Awakening",
+   "author": "Kate Chopin",
+   "year": 1899,
+   "gutenberg_id": 160,
+   "sha256": "2d3ae0e1cf5a21743a5aa1e98565decc9702320ace54afa4969d58283a332fb4",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "When the Sleeper Wakes",
+   "author": "Herbert George Wells",
+   "year": 1899,
+   "gutenberg_id": 12163,
+   "sha256": "0f5e52393711e3569e663dc226024abff50b63443d8514d7c50a38afd0f2a534",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Sister Carrie",
+   "author": "Theodore Dreiser",
+   "year": 1900,
+   "gutenberg_id": 233,
+   "sha256": "e4c488ad003927d5efe203e7a171f8c468d15dc2a1d2bce770b2446d267e6b05",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Singing Bone",
+   "author": "R. Austin Freeman",
+   "year": 1900,
+   "gutenberg_id": 59478,
+   "sha256": "8c628bb9383309426ef8529e742b83ff33871dc2e7b3e9a425d8e87c56793a14",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=59478 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Wonderful Wizard of Oz",
+   "author": "L. Frank Baum",
+   "year": 1900,
+   "gutenberg_id": 55,
+   "sha256": "1264aae1d069eaba15b822b772ee090490b233f7385776d5094fe2fce0facf0a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Clementina",
+   "author": "A.E.W. Mason",
+   "year": 1901,
+   "gutenberg_id": 13567,
+   "sha256": "44d13d43c4e37adf3272c8891eb44f328223ed27f73a26875dd7b8ca3b2113fb",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "Kim",
+   "author": "Rudyard Kipling",
+   "year": 1901,
+   "gutenberg_id": 2226,
+   "sha256": "d743261c38f9d768dda6e8c4171893971edf39ddbabc12b20e8ddcbc78045e58",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2226 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Crisis",
+   "author": "Winston Churchill",
+   "year": 1901,
+   "gutenberg_id": 59794,
+   "sha256": "9405aaede464b8b1c0118067a0c9ae89b943134cfce8489ca1cc5fe5bc171ef5",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=59794 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Four Feathers",
+   "author": "A.E.W. Mason",
+   "year": 1901,
+   "gutenberg_id": 18883,
+   "sha256": "bbe778c4efa5fff67cebe3383362952b3e09ce221c5ba15f1df16cab0ecab325",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=18883 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Inheritors",
+   "author": "Joseph Conrad",
+   "year": 1901,
+   "gutenberg_id": 14888,
+   "sha256": "9699c20b2cfb0b2be246b5e6210af282eb1ba69c39cd923e3bf4e659e6e1f18a",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=14888 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Purple Cloud",
+   "author": "Matthew Phipps Shiel",
+   "year": 1901,
+   "gutenberg_id": 11229,
+   "sha256": "19f8a241baed00ff06035e336c293539f3320c447343fa61dda5c3bdf8c2c4ab",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "The Wings of the Dove",
+   "author": "Henry James",
+   "year": 1901,
+   "gutenberg_id": 29452,
+   "sha256": "4a752c6015ed7edc0a1c5326f623566414fd3dbf145f10336b1de39c10813c1d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=29452 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Hound of the Baskervilles",
+   "author": "Arthur Conan Doyle",
+   "year": 1902,
+   "gutenberg_id": 2852,
+   "sha256": "7a8679f161f62ba6dacbb94b19ff26d847dbdcedaa9265f3cd080e48254802c7",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2852 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Virginian",
+   "author": "Owen Wister",
+   "year": 1902,
+   "gutenberg_id": 1298,
+   "sha256": "d37a6d3b56e8af1fc99df91d26308c9a0b5f3d3200dc5535a138a22c9d2afc8a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Call of the Wild",
+   "author": "Jack London",
+   "year": 1903,
+   "gutenberg_id": 215,
+   "sha256": "213f6457f07542fc2b67bdc09a89e6bfc026e7a4f5e8d3f07972d70ca70a3aa1",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Riddle of the Sands",
+   "author": "Erskine Childers",
+   "year": 1903,
+   "gutenberg_id": 2360,
+   "sha256": "55475cc61aefd7e8d33f62942aa891fabe5ad68cdc37f56816551c32646216a0",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Hadrian the Seventh",
+   "author": "Frederick Rolfe",
+   "year": 1904,
+   "gutenberg_id": 67369,
+   "sha256": "a4e6483f33442cf24b89d48da8efbe5b0c6dd8aee2b89c5a1e370187451d07f1",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Nostromo",
+   "author": "Joseph Conrad",
+   "year": 1904,
+   "gutenberg_id": 2021,
+   "sha256": "c3d15ed082b104286a9c68ff64b6ca044dbc9206604cbb56df80f8b909e1a948",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2021 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Food of the Gods",
+   "author": "Herbert George Wells",
+   "year": 1904,
+   "gutenberg_id": 11696,
+   "sha256": "1d4ae1ffa075d4045eb96ea08f9694f1a7906c6dfa07012b15d227db5df8b85f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=11696 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Food of the Gods and How It Came to Earth",
+   "author": "Herbert George Wells",
+   "year": 1904,
+   "gutenberg_id": 11696,
+   "sha256": "1d4ae1ffa075d4045eb96ea08f9694f1a7906c6dfa07012b15d227db5df8b85f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=11696 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Golden Bowl",
+   "author": "Henry James",
+   "year": 1904,
+   "gutenberg_id": 4264,
+   "sha256": "796a9f1485656038d490fd33a0c2cec4b768512d394646862bfb066a88456db5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4264 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Napoleon of Notting Hill",
+   "author": "G. K. Chesterton",
+   "year": 1904,
+   "gutenberg_id": 20058,
+   "sha256": "95a98a4e70756b75492976a50cf692937f289527ae0e27cfd222bacaa5e7c6fe",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Sea-Wolf",
+   "author": "Jack London",
+   "year": 1904,
+   "gutenberg_id": 1074,
+   "sha256": "4bdb0b74cf434bf6a16cb3d9ce2c7e76ab222a3f309abb82fc79624d5dd86611",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1074 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Kipps",
+   "author": "Herbert George Wells",
+   "year": 1905,
+   "gutenberg_id": 39162,
+   "sha256": "510d12495cc5673aa679e1aaed882e25e122192d0800ec39a2e80aa11d49ab22",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=39162 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Puck of Pook's Hill",
+   "author": "Rudyard Kipling",
+   "year": 1905,
+   "gutenberg_id": 26027,
+   "sha256": "84743217793537149973d3f526c3990c1fc28fae4d937d0319da29f0d04c21c1",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=26027 overlap=1.00",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The House of Mirth",
+   "author": "Edith Wharton",
+   "year": 1905,
+   "gutenberg_id": 284,
+   "sha256": "845488ce9090c7b22bb8f1c602c0de3172365e3deaad8086c34069f43bc79cd1",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Where Angels Fear to Tread",
+   "author": "E.M. Forster",
+   "year": 1905,
+   "gutenberg_id": 2948,
+   "sha256": "b305936d08d4167203cb1ca5028fcbdedcdbfef613446d4f582673814d50b749",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "White Fang",
+   "author": "Jack London",
+   "year": 1905,
+   "gutenberg_id": 910,
+   "sha256": "2c817fc5184f6d002669c3276d706016bceefe5d35eabb353bf9f644b170982b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=910 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Jungle",
+   "author": "Upton Sinclair",
+   "year": 1906,
+   "gutenberg_id": 140,
+   "sha256": "9047a709ba066b955e3dc873dc5abd022ecc01bd5c8500529930c3aaaaf07205",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Man of Property",
+   "author": "John Galsworthy",
+   "year": 1906,
+   "gutenberg_id": 2559,
+   "sha256": "1ace97da670364b037dccb7fa470bdc863a80101fd97fa84faa7cbedcfb57715",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Railway Children",
+   "author": "E. Nesbit",
+   "year": 1906,
+   "gutenberg_id": 1874,
+   "sha256": "54caa4e9425706b231aa07b6a8b9303a2381414b20735f84019f25f77f80f621",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Lord of the World",
+   "author": "Robert Hugh Benson",
+   "year": 1907,
+   "gutenberg_id": 14021,
+   "sha256": "3b14629c0e1c78b4b2de7d800f119b691a9c169e81eed6329c60495685ef4849",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Enchanted Castle",
+   "author": "E. Nesbit",
+   "year": 1907,
+   "gutenberg_id": 34219,
+   "sha256": "bd93e9db16668d7a4b19e2918e3e627446e008c90d71022e0776e0c3c333ddf4",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=34219 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Hill of Dreams",
+   "author": "Arthur Machen",
+   "year": 1907,
+   "gutenberg_id": 13969,
+   "sha256": "fb62be7b095b4cbc2ab2c7eb12e12d66e22d15a3c4057555f76ac5bc7bee82a5",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=13969 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The House on the Borderland",
+   "author": "William Hope Hodgson",
+   "year": 1907,
+   "gutenberg_id": 10002,
+   "sha256": "d9141fbe8d6990edc5593616307bf501a0ccc58dbe2da1b2628232048e47f8da",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Longest Journey",
+   "author": "E.M. Forster",
+   "year": 1907,
+   "gutenberg_id": 2604,
+   "sha256": "83940f21b5b3d9d40993eb5f86f22b55b30f1e688c34ef69a3d4a559a3bed4cd",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=2604 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Mystery of the Yellow Room",
+   "author": "Gaston Leroux",
+   "year": 1907,
+   "gutenberg_id": 1685,
+   "sha256": "36a3a5a985de1a316263b7ac909d6be81ffab1327cc385d7c1aac20bdfab2527",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Red Thumb Mark",
+   "author": "R. Austin Freeman",
+   "year": 1907,
+   "gutenberg_id": 11128,
+   "sha256": "a526cdcf744760910b53f88370bccbda7f54aad72b6bd3053103d58d6014de97",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Secret Agent",
+   "author": "Joseph Conrad",
+   "year": 1907,
+   "gutenberg_id": 974,
+   "sha256": "349c39313ca64beb16be860a14a6e30eb88bff16190c813325e97f96f9c12904",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=974 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "A Room with a View",
+   "author": "E. M. Forster",
+   "year": 1908,
+   "gutenberg_id": 2641,
+   "sha256": "e873268bf4e4a12f93cdb7d0a33fdcf8e2cd7dcd176eacfcbf162a753c2b27cd",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Circular Staircase",
+   "author": "Mary Roberts Rinehart",
+   "year": 1908,
+   "gutenberg_id": 434,
+   "sha256": "fe32e67efbcb25f8414d96e98cc6e297d0ee25bca811c83f81c96d0c786508b3",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Fifth Queen",
+   "author": "Ford Madox Ford",
+   "year": 1908,
+   "gutenberg_id": 27432,
+   "sha256": "b061b3d418a61e512dc4ce502ddd11256ca9392d469a070f8217701c49b27b6e",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Man Who Was Thursday",
+   "author": "G. K. Chesterton",
+   "year": 1908,
+   "gutenberg_id": 1695,
+   "sha256": "2792d27f243ceee282fa8288a1b2e95743be560aa5750c5a587942784cd97f3f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1695 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Old Wives' Tale",
+   "author": "Arnold Bennett",
+   "year": 1908,
+   "gutenberg_id": 5247,
+   "sha256": "7c3778c992760a61abc194370097318afefce269d1956a1ffd41977d838fcef3",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Wind in the Willows",
+   "author": "Kenneth Grahame",
+   "year": 1908,
+   "gutenberg_id": 289,
+   "sha256": "6d5e3453a50222f0e17679813c28b46114f3725dcf60986b5cfd784f47608bad",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Ann Veronica",
+   "author": "Herbert George Wells",
+   "year": 1909,
+   "gutenberg_id": 524,
+   "sha256": "4c533c4fbfa85cf0a65ffbd78d3955379145fba5f086edd8b0ec05a6c73c3a98",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=524 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Ghost Pirates",
+   "author": "William Hope Hodgson",
+   "year": 1909,
+   "gutenberg_id": 10966,
+   "sha256": "a17b6336d3aa895b65c716a8dea69bf9491e76dfbd2c5b1cc741e649e4a9c464",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=10966 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The History of Mr Polly",
+   "author": "Herbert George Wells",
+   "year": 1909,
+   "gutenberg_id": 7308,
+   "sha256": "90ad318207c80dc8a0f7c07feab03a5b501c8d81afaf58e6da4fbd479e226393",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=7308 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Man in Lower Ten",
+   "author": "Mary Roberts Rinehart",
+   "year": 1909,
+   "gutenberg_id": 1869,
+   "sha256": "d1b001e9ff4900d5cb4242348f4743591390f340d34e8d78c6f66ef651951dee",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1869 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Three Lives",
+   "author": "Gertrude Stein",
+   "year": 1909,
+   "gutenberg_id": 15408,
+   "sha256": "87bddaa102fca0569183202b873ea7beb321ef734cee6671a1abb3156516c3ed",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Clayhanger",
+   "author": "Arnold Bennett",
+   "year": 1910,
+   "gutenberg_id": 21249,
+   "sha256": "9b0987490a292ce15d8fa13934e3b42a62c910aad78247b01c94e32b6292b782",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=21249 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Ethan Frome",
+   "author": "Edith Wharton",
+   "year": 1910,
+   "gutenberg_id": 4517,
+   "sha256": "96587802eb0a488f7155364f897d25612bdc62c057e23f593b0b829783b2decd",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4517 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Prester John",
+   "author": "John Buchan",
+   "year": 1910,
+   "gutenberg_id": 611,
+   "sha256": "d42f3749461db1099ab2219fcc1403e485dd30a82e810bd2fac5bf2b909d1e09",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Broad Highway",
+   "author": "Jeffery Farnol",
+   "year": 1910,
+   "gutenberg_id": 5257,
+   "sha256": "b00845284b0387992d8c72379337d21901ba86f6ed45edd96cb48a106c7356b7",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The White Peacock",
+   "author": "D.H. Lawrence",
+   "year": 1910,
+   "gutenberg_id": 38561,
+   "sha256": "d2d33d0d85409fa0f8e13ed317a855741deaa8f03361f708761292dfb05620a3",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Billy Budd",
+   "author": "Herman Melville",
+   "year": 1911,
+   "gutenberg_id": 76513,
+   "sha256": "1d2c2291001650629a251f21a1d04c1396f3405d10bb32836a305f8981650f21",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=76513 overlap=1.00",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "Jennie Gerhardt",
+   "author": "Theodore Dreiser",
+   "year": 1911,
+   "gutenberg_id": 28988,
+   "sha256": "f3965e12bd6aea82079c2650707ee662bf92e56f2e595e1be7c621fb18a4b898",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=28988 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Peter Pan",
+   "author": "J. M. Barrie",
+   "year": 1911,
+   "gutenberg_id": 16,
+   "sha256": "91d50de55ed90c21ecbc08c789706a709bffac8620f3f5ebd1c330da1c4cad7e",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Ralph 124C 41+",
+   "author": "Hugo Gernsback",
+   "year": 1911,
+   "gutenberg_id": 60944,
+   "sha256": "66c6578c4568c35d3cb8c3e8e5d27ea5296dd8d7725ac977d5a240e2c34482ef",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Eye of Osiris",
+   "author": "R. Austin Freeman",
+   "year": 1911,
+   "gutenberg_id": 24201,
+   "sha256": "5a6e735b94351b68b7a3b1cb8bb717b229d68f5b52951d3c46e6a6436f3481a0",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=24201 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Hampdenshire Wonder",
+   "author": "John Davys Beresford",
+   "year": 1911,
+   "gutenberg_id": 53028,
+   "sha256": "0a03e093573729724a170f1fe7f12cfec5c2ee1e438a5ef3747fcf08581bd420",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Innocence of Father Brown",
+   "author": "G. K. Chesterton",
+   "year": 1911,
+   "gutenberg_id": 204,
+   "sha256": "d6c1496e73500381ffc1ed52b790bc6b53002d5d6cc92ca58a428ab79cbde9c0",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=204 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Secret Garden",
+   "author": "Frances Hodgson Burnett",
+   "year": 1911,
+   "gutenberg_id": 113,
+   "sha256": "72b135da4ebf6fcdb9240f8eda591925587bb638395e3fe9d85c66a87a18b181",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Under Western Eyes",
+   "author": "Joseph Conrad",
+   "year": 1911,
+   "gutenberg_id": 2480,
+   "sha256": "ac9562964e59136f732d812e774f10be3e1ecb77b71b3ee4ca0f8cd217545b2f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2480 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Zuleika Dobson",
+   "author": "Max Beerbohm",
+   "year": 1911,
+   "gutenberg_id": 1845,
+   "sha256": "3ddd3c25084be3d1606f85b42a9855f3ec9da66b9bda633475372dea0f47687b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "A Princess of Mars",
+   "author": "Edgar Rice Burroughs",
+   "year": 1912,
+   "gutenberg_id": 62,
+   "sha256": "6d0d0e810bf99fbeff79f9d249fc7d439a36442669dc7f96d7ad89d875d40556",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Riders of the Purple Sage",
+   "author": "Zane Grey",
+   "year": 1912,
+   "gutenberg_id": 1300,
+   "sha256": "1a2efb8fb7a307d80e25a4a2b7b4e2e2e502bd4b1f53521b8a7e663d9222ecd8",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Financier",
+   "author": "Theodore Dreiser",
+   "year": 1912,
+   "gutenberg_id": 1840,
+   "sha256": "c00cd115f5b342155d11b80a0a9d913a73cb28882939ad55b787859efaaa3e36",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=1840 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Lost World",
+   "author": "Arthur Conan Doyle",
+   "year": 1912,
+   "gutenberg_id": 139,
+   "sha256": "d5a339c02d5d82d62d1568c4370a8b36a72848634ca1b2627a602718a6fcf8bd",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=139 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Chance",
+   "author": "Joseph Conrad",
+   "year": 1913,
+   "gutenberg_id": 1476,
+   "sha256": "4d8e2a203bd4f5dfd3bf9a8b19a834c54d9c5461178f8fa48060d006628e862a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9341 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Lady Chatterley's Lover",
+   "author": "D.H. Lawrence",
+   "year": 1913,
+   "gutenberg_id": 73144,
+   "sha256": "b4671536698461e14766defc79f29ad0281badd101b189b19482fff719ad878a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=73144 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Sons and Lovers",
+   "author": "D.H. Lawrence",
+   "year": 1913,
+   "gutenberg_id": 217,
+   "sha256": "a4697a142dc554bb3c181cc9d105bd4c9707c2c6e2cef1d5b8a1b12b636caa36",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=217 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Amateur Gentleman",
+   "author": "Jeffery Farnol",
+   "year": 1913,
+   "gutenberg_id": 9879,
+   "sha256": "8d55711e69fa322d70f3a37b8e143f3d28c732c69266e8798a76af980757bef8",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9879 overlap=1.00",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "The Dark Flower",
+   "author": "John Galsworthy",
+   "year": 1913,
+   "gutenberg_id": 2192,
+   "sha256": "b79873e7e86d72b00656cdb50b21f7604164a299ef87653987962b5c45ea8c9e",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2192 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Wisdom of Father Brown",
+   "author": "G. K. Chesterton",
+   "year": 1913,
+   "gutenberg_id": 223,
+   "sha256": "128ccc36d61b0cfcc99439ce0622e68b37f1d6b424a71147725e7e95d33890ac",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=223 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Trent's Last Case",
+   "author": "E. C. Bentley",
+   "year": 1913,
+   "gutenberg_id": 2568,
+   "sha256": "09bd59553aac03bf6276c9d8ae720b8d51484f248366e80224494a40a4a1f3b9",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "At the Earth's Core",
+   "author": "Edgar Rice Burroughs",
+   "year": 1914,
+   "gutenberg_id": 123,
+   "sha256": "e9f10a4f1070c78b596e417024278ebb1564a1793eaacb0ceb5110baf43034a4",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=123 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Dubliners",
+   "author": "James Joyce",
+   "year": 1914,
+   "gutenberg_id": 2814,
+   "sha256": "a55eda12249a3e4f8e127818a5ab4e451f81665aefd723fa171b1e6c0118fe80",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Titan",
+   "author": "Theodore Dreiser",
+   "year": 1914,
+   "gutenberg_id": 3629,
+   "sha256": "82206be4ed549e87cade3387d17a3f0f3c299ea3457cabbe577579c52ceece9c",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=3629 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Valley of Fear",
+   "author": "Arthur Conan Doyle",
+   "year": 1914,
+   "gutenberg_id": 3289,
+   "sha256": "8f7ab5b7afed76e0e8d19ef27453dac3deeacee92c525cd1ef64bda2dec37ed7",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=3289 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The World Set Free",
+   "author": "Herbert George Wells",
+   "year": 1914,
+   "gutenberg_id": 1059,
+   "sha256": "fda5e6eb1561b9245d21492b683291e49a7c5880e46c424cd008b3f0d390c165",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=1059 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Ulysses",
+   "author": "James Joyce",
+   "year": 1914,
+   "gutenberg_id": 4300,
+   "sha256": "8b6b5c217d994ffbe5bfc46372938ac08f1bc0768ef76921a3367e76ae3c6f4a",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4300 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Herland",
+   "author": "Charlotte Perkins Gilman",
+   "year": 1915,
+   "gutenberg_id": 32,
+   "sha256": "8d9f7ad441dbb83f8f263a19d1f07a72968322a0abdcccae7818e0779bdcb604",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Of Human Bondage",
+   "author": "W. Somerset Maugham",
+   "year": 1915,
+   "gutenberg_id": 351,
+   "sha256": "9837f7734ef9df427d6dc4c668f3d1b0184473db20b0809e6c39139cb5ba84eb",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Pointed Roofs",
+   "author": "Dorothy Richardson",
+   "year": 1915,
+   "gutenberg_id": 3019,
+   "sha256": "97e21f89fc89990bcf500f5b4d0ceb37efa87b040938d5eace3f3ede2d2512c3",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Good Soldier",
+   "author": "Ford Madox Ford",
+   "year": 1915,
+   "gutenberg_id": 2775,
+   "sha256": "fa916fc8e092d35311170145fbdf40d4ac01737c73e1bb774aecc5d3cbef83ad",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=2775 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Rainbow",
+   "author": "D.H. Lawrence",
+   "year": 1915,
+   "gutenberg_id": 28948,
+   "sha256": "d1d78f30f51ec5c1814e0abe5b8f07b0023f1888f76c351a008955417c4f2195",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex_sweep",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=28948 title='The Rainbow'",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Research Magnificent",
+   "author": "Herbert George Wells",
+   "year": 1915,
+   "gutenberg_id": 1138,
+   "sha256": "16742a995e136c8b0617987e63bae2d356b0effd8cc01b8182ba5bffef047add",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=1138 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Return of Tarzan",
+   "author": "Edgar Rice Burroughs",
+   "year": 1915,
+   "gutenberg_id": 81,
+   "sha256": "91283e9144b446b35fd8cddbdd82c7d1e8601b2bc264cd22143d92e2b65640cf",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=81 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Sea Hawk",
+   "author": "Rafael Sabatini",
+   "year": 1915,
+   "gutenberg_id": 3294,
+   "sha256": "afe9cd56062edbc4231e0432eeeb0882919b05a338fc9b43f3eedd1cd4d92593",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "The Thirty-Nine Steps",
+   "author": "John Buchan",
+   "year": 1915,
+   "gutenberg_id": 558,
+   "sha256": "08e5d3c3f9ff6f535291feecd596bc44a07f70784f6324b312e3ca2703c1a850",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=558 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Voyage Out",
+   "author": "Virginia Woolf",
+   "year": 1915,
+   "gutenberg_id": 144,
+   "sha256": "57e7da2ee30761892b5e9a871214a7799ea258e7c6c52b1ff3d5739200a8d66e",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Victory",
+   "author": "Joseph Conrad",
+   "year": 1915,
+   "gutenberg_id": 6378,
+   "sha256": "7b14adad4db795b238c2bcba6b6efa2b5fb673b1c3330fe3d673c088d2141782",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=6378 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "A Portrait of the Artist as a Young Man",
+   "author": "James Joyce",
+   "year": 1916,
+   "gutenberg_id": 4217,
+   "sha256": "36e6bce5541e87ec42f27da24d8832932acd95a0f10b2d929e3b617390d2188b",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=4217 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "Moon of Israel",
+   "author": "Henry Rider Haggard",
+   "year": 1918,
+   "gutenberg_id": 2856,
+   "sha256": "28d9ce4f2dc07c4e3b12a491989e2a6e70ca03e85915aab95aae0d82722a66dc",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 2
+   }
+  },
+  {
+   "title": "My \u00c1ntonia",
+   "author": "Willa Cather",
+   "year": 1918,
+   "gutenberg_id": 242,
+   "sha256": "3869b506da28cdb37b2829ed394f42aea44028cafd64dc1ee826739d59c05fa7",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Tarr",
+   "author": "Wyndham Lewis",
+   "year": 1918,
+   "gutenberg_id": 58340,
+   "sha256": "174682b4159759888be8beeefe59d5fcf9c1e074af8062f1ec0aaa69b9a576fd",
+   "words": 20000,
+   "n_labels": 3,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Land That Time Forgot",
+   "author": "Edgar Rice Burroughs",
+   "year": 1918,
+   "gutenberg_id": 551,
+   "sha256": "e979fd0792ab10761da9f47ba04d0c1e71565d5547cb874dbe9a88370356956c",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=551 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Magnificent Ambersons",
+   "author": "Booth Tarkington",
+   "year": 1918,
+   "gutenberg_id": 8867,
+   "sha256": "1bffb048505bb8c491023a1026e14f3767c797e0890325b16c56ef57c287e06f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Moon Pool",
+   "author": "Abraham Merritt",
+   "year": 1919,
+   "gutenberg_id": 765,
+   "sha256": "743ebc0f4f748d2b13bb51dfa3440b00b3b7d1e777334abaa9c4e44ddea713fc",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Main Street",
+   "author": "Sinclair Lewis",
+   "year": 1920,
+   "gutenberg_id": 543,
+   "sha256": "641d788d02bd0e299b07bfd961cc54decaf648bca385b73c9ddf4ebaf8fb5d8f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Age of Innocence",
+   "author": "Edith Wharton",
+   "year": 1920,
+   "gutenberg_id": 541,
+   "sha256": "8eb864e7dcd8527fbd957af3f203c39dba054c6c2d5032b563a938becde7e3a1",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=541 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Beautiful and Damned",
+   "author": "F. Scott Fitzgerald",
+   "year": 1920,
+   "gutenberg_id": 9830,
+   "sha256": "19c1eb1b7c55524298bd74f2dfc13a4305e26176b7b95ca6fbd60b4ed8e7bc5f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=9830 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Cask",
+   "author": "Freeman Wills Crofts",
+   "year": 1920,
+   "gutenberg_id": 59854,
+   "sha256": "f7a016f6bd7bdaac7fa37b03abfc78dae57f02f921c559897a2c2e4b217dae8f",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Great Gatsby",
+   "author": "F. Scott Fitzgerald",
+   "year": 1920,
+   "gutenberg_id": 64317,
+   "sha256": "f79d862892528a403ecf50c64b759af5417db6d07cce0781d43e375fc4c85fda",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=64317 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Mysterious Affair at Styles",
+   "author": "Agatha Christie",
+   "year": 1920,
+   "gutenberg_id": 863,
+   "sha256": "12696f084099b589099272ba0c84e3bb9efb50e9a98f9eba5269be356563d953",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "This Side of Paradise",
+   "author": "F. Scott Fitzgerald",
+   "year": 1920,
+   "gutenberg_id": 805,
+   "sha256": "a5327875faa1aebb97bbd3fc3e7455559e84d77ec628e634d09569e95aed92c5",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Women in Love",
+   "author": "D. H. Lawrence",
+   "year": 1920,
+   "gutenberg_id": 4240,
+   "sha256": "a4ee348b600d13f7187fba377190baed28f5ca48fc0b697eaad58bb24a8edec0",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "R.U.R.",
+   "author": "Karel \u010capek",
+   "year": 1921,
+   "gutenberg_id": 59112,
+   "sha256": "b051f5ade9384867355987769b2bfbaa6a3272af0f5f4350bb6f74733d8b203b",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Black Moth",
+   "author": "Georgette Heyer",
+   "year": 1921,
+   "gutenberg_id": 38703,
+   "sha256": "79ff8ebe88b445ab23b727f48b73ddf3f544613460d1c5981d39be47566950c8",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 3
+   }
+  },
+  {
+   "title": "Three Soldiers",
+   "author": "John Dos Passos",
+   "year": 1921,
+   "gutenberg_id": 6362,
+   "sha256": "76bbcd16868fe0404fe9ff70d4194fc20d2ddd7d6c14ec57af34bbc55db30c8b",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "Babbitt",
+   "author": "Sinclair Lewis",
+   "year": 1922,
+   "gutenberg_id": 1156,
+   "sha256": "226dce6ae61c538f856200d4c96e41ad1cbf8c6e1b0b1b5e5a7b635e63aaffcb",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "given_name",
+    "note": "gutenberg_id=1156 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Jacob's Room",
+   "author": "Virginia Woolf",
+   "year": 1922,
+   "gutenberg_id": 5670,
+   "sha256": "191e512243a5c6d214f883f56e9468aa89b8ace1cad9740d01bec6a66608cd73",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=5670 overlap=1.00",
+    "results_community": 5
+   }
+  },
+  {
+   "title": "The Covered Wagon",
+   "author": "Emerson Hough",
+   "year": 1922,
+   "gutenberg_id": 13384,
+   "sha256": "9a4368edc1f53e4b43d4e1c92f90bc9ccb724d940b50bd4e289edd93ea1d18ad",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Red House Mystery",
+   "author": "A. A. Milne",
+   "year": 1922,
+   "gutenberg_id": 1872,
+   "sha256": "29150f2461150ae2868f8483b333bef5ca3eec6c746a52d0dc556cb86df35784",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Waste Land",
+   "author": "T. S. Eliot",
+   "year": 1922,
+   "gutenberg_id": 1321,
+   "sha256": "4ace30d0a37252531803651d3aab65187f7400dcabe4dd8a8506af3c7a921863",
+   "words": 4697,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 0
+   }
+  },
+  {
+   "title": "A Lost Lady",
+   "author": "Willa Cather",
+   "year": 1923,
+   "gutenberg_id": 65636,
+   "sha256": "13d1b45575017b11da16204abe75f4407538117eacd9474d0ffed6e978ec85c7",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=65636 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Antic Hay",
+   "author": "Aldous Huxley",
+   "year": 1923,
+   "gutenberg_id": 60483,
+   "sha256": "50d409750567ba355bd75098ef3dc642cda99673fe0237683860f4b300225caf",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Clockwork Man",
+   "author": "Edwin Vincent Odle",
+   "year": 1923,
+   "gutenberg_id": 60374,
+   "sha256": "6fef8279bbe373b5e3eb06454823eb676ac41c7605afc5746893b9588ce35985",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The Murder on the Links",
+   "author": "Agatha Christie",
+   "year": 1923,
+   "gutenberg_id": 58866,
+   "sha256": "24009011bd66c43046f9c1424290d98931ada6ab27daa837b71597a04828a406",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=58866 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Whose Body?",
+   "author": "Dorothy L. Sayers",
+   "year": 1923,
+   "gutenberg_id": 58820,
+   "sha256": "e934548c583a1a42ec63452ddd7af32f8a6adceb53430b072af870f07cec82bf",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "A Passage to India",
+   "author": "E. M. Forster",
+   "year": 1924,
+   "gutenberg_id": 61221,
+   "sha256": "d7507c59fc83f06df72b9af44149006a6840ddcbe10aed6fa11c6d21a9781c38",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "year_constrained",
+    "note": "gutenberg_id=61221 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Some Do Not",
+   "author": "Ford Madox Ford",
+   "year": 1924,
+   "gutenberg_id": 64248,
+   "sha256": "b871092e506223ebec7ae5a7b7522f8f5dccff981b1ba4a8323b05ed49eff88e",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=64248 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Man in the Brown Suit",
+   "author": "Agatha Christie",
+   "year": 1924,
+   "gutenberg_id": 61168,
+   "sha256": "bf3b90129a068dad06ece80743bbf9d967f85550a69c3c94c0c29b643cbb103c",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=61168 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Rasp",
+   "author": "Philip MacDonald",
+   "year": 1924,
+   "gutenberg_id": 72462,
+   "sha256": "ba92e66a64b46bbc2949bf7c53b9e65511ef249bc31f1780668290c9f898720f",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "In Our Time",
+   "author": "Ernest Hemingway",
+   "year": 1925,
+   "gutenberg_id": 61085,
+   "sha256": "9d760730cc9c04f4990b56d1ac5083567a1ab0d729fe4987023e9ac399e6cb0b",
+   "words": 3772,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Manhattan Transfer",
+   "author": "John Dos Passos",
+   "year": 1925,
+   "gutenberg_id": 71853,
+   "sha256": "fdb7f8b038cd58a93847dac0ec690b839f55cbbd4d895f14dc9ecd05f21b818f",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=71853 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Mrs Dalloway",
+   "author": "Virginia Woolf",
+   "year": 1925,
+   "gutenberg_id": 71865,
+   "sha256": "749184f8b3c47458cf7f4ce08c1e9a3e161b53297d76d224b0dc643e242f07a9",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=71865 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "No More Parades",
+   "author": "Ford Madox Ford",
+   "year": 1925,
+   "gutenberg_id": 67622,
+   "sha256": "043a3607dee1a22e5f5508ad729490ae345a461643c269175d97f26f83322717",
+   "words": 20000,
+   "n_labels": 5,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=67622 overlap=1.00",
+    "results_community": 4
+   }
+  },
+  {
+   "title": "The House Without a Key",
+   "author": "Earl Derr Biggers",
+   "year": 1925,
+   "gutenberg_id": 73771,
+   "sha256": "aa475e3dc6234606f7ba6d30cb345f30707f23726eb26681cea597146188e951",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Professor's House",
+   "author": "Willa Cather",
+   "year": 1925,
+   "gutenberg_id": 65465,
+   "sha256": "61b49089914f1aa619b59338f6a87cf7feb8958aba33ae03398f55f17e922493",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=65465 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Secret of Chimneys",
+   "author": "Agatha Christie",
+   "year": 1925,
+   "gutenberg_id": 65238,
+   "sha256": "fe2387fa99c0afe147e9c6643dc3fe3309e927a0930e5df03a281b366de36741",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=65238 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "Those Barren Leaves",
+   "author": "Aldous Huxley",
+   "year": 1925,
+   "gutenberg_id": 74437,
+   "sha256": "dbf6f59adc9ad5d439a69ff6f19e3f1cb4b88cee120fda464790e7287e02db97",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=74437 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "An American Tragedy",
+   "author": "Theodore Dreiser",
+   "year": 1926,
+   "gutenberg_id": 75181,
+   "sha256": "f7acdeceb20686f5389fb044d4aaa3c45bf20e2342262c624bc1a06dc7bc2051",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=75181 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Benson Murder Case",
+   "author": "S. S. Van Dine",
+   "year": 1926,
+   "gutenberg_id": 70634,
+   "sha256": "535dc4e3d63f3054220af1a4741e0893e7e372a7f7a5a1bcc24fad5ad423f333",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Murder of Roger Ackroyd",
+   "author": "Agatha Christie",
+   "year": 1926,
+   "gutenberg_id": 69087,
+   "sha256": "ce12b1a39226ba5ecf264e51e43959aff55f42f7ec7d8166400bb00cf442ec11",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=69087 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Roger Ackroyd",
+   "author": "Agatha Christie",
+   "year": 1926,
+   "gutenberg_id": 69087,
+   "sha256": "ce12b1a39226ba5ecf264e51e43959aff55f42f7ec7d8166400bb00cf442ec11",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=69087 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Sun Also Rises",
+   "author": "Ernest Hemingway",
+   "year": 1926,
+   "gutenberg_id": 67138,
+   "sha256": "336d7088a2072faec00d063eaf8e7ec349967e3e481b394cfc698e6bd769083d",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=67138 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "Elmer Gantry",
+   "author": "Sinclair Lewis",
+   "year": 1927,
+   "gutenberg_id": 72609,
+   "sha256": "027bb1a934a0d903ab5a9f840f307dc6aaa1bce4816f0a4c16d53272d00bfee8",
+   "words": 20000,
+   "n_labels": 6,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "given_name",
+    "note": "gutenberg_id=72609 overlap=1.00",
+    "results_community": 7
+   }
+  },
+  {
+   "title": "The Big Four",
+   "author": "Agatha Christie",
+   "year": 1927,
+   "gutenberg_id": 70114,
+   "sha256": "43354e5fb4f456719a52848517816d1403ac1481eec0dbadcb4ab4f9478863a0",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=70114 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Canary Murder Case",
+   "author": "S. S. Van Dine",
+   "year": 1927,
+   "gutenberg_id": 70788,
+   "sha256": "8089051855ce3c7922e38a46509f639b110f55401c88d538772f4d90fd0c5143",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=70788 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Greene Murder Case",
+   "author": "S. S. Van Dine",
+   "year": 1928,
+   "gutenberg_id": 72719,
+   "sha256": "b07fbfdf12db6928da066bdab100508d391b81472aa248dd5196b78d4b5b069e",
+   "words": 20000,
+   "n_labels": 7,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=72719 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Mystery of the Blue Train",
+   "author": "Agatha Christie",
+   "year": 1928,
+   "gutenberg_id": 72824,
+   "sha256": "1f274f769794c37cc7886acacf255a8894080966fd07b0ad9974b9a8a1b05f41",
+   "words": 20000,
+   "n_labels": 8,
+   "recon": {
+    "author_src": "gutendex",
+    "year_src": "openlibrary",
+    "spelling": "single",
+    "note": "gutenberg_id=72824 overlap=1.00",
+    "results_community": 6
+   }
+  },
+  {
+   "title": "The Well of Loneliness",
+   "author": "Radclyffe Hall",
+   "year": 1928,
+   "gutenberg_id": 73042,
+   "sha256": "e3a5deac8c36318e769ee0d43bd9dcbf27f94793021f40710681edfed484c279",
+   "words": 20000,
+   "n_labels": 4,
+   "recon": {
+    "author_src": "genre_network.html",
+    "year_src": "genre_network.html",
+    "spelling": "known",
+    "note": "",
+    "results_community": 5
+   }
+  }
+ ]
+}

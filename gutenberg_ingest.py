@@ -71,10 +71,24 @@ def _http(url, want_json=True, read_bytes=None, retries=4):
 
 
 # --- 1. gather candidate metadata (paged, cached) ----------------------------
+# Gutenberg publishes side files under the same text/plain mime as the work
+# itself. Id 9344 (Almayer's Folly) offers ONLY "9344-readme.txt"; so does
+# 9341 (Chance). Accepting those makes find_on_gutenberg prefer a README
+# record over the real novel, which sits further down the same result list
+# (720, 1476). Right now that fails loudly - the guessed cache URL 404s and
+# the title is dropped - but the failure is luck: had the file existed, a
+# Gutenberg readme would have entered the corpus as the novel's prose and
+# been clustered as if it were fiction.
+NOT_THE_WORK = ("-readme.txt", "readme.txt", "-index.txt", ".zip")
+
+
 def text_plain_url(formats):
     for mime, url in formats.items():
-        if mime.startswith("text/plain") and not url.endswith(".zip"):
-            return url
+        if not mime.startswith("text/plain"):
+            continue
+        if any(url.lower().endswith(x) for x in NOT_THE_WORK):
+            continue
+        return url
     return None
 
 
@@ -136,7 +150,7 @@ def publication_year(title, author, author_birth):
     return None
 
 
-def fetch_opening_prose(book_id, max_words=DESC_WORDS):
+def fetch_opening_prose(book_id, max_words=DESC_WORDS, fallback_url=None):
     '''Pull real prose from the first mirror that responds, strip Gutenberg's
     header AND license footer, and return up to `max_words` of it.
 
@@ -146,9 +160,15 @@ def fetch_opening_prose(book_id, max_words=DESC_WORDS):
     # A small head suffices for the opening; otherwise download the whole file.
     read_bytes = TEXT_HEAD_BYTES if (max_words and max_words <= DESC_WORDS) else None
     raw = None
-    for tmpl in TEXT_MIRRORS:
+    urls = [t.format(id=book_id) for t in TEXT_MIRRORS]
+    # The mirrors only serve the cache/epub/<id>/pg<id>.txt layout. Plenty of
+    # legacy ids are published only as /files/<id>/<id>-0.txt, so the URL
+    # Gutendex reported has to be tried too rather than assumed redundant.
+    if fallback_url:
+        urls.append(fallback_url)
+    for url in urls:
         try:
-            raw = _http(tmpl.format(id=book_id), want_json=False,
+            raw = _http(url, want_json=False,
                         read_bytes=read_bytes, retries=1)
             break
         except Exception:                            # noqa: BLE001
