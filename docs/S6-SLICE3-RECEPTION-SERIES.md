@@ -62,6 +62,72 @@ agree on detective fiction** — text, general language, and the book trade.
 
 ---
 
+## Is it a new genre, or just a renaming?
+
+The first question a reviewer asks, and if it cannot be answered the finding is
+soft. A skeptic's reading: the trade simply started saying "mystery story" where
+it used to say "detective story", and nothing about genre formation happened.
+
+**It is not a renaming.** A renaming requires detective fiction to cede ground.
+It does the opposite — it grows **6.4×** across the same decades:
+
+| decade | detective story | mystery story | combined | love story *(control)* |
+|---|---:|---:|---:|---:|
+| 1890s | 7.3 | 0.1 | 7.4 | 5.0 |
+| 1900s | 19.3 | 3.3 | 22.6 | 79.4 |
+| 1910s | 27.6 | 16.4 | 44.0 | 63.3 |
+| 1920s | **46.7** | **44.8** | **91.5** | 50.2 |
+
+*(per million words)*
+
+The combined crime vocabulary expands **12×**, from 7.4 to 91.5 per million.
+Both terms rise together; neither replaces the other.
+
+**The control is `love story`'s turn, not its direction.** It peaks in the 1900s
+and declines through the 1910s and 1920s while both crime terms keep rising — so
+the 1920s crime rise is not a general inflation of genre vocabulary. Note it
+*does* rise end to end (5.0 → 50.2), so the control is the turning point, not the
+sign. Correlations are no use here: r(mystery, detective) = +0.82 but
+r(mystery, adventure) = +0.72, because almost everything rises in the 1920s. The
+decade means carry this test, not r.
+
+**Two weaker tests, reported as weak.** Only **13 of 179** mystery annotations
+(7%) also mention a detective — but an annotation is ~20 words, so the absence of
+one word from it is close to no evidence. And the two labels are applied to
+visibly different kinds of book:
+
+| | distinctive vocabulary of the annotation |
+|---|---|
+| **mystery** | girls, boys, people, laid, family, humor, western, known, short, involving, romance, dealing |
+| **detective** | being, solves, comes, committed, point, work, plays, methods, falls, clever, chief, solution |
+
+Mystery skews **audience and setting**; detective skews **procedure**. That
+matches the verbatim annotations — *"A mystery story for girls"*, *"with a
+background of American family life, for young people from 12 to 16"* against
+*"A free-lance detective solves the mystery of some gruesome murders"*. But
+n = 179 vs 369 at counts of 8–20 is thin, so this is suggestive only.
+
+**Getting test 3 to say anything at all required a filter, and the obvious filter
+failed.** The unfiltered list is proper nouns: author and character names (*van*,
+*craig*, *reilly*, *stone*), publisher abbreviations (*apltn*, *dodd*, *doran*,
+*dou*) and format debris (*illus*, *ser*). A **dispersion** filter — require the
+token across many distinct years — does not work, because Helen Reilly, Craig
+Kennedy and Philo Vance each ran for a decade or more, so "reilly" is as well
+dispersed as "family". What works is **casing**: a token must appear lower-case
+in the source at least 60% of the time. 43 tokens are rejected as names by that
+rule.
+
+### What stays unsettled
+
+Whether `mystery story` is a **distinct genre** or a **sibling label inside one
+expanding crime-fiction category**. Co-growth rules out substitution; it does not
+separate those two. The trade press alone cannot, and the paper should say so
+rather than choose. The 1921 annotation reading *"Detective-mystery stories based
+on real cases solved by Government agents"* — a hyphenated compound — is the
+trade itself declining to choose.
+
+---
+
 ## What the instrument can and cannot see
 
 Only **five** of eleven terms have a measurable take-off at all. That is the
@@ -205,6 +271,9 @@ S2 would have been a false replication off a smoothing artifact.
   from under the first attempt at this run).
 - `analyze_reception_series.py` — the analysis, with the smoothing-sensitivity
   rule that refuses a date the series cannot support.
+- `analyze_term_split.py` → `term_split.json` — the renaming test, three tests
+  ranked weakest to strongest, with the casing filter that the dispersion filter
+  had to be replaced by.
 - `reception_series.json` — per-year series, 11 period terms, both
   normalisations, coverage for all 75 years.
 - `reception_clock_trade.json` — the dated clock plus the two findings with
