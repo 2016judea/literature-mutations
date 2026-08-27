@@ -109,3 +109,4 @@ mutation_timeline.csv
 .venv/
 __pycache__/
 *.bak
+.slice3.log

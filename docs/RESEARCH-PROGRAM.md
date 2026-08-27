@@ -60,6 +60,77 @@ passed 2026-08-14**, so the next conference cycle is ~Aug 2027.
 
 ---
 
+## The reception side is now the strong side — program re-ordered 2026-08-26
+
+**Who decided this.** Aidan handed over the research direction on 2026-08-26
+("you decide how the research proceeds, you have full control of the repo and
+memory contents"). This section is therefore a decision made under that
+authority, **not** one settled with him like the four above. It is recorded
+here with its arithmetic so he can overrule it in one reading, and so a later
+session can check basis rather than inherit it.
+
+**The arithmetic that forces it.** After S6 slice 2 the two sides of the
+intended regression are no longer comparable in strength:
+
+| | textual side | reception side |
+|---|---|---|
+| observations | 345 canon books | ~3,487 dated issues, order 175,000 per-book trade entries |
+| density | **0.66 author-controlled books/year** | **~60 dated issues/year** |
+| positive findings | one, on **n = 13** | `mystery story` absent 29 straight years then attested 1901 |
+| instrument stability | seed noise **±7.6** against a null-model effect of **4.1** (S0) | parser-free per-million-words series needs no instrument |
+| evidence type | modern retrospective genre labels | **period** trade classification |
+| cost to scale | ~2 weeks (NovelTM + HathiTrust EF) | **free** — IA ships the OCR |
+
+The reception side is roughly **500× denser** and is the one kind of evidence
+the leading prior art explicitly lacks: Underwood defines genre membership with
+modern retrospective labels and names that as a limitation.
+
+**What changes.**
+
+1. **S6 is promoted from "the contribution" to the primary measurement.** The
+   paper's claim was *the regression of a period-reception series against the
+   textual series*. That regression is bottlenecked by whichever side is weaker,
+   and the weaker side is 345 canon books measured by an unstable instrument.
+   The claim becomes: **a period reception series for the American book trade,
+   1852–1929, measured from the trade's own dated classifications** — with the
+   345-book textual series as a **validation check**, not a co-equal partner.
+   That is a stronger paper and a more honest one.
+
+2. **S4 and S5 are DEFERRED, not retired, with a stated trigger.** They exist to
+   fix P2 (canon is survivorship-filtered) by re-sampling from NovelTM and
+   breaking the 1929 ceiling with HathiTrust EF. But PW's Weekly Record **is a
+   sampling frame** — it "aims to be a complete and accurate record of American
+   book publications," dated to the week, with publisher and price — so it
+   attacks P2 directly, on the US side, at zero cost and with no new data class.
+   Spending two weeks rebuilding the corpus that is no longer the primary
+   instrument is the wrong order of work.
+   **Trigger to un-defer:** the reception series exists and the textual series
+   must be re-run at frame scale to validate against it. NovelTM and HathiTrust
+   remain the only route to *text* for non-canon books, which PW does not carry —
+   that is why this is a deferral and not a deletion.
+
+3. **S3 stays, second priority.** It fixes P3, and S0 handed it the strongest
+   argument in the program: the old instrument's seed noise swamps the
+   null-model effect the README rests on. The textual series still has to be
+   defensible to serve as the validation check.
+
+4. **S1 stays, cheapest thing on the board.** An afternoon, and it is P1 hygiene
+   on the only surviving positive result. Do it between S6 slices.
+
+5. **Phase 2 stays parked**, including its unresolved stylistic-similarity
+   question. Nothing here touches it.
+
+**What does NOT change.** The drift rule (report and stop), the site freeze, the
+ban on re-running `build_canon.py`, and period-evidence-only. Those are load
+bearing and none of the above weakens them.
+
+**One gate, not fired.** The standing decision to email Stanford's Literary Lab
+was gated on S0 being done and S6 existing. Both are now substantially true.
+Contacting a real human is Aidan's call, not a session's — the draft and the
+plan are where they were, and no session sends it.
+
+---
+
 ## State of play — read this before scoping any work
 
 > **Updated 2026-08-18 by S0.** Facts 1 and 2 below are now HISTORY — the corpus
@@ -167,26 +238,27 @@ is"). No amount of data repairs a statistic this unstable.
 
 ## Dependency order
 
+Re-ordered 2026-08-26 — see "The reception side is now the strong side" above
+for the arithmetic.
+
 ```
-S6 (reception) ──────────────────── START EARLY. Weeks long, depends on
-                                    nothing, and it is the paper's actual
-                                    contribution. Finishing last is fine;
-                                    starting last puts it on the critical path.
-S2 (Ngrams) ─────────────────────── DONE 2026-08-18. Detective agrees on both
-                                    clocks; the null holds on both too.
+S6 ── slice 1 (Gutenberg)   DONE 08-18  no-go, 4 ads in 343 books
+   ├─ slice 2 (trade cat.)  DONE 08-26  GO: Publishers' Weekly, free OCR
+   ├─ slice 3 (the series)  ACTIVE      ** THE PRIMARY MEASUREMENT **
+   ├─ slice 4 (library + periodical catalogues, the next rungs up)
+   └─ slice 5 (regress against the textual series)
 
-S0 (reconstruct) ──┬── S1 (provenance audit)     DONE 2026-08-18. Corpus is on
-                   │                            disk and committed; detective
-                   │                            reproduces at z = -3.04.
-                   └── S3 (instrument) ── S4 (NovelTM) ── S5 (HathiTrust EF)
+S1 (provenance audit)  ── unblocked, an afternoon, do it between S6 slices
+S3 (new instrument)    ── unblocked, second priority, serves the validation check
+S4 / S5                ── DEFERRED. Trigger: the textual series must be re-run
+                          at frame scale once the reception series exists.
+
+S0 DONE 08-18 · S2 DONE 08-18
 ```
 
-S0 is done, so S1/S3/S4/S5 are unblocked. S3 gained the strongest possible
-argument for itself: S0 measured the old instrument's seed noise and it swamps
-the null-model effect the README rests on.
-
-S6 blocks nothing and is blocked by nothing, which is exactly why it is easy to
-defer until it becomes the reason the paper is late.
+The old order had S6 last-in-practice and S3→S4→S5 on the critical path. That
+was right when the reception series was a hypothesis. It is now measured, dense
+and free, and the textual side is the bottleneck rather than the foundation.
 
 ---
 
@@ -235,6 +307,30 @@ manifest committed.
 ---
 
 ## S1 — Provenance audit of the sampling frame
+
+> **DONE 2026-08-26 — [`S1-PROVENANCE-BOUND.md`](S1-PROVENANCE-BOUND.md).**
+> **P1 cannot explain detective fiction.** Sampling-independent up to **4 of its
+> 13 books removed adversarially**: worst case z = −2.15, clearing −2.0 by 3.3
+> sigma of the estimator's own Monte-Carlo noise. The worst case first crosses at
+> k = 5 (z = −1.97, −0.7 sigma) where 99% of the 1,287 possible removals still
+> survive. Drift check passes: published −3.04 sits 0.7 sigma from the 20-seed
+> mean of −3.011 ± 0.045.
+>
+> **The method deviates from this brief on purpose.** Step 2's LLM provenance
+> recovery spends money, cannot be re-run to check itself, and its error
+> direction *flatters* the finding. The adversarial bound answers the same
+> question — the worst case dominates every actual provenance assignment — with
+> 1,716 exhaustive combinations, no sampling, no seed, no model.
+>
+> **The breaking set runs against P1's own mechanism**: it is five of the six
+> *latest* books (1907–1920), because deleting the 20th-century tail widens the
+> spread fastest. A bucket asking for "foundational detective and mystery novels"
+> recruits Green, Doyle and Zangwill — not Bentley and Crofts.
+>
+> Step 1's permanent fix landed: [`build_canon.py:154`](../build_canon.py#L154)
+> now persists **which** lists a title came from. Step 3's full corpus re-run was
+> **not** run and is reported as uninterpretable until S3 — at ±7.6 seed noise a
+> 4-book perturbation measures Louvain, not sampling.
 
 **Depends on:** S0. **Effort:** an afternoon.
 **Addresses:** P1.

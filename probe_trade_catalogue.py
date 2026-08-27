@@ -59,7 +59,13 @@ from probe_backmatter import MARKERS
 OUT = "trade_catalogue_probe.json"
 # Issues are 150-350KB of OCR each; cache so the detector can be re-run and
 # argued with without re-downloading. Slice 1's cache did the same job.
-CACHE = os.environ.get("TRADE_CACHE", "/tmp/ia_trade_text")
+# It lives under the user's home, NOT /tmp. This cache exists so a later
+# session verifies rather than re-fetches - the discipline S0 and S2 both
+# insisted on - and /tmp defeats exactly that: a 200MB sweep cache was cleared
+# out from under a running full-density run on 2026-08-26 and the whole download
+# had to be repeated. Override with TRADE_CACHE.
+CACHE = os.environ.get("TRADE_CACHE",
+                       os.path.expanduser("~/.cache/literature-mutations/ia_trade_text"))
 UA = {"User-Agent": "Mozilla/5.0 (literature-mutations research probe)"}
 
 # The serial. Publishers' Weekly is the US book trade's weekly of record from

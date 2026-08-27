@@ -244,5 +244,8 @@ one splice, no new cost class.
   detail for all 232 issues, coverage per year for all 58 years, and the
   Weekly Record yield. Committed so the next session re-reads rather than
   re-fetches.
-- OCR cached at `/tmp/ia_trade_text` (not committed — ~60MB, re-fetchable from
-  the identifiers in the JSON).
+- OCR cached at `~/.cache/literature-mutations/ia_trade_text` (not committed —
+  ~60MB, re-fetchable from the identifiers in the JSON). It was originally under
+  `/tmp`, which the OS cleared out from under a running full-density sweep on
+  2026-08-26; a cache whose purpose is "the next session re-reads rather than
+  re-fetches" cannot live somewhere the OS empties.
