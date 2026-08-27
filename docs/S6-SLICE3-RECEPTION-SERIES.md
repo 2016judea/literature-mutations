@@ -6,7 +6,7 @@ re-ordering in [`RESEARCH-PROGRAM.md`](RESEARCH-PROGRAM.md) ("The reception side
 is now the strong side"). Slices 1 and 2 were go/no-go probes. **This one
 builds.**
 
-**3,487 dated issues · 1855–1929 · 128.5M words of OCR · 81,900 trade
+**3,487 dated issues · 1855–1929 · 128.5M words of OCR · 89,909 trade
 annotations extracted · 0 fetch failures.**
 
 ---
@@ -233,6 +233,69 @@ S2 would have been a false replication off a smoothing artifact.
 
 ---
 
+## Hardening the extractor — three defects, found by driving it
+
+After the series was built, the annotation extractor was audited by reading its
+rejects and its accepts rather than its code. Three defects, in ascending order
+of how much they mattered.
+
+**1. `net` was being read as a price.** In PW a price runs `cl., net, $1.75.` —
+`net` is a *qualifier preceding* the figure. The extractor took the first
+price-like token, so the annotation began mid-number (`1.75. Mrs. Henry Bacon
+tells the story of...`) and was then thrown away for not starting with a capital.
+**24% of all candidates in the 1901 issue** died this way. Fix: take the *last*
+price-like token in the tail.
+
+**2. Bounding that search by the entry-head patterns regressed the 1920s.** The
+first version of the fix closed the price window at the next head-shaped string —
+but the 1920s imprint *is* head-shaped: `Bost., Small, Maynard $2` trips the
+pattern before the price, so the window shut early and the entry was dropped.
+This was caught because the fix *lost* the known `detective` annotation in the
+1925 issue. The 140-character tail window is now the only bound.
+
+**3. Place and corporate entry heads let annotations swallow the next entry —
+the one that actually threatened the finding.** PW heads many entries with a
+place or a body rather than a personal name: `California. Statutes of
+California…`, `Missouri. Supreme ct. Reports…`, `Bible. New Testament…`. None
+match the Surname-comma-Given shape, so the *previous* entry's annotation ran on
+and absorbed the next entry's **title** — which is exactly how an author's title
+gets counted as a trade classification, the distinction this whole measurement
+rests on. One row was tagged `sensation novel` off swallowed text.
+
+Measured: **258 of 1,542 genre-bearing rows (16.7%)** contained a swallowed
+bibliographic entry. Fixed by adding a corporate-head pattern *and* a
+bibliographic-signature cut — a page count with a price after it cannot belong to
+a description, so the annotation is **truncated** there (backing up to the
+previous sentence boundary) rather than discarded, keeping the genuine
+description in front of it.
+
+| | before | after |
+|---|---:|---:|
+| annotations extracted | 81,900 | **89,909** (+9.8%) |
+| genre-bearing rows | 1,453 | 1,517 |
+| rows containing a swallowed entry | 258 (**16.7%**) | 10 (**0.7%**) |
+
+**Every conclusion above is unchanged.** `mystery story`: still zero for 41
+years, still take-off 1906–1909 on the primary series and 1915–1918 on the
+annotation series. `detective story`: still sustained 1873, take-off 1891–1897.
+The renaming test's decade means are identical. So the findings survive a 10%
+recall gain and a **24× reduction in contamination**.
+
+**And the primary series is now verified parser-free, not merely claimed so.**
+Both re-runs were diffed against the original: **zero differences** in the
+per-million raw counts across all 75 years and all 11 terms. That is the
+architectural claim of this slice — the blunt series cannot be biased by how the
+parser behaves in one decade versus another — checked rather than asserted.
+
+**One thing this exposed about test 3.** The content-vocabulary lists move when
+the extractor changes: `family`, `western` and `romance` left the mystery list
+between runs, `methods` and `solution` left detective's. The *audience-versus-
+procedure* split survives both runs (girls, boys, people, laid, humor against
+solves, committed, clever, chief), but the specific tokens are unstable at
+n = 180. Read the direction, never the list.
+
+---
+
 ## Two limits, unchanged from slice 2
 
 1. **It is the American trade.** The Phase 1 corpus is English-language fiction
@@ -252,10 +315,12 @@ S2 would have been a false replication off a smoothing artifact.
    highest-value thing S3 can be pointed at.
 2. **Report take-off bands, never take-off points.** The rule is in
    `analyze_reception_series.py`; do not reintroduce a bare take-off date.
-3. **The annotation extractor's recall is the remaining soft spot.** 81,900
-   annotations from 3,487 issues is ~23/issue against a Weekly Record that ran
-   to 150+ entries/week by the 1920s. Raising recall sharpens the second series;
-   it does not affect the primary one.
+3. **~~The annotation extractor's recall is the remaining soft spot.~~
+   Wrong, and corrected below** — see *Hardening the extractor*. That item
+   compared annotations to *entries* on the assumption every entry gets a
+   descriptive line. Hand-checking 19 consecutive Weekly Record entries shows
+   only about **half** do; PW annotated selectively and says so. The real defect
+   in that neighbourhood was **precision, not recall**, and it is fixed.
 4. **Don't re-sweep to re-argue.** `reception_series.json` holds the per-year
    series and `_data/reception_entries.jsonl.gz` the 1,453 genre-bearing
    annotations with their dates. The 69-minute sweep runs once;
@@ -278,5 +343,5 @@ S2 would have been a false replication off a smoothing artifact.
   normalisations, coverage for all 75 years.
 - `reception_clock_trade.json` — the dated clock plus the two findings with
   their denominators.
-- `_data/reception_entries.jsonl.gz` — **1,453 dated genre-bearing trade
-  annotations**, 1878-11-09 to 1929-12-28. The per-book table.
+- `_data/reception_entries.jsonl.gz` — **1,517 dated genre-bearing trade
+  annotations**, 1878–1929. The per-book table.

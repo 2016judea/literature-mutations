@@ -6,7 +6,7 @@
  ],
  "issues": 3487,
  "words_ocr": 128450049,
- "annotations": 81900,
+ "annotations": 89909,
  "annotation_floor_year": 1878,
  "estimator": {
   "primary_fraction_of_peak": 0.1,
@@ -255,19 +255,19 @@
    ],
    "terms": {
     "detective story": {
-     "total_hits": 170,
+     "total_hits": 166,
      "first_hit": 1880,
-     "years_with_a_hit": 32,
+     "years_with_a_hit": 33,
      "leading_zero_years": 2,
      "first_attestation": 1887,
      "sustained_from": 1887,
-     "peak": 6.19,
+     "peak": 4.68,
      "peak_year": 1922,
      "peak_at_window_edge": false,
      "takeoff_band": {
       "smooth_9": 1900,
       "smooth_5": 1901,
-      "smooth_3": 1901,
+      "smooth_3": 1917,
       "smooth_1": 1918
      },
      "takeoff_spread_years": 18,
@@ -275,19 +275,19 @@
      "takeoff": null
     },
     "detective (any)": {
-     "total_hits": 411,
+     "total_hits": 419,
      "first_hit": 1878,
      "years_with_a_hit": 44,
      "leading_zero_years": 0,
      "first_attestation": 1878,
      "sustained_from": 1878,
-     "peak": 10.43,
-     "peak_year": 1923,
-     "peak_at_window_edge": false,
+     "peak": 8.81,
+     "peak_year": 1929,
+     "peak_at_window_edge": true,
      "takeoff_band": {
       "smooth_9": 1878,
       "smooth_5": 1878,
-      "smooth_3": 1900,
+      "smooth_3": 1878,
       "smooth_1": 1901
      },
      "takeoff_spread_years": 23,
@@ -301,7 +301,7 @@
      "leading_zero_years": 23,
      "first_attestation": 1910,
      "sustained_from": 1910,
-     "peak": 9.69,
+     "peak": 8.11,
      "peak_year": 1923,
      "peak_at_window_edge": false,
      "takeoff_band": {
@@ -315,13 +315,13 @@
      "takeoff": "1915-1918"
     },
     "sensation novel": {
-     "total_hits": 20,
+     "total_hits": 24,
      "first_hit": 1879,
-     "years_with_a_hit": 13,
+     "years_with_a_hit": 14,
      "leading_zero_years": 1,
      "first_attestation": 1879,
      "sustained_from": 1879,
-     "peak": 1.33,
+     "peak": 1.31,
      "peak_year": 1879,
      "peak_at_window_edge": false,
      "takeoff_band": {
@@ -341,7 +341,7 @@
      "leading_zero_years": 11,
      "first_attestation": null,
      "sustained_from": null,
-     "peak": 0.11,
+     "peak": 0.1,
      "peak_year": 1926,
      "peak_at_window_edge": false,
      "takeoff_band": {
@@ -355,73 +355,73 @@
      "takeoff": null
     },
     "ghost story": {
-     "total_hits": 10,
-     "first_hit": 1892,
-     "years_with_a_hit": 8,
-     "leading_zero_years": 14,
+     "total_hits": 13,
+     "first_hit": 1891,
+     "years_with_a_hit": 10,
+     "leading_zero_years": 13,
      "first_attestation": null,
      "sustained_from": null,
-     "peak": 0.25,
-     "peak_year": 1922,
+     "peak": 0.92,
+     "peak_year": 1893,
      "peak_at_window_edge": false,
      "takeoff_band": {
-      "smooth_9": 1904,
-      "smooth_5": 1918,
+      "smooth_9": 1889,
+      "smooth_5": null,
       "smooth_3": null,
       "smooth_1": null
      },
-     "takeoff_spread_years": 14,
+     "takeoff_spread_years": null,
      "takeoff_measurable": false,
      "takeoff": null
     },
     "historical romance": {
-     "total_hits": 104,
+     "total_hits": 117,
      "first_hit": 1878,
      "years_with_a_hit": 32,
      "leading_zero_years": 0,
      "first_attestation": 1878,
      "sustained_from": 1878,
-     "peak": 3.55,
-     "peak_year": 1902,
+     "peak": 3.85,
+     "peak_year": 1900,
      "peak_at_window_edge": false,
      "takeoff_band": {
       "smooth_9": 1878,
       "smooth_5": 1878,
       "smooth_3": 1922,
-      "smooth_1": 1929
+      "smooth_1": 1928
      },
-     "takeoff_spread_years": 51,
+     "takeoff_spread_years": 50,
      "takeoff_measurable": false,
      "takeoff": null
     },
     "adventure story": {
-     "total_hits": 230,
-     "first_hit": 1879,
-     "years_with_a_hit": 39,
-     "leading_zero_years": 1,
-     "first_attestation": 1879,
-     "sustained_from": 1879,
-     "peak": 6.81,
+     "total_hits": 241,
+     "first_hit": 1878,
+     "years_with_a_hit": 40,
+     "leading_zero_years": 0,
+     "first_attestation": 1878,
+     "sustained_from": 1878,
+     "peak": 6.62,
      "peak_year": 1929,
      "peak_at_window_edge": true,
      "takeoff_band": {
       "smooth_9": 1894,
       "smooth_5": 1896,
       "smooth_3": 1897,
-      "smooth_1": 1920
+      "smooth_1": 1916
      },
-     "takeoff_spread_years": 26,
+     "takeoff_spread_years": 22,
      "takeoff_measurable": false,
      "takeoff": null
     },
     "western story": {
-     "total_hits": 52,
+     "total_hits": 55,
      "first_hit": 1878,
-     "years_with_a_hit": 20,
+     "years_with_a_hit": 21,
      "leading_zero_years": 0,
      "first_attestation": 1900,
      "sustained_from": 1900,
-     "peak": 2.05,
+     "peak": 1.84,
      "peak_year": 1923,
      "peak_at_window_edge": false,
      "takeoff_band": {
@@ -435,13 +435,13 @@
      "takeoff": null
     },
     "love story": {
-     "total_hits": 507,
+     "total_hits": 515,
      "first_hit": 1878,
-     "years_with_a_hit": 42,
+     "years_with_a_hit": 43,
      "leading_zero_years": 0,
      "first_attestation": 1878,
      "sustained_from": 1878,
-     "peak": 12.64,
+     "peak": 11.98,
      "peak_year": 1878,
      "peak_at_window_edge": false,
      "takeoff_band": {
@@ -456,21 +456,21 @@
     },
     "sea story": {
      "total_hits": 21,
-     "first_hit": 1883,
+     "first_hit": 1881,
      "years_with_a_hit": 14,
-     "leading_zero_years": 5,
+     "leading_zero_years": 3,
      "first_attestation": 1902,
      "sustained_from": 1902,
-     "peak": 0.47,
+     "peak": 0.43,
      "peak_year": 1926,
      "peak_at_window_edge": false,
      "takeoff_band": {
-      "smooth_9": 1879,
+      "smooth_9": 1878,
       "smooth_5": 1900,
       "smooth_3": 1901,
       "smooth_1": 1928
      },
-     "takeoff_spread_years": 49,
+     "takeoff_spread_years": 50,
      "takeoff_measurable": false,
      "takeoff": null
     }

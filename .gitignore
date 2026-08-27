@@ -110,3 +110,5 @@ mutation_timeline.csv
 __pycache__/
 *.bak
 .slice3.log
+.slice3b.log
+.slice3c.log

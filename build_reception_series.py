@@ -108,11 +108,46 @@ DEHYPH_RE = re.compile(r"([A-Za-z])[-‐‑–]\s*\n\s*([a-z])")
 # rhythm of time", PW 1901-10-05). Found by looking for a known row and not
 # finding it - not by reading the regex.
 PAGES_RE = re.compile(r"\b\d{1,7}\s*(?:[-+]\s*\d{1,7}\s*)?p\b\.?")
+# "net" and "apply" are PRICE QUALIFIERS in PW, not prices, and they come
+# BEFORE the figure: "cl., net, $1.75." So the first price-like token in the
+# tail is often "net", the annotation is then taken from mid-number, and it is
+# thrown away for not starting with a capital. That silently cost 24% of all
+# candidates in the 1901 issue. Fix: collect every price-like token in the tail
+# and take the LAST one, bounded by the next entry head so the window cannot
+# reach into the following record.
 PRICE_RE = re.compile(r"\$\s?[\d.,]+|\b\d{1,3}\s*c\b\.?|\bnet\b|\bapply\b")
+
+
+def price_end(tail):
+    '''Offset just past the LAST price-like token in `tail`, or None.
+
+    Deliberately NOT bounded by the entry-head regexes. Bounding it that way
+    was tried and regressed the 1920s format, where the imprint itself is
+    head-shaped - "Bost., Small, Maynard $2" trips the head pattern before the
+    price, the window closes early, and the entry is dropped. The 140-character
+    tail window is the only bound; entries run 250+ characters, so it cannot
+    reach the next record's price.'''
+    last = None
+    for m in PRICE_RE.finditer(tail):
+        last = m.end()
+    return last
 NEXT_HEAD_RE = re.compile(r"(?m)^\s{0,4}[A-Z][A-Za-z'’\-]{2,22},\s+[A-Z]")
 # The next entry head where OCR did not give it a line of its own: a sentence
 # end (or an asterisk, PW's "first book by this author" mark) then a surname.
 MID_HEAD_RE = re.compile(r"[.!?]\s*\*?\s*[A-Z][A-Za-z'’\-]{2,22},\s+[A-Z]")
+# PW heads a great many entries with a PLACE or a CORPORATE body rather than a
+# personal name - "California. Statutes of California...", "Missouri. Supreme
+# ct. Reports...", "Bible. New Testament..." - and none of those match the
+# Surname-comma-Given shape. Without this, the PREVIOUS entry's annotation
+# swallows the next entry's TITLE, which is how an author's title ends up
+# counted as a trade classification. Measured at 16.7% of genre-bearing rows
+# before this landed.
+CORP_HEAD_RE = re.compile(r"(?m)^\s{0,4}[A-Z][A-Za-z'’\-]{2,22}\.\s+[A-Z]")
+# A swallowed entry announces itself with a bibliographic signature: a page
+# count followed by a price. An annotation never contains one, so this is the
+# cut point of last resort when no head pattern fires.
+BIB_SIG_WINDOW = 140
+CONTENTS_RE = re.compile(r"^contents\b", re.I)
 TAIL_WINDOW = 140          # chars after the page count to find a price
 ANN_MAX = 400              # chars of annotation kept when no next head lands
 # Leading debris an annotation must not start with: leftovers of the tail the
@@ -131,6 +166,25 @@ def normalise(text):
     '''Repair OCR line-break hyphenation. Newlines are KEPT - the entry head
     anchor is line-start, and collapsing them would destroy it.'''
     return DEHYPH_RE.sub(r"\1\2", text)
+
+
+def bib_signature_cut(chunk):
+    '''Where a swallowed next-entry begins inside a candidate annotation.
+
+    A page count with a price after it is a bibliographic signature and cannot
+    belong to a description, so everything from there on is the next record.
+    The cut backs up to the previous sentence boundary so the genuine
+    description in front of it survives instead of the whole row being thrown
+    away.'''
+    for m in PAGES_RE.finditer(chunk):
+        if PRICE_RE.search(chunk[m.end():m.end() + BIB_SIG_WINDOW]):
+            head = chunk[:m.start()]
+            for sep in (". ", "; ", "! ", "? "):
+                j = head.rfind(sep)
+                if j > 0:
+                    return j + 1
+            return m.start()
+    return len(chunk)
 
 
 def annotations(text):
@@ -163,20 +217,23 @@ def annotations(text):
         if m.start() < cursor:
             continue                    # inside an entry already consumed
         seg = text[m.end():m.end() + TAIL_WINDOW]
-        p = PRICE_RE.search(seg)
-        if not p:
+        pe = price_end(seg)
+        if pe is None:
             continue
-        start = m.end() + p.end()
+        start = m.end() + pe
         rest = text[start:start + 900]
         cut = len(rest[:ANN_MAX])
-        for rx in (NEXT_HEAD_RE, MID_HEAD_RE):
+        for rx in (NEXT_HEAD_RE, MID_HEAD_RE, CORP_HEAD_RE):
             nh = rx.search(rest)
             if nh:
                 cut = min(cut, nh.start())
+        cut = min(cut, bib_signature_cut(rest[:cut]))
         ann = re.sub(r"\s+", " ", rest[:cut]).strip(" .;,:*")
         ann = ANN_LEAD_RE.sub("", ann).strip(" .;,:*")
         if len(ann.split()) < MIN_ANN_WORDS or not ann[:1].isupper():
             continue                    # a mid-sentence fragment, not a line
+        if CONTENTS_RE.match(ann):
+            continue                    # a table of contents, not a description
         key = ann[:80].lower()
         if key in seen:
             continue

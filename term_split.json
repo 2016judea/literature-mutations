@@ -2,10 +2,10 @@
  "question": "is 'mystery story' a new genre or a renaming of detective fiction?",
  "test1_cooccurrence": {
   "strength": "weak - an annotation is ~20 words",
-  "detective_annotations": 382,
-  "mystery_annotations": 179,
-  "both": 13,
-  "both_share_of_mystery": 0.073
+  "detective_annotations": 392,
+  "mystery_annotations": 180,
+  "both": 12,
+  "both_share_of_mystery": 0.067
  },
  "test2_substitution": {
   "strength": "strong - this decides it",
@@ -52,225 +52,205 @@
  },
  "test3_content": {
   "strength": "suggestive only - thin counts",
-  "n_mystery": 179,
-  "n_detective_only": 369,
+  "n_mystery": 180,
+  "n_detective_only": 380,
   "min_count": 8,
   "min_lower_case_fraction": 0.6,
   "rejected_as_names": [
-   "america",
    "american",
-   "apltn",
-   "arthur",
-   "chic",
    "city",
+   "club",
    "contents",
    "craig",
-   "dodd",
-   "doran",
-   "dou",
    "england",
    "english",
    "france",
    "french",
    "green",
-   "harp",
-   "holmes",
    "john",
    "kennedy",
    "lady",
-   "lee",
    "london",
    "mary",
-   "miff",
-   "mrs",
    "paris",
-   "publishers",
-   "reilly",
-   "reviewed",
    "scotland",
    "sir",
    "smith",
-   "southern",
-   "stone",
-   "street",
    "tue",
-   "united",
-   "van",
    "west",
-   "william",
    "yard",
    "york"
   ],
   "distinctive_of_mystery": [
    {
     "token": "girls",
-    "in_group": 18,
+    "in_group": 16,
     "in_other": 2,
-    "lower_case_fraction": 0.95,
-    "log_odds": 2.82
+    "lower_case_fraction": 0.94,
+    "log_odds": 2.72
    },
    {
     "token": "boys",
-    "in_group": 11,
+    "in_group": 9,
     "in_other": 6,
-    "lower_case_fraction": 1.41,
-    "log_odds": 1.34
+    "lower_case_fraction": 1.13,
+    "log_odds": 1.16
    },
    {
-    "token": "people",
-    "in_group": 11,
-    "in_other": 6,
-    "lower_case_fraction": 1.0,
-    "log_odds": 1.34
+    "token": "front",
+    "in_group": 6,
+    "in_other": 4,
+    "lower_case_fraction": 0.9,
+    "log_odds": 1.14
    },
    {
     "token": "laid",
-    "in_group": 12,
-    "in_other": 7,
-    "lower_case_fraction": 1.05,
-    "log_odds": 1.28
-   },
-   {
-    "token": "family",
     "in_group": 8,
-    "in_other": 5,
-    "lower_case_fraction": 1.08,
-    "log_odds": 1.19
+    "in_other": 6,
+    "lower_case_fraction": 1.0,
+    "log_odds": 1.04
    },
    {
-    "token": "western",
-    "in_group": 5,
-    "in_other": 4,
-    "lower_case_fraction": 0.89,
-    "log_odds": 0.94
+    "token": "people",
+    "in_group": 10,
+    "in_other": 8,
+    "lower_case_fraction": 1.0,
+    "log_odds": 0.99
+   },
+   {
+    "token": "dealing",
+    "in_group": 11,
+    "in_other": 9,
+    "lower_case_fraction": 1.0,
+    "log_odds": 0.98
    },
    {
     "token": "humor",
     "in_group": 5,
     "in_other": 4,
     "lower_case_fraction": 0.89,
-    "log_odds": 0.94
+    "log_odds": 0.96
    },
    {
     "token": "known",
     "in_group": 6,
     "in_other": 5,
     "lower_case_fraction": 1.0,
-    "log_odds": 0.91
+    "log_odds": 0.93
    },
    {
-    "token": "short",
-    "in_group": 6,
+    "token": "husband",
+    "in_group": 4,
+    "in_other": 4,
+    "lower_case_fraction": 1.38,
+    "log_odds": 0.76
+   },
+   {
+    "token": "well",
+    "in_group": 5,
     "in_other": 5,
-    "lower_case_fraction": 0.73,
-    "log_odds": 0.91
-   },
-   {
-    "token": "involving",
-    "in_group": 10,
-    "in_other": 9,
     "lower_case_fraction": 1.0,
-    "log_odds": 0.85
+    "log_odds": 0.76
    },
    {
-    "token": "romance",
-    "in_group": 14,
-    "in_other": 13,
-    "lower_case_fraction": 0.63,
-    "log_odds": 0.84
-   },
-   {
-    "token": "dealing",
-    "in_group": 14,
-    "in_other": 13,
+    "token": "sea",
+    "in_group": 4,
+    "in_other": 4,
     "lower_case_fraction": 1.0,
-    "log_odds": 0.84
+    "log_odds": 0.76
+   },
+   {
+    "token": "three",
+    "in_group": 5,
+    "in_other": 5,
+    "lower_case_fraction": 0.9,
+    "log_odds": 0.76
    }
   ],
   "distinctive_of_detective": [
    {
+    "token": "him",
+    "in_group": 23,
+    "in_other": 0,
+    "lower_case_fraction": 1.17,
+    "log_odds": 3.17
+   },
+   {
     "token": "being",
-    "in_group": 16,
+    "in_group": 19,
     "in_other": 0,
-    "lower_case_fraction": 1.06,
-    "log_odds": 2.82
-   },
-   {
-    "token": "solves",
-    "in_group": 12,
-    "in_other": 0,
-    "lower_case_fraction": 1.0,
-    "log_odds": 2.53
-   },
-   {
-    "token": "comes",
-    "in_group": 11,
-    "in_other": 0,
-    "lower_case_fraction": 1.0,
-    "log_odds": 2.44
-   },
-   {
-    "token": "committed",
-    "in_group": 11,
-    "in_other": 0,
-    "lower_case_fraction": 1.09,
-    "log_odds": 2.44
-   },
-   {
-    "token": "point",
-    "in_group": 10,
-    "in_other": 0,
-    "lower_case_fraction": 1.0,
-    "log_odds": 2.35
-   },
-   {
-    "token": "work",
-    "in_group": 27,
-    "in_other": 1,
-    "lower_case_fraction": 1.0,
-    "log_odds": 2.26
-   },
-   {
-    "token": "methods",
-    "in_group": 9,
-    "in_other": 0,
-    "lower_case_fraction": 1.0,
-    "log_odds": 2.25
-   },
-   {
-    "token": "chief",
-    "in_group": 9,
-    "in_other": 0,
-    "lower_case_fraction": 0.78,
-    "log_odds": 2.25
-   },
-   {
-    "token": "falls",
-    "in_group": 9,
-    "in_other": 0,
-    "lower_case_fraction": 1.0,
-    "log_odds": 2.25
+    "lower_case_fraction": 1.05,
+    "log_odds": 2.97
    },
    {
     "token": "clever",
-    "in_group": 9,
+    "in_group": 14,
     "in_other": 0,
-    "lower_case_fraction": 1.11,
-    "log_odds": 2.25
+    "lower_case_fraction": 1.0,
+    "log_odds": 2.66
    },
    {
-    "token": "plays",
+    "token": "committed",
+    "in_group": 12,
+    "in_other": 0,
+    "lower_case_fraction": 1.08,
+    "log_odds": 2.51
+   },
+   {
+    "token": "chief",
+    "in_group": 12,
+    "in_other": 0,
+    "lower_case_fraction": 0.83,
+    "log_odds": 2.51
+   },
+   {
+    "token": "search",
+    "in_group": 12,
+    "in_other": 0,
+    "lower_case_fraction": 1.0,
+    "log_odds": 2.51
+   },
+   {
+    "token": "solves",
+    "in_group": 11,
+    "in_other": 0,
+    "lower_case_fraction": 1.0,
+    "log_odds": 2.42
+   },
+   {
+    "token": "boy",
+    "in_group": 10,
+    "in_other": 0,
+    "lower_case_fraction": 0.8,
+    "log_odds": 2.33
+   },
+   {
+    "token": "work",
+    "in_group": 28,
+    "in_other": 1,
+    "lower_case_fraction": 1.0,
+    "log_odds": 2.27
+   },
+   {
+    "token": "point",
     "in_group": 9,
     "in_other": 0,
     "lower_case_fraction": 1.0,
-    "log_odds": 2.25
+    "log_odds": 2.22
    },
    {
-    "token": "place",
-    "in_group": 8,
+    "token": "comes",
+    "in_group": 9,
     "in_other": 0,
     "lower_case_fraction": 1.0,
-    "log_odds": 2.13
+    "log_odds": 2.22
+   },
+   {
+    "token": "result",
+    "in_group": 9,
+    "in_other": 0,
+    "lower_case_fraction": 1.0,
+    "log_odds": 2.22
    }
   ]
  },

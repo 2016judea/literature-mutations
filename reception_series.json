@@ -101,8 +101,8 @@
  "issues_scanned": 3487,
  "issues_missed": [],
  "words_ocr": 128450049,
- "annotations_extracted": 81900,
- "genre_bearing_annotations": 1453,
+ "annotations_extracted": 89909,
+ "genre_bearing_annotations": 1517,
  "table": "_data/reception_entries.jsonl.gz",
  "by_year": {
   "1855": {
@@ -167,7 +167,7 @@
   "1856": {
    "issues": 52,
    "words": 1167744,
-   "annotations": 2,
+   "annotations": 1,
    "serial": "american-publishers-circular",
    "whole_raw": {
     "detective story": 0,
@@ -580,7 +580,7 @@
   "1863": {
    "issues": 22,
    "words": 661503,
-   "annotations": 3,
+   "annotations": 2,
    "serial": "american-publishers-circular",
    "whole_raw": {
     "detective story": 2,
@@ -1170,7 +1170,7 @@
   "1873": {
    "issues": 50,
    "words": 997896,
-   "annotations": 2,
+   "annotations": 0,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 1,
@@ -1347,7 +1347,7 @@
   "1876": {
    "issues": 52,
    "words": 1322235,
-   "annotations": 12,
+   "annotations": 11,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 1,
@@ -1406,7 +1406,7 @@
   "1877": {
    "issues": 50,
    "words": 1061952,
-   "annotations": 1,
+   "annotations": 3,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 2,
@@ -1465,7 +1465,7 @@
   "1878": {
    "issues": 49,
    "words": 1129866,
-   "annotations": 205,
+   "annotations": 225,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 1,
@@ -1488,7 +1488,7 @@
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 1,
-    "adventure story": 0,
+    "adventure story": 1,
     "western story": 1,
     "love story": 5,
     "sea story": 0
@@ -1509,22 +1509,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 4.878048780487805,
+    "detective (any)": 4.444444444444445,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 4.878048780487805,
-    "adventure story": 0.0,
-    "western story": 4.878048780487805,
-    "love story": 24.390243902439025,
+    "historical romance": 4.444444444444445,
+    "adventure story": 4.444444444444445,
+    "western story": 4.444444444444445,
+    "love story": 22.22222222222222,
     "sea story": 0.0
    }
   },
   "1879": {
    "issues": 49,
    "words": 1214816,
-   "annotations": 591,
+   "annotations": 672,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 0,
@@ -1541,12 +1541,12 @@
    },
    "ann_raw": {
     "detective story": 0,
-    "detective (any)": 1,
+    "detective (any)": 2,
     "mystery story": 0,
     "sensation novel": 1,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 2,
+    "historical romance": 1,
     "adventure story": 2,
     "western story": 0,
     "love story": 4,
@@ -1568,22 +1568,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 1.6920473773265652,
+    "detective (any)": 2.9761904761904763,
     "mystery story": 0.0,
-    "sensation novel": 1.6920473773265652,
+    "sensation novel": 1.4880952380952381,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 3.3840947546531304,
-    "adventure story": 3.3840947546531304,
+    "historical romance": 1.4880952380952381,
+    "adventure story": 2.9761904761904763,
     "western story": 0.0,
-    "love story": 6.768189509306261,
+    "love story": 5.9523809523809526,
     "sea story": 0.0
    }
   },
   "1880": {
    "issues": 49,
    "words": 1156511,
-   "annotations": 678,
+   "annotations": 749,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 8,
@@ -1600,7 +1600,7 @@
    },
    "ann_raw": {
     "detective story": 1,
-    "detective (any)": 3,
+    "detective (any)": 5,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
@@ -1626,23 +1626,23 @@
     "sea story": 1.7293393664219363
    },
    "per_1k_annotations": {
-    "detective story": 1.4749262536873156,
-    "detective (any)": 4.424778761061947,
+    "detective story": 1.335113484646195,
+    "detective (any)": 6.675567423230975,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 1.4749262536873156,
+    "adventure story": 1.335113484646195,
     "western story": 0.0,
-    "love story": 17.699115044247787,
+    "love story": 16.02136181575434,
     "sea story": 0.0
    }
   },
   "1881": {
    "issues": 49,
    "words": 1207328,
-   "annotations": 809,
+   "annotations": 906,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 1,
@@ -1667,8 +1667,8 @@
     "historical romance": 0,
     "adventure story": 0,
     "western story": 0,
-    "love story": 9,
-    "sea story": 0
+    "love story": 10,
+    "sea story": 1
    },
    "genre_acts": 88,
    "per_million": {
@@ -1688,20 +1688,20 @@
     "detective story": 0.0,
     "detective (any)": 0.0,
     "mystery story": 0.0,
-    "sensation novel": 1.2360939431396787,
+    "sensation novel": 1.1037527593818985,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
     "adventure story": 0.0,
     "western story": 0.0,
-    "love story": 11.124845488257108,
-    "sea story": 0.0
+    "love story": 11.037527593818984,
+    "sea story": 1.1037527593818985
    }
   },
   "1882": {
    "issues": 47,
    "words": 1235810,
-   "annotations": 930,
+   "annotations": 1066,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 2,
@@ -1724,9 +1724,9 @@
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 0,
-    "adventure story": 0,
+    "adventure story": 1,
     "western story": 0,
-    "love story": 3,
+    "love story": 5,
     "sea story": 0
    },
    "genre_acts": 64,
@@ -1745,22 +1745,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 3.225806451612903,
+    "detective (any)": 2.8142589118198873,
     "mystery story": 0.0,
-    "sensation novel": 2.150537634408602,
+    "sensation novel": 1.876172607879925,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 0.0,
+    "adventure story": 0.9380863039399625,
     "western story": 0.0,
-    "love story": 3.225806451612903,
+    "love story": 4.690431519699812,
     "sea story": 0.0
    }
   },
   "1883": {
    "issues": 48,
    "words": 1342522,
-   "annotations": 1032,
+   "annotations": 1181,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 11,
@@ -1779,7 +1779,7 @@
     "detective story": 0,
     "detective (any)": 2,
     "mystery story": 0,
-    "sensation novel": 3,
+    "sensation novel": 4,
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 3,
@@ -1804,22 +1804,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 1.937984496124031,
+    "detective (any)": 1.6934801016088061,
     "mystery story": 0.0,
-    "sensation novel": 2.9069767441860463,
+    "sensation novel": 3.3869602032176123,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 2.9069767441860463,
+    "historical romance": 2.5402201524132093,
     "adventure story": 0.0,
     "western story": 0.0,
-    "love story": 5.813953488372093,
-    "sea story": 0.9689922480620154
+    "love story": 5.080440304826419,
+    "sea story": 0.8467400508044031
    }
   },
   "1884": {
    "issues": 48,
    "words": 1240668,
-   "annotations": 1135,
+   "annotations": 1346,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 4,
@@ -1836,16 +1836,16 @@
    },
    "ann_raw": {
     "detective story": 0,
-    "detective (any)": 1,
+    "detective (any)": 2,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 2,
-    "adventure story": 2,
+    "adventure story": 3,
     "western story": 0,
-    "love story": 8,
-    "sea story": 1
+    "love story": 9,
+    "sea story": 0
    },
    "genre_acts": 78,
    "per_million": {
@@ -1863,22 +1863,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 0.8810572687224669,
+    "detective (any)": 1.485884101040119,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 1.7621145374449338,
-    "adventure story": 1.7621145374449338,
+    "historical romance": 1.485884101040119,
+    "adventure story": 2.2288261515601784,
     "western story": 0.0,
-    "love story": 7.048458149779735,
-    "sea story": 0.8810572687224669
+    "love story": 6.686478454680535,
+    "sea story": 0.0
    }
   },
   "1885": {
    "issues": 48,
    "words": 1255802,
-   "annotations": 963,
+   "annotations": 1074,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 10,
@@ -1922,22 +1922,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 1.0384215991692627,
+    "detective (any)": 0.931098696461825,
     "mystery story": 0.0,
-    "sensation novel": 1.0384215991692627,
+    "sensation novel": 0.931098696461825,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
     "adventure story": 0.0,
     "western story": 0.0,
-    "love story": 2.0768431983385254,
+    "love story": 1.86219739292365,
     "sea story": 0.0
    }
   },
   "1886": {
    "issues": 48,
    "words": 1355817,
-   "annotations": 1279,
+   "annotations": 1441,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 8,
@@ -1959,7 +1959,7 @@
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 4,
+    "historical romance": 5,
     "adventure story": 0,
     "western story": 1,
     "love story": 3,
@@ -1981,22 +1981,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 2.3455824863174355,
+    "detective (any)": 2.081887578070784,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 3.127443315089914,
+    "historical romance": 3.4698126301179735,
     "adventure story": 0.0,
-    "western story": 0.7818608287724785,
-    "love story": 2.3455824863174355,
+    "western story": 0.6939625260235948,
+    "love story": 2.081887578070784,
     "sea story": 0.0
    }
   },
   "1887": {
    "issues": 47,
    "words": 1248026,
-   "annotations": 1096,
+   "annotations": 1244,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 1,
@@ -2013,7 +2013,7 @@
    },
    "ann_raw": {
     "detective story": 1,
-    "detective (any)": 6,
+    "detective (any)": 4,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
@@ -2039,23 +2039,23 @@
     "sea story": 2.403796074761263
    },
    "per_1k_annotations": {
-    "detective story": 0.9124087591240876,
-    "detective (any)": 5.474452554744525,
+    "detective story": 0.8038585209003215,
+    "detective (any)": 3.215434083601286,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 0.9124087591240876,
+    "adventure story": 0.8038585209003215,
     "western story": 0.0,
-    "love story": 4.562043795620438,
+    "love story": 4.019292604501608,
     "sea story": 0.0
    }
   },
   "1888": {
    "issues": 48,
    "words": 1457959,
-   "annotations": 1362,
+   "annotations": 1545,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 12,
@@ -2072,7 +2072,7 @@
    },
    "ann_raw": {
     "detective story": 1,
-    "detective (any)": 6,
+    "detective (any)": 4,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
@@ -2098,23 +2098,23 @@
     "sea story": 1.371780687934297
    },
    "per_1k_annotations": {
-    "detective story": 0.7342143906020558,
-    "detective (any)": 4.405286343612334,
+    "detective story": 0.6472491909385113,
+    "detective (any)": 2.588996763754045,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 0.7342143906020558,
-    "adventure story": 0.7342143906020558,
+    "historical romance": 0.6472491909385113,
+    "adventure story": 0.6472491909385113,
     "western story": 0.0,
-    "love story": 3.671071953010279,
+    "love story": 3.236245954692557,
     "sea story": 0.0
    }
   },
   "1889": {
    "issues": 48,
    "words": 1331272,
-   "annotations": 1339,
+   "annotations": 1568,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 11,
@@ -2130,8 +2130,8 @@
     "sea story": 1
    },
    "ann_raw": {
-    "detective story": 1,
-    "detective (any)": 5,
+    "detective story": 2,
+    "detective (any)": 7,
     "mystery story": 0,
     "sensation novel": 2,
     "scientific romance": 1,
@@ -2157,11 +2157,11 @@
     "sea story": 0.7511612953626307
    },
    "per_1k_annotations": {
-    "detective story": 0.7468259895444361,
-    "detective (any)": 3.7341299477221805,
+    "detective story": 1.2755102040816326,
+    "detective (any)": 4.464285714285714,
     "mystery story": 0.0,
-    "sensation novel": 1.4936519790888723,
-    "scientific romance": 0.7468259895444361,
+    "sensation novel": 1.2755102040816326,
+    "scientific romance": 0.6377551020408163,
     "ghost story": 0.0,
     "historical romance": 0.0,
     "adventure story": 0.0,
@@ -2173,7 +2173,7 @@
   "1890": {
    "issues": 48,
    "words": 1416181,
-   "annotations": 1302,
+   "annotations": 1510,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 8,
@@ -2216,14 +2216,14 @@
     "sea story": 1.4122488580202672
    },
    "per_1k_annotations": {
-    "detective story": 0.7680491551459293,
-    "detective (any)": 5.376344086021505,
+    "detective story": 0.6622516556291391,
+    "detective (any)": 4.635761589403973,
     "mystery story": 0.0,
-    "sensation novel": 0.7680491551459293,
+    "sensation novel": 0.6622516556291391,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 2.304147465437788,
+    "adventure story": 1.9867549668874172,
     "western story": 0.0,
     "love story": 0.0,
     "sea story": 0.0
@@ -2232,7 +2232,7 @@
   "1891": {
    "issues": 48,
    "words": 1489623,
-   "annotations": 1366,
+   "annotations": 1587,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 2,
@@ -2248,13 +2248,13 @@
     "sea story": 0
    },
    "ann_raw": {
-    "detective story": 0,
-    "detective (any)": 4,
+    "detective story": 1,
+    "detective (any)": 6,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
-    "ghost story": 0,
-    "historical romance": 4,
+    "ghost story": 1,
+    "historical romance": 5,
     "adventure story": 1,
     "western story": 0,
     "love story": 2,
@@ -2275,23 +2275,23 @@
     "sea story": 0.0
    },
    "per_1k_annotations": {
-    "detective story": 0.0,
-    "detective (any)": 2.9282576866764276,
+    "detective story": 0.630119722747322,
+    "detective (any)": 3.780718336483932,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
-    "ghost story": 0.0,
-    "historical romance": 2.9282576866764276,
-    "adventure story": 0.7320644216691069,
+    "ghost story": 0.630119722747322,
+    "historical romance": 3.15059861373661,
+    "adventure story": 0.630119722747322,
     "western story": 0.0,
-    "love story": 1.4641288433382138,
+    "love story": 1.260239445494644,
     "sea story": 0.0
    }
   },
   "1892": {
    "issues": 49,
    "words": 1559330,
-   "annotations": 1774,
+   "annotations": 2033,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 10,
@@ -2310,9 +2310,9 @@
     "detective story": 1,
     "detective (any)": 3,
     "mystery story": 0,
-    "sensation novel": 1,
+    "sensation novel": 3,
     "scientific romance": 0,
-    "ghost story": 1,
+    "ghost story": 0,
     "historical romance": 1,
     "adventure story": 1,
     "western story": 0,
@@ -2334,14 +2334,14 @@
     "sea story": 0.6413010716140907
    },
    "per_1k_annotations": {
-    "detective story": 0.5636978579481398,
-    "detective (any)": 1.6910935738444195,
+    "detective story": 0.49188391539596654,
+    "detective (any)": 1.4756517461878997,
     "mystery story": 0.0,
-    "sensation novel": 0.5636978579481398,
+    "sensation novel": 1.4756517461878997,
     "scientific romance": 0.0,
-    "ghost story": 0.5636978579481398,
-    "historical romance": 0.5636978579481398,
-    "adventure story": 0.5636978579481398,
+    "ghost story": 0.0,
+    "historical romance": 0.49188391539596654,
+    "adventure story": 0.49188391539596654,
     "western story": 0.0,
     "love story": 0.0,
     "sea story": 0.0
@@ -2350,7 +2350,7 @@
   "1893": {
    "issues": 48,
    "words": 1501354,
-   "annotations": 1704,
+   "annotations": 2026,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 11,
@@ -2367,14 +2367,14 @@
    },
    "ann_raw": {
     "detective story": 1,
-    "detective (any)": 3,
+    "detective (any)": 5,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
-    "ghost story": 0,
+    "ghost story": 2,
     "historical romance": 2,
     "adventure story": 4,
-    "western story": 0,
+    "western story": 1,
     "love story": 0,
     "sea story": 1
    },
@@ -2393,23 +2393,23 @@
     "sea story": 1.332130863207478
    },
    "per_1k_annotations": {
-    "detective story": 0.5868544600938967,
-    "detective (any)": 1.7605633802816902,
+    "detective story": 0.49358341559723595,
+    "detective (any)": 2.4679170779861797,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
-    "ghost story": 0.0,
-    "historical romance": 1.1737089201877935,
-    "adventure story": 2.347417840375587,
-    "western story": 0.0,
+    "ghost story": 0.9871668311944719,
+    "historical romance": 0.9871668311944719,
+    "adventure story": 1.9743336623889438,
+    "western story": 0.49358341559723595,
     "love story": 0.0,
-    "sea story": 0.5868544600938967
+    "sea story": 0.49358341559723595
    }
   },
   "1894": {
    "issues": 48,
    "words": 1482602,
-   "annotations": 82,
+   "annotations": 90,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 9,
@@ -2468,7 +2468,7 @@
   "1895": {
    "issues": 48,
    "words": 1574668,
-   "annotations": 80,
+   "annotations": 90,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 13,
@@ -2527,7 +2527,7 @@
   "1896": {
    "issues": 50,
    "words": 1774692,
-   "annotations": 109,
+   "annotations": 112,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 10,
@@ -2586,7 +2586,7 @@
   "1897": {
    "issues": 52,
    "words": 1881438,
-   "annotations": 127,
+   "annotations": 150,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 21,
@@ -2607,11 +2607,11 @@
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
-    "ghost story": 0,
-    "historical romance": 0,
+    "ghost story": 1,
+    "historical romance": 1,
     "adventure story": 0,
     "western story": 0,
-    "love story": 0,
+    "love story": 1,
     "sea story": 0
    },
    "genre_acts": 117,
@@ -2634,18 +2634,18 @@
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
-    "ghost story": 0.0,
-    "historical romance": 0.0,
+    "ghost story": 6.666666666666667,
+    "historical romance": 6.666666666666667,
     "adventure story": 0.0,
     "western story": 0.0,
-    "love story": 0.0,
+    "love story": 6.666666666666667,
     "sea story": 0.0
    }
   },
   "1898": {
    "issues": 53,
    "words": 1879446,
-   "annotations": 165,
+   "annotations": 192,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 16,
@@ -2694,8 +2694,8 @@
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 18.181818181818183,
-    "adventure story": 6.0606060606060606,
+    "historical romance": 15.625,
+    "adventure story": 5.208333333333333,
     "western story": 0.0,
     "love story": 0.0,
     "sea story": 0.0
@@ -2704,7 +2704,7 @@
   "1899": {
    "issues": 52,
    "words": 1975536,
-   "annotations": 178,
+   "annotations": 251,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 25,
@@ -2754,7 +2754,7 @@
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 5.617977528089888,
+    "adventure story": 3.9840637450199203,
     "western story": 0.0,
     "love story": 0.0,
     "sea story": 0.0
@@ -2763,7 +2763,7 @@
   "1900": {
    "issues": 52,
    "words": 2225505,
-   "annotations": 2260,
+   "annotations": 2775,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 29,
@@ -2785,10 +2785,10 @@
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 8,
+    "historical romance": 10,
     "adventure story": 6,
     "western story": 1,
-    "love story": 16,
+    "love story": 18,
     "sea story": 0
    },
    "genre_acts": 184,
@@ -2806,23 +2806,23 @@
     "sea story": 4.04402596264668
    },
    "per_1k_annotations": {
-    "detective story": 0.4424778761061947,
-    "detective (any)": 1.3274336283185841,
+    "detective story": 0.36036036036036034,
+    "detective (any)": 1.0810810810810811,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 3.5398230088495577,
-    "adventure story": 2.6548672566371683,
-    "western story": 0.4424778761061947,
-    "love story": 7.079646017699115,
+    "historical romance": 3.6036036036036037,
+    "adventure story": 2.1621621621621623,
+    "western story": 0.36036036036036034,
+    "love story": 6.486486486486487,
     "sea story": 0.0
    }
   },
   "1901": {
    "issues": 52,
    "words": 2332259,
-   "annotations": 1883,
+   "annotations": 2729,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 38,
@@ -2839,15 +2839,15 @@
    },
    "ann_raw": {
     "detective story": 2,
-    "detective (any)": 9,
+    "detective (any)": 12,
     "mystery story": 1,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 5,
-    "adventure story": 4,
+    "adventure story": 5,
     "western story": 1,
-    "love story": 20,
+    "love story": 22,
     "sea story": 0
    },
    "genre_acts": 215,
@@ -2865,23 +2865,23 @@
     "sea story": 1.7150753839946593
    },
    "per_1k_annotations": {
-    "detective story": 1.0621348911311737,
-    "detective (any)": 4.779607010090282,
-    "mystery story": 0.5310674455655868,
+    "detective story": 0.7328691828508611,
+    "detective (any)": 4.397215097105167,
+    "mystery story": 0.36643459142543056,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 2.655337227827934,
-    "adventure story": 2.1242697822623473,
-    "western story": 0.5310674455655868,
-    "love story": 10.621348911311737,
+    "historical romance": 1.8321729571271528,
+    "adventure story": 1.8321729571271528,
+    "western story": 0.36643459142543056,
+    "love story": 8.061561011359473,
     "sea story": 0.0
    }
   },
   "1902": {
    "issues": 52,
    "words": 2137200,
-   "annotations": 1921,
+   "annotations": 2584,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 25,
@@ -2897,16 +2897,16 @@
     "sea story": 12
    },
    "ann_raw": {
-    "detective story": 4,
+    "detective story": 3,
     "detective (any)": 5,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 7,
-    "adventure story": 6,
+    "historical romance": 9,
+    "adventure story": 7,
     "western story": 0,
-    "love story": 34,
+    "love story": 39,
     "sea story": 3
    },
    "genre_acts": 210,
@@ -2924,23 +2924,23 @@
     "sea story": 5.614823133071308
    },
    "per_1k_annotations": {
-    "detective story": 2.082248828735034,
-    "detective (any)": 2.6028110359187924,
+    "detective story": 1.1609907120743035,
+    "detective (any)": 1.934984520123839,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 3.643935450286309,
-    "adventure story": 3.123373243102551,
+    "historical romance": 3.48297213622291,
+    "adventure story": 2.708978328173375,
     "western story": 0.0,
-    "love story": 17.699115044247787,
-    "sea story": 1.5616866215512755
+    "love story": 15.092879256965944,
+    "sea story": 1.1609907120743035
    }
   },
   "1903": {
    "issues": 52,
    "words": 2974791,
-   "annotations": 1808,
+   "annotations": 1873,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 54,
@@ -2957,7 +2957,7 @@
    },
    "ann_raw": {
     "detective story": 3,
-    "detective (any)": 5,
+    "detective (any)": 6,
     "mystery story": 0,
     "sensation novel": 1,
     "scientific romance": 0,
@@ -2965,7 +2965,7 @@
     "historical romance": 4,
     "adventure story": 3,
     "western story": 0,
-    "love story": 32,
+    "love story": 33,
     "sea story": 0
    },
    "genre_acts": 198,
@@ -2983,23 +2983,23 @@
     "sea story": 5.042371043881738
    },
    "per_1k_annotations": {
-    "detective story": 1.6592920353982301,
-    "detective (any)": 2.765486725663717,
+    "detective story": 1.601708489054992,
+    "detective (any)": 3.203416978109984,
     "mystery story": 0.0,
-    "sensation novel": 0.5530973451327433,
+    "sensation novel": 0.5339028296849974,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 2.2123893805309733,
-    "adventure story": 1.6592920353982301,
+    "historical romance": 2.1356113187399894,
+    "adventure story": 1.601708489054992,
     "western story": 0.0,
-    "love story": 17.699115044247787,
+    "love story": 17.618793379604913,
     "sea story": 0.0
    }
   },
   "1904": {
    "issues": 53,
    "words": 2494101,
-   "annotations": 1549,
+   "annotations": 1579,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 45,
@@ -3022,9 +3022,9 @@
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 2,
-    "adventure story": 3,
+    "adventure story": 4,
     "western story": 0,
-    "love story": 22,
+    "love story": 23,
     "sea story": 0
    },
    "genre_acts": 171,
@@ -3042,23 +3042,23 @@
     "sea story": 6.014191085284838
    },
    "per_1k_annotations": {
-    "detective story": 1.9367333763718528,
-    "detective (any)": 5.1646223369916076,
+    "detective story": 1.8999366687777075,
+    "detective (any)": 5.06649778340722,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 1.2911555842479019,
-    "adventure story": 1.9367333763718528,
+    "historical romance": 1.266624445851805,
+    "adventure story": 2.53324889170361,
     "western story": 0.0,
-    "love story": 14.202711426726921,
+    "love story": 14.566181127295756,
     "sea story": 0.0
    }
   },
   "1905": {
    "issues": 51,
    "words": 2637576,
-   "annotations": 1634,
+   "annotations": 1640,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 76,
@@ -3075,7 +3075,7 @@
    },
    "ann_raw": {
     "detective story": 4,
-    "detective (any)": 13,
+    "detective (any)": 12,
     "mystery story": 0,
     "sensation novel": 2,
     "scientific romance": 0,
@@ -3083,7 +3083,7 @@
     "historical romance": 0,
     "adventure story": 4,
     "western story": 2,
-    "love story": 29,
+    "love story": 27,
     "sea story": 2
    },
    "genre_acts": 190,
@@ -3101,23 +3101,23 @@
     "sea story": 4.549631934776476
    },
    "per_1k_annotations": {
-    "detective story": 2.4479804161566707,
-    "detective (any)": 7.9559363525091795,
+    "detective story": 2.4390243902439024,
+    "detective (any)": 7.317073170731708,
     "mystery story": 0.0,
-    "sensation novel": 1.2239902080783354,
+    "sensation novel": 1.2195121951219512,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 2.4479804161566707,
-    "western story": 1.2239902080783354,
-    "love story": 17.74785801713586,
-    "sea story": 1.2239902080783354
+    "adventure story": 2.4390243902439024,
+    "western story": 1.2195121951219512,
+    "love story": 16.463414634146343,
+    "sea story": 1.2195121951219512
    }
   },
   "1906": {
    "issues": 52,
    "words": 2590642,
-   "annotations": 2161,
+   "annotations": 2195,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 57,
@@ -3134,7 +3134,7 @@
    },
    "ann_raw": {
     "detective story": 5,
-    "detective (any)": 19,
+    "detective (any)": 16,
     "mystery story": 0,
     "sensation novel": 3,
     "scientific romance": 0,
@@ -3160,23 +3160,23 @@
     "sea story": 5.018061160129419
    },
    "per_1k_annotations": {
-    "detective story": 2.3137436372049978,
-    "detective (any)": 8.792225821378992,
+    "detective story": 2.277904328018223,
+    "detective (any)": 7.289293849658314,
     "mystery story": 0.0,
-    "sensation novel": 1.3882461823229986,
+    "sensation novel": 1.366742596810934,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 0.46274872744099954,
-    "adventure story": 1.8509949097639982,
+    "historical romance": 0.45558086560364464,
+    "adventure story": 1.8223234624145785,
     "western story": 0.0,
-    "love story": 12.494215640906987,
+    "love story": 12.300683371298405,
     "sea story": 0.0
    }
   },
   "1907": {
    "issues": 52,
    "words": 3000228,
-   "annotations": 2905,
+   "annotations": 3002,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 58,
@@ -3219,23 +3219,23 @@
     "sea story": 5.999544034653367
    },
    "per_1k_annotations": {
-    "detective story": 2.4096385542168677,
-    "detective (any)": 5.851979345955249,
+    "detective story": 2.3317788141239175,
+    "detective (any)": 5.662891405729513,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 0.3442340791738382,
-    "adventure story": 0.3442340791738382,
-    "western story": 0.3442340791738382,
-    "love story": 6.884681583476764,
-    "sea story": 0.3442340791738382
+    "historical romance": 0.3331112591605596,
+    "adventure story": 0.3331112591605596,
+    "western story": 0.3331112591605596,
+    "love story": 6.662225183211192,
+    "sea story": 0.3331112591605596
    }
   },
   "1908": {
    "issues": 52,
    "words": 2969303,
-   "annotations": 2792,
+   "annotations": 2814,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 81,
@@ -3251,8 +3251,8 @@
     "sea story": 30
    },
    "ann_raw": {
-    "detective story": 2,
-    "detective (any)": 7,
+    "detective story": 3,
+    "detective (any)": 9,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
@@ -3260,7 +3260,7 @@
     "historical romance": 1,
     "adventure story": 5,
     "western story": 1,
-    "love story": 22,
+    "love story": 20,
     "sea story": 0
    },
    "genre_acts": 264,
@@ -3278,23 +3278,23 @@
     "sea story": 10.10338116386236
    },
    "per_1k_annotations": {
-    "detective story": 0.7163323782234957,
-    "detective (any)": 2.507163323782235,
+    "detective story": 1.0660980810234542,
+    "detective (any)": 3.1982942430703623,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
-    "ghost story": 1.0744985673352436,
-    "historical romance": 0.35816618911174786,
-    "adventure story": 1.7908309455587392,
-    "western story": 0.35816618911174786,
-    "love story": 7.8796561604584525,
+    "ghost story": 1.0660980810234542,
+    "historical romance": 0.35536602700781805,
+    "adventure story": 1.7768301350390903,
+    "western story": 0.35536602700781805,
+    "love story": 7.107320540156361,
     "sea story": 0.0
    }
   },
   "1909": {
    "issues": 52,
    "words": 3080987,
-   "annotations": 3479,
+   "annotations": 3309,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 58,
@@ -3310,8 +3310,8 @@
     "sea story": 6
    },
    "ann_raw": {
-    "detective story": 10,
-    "detective (any)": 17,
+    "detective story": 9,
+    "detective (any)": 16,
     "mystery story": 0,
     "sensation novel": 1,
     "scientific romance": 0,
@@ -3319,7 +3319,7 @@
     "historical romance": 3,
     "adventure story": 5,
     "western story": 0,
-    "love story": 14,
+    "love story": 15,
     "sea story": 1
    },
    "genre_acts": 247,
@@ -3337,23 +3337,23 @@
     "sea story": 1.9474278859339555
    },
    "per_1k_annotations": {
-    "detective story": 2.874389192296637,
-    "detective (any)": 4.886461626904283,
+    "detective story": 2.7198549410698094,
+    "detective (any)": 4.835297673012995,
     "mystery story": 0.0,
-    "sensation novel": 0.2874389192296637,
+    "sensation novel": 0.3022061045633122,
     "scientific romance": 0.0,
-    "ghost story": 0.2874389192296637,
-    "historical romance": 0.8623167576889911,
-    "adventure story": 1.4371945961483186,
+    "ghost story": 0.3022061045633122,
+    "historical romance": 0.9066183136899365,
+    "adventure story": 1.5110305228165608,
     "western story": 0.0,
-    "love story": 4.0241448692152915,
-    "sea story": 0.2874389192296637
+    "love story": 4.533091568449683,
+    "sea story": 0.3022061045633122
    }
   },
   "1910": {
    "issues": 52,
    "words": 3289281,
-   "annotations": 3848,
+   "annotations": 3616,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 56,
@@ -3370,7 +3370,7 @@
    },
    "ann_raw": {
     "detective story": 5,
-    "detective (any)": 10,
+    "detective (any)": 9,
     "mystery story": 1,
     "sensation novel": 0,
     "scientific romance": 0,
@@ -3396,23 +3396,23 @@
     "sea story": 3.0401780814713004
    },
    "per_1k_annotations": {
-    "detective story": 1.2993762993762994,
-    "detective (any)": 2.598752598752599,
-    "mystery story": 0.2598752598752599,
+    "detective story": 1.3827433628318584,
+    "detective (any)": 2.4889380530973453,
+    "mystery story": 0.27654867256637167,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
-    "ghost story": 0.2598752598752599,
-    "historical romance": 0.2598752598752599,
-    "adventure story": 2.3388773388773387,
-    "western story": 0.7796257796257796,
-    "love story": 3.898128898128898,
-    "sea story": 0.5197505197505198
+    "ghost story": 0.27654867256637167,
+    "historical romance": 0.27654867256637167,
+    "adventure story": 2.4889380530973453,
+    "western story": 0.8296460176991151,
+    "love story": 4.148230088495575,
+    "sea story": 0.5530973451327433
    }
   },
   "1911": {
    "issues": 52,
    "words": 3406253,
-   "annotations": 2582,
+   "annotations": 2512,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 65,
@@ -3456,22 +3456,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 0.3872966692486445,
-    "mystery story": 0.3872966692486445,
+    "detective (any)": 0.3980891719745223,
+    "mystery story": 0.3980891719745223,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 0.3872966692486445,
+    "adventure story": 0.3980891719745223,
     "western story": 0.0,
-    "love story": 2.3237800154918666,
+    "love story": 2.388535031847134,
     "sea story": 0.0
    }
   },
   "1912": {
    "issues": 59,
    "words": 2943684,
-   "annotations": 1652,
+   "annotations": 1656,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 81,
@@ -3496,7 +3496,7 @@
     "historical romance": 2,
     "adventure story": 0,
     "western story": 1,
-    "love story": 9,
+    "love story": 5,
     "sea story": 0
    },
    "genre_acts": 262,
@@ -3515,22 +3515,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 1.2106537530266344,
+    "detective (any)": 1.2077294685990339,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 1.2106537530266344,
+    "historical romance": 1.2077294685990339,
     "adventure story": 0.0,
-    "western story": 0.6053268765133172,
-    "love story": 5.447941888619854,
+    "western story": 0.6038647342995169,
+    "love story": 3.0193236714975846,
     "sea story": 0.0
    }
   },
   "1913": {
    "issues": 59,
    "words": 3071957,
-   "annotations": 1584,
+   "annotations": 1630,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 65,
@@ -3555,7 +3555,7 @@
     "historical romance": 0,
     "adventure story": 2,
     "western story": 0,
-    "love story": 6,
+    "love story": 5,
     "sea story": 0
    },
    "genre_acts": 278,
@@ -3573,23 +3573,23 @@
     "sea story": 1.3021015593642749
    },
    "per_1k_annotations": {
-    "detective story": 0.6313131313131313,
-    "detective (any)": 0.6313131313131313,
-    "mystery story": 0.6313131313131313,
+    "detective story": 0.6134969325153374,
+    "detective (any)": 0.6134969325153374,
+    "mystery story": 0.6134969325153374,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 1.2626262626262625,
+    "adventure story": 1.2269938650306749,
     "western story": 0.0,
-    "love story": 3.787878787878788,
+    "love story": 3.067484662576687,
     "sea story": 0.0
    }
   },
   "1914": {
    "issues": 57,
    "words": 2919363,
-   "annotations": 1453,
+   "annotations": 1490,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 63,
@@ -3612,7 +3612,7 @@
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 0,
-    "adventure story": 1,
+    "adventure story": 0,
     "western story": 0,
     "love story": 1,
     "sea story": 0
@@ -3639,16 +3639,16 @@
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 0.6882312456985548,
+    "adventure story": 0.0,
     "western story": 0.0,
-    "love story": 0.6882312456985548,
+    "love story": 0.6711409395973155,
     "sea story": 0.0
    }
   },
   "1915": {
    "issues": 54,
    "words": 2761291,
-   "annotations": 1266,
+   "annotations": 1352,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 66,
@@ -3665,7 +3665,7 @@
    },
    "ann_raw": {
     "detective story": 0,
-    "detective (any)": 3,
+    "detective (any)": 5,
     "mystery story": 1,
     "sensation novel": 0,
     "scientific romance": 0,
@@ -3673,7 +3673,7 @@
     "historical romance": 0,
     "adventure story": 0,
     "western story": 0,
-    "love story": 3,
+    "love story": 1,
     "sea story": 0
    },
    "genre_acts": 205,
@@ -3692,22 +3692,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 2.3696682464454977,
-    "mystery story": 0.7898894154818326,
+    "detective (any)": 3.698224852071006,
+    "mystery story": 0.7396449704142012,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
     "adventure story": 0.0,
     "western story": 0.0,
-    "love story": 2.3696682464454977,
+    "love story": 0.7396449704142012,
     "sea story": 0.0
    }
   },
   "1916": {
    "issues": 53,
    "words": 2936830,
-   "annotations": 1414,
+   "annotations": 1610,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 63,
@@ -3724,13 +3724,13 @@
    },
    "ann_raw": {
     "detective story": 0,
-    "detective (any)": 4,
+    "detective (any)": 2,
     "mystery story": 0,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 0,
-    "adventure story": 5,
+    "adventure story": 6,
     "western story": 0,
     "love story": 3,
     "sea story": 0
@@ -3751,22 +3751,22 @@
    },
    "per_1k_annotations": {
     "detective story": 0.0,
-    "detective (any)": 2.828854314002829,
+    "detective (any)": 1.2422360248447204,
     "mystery story": 0.0,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 3.536067892503536,
+    "adventure story": 3.7267080745341614,
     "western story": 0.0,
-    "love story": 2.1216407355021216,
+    "love story": 1.8633540372670807,
     "sea story": 0.0
    }
   },
   "1917": {
    "issues": 52,
    "words": 2898018,
-   "annotations": 1899,
+   "annotations": 2284,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 84,
@@ -3789,7 +3789,7 @@
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 2,
-    "adventure story": 4,
+    "adventure story": 5,
     "western story": 0,
     "love story": 2,
     "sea story": 0
@@ -3809,23 +3809,23 @@
     "sea story": 4.830887868881422
    },
    "per_1k_annotations": {
-    "detective story": 1.05318588730911,
-    "detective (any)": 5.265929436545551,
-    "mystery story": 0.526592943654555,
+    "detective story": 0.8756567425569177,
+    "detective (any)": 4.378283712784588,
+    "mystery story": 0.43782837127845886,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 1.05318588730911,
-    "adventure story": 2.10637177461822,
+    "historical romance": 0.8756567425569177,
+    "adventure story": 2.189141856392294,
     "western story": 0.0,
-    "love story": 1.05318588730911,
+    "love story": 0.8756567425569177,
     "sea story": 0.0
    }
   },
   "1918": {
    "issues": 52,
    "words": 2761621,
-   "annotations": 2045,
+   "annotations": 2511,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 116,
@@ -3841,16 +3841,16 @@
     "sea story": 7
    },
    "ann_raw": {
-    "detective story": 15,
-    "detective (any)": 22,
-    "mystery story": 5,
+    "detective story": 13,
+    "detective (any)": 20,
+    "mystery story": 4,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 4,
-    "adventure story": 2,
+    "historical romance": 6,
+    "adventure story": 3,
     "western story": 2,
-    "love story": 5,
+    "love story": 4,
     "sea story": 0
    },
    "genre_acts": 265,
@@ -3868,23 +3868,23 @@
     "sea story": 2.534743181631368
    },
    "per_1k_annotations": {
-    "detective story": 7.334963325183374,
-    "detective (any)": 10.75794621026895,
-    "mystery story": 2.444987775061125,
+    "detective story": 5.1772202309836715,
+    "detective (any)": 7.964954201513342,
+    "mystery story": 1.5929908403026682,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 1.9559902200488997,
-    "adventure story": 0.9779951100244498,
-    "western story": 0.9779951100244498,
-    "love story": 2.444987775061125,
+    "historical romance": 2.3894862604540026,
+    "adventure story": 1.1947431302270013,
+    "western story": 0.7964954201513341,
+    "love story": 1.5929908403026682,
     "sea story": 0.0
    }
   },
   "1919": {
    "issues": 54,
    "words": 2246798,
-   "annotations": 1210,
+   "annotations": 1432,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 119,
@@ -3900,14 +3900,14 @@
     "sea story": 8
    },
    "ann_raw": {
-    "detective story": 15,
+    "detective story": 14,
     "detective (any)": 20,
-    "mystery story": 16,
+    "mystery story": 15,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 1,
-    "adventure story": 1,
+    "historical romance": 0,
+    "adventure story": 2,
     "western story": 4,
     "love story": 11,
     "sea story": 0
@@ -3927,23 +3927,23 @@
     "sea story": 3.5606227173070297
    },
    "per_1k_annotations": {
-    "detective story": 12.396694214876034,
-    "detective (any)": 16.52892561983471,
-    "mystery story": 13.223140495867769,
+    "detective story": 9.776536312849162,
+    "detective (any)": 13.966480446927374,
+    "mystery story": 10.474860335195531,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 0.8264462809917356,
-    "adventure story": 0.8264462809917356,
-    "western story": 3.3057851239669422,
-    "love story": 9.090909090909092,
+    "historical romance": 0.0,
+    "adventure story": 1.3966480446927374,
+    "western story": 2.793296089385475,
+    "love story": 7.681564245810056,
     "sea story": 0.0
    }
   },
   "1920": {
    "issues": 56,
    "words": 2428695,
-   "annotations": 915,
+   "annotations": 1189,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 155,
@@ -3959,14 +3959,14 @@
     "sea story": 18
    },
    "ann_raw": {
-    "detective story": 11,
-    "detective (any)": 14,
-    "mystery story": 19,
+    "detective story": 10,
+    "detective (any)": 13,
+    "mystery story": 17,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 1,
     "historical romance": 0,
-    "adventure story": 10,
+    "adventure story": 12,
     "western story": 4,
     "love story": 10,
     "sea story": 0
@@ -3986,23 +3986,23 @@
     "sea story": 7.411387597042856
    },
    "per_1k_annotations": {
-    "detective story": 12.021857923497267,
-    "detective (any)": 15.300546448087431,
-    "mystery story": 20.76502732240437,
+    "detective story": 8.410428931875526,
+    "detective (any)": 10.933557611438184,
+    "mystery story": 14.297729184188393,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
-    "ghost story": 1.092896174863388,
+    "ghost story": 0.8410428931875525,
     "historical romance": 0.0,
-    "adventure story": 10.92896174863388,
-    "western story": 4.371584699453552,
-    "love story": 10.92896174863388,
+    "adventure story": 10.09251471825063,
+    "western story": 3.36417157275021,
+    "love story": 8.410428931875526,
     "sea story": 0.0
    }
   },
   "1921": {
    "issues": 53,
    "words": 2494219,
-   "annotations": 744,
+   "annotations": 932,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 95,
@@ -4018,16 +4018,16 @@
     "sea story": 26
    },
    "ann_raw": {
-    "detective story": 5,
-    "detective (any)": 12,
-    "mystery story": 9,
+    "detective story": 2,
+    "detective (any)": 8,
+    "mystery story": 8,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 0,
-    "adventure story": 4,
+    "adventure story": 1,
     "western story": 0,
-    "love story": 5,
+    "love story": 6,
     "sea story": 0
    },
    "genre_acts": 382,
@@ -4045,23 +4045,23 @@
     "sea story": 10.424104699707604
    },
    "per_1k_annotations": {
-    "detective story": 6.720430107526882,
-    "detective (any)": 16.129032258064516,
-    "mystery story": 12.096774193548388,
+    "detective story": 2.1459227467811157,
+    "detective (any)": 8.583690987124463,
+    "mystery story": 8.583690987124463,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
     "historical romance": 0.0,
-    "adventure story": 5.376344086021505,
+    "adventure story": 1.0729613733905579,
     "western story": 0.0,
-    "love story": 6.720430107526882,
+    "love story": 6.437768240343348,
     "sea story": 0.0
    }
   },
   "1922": {
    "issues": 52,
    "words": 2454342,
-   "annotations": 2084,
+   "annotations": 2288,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 72,
@@ -4077,16 +4077,16 @@
     "sea story": 22
    },
    "ann_raw": {
-    "detective story": 5,
+    "detective story": 6,
     "detective (any)": 13,
-    "mystery story": 18,
+    "mystery story": 19,
     "sensation novel": 0,
     "scientific romance": 1,
     "ghost story": 0,
     "historical romance": 4,
     "adventure story": 14,
     "western story": 2,
-    "love story": 21,
+    "love story": 23,
     "sea story": 3
    },
    "genre_acts": 344,
@@ -4104,23 +4104,23 @@
     "sea story": 8.963705954589866
    },
    "per_1k_annotations": {
-    "detective story": 2.399232245681382,
-    "detective (any)": 6.2380038387715935,
-    "mystery story": 8.637236084452976,
+    "detective story": 2.6223776223776225,
+    "detective (any)": 5.681818181818182,
+    "mystery story": 8.304195804195805,
     "sensation novel": 0.0,
-    "scientific romance": 0.4798464491362764,
+    "scientific romance": 0.4370629370629371,
     "ghost story": 0.0,
-    "historical romance": 1.9193857965451055,
-    "adventure story": 6.717850287907869,
-    "western story": 0.9596928982725528,
-    "love story": 10.076775431861805,
-    "sea story": 1.4395393474088292
+    "historical romance": 1.7482517482517483,
+    "adventure story": 6.118881118881119,
+    "western story": 0.8741258741258742,
+    "love story": 10.052447552447552,
+    "sea story": 1.3111888111888113
    }
   },
   "1923": {
    "issues": 52,
    "words": 2424311,
-   "annotations": 2361,
+   "annotations": 2610,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 63,
@@ -4137,15 +4137,15 @@
    },
    "ann_raw": {
     "detective story": 4,
-    "detective (any)": 10,
-    "mystery story": 20,
+    "detective (any)": 11,
+    "mystery story": 21,
     "sensation novel": 0,
     "scientific romance": 1,
     "ghost story": 0,
-    "historical romance": 4,
+    "historical romance": 5,
     "adventure story": 12,
     "western story": 8,
-    "love story": 13,
+    "love story": 12,
     "sea story": 0
    },
    "genre_acts": 227,
@@ -4163,23 +4163,23 @@
     "sea story": 8.24976663472632
    },
    "per_1k_annotations": {
-    "detective story": 1.6941973739940703,
-    "detective (any)": 4.235493434985176,
-    "mystery story": 8.470986869970352,
+    "detective story": 1.5325670498084292,
+    "detective (any)": 4.21455938697318,
+    "mystery story": 8.045977011494253,
     "sensation novel": 0.0,
-    "scientific romance": 0.4235493434985176,
+    "scientific romance": 0.3831417624521073,
     "ghost story": 0.0,
-    "historical romance": 1.6941973739940703,
-    "adventure story": 5.082592121982211,
-    "western story": 3.3883947479881407,
-    "love story": 5.506141465480728,
+    "historical romance": 1.9157088122605364,
+    "adventure story": 4.597701149425287,
+    "western story": 3.0651340996168583,
+    "love story": 4.597701149425287,
     "sea story": 0.0
    }
   },
   "1924": {
    "issues": 52,
    "words": 2341414,
-   "annotations": 2666,
+   "annotations": 2893,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 72,
@@ -4196,15 +4196,15 @@
    },
    "ann_raw": {
     "detective story": 8,
-    "detective (any)": 16,
-    "mystery story": 17,
+    "detective (any)": 19,
+    "mystery story": 16,
     "sensation novel": 1,
     "scientific romance": 0,
     "ghost story": 1,
-    "historical romance": 1,
+    "historical romance": 2,
     "adventure story": 14,
     "western story": 2,
-    "love story": 17,
+    "love story": 16,
     "sea story": 1
    },
    "genre_acts": 178,
@@ -4222,23 +4222,23 @@
     "sea story": 10.250216322273635
    },
    "per_1k_annotations": {
-    "detective story": 3.000750187546887,
-    "detective (any)": 6.001500375093774,
-    "mystery story": 6.3765941485371345,
-    "sensation novel": 0.37509377344336087,
+    "detective story": 2.76529554096094,
+    "detective (any)": 6.567576909782233,
+    "mystery story": 5.53059108192188,
+    "sensation novel": 0.3456619426201175,
     "scientific romance": 0.0,
-    "ghost story": 0.37509377344336087,
-    "historical romance": 0.37509377344336087,
-    "adventure story": 5.251312828207052,
-    "western story": 0.7501875468867217,
-    "love story": 6.3765941485371345,
-    "sea story": 0.37509377344336087
+    "ghost story": 0.3456619426201175,
+    "historical romance": 0.691323885240235,
+    "adventure story": 4.839267196681646,
+    "western story": 0.691323885240235,
+    "love story": 5.53059108192188,
+    "sea story": 0.3456619426201175
    }
   },
   "1925": {
    "issues": 52,
    "words": 2209098,
-   "annotations": 2697,
+   "annotations": 2899,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 114,
@@ -4254,16 +4254,16 @@
     "sea story": 24
    },
    "ann_raw": {
-    "detective story": 10,
-    "detective (any)": 21,
-    "mystery story": 9,
-    "sensation novel": 0,
+    "detective story": 11,
+    "detective (any)": 22,
+    "mystery story": 10,
+    "sensation novel": 1,
     "scientific romance": 0,
     "ghost story": 1,
-    "historical romance": 7,
-    "adventure story": 18,
+    "historical romance": 9,
+    "adventure story": 19,
     "western story": 4,
-    "love story": 19,
+    "love story": 22,
     "sea story": 1
    },
    "genre_acts": 178,
@@ -4281,23 +4281,23 @@
     "sea story": 10.86416265824332
    },
    "per_1k_annotations": {
-    "detective story": 3.7078235076010384,
-    "detective (any)": 7.786429365962181,
-    "mystery story": 3.337041156840934,
-    "sensation novel": 0.0,
+    "detective story": 3.794411866160745,
+    "detective (any)": 7.58882373232149,
+    "mystery story": 3.449465332873405,
+    "sensation novel": 0.3449465332873405,
     "scientific romance": 0.0,
-    "ghost story": 0.3707823507601038,
-    "historical romance": 2.5954764553207266,
-    "adventure story": 6.674082313681868,
-    "western story": 1.4831294030404152,
-    "love story": 7.044864664441972,
-    "sea story": 0.3707823507601038
+    "ghost story": 0.3449465332873405,
+    "historical romance": 3.104518799586064,
+    "adventure story": 6.553984132459469,
+    "western story": 1.379786133149362,
+    "love story": 7.58882373232149,
+    "sea story": 0.3449465332873405
    }
   },
   "1926": {
    "issues": 52,
    "words": 2256513,
-   "annotations": 2495,
+   "annotations": 2694,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 96,
@@ -4314,14 +4314,14 @@
    },
    "ann_raw": {
     "detective story": 16,
-    "detective (any)": 26,
-    "mystery story": 18,
+    "detective (any)": 27,
+    "mystery story": 19,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 1,
     "historical romance": 8,
-    "adventure story": 16,
-    "western story": 4,
+    "adventure story": 17,
+    "western story": 5,
     "love story": 10,
     "sea story": 1
    },
@@ -4340,23 +4340,23 @@
     "sea story": 3.9884547529750547
    },
    "per_1k_annotations": {
-    "detective story": 6.412825651302605,
-    "detective (any)": 10.420841683366733,
-    "mystery story": 7.214428857715431,
+    "detective story": 5.939123979213066,
+    "detective (any)": 10.022271714922049,
+    "mystery story": 7.052709725315516,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
-    "ghost story": 0.40080160320641284,
-    "historical romance": 3.2064128256513027,
-    "adventure story": 6.412825651302605,
-    "western story": 1.6032064128256514,
-    "love story": 4.008016032064128,
-    "sea story": 0.40080160320641284
+    "ghost story": 0.3711952487008166,
+    "historical romance": 2.969561989606533,
+    "adventure story": 6.310319227913883,
+    "western story": 1.8559762435040832,
+    "love story": 3.7119524870081664,
+    "sea story": 0.3711952487008166
    }
   },
   "1927": {
    "issues": 53,
    "words": 2182277,
-   "annotations": 2681,
+   "annotations": 2771,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 94,
@@ -4372,16 +4372,16 @@
     "sea story": 20
    },
    "ann_raw": {
-    "detective story": 11,
-    "detective (any)": 30,
-    "mystery story": 19,
+    "detective story": 10,
+    "detective (any)": 29,
+    "mystery story": 20,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
     "historical romance": 3,
-    "adventure story": 22,
+    "adventure story": 23,
     "western story": 7,
-    "love story": 11,
+    "love story": 10,
     "sea story": 0
    },
    "genre_acts": 135,
@@ -4399,23 +4399,23 @@
     "sea story": 9.164739398344024
    },
    "per_1k_annotations": {
-    "detective story": 4.102946661693398,
-    "detective (any)": 11.189854531891086,
-    "mystery story": 7.086907870197687,
+    "detective story": 3.608805485384338,
+    "detective (any)": 10.46553590761458,
+    "mystery story": 7.217610970768676,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 1.1189854531891086,
-    "adventure story": 8.205893323386796,
-    "western story": 2.6109660574412534,
-    "love story": 4.102946661693398,
+    "historical romance": 1.0826416456153014,
+    "adventure story": 8.300252616383977,
+    "western story": 2.5261638397690365,
+    "love story": 3.608805485384338,
     "sea story": 0.0
    }
   },
   "1928": {
    "issues": 52,
    "words": 2597468,
-   "annotations": 2333,
+   "annotations": 2504,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 154,
@@ -4431,16 +4431,16 @@
     "sea story": 11
    },
    "ann_raw": {
-    "detective story": 4,
-    "detective (any)": 17,
-    "mystery story": 13,
+    "detective story": 5,
+    "detective (any)": 19,
+    "mystery story": 14,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 4,
+    "historical romance": 5,
     "adventure story": 14,
     "western story": 1,
-    "love story": 16,
+    "love story": 17,
     "sea story": 2
    },
    "genre_acts": 174,
@@ -4458,23 +4458,23 @@
     "sea story": 4.23489336538506
    },
    "per_1k_annotations": {
-    "detective story": 1.7145306472353192,
-    "detective (any)": 7.286755250750107,
-    "mystery story": 5.572224603514788,
+    "detective story": 1.9968051118210863,
+    "detective (any)": 7.587859424920127,
+    "mystery story": 5.5910543130990416,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 1.7145306472353192,
-    "adventure story": 6.000857265323618,
-    "western story": 0.4286326618088298,
-    "love story": 6.858122588941277,
-    "sea story": 0.8572653236176596
+    "historical romance": 1.9968051118210863,
+    "adventure story": 5.5910543130990416,
+    "western story": 0.3993610223642173,
+    "love story": 6.789137380191693,
+    "sea story": 0.7987220447284346
    }
   },
   "1929": {
    "issues": 52,
    "words": 2100282,
-   "annotations": 3250,
+   "annotations": 3458,
    "serial": "publishers-weekly",
    "whole_raw": {
     "detective story": 174,
@@ -4491,15 +4491,15 @@
    },
    "ann_raw": {
     "detective story": 10,
-    "detective (any)": 27,
+    "detective (any)": 29,
     "mystery story": 11,
     "sensation novel": 0,
     "scientific romance": 0,
     "ghost story": 0,
-    "historical romance": 8,
+    "historical romance": 9,
     "adventure story": 22,
-    "western story": 2,
-    "love story": 24,
+    "western story": 3,
+    "love story": 23,
     "sea story": 1
    },
    "genre_acts": 155,
@@ -4517,17 +4517,17 @@
     "sea story": 4.761265391980696
    },
    "per_1k_annotations": {
-    "detective story": 3.076923076923077,
-    "detective (any)": 8.307692307692308,
-    "mystery story": 3.3846153846153846,
+    "detective story": 2.891844997108155,
+    "detective (any)": 8.38635049161365,
+    "mystery story": 3.1810294968189705,
     "sensation novel": 0.0,
     "scientific romance": 0.0,
     "ghost story": 0.0,
-    "historical romance": 2.4615384615384617,
-    "adventure story": 6.769230769230769,
-    "western story": 0.6153846153846154,
-    "love story": 7.384615384615385,
-    "sea story": 0.3076923076923077
+    "historical romance": 2.6026604973973395,
+    "adventure story": 6.362058993637941,
+    "western story": 0.8675534991324465,
+    "love story": 6.6512434933487565,
+    "sea story": 0.2891844997108155
    }
   }
  },
@@ -4690,63 +4690,63 @@
   },
   "per_1k_annotations": {
    "detective story": {
-    "peak": 6.1876416152455045,
+    "peak": 4.684876031223364,
     "peak_year": 1922,
-    "total": 170,
+    "total": 166,
     "first_attestation": 1887,
-    "takeoff_5pct": 1898,
+    "takeoff_5pct": 1883,
     "takeoff_10pct": 1900,
     "takeoff_20pct": 1915,
-    "mass_p25": 1909,
+    "mass_p25": 1907,
     "mass_p50": 1919,
-    "mass_p75": 1923,
-    "mass_iqr": 14,
+    "mass_p75": 1924,
+    "mass_iqr": 17,
     "zero_years_before_first_hit": 25
    },
    "detective (any)": {
-    "peak": 10.425625284006353,
-    "peak_year": 1923,
-    "total": 411,
+    "peak": 8.810168254278379,
+    "peak_year": 1929,
+    "total": 419,
     "first_attestation": 1878,
     "takeoff_5pct": 1874,
     "takeoff_10pct": 1876,
-    "takeoff_20pct": 1882,
-    "mass_p25": 1903,
-    "mass_p50": 1918,
-    "mass_p75": 1922,
-    "mass_iqr": 19,
+    "takeoff_20pct": 1878,
+    "mass_p25": 1902,
+    "mass_p50": 1917,
+    "mass_p75": 1923,
+    "mass_iqr": 21,
     "zero_years_before_first_hit": 23
    },
    "mystery story": {
-    "peak": 9.68979299994834,
+    "peak": 8.106314492564215,
     "peak_year": 1923,
     "total": 180,
     "first_attestation": 1910,
     "takeoff_5pct": 1914,
     "takeoff_10pct": 1915,
-    "takeoff_20pct": 1915,
+    "takeoff_20pct": 1916,
     "mass_p25": 1920,
-    "mass_p50": 1921,
-    "mass_p75": 1925,
-    "mass_iqr": 5,
+    "mass_p50": 1922,
+    "mass_p75": 1926,
+    "mass_iqr": 6,
     "zero_years_before_first_hit": 46
    },
    "sensation novel": {
-    "peak": 1.0026752553589062,
+    "peak": 0.9762310561151666,
     "peak_year": 1881,
-    "total": 20,
+    "total": 24,
     "first_attestation": 1879,
     "takeoff_5pct": 1875,
     "takeoff_10pct": 1875,
     "takeoff_20pct": 1877,
     "mass_p25": 1882,
-    "mass_p50": 1883,
-    "mass_p75": 1892,
-    "mass_iqr": 10,
+    "mass_p50": 1885,
+    "mass_p75": 1903,
+    "mass_iqr": 21,
     "zero_years_before_first_hit": 24
    },
    "scientific romance": {
-    "peak": 0.11292447407934925,
+    "peak": 0.10252558743938055,
     "peak_year": 1926,
     "total": 3,
     "first_attestation": null,
@@ -4760,88 +4760,88 @@
     "zero_years_before_first_hit": 34
    },
    "ghost story": {
-    "peak": 0.2488415446970295,
-    "peak_year": 1922,
-    "total": 10,
+    "peak": 0.9204392467342734,
+    "peak_year": 1893,
+    "total": 13,
     "first_attestation": null,
-    "takeoff_5pct": 1904,
-    "takeoff_10pct": 1904,
-    "takeoff_20pct": 1904,
-    "mass_p25": 1908,
-    "mass_p50": 1920,
-    "mass_p75": 1924,
-    "mass_iqr": 16,
-    "zero_years_before_first_hit": 37
+    "takeoff_5pct": 1887,
+    "takeoff_10pct": 1889,
+    "takeoff_20pct": null,
+    "mass_p25": 1897,
+    "mass_p50": 1897,
+    "mass_p75": 1908,
+    "mass_iqr": 11,
+    "zero_years_before_first_hit": 36
    },
    "historical romance": {
-    "peak": 3.554134173444651,
-    "peak_year": 1902,
-    "total": 104,
+    "peak": 3.845850125356902,
+    "peak_year": 1900,
+    "total": 117,
     "first_attestation": 1878,
     "takeoff_5pct": 1874,
     "takeoff_10pct": 1874,
-    "takeoff_20pct": 1875,
-    "mass_p25": 1891,
+    "takeoff_20pct": 1879,
+    "mass_p25": 1897,
     "mass_p50": 1898,
     "mass_p75": 1917,
-    "mass_iqr": 26,
+    "mass_iqr": 20,
     "zero_years_before_first_hit": 23
    },
    "adventure story": {
-    "peak": 6.812577864585132,
+    "peak": 6.623533856698861,
     "peak_year": 1929,
-    "total": 230,
-    "first_attestation": 1879,
-    "takeoff_5pct": 1875,
+    "total": 241,
+    "first_attestation": 1878,
+    "takeoff_5pct": 1874,
     "takeoff_10pct": 1894,
     "takeoff_20pct": 1895,
-    "mass_p25": 1902,
+    "mass_p25": 1900,
     "mass_p50": 1920,
     "mass_p75": 1925,
-    "mass_iqr": 23,
-    "zero_years_before_first_hit": 24
+    "mass_iqr": 25,
+    "zero_years_before_first_hit": 23
    },
    "western story": {
-    "peak": 2.0525496544305812,
+    "peak": 1.8388864152823483,
     "peak_year": 1923,
-    "total": 52,
+    "total": 55,
     "first_attestation": 1900,
-    "takeoff_5pct": 1897,
+    "takeoff_5pct": 1901,
     "takeoff_10pct": 1901,
     "takeoff_20pct": 1915,
     "mass_p25": 1905,
     "mass_p50": 1920,
-    "mass_p75": 1923,
-    "mass_iqr": 18,
+    "mass_p75": 1924,
+    "mass_iqr": 19,
     "zero_years_before_first_hit": 23
    },
    "love story": {
-    "peak": 12.478705316245712,
+    "peak": 11.59550499894721,
     "peak_year": 1904,
-    "total": 507,
+    "total": 515,
     "first_attestation": 1878,
     "takeoff_5pct": 1874,
     "takeoff_10pct": 1874,
     "takeoff_20pct": 1874,
     "mass_p25": 1885,
     "mass_p50": 1904,
-    "mass_p75": 1919,
-    "mass_iqr": 34,
+    "mass_p75": 1918,
+    "mass_iqr": 33,
     "zero_years_before_first_hit": 23
    },
    "sea story": {
-    "peak": 0.4688968382660843,
+    "peak": 0.43261238502954197,
     "peak_year": 1926,
     "total": 21,
     "first_attestation": 1902,
-    "takeoff_5pct": 1879,
-    "takeoff_10pct": 1879,
-    "takeoff_20pct": 1879,
-    "mass_p25": 1902,
+    "takeoff_5pct": 1877,
+    "takeoff_10pct": 1877,
+    "takeoff_20pct": 1877,
+    "mass_p25": 1893,
     "mass_p50": 1905,
     "mass_p75": 1922,
-    "mass_iqr": 20,
-    "zero_years_before_first_hit": 28
+    "mass_iqr": 29,
+    "zero_years_before_first_hit": 26
    }
   }
  },
