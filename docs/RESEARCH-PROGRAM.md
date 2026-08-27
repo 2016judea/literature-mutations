@@ -244,12 +244,13 @@ for the arithmetic.
 ```
 S6 ── slice 1 (Gutenberg)   DONE 08-18  no-go, 4 ads in 343 books
    ├─ slice 2 (trade cat.)  DONE 08-26  GO: Publishers' Weekly, free OCR
-   ├─ slice 3 (the series)  ACTIVE      ** THE PRIMARY MEASUREMENT **
+   ├─ slice 3 (the series)  DONE 08-26  mystery story: 41 silent years, then 1,605
+   │                                    hits. Detective on a third clock.
    ├─ slice 4 (library + periodical catalogues, the next rungs up)
    └─ slice 5 (regress against the textual series)
 
-S1 (provenance audit)  ── unblocked, an afternoon, do it between S6 slices
-S3 (new instrument)    ── unblocked, second priority, serves the validation check
+S1 (provenance audit)  ── DONE 08-26. P1 cannot explain detective fiction.
+S3 (new instrument)    ── NEXT. Point it at mystery story 1896/1906-1909 first.
 S4 / S5                ── DEFERRED. Trigger: the textual series must be re-run
                           at frame scale once the reception series exists.
 
@@ -589,6 +590,40 @@ and librarians classified books *at the time* — and nobody has built that seri
 > - **The real cost is section segmentation** (24% of issues lose the Weekly
 >   Record heading to OCR), and the window is cheaply extendable back to 1852 by
 >   splicing IA's 532 items of *The American Publishers' Circular*.
+
+> **Slice 3 DONE 2026-08-26 — [`S6-SLICE3-RECEPTION-SERIES.md`](S6-SLICE3-RECEPTION-SERIES.md).
+> The series exists.** 3,487 dated issues, 1855–1929, 128.5M words, 81,900 trade
+> annotations, 0 fetch failures. Two serials spliced: *American Publishers'
+> Circular* 1852–1871 ahead of *Publishers' Weekly* 1872–1929.
+>
+> - **`mystery story` appears ZERO times in 41.8M words across 1,690 issues,
+>   1855–1895 — then 1,605 times in the next 34 years.** First 1896, sustained
+>   1896, take-off **1906–1909** (3-year band), plateau ~40/M to 1929. Not a
+>   repeated ad (169 hits across 45 of 56 issues in 1920) and not authors' titles
+>   (the hits are in the trade's own descriptive line). **A second datable genre,
+>   and the reception side found it alone.**
+> - **Detective fiction now has a third clock**: 2,592 hits, sustained 1873,
+>   take-off 1891–1897, still rising at 1929, against S2's Ngrams 1889 and the
+>   corpus's 1878–1926.
+> - **Methods correction: a fraction-of-peak take-off on a smoothed SPARSE series
+>   can precede the term's first occurrence.** `sensation novel` first appears
+>   1863 and the inherited estimator reported 1859; `sea story`'s take-off moves
+>   **74 years** across smoothing widths 9/5/3/1. Take-offs now ship as **bands**
+>   and one spanning >10 years is **not measurable**. Five of eleven terms
+>   survive it. Not a criticism of S2 — Ngrams series are dense, this one has
+>   hard zeros.
+> - **A false replication was avoided rather than published.** `sensation novel`'s
+>   apparent 1859 take-off matched S2's 1859 exactly and is a smoothing artifact.
+>   The splice bought 17 more years of proven silence for `mystery story`; it did
+>   **not** confirm `sensation novel`.
+> - **The annotation series is clamped to 1878+** — the APC never annotated (5
+>   annotations in 522 issues) and PW takes up the practice in the late 1870s.
+>   Where both series see `mystery story` they differ by ~9 years: vocabulary
+>   reaches the market before it reaches the catalogue.
+>
+> **Next: point S3 at `mystery story` 1896/1906–1909.** If the textual instrument
+> finds a formation in that window, the project has a second datable genre and
+> stops resting on 13 books. That is now the highest-value thing S3 can do.
 
 **Sources, ascending cost.**
 - **Publishers' series labels and back-matter advertisements.** Genre formation
