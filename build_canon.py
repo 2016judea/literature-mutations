@@ -147,6 +147,11 @@ def main():
             "support": len(rec["lists"]) + len(rec["models"]),  # lists + model agreement
             "models": sorted(rec["models"]),
             "n_lists": len(rec["lists"]),
+            # WHICH lists, not just how many. Discarding this made the S1
+            # provenance audit impossible on the existing corpus: the whole
+            # question is whether a title entered only through a genre-NAMED
+            # bucket, and a count cannot answer it. Persisted 2026-08-26.
+            "lists": sorted(rec["lists"]),
         })
     records.sort(key=lambda r: (-r["support"], r["year"]))
 
