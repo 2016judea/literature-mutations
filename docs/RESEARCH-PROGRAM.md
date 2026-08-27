@@ -453,6 +453,36 @@ and librarians classified books *at the time* — and nobody has built that seri
 > first: the trade catalogues (*Publishers' Circular*, *English Catalogue of
 > Books*), which concentrate the same headings in bulk.
 
+> **Slice 2 done 2026-08-26 — [`S6-SLICE2-TRADE-CATALOGUE.md`](S6-SLICE2-TRADE-CATALOGUE.md).**
+> **GO, and the page-scan OCR pipeline is not needed.** But on a different
+> serial than slice 1 named and a different artifact than it expected:
+>
+> - **Both sources slice 1 named fail, measured.** *The English Catalogue of
+>   Books* is an alphabetical price list — 2 generic genre-term hits in 318,725
+>   words, no specific genre term at all. IA holds 24 items of *The Publishers'
+>   Circular*, nearly all 1853, and the issue tested fires zero genre terms.
+> - **Publishers' Weekly is the source: 2,965 dated issues, 1872–1929,
+>   free `_djvu.txt`, no lending restriction, no OCR cost.** Register control
+>   fires 5/5 on 8.8M words.
+> - **The artifact is the Weekly Record annotation, not the heading** — one
+>   dated line per book, and PW's own masthead says the annotations are
+>   "descriptive, not critical; intended to place not to judge the books,"
+>   i.e. classificatory. PW's formal `CLASS SYNOPSIS` never subdivides Fiction,
+>   so the class list cannot date a genre; the annotation can.
+> - **Yield: Weekly Record locatable in 176/232 sampled issues (76%), 13,743
+>   entries, 1,263 (9.2%) genre-bearing** → order of 175,000 dated per-book
+>   entries and ~16,000 genre attributions across the run, against slice 1's 4.
+> - **New finding: `mystery story` is absent for 29 consecutive years
+>   (1872–1900), first attested 1901, sustained after.** A dated formation in
+>   period trade evidence, and a testable prediction for S3/S4 — if the textual
+>   instrument finds it too, the positive result stops resting on 13 books.
+> - **`detective story` first attested 1880, sustained from 1908** — same era as
+>   S2's 1889 Ngrams take-off, independent source. Do **not** read its 20%
+>   take-off of 1904 as a date: it is right-censored at the 1929 window edge.
+> - **The real cost is section segmentation** (24% of issues lose the Weekly
+>   Record heading to OCR), and the window is cheaply extendable back to 1852 by
+>   splicing IA's 532 items of *The American Publishers' Circular*.
+
 **Sources, ascending cost.**
 - **Publishers' series labels and back-matter advertisements.** Genre formation
   as a dated marketing act: the moment a publisher creates "The Detective
