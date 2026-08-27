@@ -146,12 +146,50 @@ n = 13, not because it was likely to be the explanation.
 
 ---
 
+## Also closed here: S0 housekeeping (b) and (a)
+
+S0 left three defects for "once Aidan has ruled on the report." Two of them bear
+directly on whether this audit's result means anything, so both are measured
+rather than carried as caveats.
+
+**(b) Author aliases partly defeat the one-book-per-author control.** S0
+estimated that `n_authors = 166` counts ~157 people. Every multi-spelling
+surname in the corpus was listed and inspected; **eight** are the same person
+twice or three times (*H. G. Wells* / *H.G. Wells* / *Herbert George Wells*,
+*Sir Walter Scott* / *Walter Scott*, *Fanny* / *Frances Burney*, and five more),
+while the rest — three Brontës, three Lewises, two Eliots, two Browns, two
+Richardsons — are **different people who must not be merged**. Merging those
+would be a worse error than the one being fixed, so the alias map is explicit
+and auditable rather than a fuzzy match.
+
+| | distinct author strings | one-per-author subset | detective community |
+|---|---:|---:|---|
+| as published | 166 | 166 | n = 13, z = **−2.96** |
+| alias-controlled | **157** | 157 | n = 14, z = **−2.47** |
+
+**S0's estimate of ~157 is exact.** The finding survives — z = −2.47 still clears
+−2.0 by roughly 10 MC sigma, and the community gains a member rather than losing
+one. But it is **weaker by about half a point of z**, and that is the honest
+number: the alias defect was inflating the result, not fabricating it.
+
+**(a) 14 works appear twice under two titles.** This one cannot affect the
+controlled communities at all, and the argument is structural rather than
+empirical: a duplicated work shares its author, and the one-book-per-author
+control admits at most one book per author. The only way a duplicate could slip
+through both copies is if the two titles were attributed to two *different author
+spellings* — which is exactly defect (b), now controlled. So (a) is neutralised
+for every number in this document, and remains a live problem only for
+uncontrolled corpus counts.
+
+---
+
 ## Artifacts
 
 - `s1_provenance_bound.py` — the bound, importing `controls.py`'s own `tfidf`,
   `detrend_years`, `knn_graph` and `concentration_z` so the numbers are the
   published ones rather than a near-miss.
 - `s1_provenance_bound.json` — the full bound, all eight communities, the MC
-  noise measurement, and the worst-case title set at every k.
+  noise measurement, the worst-case title set at every k, and the alias
+  control's before/after.
 - [`build_canon.py:154`](../build_canon.py#L154) — provenance now persisted for
   every future corpus build.

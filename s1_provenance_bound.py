@@ -71,12 +71,37 @@ GENRE_BUCKETS = [
 ]
 
 
-def controlled_communities():
+# S0 housekeeping item (b): n_authors = 166 counts ~157 PEOPLE, because some
+# authors appear under several spellings, which partly defeats controls.py's
+# one-book-per-author control. Every multi-spelling surname in the corpus was
+# listed and inspected by eye; these eight are the same person twice (or three
+# times), and the rest - three Brontes, three Lewises, two Eliots, two Browns,
+# two Richardsons - are different people who must NOT be merged. Merging them
+# would be a worse error than the one being fixed.
+AUTHOR_ALIASES = {
+    "Frances Burney": "Fanny Burney",
+    "Sheridan Le Fanu": "Joseph Sheridan Le Fanu",
+    "E.M. Forster": "E. M. Forster",
+    "Henry Rider Haggard": "H. Rider Haggard",
+    "D.H. Lawrence": "D. H. Lawrence",
+    "Sir Walter Scott": "Walter Scott",
+    "William Makepeace Thackeray": "William Thackeray",
+    "H.G. Wells": "H. G. Wells",
+    "Herbert George Wells": "H. G. Wells",
+}
+
+
+def canonical(author):
+    return AUTHOR_ALIASES.get(author, author)
+
+
+def controlled_communities(alias_control=False):
     '''controls.py's Control 3 graph: one book per author, style-drift
     detrended, k-NN, Louvain. Rebuilt here from the same imported functions so
     the numbers are the published ones and not a near-miss.'''
     books = load()
-    authors = [b["author"] for b in books]
+    authors = [canonical(b["author"]) if alias_control else b["author"]
+               for b in books]
     years_all = np.array([int(b["date_published"]) for b in books], float)
     X, terms = tfidf([b["description"] for b in books])
 
@@ -89,11 +114,39 @@ def controlled_communities():
     Xk, yk = X[keep], years_all[keep]
     G, M = knn_graph(detrend_years(Xk, yk))
     comms = [c for c in nxc.louvain_communities(G, seed=SEED) if len(c) >= 5]
-    return books, keep, yk, M, terms, comms
+    return books, keep, yk, M, terms, comms, len(set(authors))
+
+
+def alias_control_check():
+    '''Housekeeping (b): does detective fiction survive collapsing the author
+    aliases that partly defeat the one-book-per-author control? Reported as a
+    number rather than left as a caveat.'''
+    out = {}
+    for tag, flag in (("as_published", False), ("alias_controlled", True)):
+        books, keep, yk, M, terms, comms, n_auth = controlled_communities(flag)
+        best = None
+        for c in comms:
+            idx = list(c)
+            centroid = M[idx].mean(0)
+            top = list(terms[np.argsort(-centroid)[:6]])
+            if any(w in " ".join(top).lower()
+                   for w in ("detective", "inspector")):
+                ys = yk[idx]
+                best = {"n": len(idx), "year_min": int(ys.min()),
+                        "year_max": int(ys.max()),
+                        "year_std": round(float(ys.std()), 1),
+                        "z": round(float(concentration_z(
+                            ys, yk, np.random.default_rng(0), TRIALS)), 2),
+                        "top_terms": top}
+                break
+        out[tag] = {"distinct_author_strings": n_auth,
+                    "one_per_author_subset": len(keep),
+                    "detective": best}
+    return out
 
 
 def main():
-    books, keep, yk, M, terms, comms = controlled_communities()
+    books, keep, yk, M, terms, comms, _ = controlled_communities()
     rng = np.random.default_rng(0)
 
     rows = []
@@ -218,7 +271,16 @@ def main():
               f"still survive, so the failure is a worst case and not the "
               f"typical one.")
 
+    alias = alias_control_check()
+    print("\nAlias control (S0 housekeeping b):")
+    for tag, r in alias.items():
+        d = r["detective"]
+        print(f"  {tag:18s} authors={r['distinct_author_strings']:>4} "
+              f"subset={r['one_per_author_subset']:>4}  detective "
+              f"{'n=' + str(d['n']) + ' z=' + str(d['z']) if d else 'NOT FOUND'}")
+
     payload = {
+        "alias_control": alias,
         "question": "does detective fiction's concentration survive removing "
                     "books that entered only via a genre-named bucket?",
         "method": "adversarial bound - worst-case removal dominates every "

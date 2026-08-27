@@ -1,4 +1,44 @@
 {
+ "alias_control": {
+  "as_published": {
+   "distinct_author_strings": 166,
+   "one_per_author_subset": 166,
+   "detective": {
+    "n": 13,
+    "year_min": 1878,
+    "year_max": 1926,
+    "year_std": 14.9,
+    "z": -2.96,
+    "top_terms": [
+     "detective",
+     "inspector",
+     "murderer",
+     "police",
+     "murder",
+     "inquest"
+    ]
+   }
+  },
+  "alias_controlled": {
+   "distinct_author_strings": 157,
+   "one_per_author_subset": 157,
+   "detective": {
+    "n": 14,
+    "year_min": 1837,
+    "year_max": 1926,
+    "year_std": 23.6,
+    "z": -2.47,
+    "top_terms": [
+     "detective",
+     "inspector",
+     "murderer",
+     "police",
+     "murder",
+     "inquest"
+    ]
+   }
+  }
+ },
  "question": "does detective fiction's concentration survive removing books that entered only via a genre-named bucket?",
  "method": "adversarial bound - worst-case removal dominates every actual provenance assignment, so no LLM call, no money and no non-determinism is needed",
  "genre_buckets_in_build_canon": [

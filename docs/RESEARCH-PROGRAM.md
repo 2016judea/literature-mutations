@@ -331,6 +331,17 @@ manifest committed.
 > now persists **which** lists a title came from. Step 3's full corpus re-run was
 > **not** run and is reported as uninterpretable until S3 — at ±7.6 seed noise a
 > 4-book perturbation measures Louvain, not sampling.
+>
+> **It also closes two of S0's three housekeeping defects.** (b) the alias
+> control: S0's estimate of ~157 real people behind 166 author strings is
+> **exact** — eight surnames are one person twice or three times, the rest are
+> different people who must not be merged. Detective fiction survives it
+> (n = 13 → 14, z = **−2.96 → −2.47**, still ~10 MC sigma clear) but is **weaker
+> by half a point of z**: the defect was inflating the result, not fabricating
+> it. (a) the 14 double-titled works cannot affect any controlled number at all —
+> a duplicated work shares its author, and one-book-per-author admits at most one
+> book per author, so (a) collapses into (b), which is now controlled. Only (c),
+> the missing `honest_metrics` producer, is still open.
 
 **Depends on:** S0. **Effort:** an afternoon.
 **Addresses:** P1.
