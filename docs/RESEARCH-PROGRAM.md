@@ -32,7 +32,9 @@ Aidan calls it each time, with the numbers in front of him.
 
 **The live site is frozen for the duration.** No session touches
 `writing-topology/research/`. It gets updated **once**, at the end, from the
-final substrate.
+final substrate. — **Lifted for S7 only, 2026-08-27, by Aidan's instruction
+above.** The figures already flagged as unreproducible below are untouched; S7
+publishes a new page rather than editing the frozen one.
 
 > Accepted risk, logged deliberately: the page currently states figures
 > (33 splits / 25 merges / 32 births; 90 real vs 94 ± 15, z = −0.27) that
@@ -40,10 +42,18 @@ final substrate.
 > disk. Aidan has accepted this for the duration rather than churn the page or
 > take it down. It is a known state, not an oversight — do not "fix" it.
 
-**Phase 2 is out of scope.** The author-influence work
+**Phase 2 is out of scope.** ~~The author-influence work
 ([`PHASE2_INFLUENCE_NETWORK.md`](PHASE2_INFLUENCE_NETWORK.md)) stays parked,
-including its unresolved stylistic-similarity question. It is already honest
-about being unresolved; leave it that way.
+including its unresolved stylistic-similarity question.~~
+
+> **SUPERSEDED 2026-08-27 by Aidan directly:** *"port this into literature
+> mutations. And continue our research with it. Publish what you will on my
+> personal website."* That un-parks Phase 2 and lifts the site freeze below, in
+> his own words, so neither is reinterpreted here. The work is
+> [`S7-MARGINALIA.md`](S7-MARGINALIA.md); the corpus is the submodule at
+> `vendor/marginalia`. S7 did **not** rebuild the graph — it validates the
+> existing one against a third evidence class and reports what binds, which is
+> Phase 2's 77-author corpus rather than the marginalia.
 
 **When the program concludes, email Stanford's Literary Lab.** Decided 2026-08-18
 and deliberately deferred to the end: Aidan writes to Mark Algee-Hewitt

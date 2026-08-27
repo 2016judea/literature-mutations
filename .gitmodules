@@ -1,0 +1,3 @@
+[submodule "vendor/marginalia"]
+	path = vendor/marginalia
+	url = https://github.com/2016judea/marginalia-corpus

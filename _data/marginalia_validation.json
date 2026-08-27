@@ -1,0 +1,412 @@
+{
+ "note": "A third held-out source for Phase 2, and the only non-interpretive one. Same permutation test as build_influence_graph.py's two existing checks, so the three z-scores are comparable.",
+ "seed": 20260827,
+ "n_null": 2000,
+ "gap_tolerance_years": 25,
+ "graph_authors": 77,
+ "marginalia_source_authors": 2067,
+ "overlap_readers": [
+  "Ezra Pound",
+  "Herman Melville",
+  "James Joyce",
+  "Walt Whitman"
+ ],
+ "power_caveat": "Underpowered by construction. The graph has 77 authors against the corpus's 2,139, so only a couple of dozen reading edges have both ends in the graph. Compare n_pairs against the 130 and 102 of the existing two sources before reading anything into a z.",
+ "existing_for_comparison": {
+  "llm_enumerated": {
+   "n_known_pairs_in_graph": 130,
+   "stylistic": {
+    "real_mean": 0.0759,
+    "null_mean": 0.0728,
+    "null_std": 0.0035,
+    "z": 0.905,
+    "n_pairs": 130
+   },
+   "conceptual": {
+    "real_mean": 0.6817,
+    "null_mean": 0.6466,
+    "null_std": 0.0037,
+    "z": 9.469,
+    "n_pairs": 130
+   }
+  },
+  "wikidata_p737": {
+   "source": "wikidata_p737",
+   "n_pairs_in_graph": 102,
+   "stylistic": {
+    "real_mean": 0.0823,
+    "null_mean": 0.0728,
+    "null_std": 0.0039,
+    "z": 2.454,
+    "n_pairs": 102
+   },
+   "conceptual": {
+    "real_mean": 0.6764,
+    "null_mean": 0.6466,
+    "null_std": 0.0042,
+    "z": 7.16,
+    "n_pairs": 102
+   }
+  }
+ },
+ "within_reader": {
+  "Herman Melville :: marked": {
+   "stylistic": {
+    "reader": "Herman Melville",
+    "n_read": 6,
+    "n_not_read": 69,
+    "read_mean": 0.1176,
+    "not_read_mean": 0.0823,
+    "null_std": 0.0149,
+    "z": 2.363,
+    "p": 0.019
+   },
+   "conceptual": {
+    "reader": "Herman Melville",
+    "n_read": 6,
+    "n_not_read": 69,
+    "read_mean": 0.6641,
+    "not_read_mean": 0.6479,
+    "null_std": 0.0143,
+    "z": 1.136,
+    "p": 0.1314
+   }
+  },
+  "James Joyce :: marked": {
+   "stylistic": {
+    "reader": "James Joyce",
+    "n_read": 6,
+    "n_not_read": 70,
+    "read_mean": 0.128,
+    "not_read_mean": 0.08,
+    "null_std": 0.0151,
+    "z": 3.177,
+    "p": 0.0015
+   },
+   "conceptual": {
+    "reader": "James Joyce",
+    "n_read": 6,
+    "n_not_read": 70,
+    "read_mean": 0.6951,
+    "not_read_mean": 0.6552,
+    "null_std": 0.0165,
+    "z": 2.416,
+    "p": 0.0045
+   }
+  },
+  "Walt Whitman :: marked": {
+   "stylistic": {
+    "reader": "Walt Whitman",
+    "n_read": 12,
+    "n_not_read": 64,
+    "read_mean": 0.0393,
+    "not_read_mean": 0.0412,
+    "null_std": 0.0055,
+    "z": -0.358,
+    "p": 0.6337
+   },
+   "conceptual": {
+    "reader": "Walt Whitman",
+    "n_read": 12,
+    "n_not_read": 64,
+    "read_mean": 0.6327,
+    "not_read_mean": 0.6321,
+    "null_std": 0.0095,
+    "z": 0.062,
+    "p": 0.4828
+   }
+  },
+  "Friedrich Nietzsche :: named": {
+   "stylistic": {
+    "reader": "Friedrich Nietzsche",
+    "n_read": 21,
+    "n_not_read": 53,
+    "read_mean": 0.1155,
+    "not_read_mean": 0.095,
+    "null_std": 0.0048,
+    "z": 4.241,
+    "p": 0.0005
+   },
+   "conceptual": {
+    "reader": "Friedrich Nietzsche",
+    "n_read": 21,
+    "n_not_read": 53,
+    "read_mean": 0.6773,
+    "not_read_mean": 0.6598,
+    "null_std": 0.0062,
+    "z": 2.839,
+    "p": 0.002
+   }
+  }
+ },
+ "within_reader_note": "THE VALID TEST. Reader held fixed; the null is authors in the same graph that reader did not read. Removes the single-reader artifact that made the graph-wide numbers below look strong.",
+ "graph_wide_null_CONFOUNDED": "Every pair in marginalia_references is Nietzsche->X and every pair in marginalia_marks_50_plus is Melville->X, so these z-scores measure one author's position in the graph, not the evidence class. Kept for contrast.",
+ "marginalia_marks": {
+  "n_pairs_found": 24,
+  "pairs": [
+   [
+    "Algernon Charles Swinburne",
+    "Walt Whitman"
+   ],
+   [
+    "Arthur Schopenhauer",
+    "Herman Melville"
+   ],
+   [
+    "Benjamin Franklin",
+    "James Joyce"
+   ],
+   [
+    "Dante Alighieri",
+    "Walt Whitman"
+   ],
+   [
+    "Epictetus",
+    "Walt Whitman"
+   ],
+   [
+    "George Bernard Shaw",
+    "James Joyce"
+   ],
+   [
+    "Henrik Ibsen",
+    "James Joyce"
+   ],
+   [
+    "Henry David Thoreau",
+    "Walt Whitman"
+   ],
+   [
+    "Homer",
+    "Herman Melville"
+   ],
+   [
+    "Homer",
+    "Walt Whitman"
+   ],
+   [
+    "James Joyce",
+    "Ezra Pound"
+   ],
+   [
+    "Jean-Jacques Rousseau",
+    "Walt Whitman"
+   ],
+   [
+    "Johann Wolfgang von Goethe",
+    "James Joyce"
+   ],
+   [
+    "Johann Wolfgang von Goethe",
+    "Walt Whitman"
+   ],
+   [
+    "John Milton",
+    "Herman Melville"
+   ],
+   [
+    "Marcus Aurelius",
+    "Walt Whitman"
+   ],
+   [
+    "Nathaniel Hawthorne",
+    "Herman Melville"
+   ],
+   [
+    "Percy Bysshe Shelley",
+    "Walt Whitman"
+   ],
+   [
+    "Ralph Waldo Emerson",
+    "Herman Melville"
+   ],
+   [
+    "Samuel Taylor Coleridge",
+    "Walt Whitman"
+   ],
+   [
+    "Sophocles",
+    "Walt Whitman"
+   ],
+   [
+    "Thomas Carlyle",
+    "Walt Whitman"
+   ],
+   [
+    "William Butler Yeats",
+    "James Joyce"
+   ],
+   [
+    "William Shakespeare",
+    "Herman Melville"
+   ]
+  ],
+  "stylistic": {
+   "n_pairs": 24,
+   "real_mean": 0.081,
+   "null_mean": 0.0754,
+   "null_std": 0.0076,
+   "z": 0.748,
+   "p": 0.2274
+  },
+  "conceptual": {
+   "n_pairs": 24,
+   "real_mean": 0.6562,
+   "null_mean": 0.647,
+   "null_std": 0.0078,
+   "z": 1.179,
+   "p": 0.1159
+  }
+ },
+ "marginalia_marks_50_plus": {
+  "n_pairs_found": 6,
+  "pairs": [
+   [
+    "Arthur Schopenhauer",
+    "Herman Melville"
+   ],
+   [
+    "Homer",
+    "Herman Melville"
+   ],
+   [
+    "John Milton",
+    "Herman Melville"
+   ],
+   [
+    "Nathaniel Hawthorne",
+    "Herman Melville"
+   ],
+   [
+    "Ralph Waldo Emerson",
+    "Herman Melville"
+   ],
+   [
+    "William Shakespeare",
+    "Herman Melville"
+   ]
+  ],
+  "note": "only pairs with 50+ marks -- attribution has no weight, this does",
+  "stylistic": {
+   "n_pairs": 6,
+   "real_mean": 0.1176,
+   "null_mean": 0.0742,
+   "null_std": 0.0152,
+   "z": 2.862,
+   "p": 0.0055
+  },
+  "conceptual": {
+   "n_pairs": 6,
+   "real_mean": 0.6641,
+   "null_mean": 0.6496,
+   "null_std": 0.0156,
+   "z": 0.931,
+   "p": 0.1774
+  }
+ },
+ "marginalia_references": {
+  "n_pairs_found": 21,
+  "pairs": [
+   [
+    "Aristotle",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Arthur Schopenhauer",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Baruch Spinoza",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Cicero",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Epictetus",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Euripides",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Friedrich Schiller",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Georg Wilhelm Friedrich Hegel",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Homer",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Immanuel Kant",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Jean-Jacques Rousseau",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Johann Wolfgang von Goethe",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Lord Byron",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Michel de Montaigne",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Plato",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Ralph Waldo Emerson",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Richard Wagner",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Sophocles",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Thomas Carlyle",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "Voltaire",
+    "Friedrich Nietzsche"
+   ],
+   [
+    "William Shakespeare",
+    "Friedrich Nietzsche"
+   ]
+  ],
+  "stylistic": {
+   "n_pairs": 21,
+   "real_mean": 0.1155,
+   "null_mean": 0.0792,
+   "null_std": 0.0079,
+   "z": 4.597,
+   "p": 0.0005
+  },
+  "conceptual": {
+   "n_pairs": 21,
+   "real_mean": 0.6773,
+   "null_mean": 0.6443,
+   "null_std": 0.0082,
+   "z": 4.014,
+   "p": 0.0005
+  }
+ }
+}
