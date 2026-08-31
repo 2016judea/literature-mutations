@@ -50,8 +50,8 @@ from constants import shelved_books
 
 BIBLIOGRAPHY_FILE = os.path.join(shelved_books, "bibliography.json")
 INFLUENCES_FILE = os.path.join(shelved_books, "known_influences.json")
-GEMINI_MODEL = "gemini-2.5-flash"
-CLAUDE_MODEL = "claude-sonnet-4-6"
+GEMINI_MODEL = "gemini-3.7-flash"
+CLAUDE_MODEL = "claude-sonnet-5"
 
 # The ~17 PD-safe seed authors identified in docs/PHASE2_INFLUENCE_NETWORK.md
 # SS3 (§7.1 locks this in as the corpus-access strategy: PD-only for this

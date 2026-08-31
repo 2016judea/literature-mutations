@@ -30,8 +30,8 @@ from collections import Counter, defaultdict
 from constants import shelved_books
 
 CANON_FILE = os.path.join(shelved_books, "canon.json")
-GEMINI_MODEL = "gemini-2.5-flash"
-CLAUDE_MODEL = "claude-sonnet-4-6"
+GEMINI_MODEL = "gemini-3.7-flash"
+CLAUDE_MODEL = "claude-sonnet-5"
 
 SOURCES = [
     "The Guardian's '100 best novels written in English' (pre-1929 entries)",

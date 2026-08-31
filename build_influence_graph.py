@@ -80,7 +80,7 @@ DIGEST_WORDS_PER_BOOK = 250     # per-book excerpt length in the author digest
 MAX_BOOKS_PER_AUTHOR = 6        # earliest N matched books, bounds prolific authors
 WELL_REPRESENTED_MIN_BOOKS = 4  # density-control subset threshold (of MAX_BOOKS_PER_AUTHOR=6)
 GEMINI_EMBED_MODEL = "gemini-embedding-001"
-CLAUDE_MODEL = "claude-sonnet-4-6"
+CLAUDE_MODEL = "claude-sonnet-5"
 
 
 def load_books():

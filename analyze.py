@@ -27,7 +27,7 @@ import numpy as np
 import temporal_network as tn
 from semantic_edges import attach_embeddings
 
-CLAUDE_MODEL = "claude-sonnet-4-6"
+CLAUDE_MODEL = "claude-sonnet-5"
 RESULTS = os.environ.get("RESULTS_OUT", "results.json")
 
 
