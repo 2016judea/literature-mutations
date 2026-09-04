@@ -61,6 +61,12 @@ including its unresolved stylistic-similarity question.~~
 > existing one against a third evidence class and reports what binds, which is
 > Phase 2's 77-author corpus rather than the marginalia.
 
+**SENT 2026-09-04.** The email below went to malgeehe@stanford.edu from Aidan's
+personal address, on his instruction, once Phase 3 was public and the gothic
+result had three clocks behind it. Address and title re-verified against
+english.stanford.edu the same day. Any reply is his to answer; do not follow up
+unprompted.
+
 **When the program concludes, email Stanford's Literary Lab.** Decided 2026-08-18
 and deliberately deferred to the end: Aidan writes to Mark Algee-Hewitt
 (malgeehe@stanford.edu), director, on one hook — their active *Castle at the
