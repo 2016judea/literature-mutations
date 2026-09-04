@@ -126,13 +126,15 @@ def fig_absent_then_everywhere(series, clock):
 
     # Labelled where each curve is alone on its patch of the plot rather than
     # at a shared peak: the two cross repeatedly after 1918, and every label
-    # placed in that zone sat on the other line. detective at 1899 (12.7, with
-    # mystery still at 0); mystery above its own 1920 maximum, which is the one
-    # point where it is the upper line and nothing is above it.
+    # placed in that zone sat on the other line. detective above its 1905 local
+    # peak (28.8, with mystery at 2.3 far below); mystery above its own 1920
+    # maximum, the one point where it is the upper line with nothing above it.
+    # At 1899 the label lay across the series line itself and the first-use
+    # rule - 5.9px deep, caught by a text-vs-geometry sweep of the live page.
     def at(term, yr):
         return by[str(yr)]["per_million"][term]
     top_my = max(range(len(years)), key=lambda i: v_my[i])
-    s.append(f'<text x="{X(1899):.1f}" y="{Y(at("detective story", 1899)) - 10:.1f}" '
+    s.append(f'<text x="{X(1905):.1f}" y="{Y(at("detective story", 1905)) - 11:.1f}" '
              f'text-anchor="middle" font-size="10.5" class="lbl">detective story</text>')
     s.append(f'<text x="{X(years[top_my]):.1f}" y="{Y(v_my[top_my]) - 11:.1f}" '
              f'text-anchor="middle" font-size="11.5" class="lbl">mystery story</text>')
@@ -148,9 +150,9 @@ def fig_absent_then_everywhere(series, clock):
     # The zero run, labelled inside its own region — high in the band, where
     # neither series has yet risen, so the type never sits on a line.
     mid = (X(a0) + X(a1)) / 2
-    s.append(f'<text x="{mid:.1f}" y="{ytop + 70}" text-anchor="middle" '
+    s.append(f'<text x="{mid:.1f}" y="{ytop + 76}" text-anchor="middle" '
              f'font-size="12" class="lbl">zero, {a1 - a0 + 1} years</text>')
-    s.append(f'<text x="{mid:.1f}" y="{ytop + 86}" text-anchor="middle" '
+    s.append(f'<text x="{mid:.1f}" y="{ytop + 92}" text-anchor="middle" '
              f'font-size="10.5">{millions(my["absent_words"])} words · '
              f'{commas(my["absent_issues"])} issues</text>')
     s.append(f'<text x="{(X(t0) + X(t1)) / 2:.1f}" y="{ytop - 6}" '
@@ -250,7 +252,9 @@ def fig_bands(clock):
     sen = terms[CALLOUT]
     sy = ROW(gap_at)
     sx = X(sen["takeoff_band"]["smooth_9"])
-    s.append(f'<path class="acd" d="M{sx:.1f} {sy - 14} L{sx:.1f} {sy - 6}"/>')
+    # the connector reaches the band it is about; at 8px it read as a stray
+    # tick floating under the text (light mode, 1440px, 2026-09-04)
+    s.append(f'<path class="acd" d="M{sx:.1f} {sy - 15} L{sx:.1f} {sy - 2}"/>')
     s.append(f'<text x="{sx:.1f}" y="{sy - 18}" '
              f'text-anchor="middle" font-size="10" class="lbl">'
              f'band opens {sen["takeoff_band"]["smooth_9"]} — before its '

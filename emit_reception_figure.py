@@ -152,14 +152,18 @@ def fig_two_clocks(res):
                 s.append(f'<path class="acd" d="M{X(t):.1f} {y_nm} '
                          f'L{X(p25):.1f} {y_nm}" opacity=".55"/>')
             s.append(f'<circle class="ac" cx="{X(t):.1f}" cy="{y_nm}" r="4.6"/>')
-            s.append(f'<text class="lbl" x="{X(t):.1f}" y="{y_nm - 8}" '
+            # BELOW the bar, not above it: at y_nm - 8 the digits' bbox cut
+            # 2.5px into the books rule at y_txt on every datable row (measured
+            # on the live page, 2026-09-04). Under the bar is empty until the
+            # next row's rule, 14px further down.
+            s.append(f'<text class="lbl" x="{X(t):.1f}" y="{y_nm + 13}" '
                      f'text-anchor="middle" font-size="10">{t}</text>')
         else:
             s.append(f'<path class="acs" d="M{X(WIN_START) + 7:.1f} {y_nm - 4.5} '
                      f'L{X(WIN_START) + 1:.1f} {y_nm} '
                      f'L{X(WIN_START) + 7:.1f} {y_nm + 4.5}" fill="none"/>')
             s.append(f'<text class="lbl" x="{X(WIN_START) + 12:.1f}" '
-                     f'y="{y_nm - 7}" font-size="10">already in use</text>')
+                     f'y="{y_nm + 13}" font-size="10">already in use</text>')
 
     # control row, set apart: era-neutral phrases about fiction. If corpus
     # composition alone produced narrow naming mass, this row would be narrow
