@@ -322,7 +322,7 @@ n = 180. Read the direction, never the list.
    only about **half** do; PW annotated selectively and says so. The real defect
    in that neighbourhood was **precision, not recall**, and it is fixed.
 4. **Don't re-sweep to re-argue.** `reception_series.json` holds the per-year
-   series and `_data/reception_entries.jsonl.gz` the 1,453 genre-bearing
+   series and `_data/reception_entries.jsonl.gz` the 1,517 genre-bearing
    annotations with their dates. The 69-minute sweep runs once;
    `analyze_reception_series.py` runs as often as the argument needs.
 

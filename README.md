@@ -195,13 +195,23 @@ Full method, all eleven terms and every caveat:
 the two probes that found the source in
 [`docs/S6-SLICE1-BACKMATTER-PROBE.md`](docs/S6-SLICE1-BACKMATTER-PROBE.md) and
 [`docs/S6-SLICE2-TRADE-CATALOGUE.md`](docs/S6-SLICE2-TRADE-CATALOGUE.md).
-The dated per-book table is `_data/reception_entries.jsonl.gz` — 1,453
+The dated per-book table is `_data/reception_entries.jsonl.gz` — 1,517
 genre-bearing trade annotations, 1878–1929.
 
 ```bash
 python build_reception_series.py     # -> reception_series.json  (69 min, once)
 python analyze_reception_series.py   # -> reception_clock_trade.json  (seconds)
+python emit_trade_figure.py          # -> trade_series_figure.html (Figs. 8-9)
 ```
+
+**Published 2026-09-04**, with the S2 name clock alongside it, as §10 and §11 of
+[the paper on the site](https://aidanjude.vercel.app/research/literature-mutations#reception).
+Both sections' figures are pasted verbatim from the emitters
+([`emit_reception_figure.py`](emit_reception_figure.py),
+[`emit_trade_figure.py`](emit_trade_figure.py)) so no number on the page is
+hand-typed. That lifts the site freeze in
+[`docs/RESEARCH-PROGRAM.md`](docs/RESEARCH-PROGRAM.md) for this work only, on
+Aidan's instruction, exactly as 2026-08-27 lifted it for S7.
 
 ## References
 

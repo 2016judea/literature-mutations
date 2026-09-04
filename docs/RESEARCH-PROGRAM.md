@@ -34,7 +34,13 @@ Aidan calls it each time, with the numbers in front of him.
 `writing-topology/research/`. It gets updated **once**, at the end, from the
 final substrate. — **Lifted for S7 only, 2026-08-27, by Aidan's instruction
 above.** The figures already flagged as unreproducible below are untouched; S7
-publishes a new page rather than editing the frozen one.
+publishes a new page rather than editing the frozen one. — **Lifted again for
+the reception side, 2026-09-04:** Aidan asked, in as many words, for Phase 3 to
+be on the site, so the S2 name clock (Figs. 6-7) and the trade series
+(Figs. 8-9) now ship as §10 and §11 of `research/literature-mutations.html`.
+Nothing else on that page was edited, and the unreproducible figures below stay
+exactly as they are. Every figure is pasted from `emit_reception_figure.py` and
+`emit_trade_figure.py`, so the site can only ever carry what the substrate says.
 
 > Accepted risk, logged deliberately: the page currently states figures
 > (33 splits / 25 merges / 32 births; 90 real vs 94 ± 15, z = −0.27) that
