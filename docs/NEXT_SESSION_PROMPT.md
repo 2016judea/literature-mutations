@@ -86,5 +86,5 @@ there is something to point at. The hook is unchanged: their *Castle at the
 Crossroads* project models the gothic **supervised**, and our unsupervised run
 says the gothic is a perennial mode (z ≈ 0) while detective fiction is the one
 datable birth (z ≈ −3.0). Plan and draft:
-`~/.claude/projects/-Users-aidan-Desktop-writing-topology/memory/litlab-outreach-plan.md`.
+`~/.claude/projects/-Users-aidan-Desktop-workspace-writing-topology/memory/litlab-outreach-plan.md`.
 Contacting a person is his call and his send — draft it, never send it.

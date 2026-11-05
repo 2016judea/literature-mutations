@@ -76,7 +76,7 @@ detective fiction is the one datable birth (z ≈ −3.0). A falsifiable questio
 their live work, not a submission — LitLab has no submission path at all. Gated on
 S0 (the corpus must be back on disk; the first thing distant reading asks for is
 the corpus) and on S6 existing. Full plan and the draft email:
-`~/.claude/projects/-Users-aidan-Desktop-writing-topology/memory/litlab-outreach-plan.md`.
+`~/.claude/projects/-Users-aidan-Desktop-workspace-writing-topology/memory/litlab-outreach-plan.md`.
 Real venues for the paper itself are in that file too — note **CHR 2027's deadline
 passed 2026-08-14**, so the next conference cycle is ~Aug 2027.
 
